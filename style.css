@@ -1,477 +1,410 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>iCare Mukkam | Mobile & Laptop Repair</title>
-
-    <meta name="description"
-          content="iCare Mukkam - Mobile and laptop repair services in Mukkam, Kozhikode. Screen replacement, battery replacement, software service and more.">
-
-    <meta name="keywords"
-          content="iCare Mukkam, mobile repair Mukkam, laptop repair Mukkam, mobile service Kozhikode">
-
-    <meta name="author"
-          content="iCare Mukkam">
-
-    <link rel="stylesheet"
-          href="style.css">
-</head>
-
-<body>
-
-<!-- =========================================
-     HEADER
-     ========================================= -->
-
-<header>
-
-    <div class="logo">
-
-        <img src="logo.png"
-             alt="iCare Mukkam Logo">
-
-        <span>iCare Mukkam</span>
-
-    </div>
-
-    <nav>
-
-        <a href="#home">Home</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#about">About</a>
-
-        <a href="#booking">Booking</a>
-
-        <a href="#contact">Contact</a>
-
-    </nav>
-
-</header>
-
-
-<!-- =========================================
-     HOME
-     ========================================= -->
-
-<section id="home">
-
-    <h2>
-        iCare Mukkam
-    </h2>
-
-    <p>
-        Professional Mobile & Laptop Repair Services
-    </p>
-
-    <p>
-        Fast • Reliable • Quality Service
-    </p>
-
-    <div>
-
-        <a class="btn-primary"
-           href="https://wa.me/919447150744"
-           target="_blank">
-
-            💬 WhatsApp
-
-        </a>
-
-        <a class="btn"
-           href="tel:+919447667744">
-
-            📞 Call Now
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     SERVICES
-     ========================================= -->
-
-<section id="services">
-
-    <h2 class="section-title">
-        Our Services
-    </h2>
-
-    <div class="services">
-
-
-        <!-- Mobile Repair -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📱
-            </div>
-
-            <h3>
-                Mobile Repair
-            </h3>
-
-            <p>
-                Professional repair service for
-                smartphones and mobile devices.
-            </p>
-
-        </div>
-
-
-        <!-- Laptop Repair -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                💻
-            </div>
-
-            <h3>
-                Laptop Repair
-            </h3>
-
-            <p>
-                Laptop hardware and software
-                repair with reliable service.
-            </p>
-
-        </div>
-
-
-        <!-- Screen Replacement -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                📲
-            </div>
-
-            <h3>
-                Screen Replacement
-            </h3>
-
-            <p>
-                Quality display and touch screen
-                replacement service.
-            </p>
-
-        </div>
-
-
-        <!-- Battery -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🔋
-            </div>
-
-            <h3>
-                Battery Replacement
-            </h3>
-
-            <p>
-                Battery replacement service for
-                mobiles and laptops.
-            </p>
-
-        </div>
-
-
-        <!-- Software -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Software Service
-            </h3>
-
-            <p>
-                Software installation, updates,
-                troubleshooting and more.
-            </p>
-
-        </div>
-
-
-        <!-- Accessories -->
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🎧
-            </div>
-
-            <h3>
-                Accessories
-            </h3>
-
-            <p>
-                Mobile and laptop accessories
-                available at our shop.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     ABOUT
-     ========================================= -->
-
-<section id="about">
-
-    <h2 class="section-title">
-        About iCare Mukkam
-    </h2>
-
-    <div class="service-card">
-
-        <p>
-
-            Welcome to <strong>iCare Mukkam</strong>.
-
-            We provide professional mobile and
-            laptop repair services with a focus
-            on quality, reliability and customer
-            satisfaction.
-
-        </p>
-
-        <br>
-
-        <p>
-
-            Our services include mobile repair,
-            laptop repair, screen replacement,
-            battery replacement, software service
-            and accessories.
-
-        </p>
-
-        <br>
-
-        <p>
-
-            📍 Mukkam, Kozhikode, Kerala
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     WHY CHOOSE US
-     ========================================= -->
-
-<section>
-
-    <h2 class="section-title">
-        Why Choose iCare?
-    </h2>
-
-    <div class="services">
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ✅
-            </div>
-
-            <h3>
-                Quality Service
-            </h3>
-
-            <p>
-                We focus on reliable and
-                professional repair service.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ⚡
-            </div>
-
-            <h3>
-                Fast Service
-            </h3>
-
-            <p>
-                We try to complete repairs
-                as quickly as possible.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🤝
-            </div>
-
-            <h3>
-                Customer Support
-            </h3>
-
-            <p>
-                Friendly support and assistance
-                for our customers.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     BOOKING
-     ========================================= -->
-
-<section id="booking">
-
-    <h2 class="section-title">
-        Book a Service
-    </h2>
-
-    <div class="service-card">
-
-        <p>
-            Need a repair?
-            Contact us directly through WhatsApp
-            to book your service.
-        </p>
-
-        <br>
-
-        <a class="btn-primary"
-           href="https://wa.me/919447150744?text=Hello%20iCare%20Mukkam,%20I%20would%20like%20to%20book%20a%20service."
-           target="_blank">
-
-            📋 Book Service on WhatsApp
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CONTACT
-     ========================================= -->
-
-<section id="contact">
-
-    <h2 class="section-title">
-        Contact iCare Mukkam
-    </h2>
-
-    <p>
-        📞 <strong>9447667744</strong>
-    </p>
-
-    <p>
-        💬 WhatsApp:
-        <strong>9447150744</strong>
-    </p>
-
-    <p>
-        📍 Mukkam, Kozhikode, Kerala
-    </p>
-
-    <br>
-
-    <a class="btn-primary"
-       href="https://wa.me/919447150744"
-       target="_blank">
-
-        💬 Chat on WhatsApp
-
-    </a>
-
-    <a class="btn"
-       href="tel:+9194476677744">
-
-        📞 Call Us
-
-    </a>
-
-</section>
-
-
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-
-<footer>
-
-    <p>
-        © 2026 iCare Mukkam.
-        All Rights Reserved.
-    </p>
-
-    <p>
-        Mobile & Laptop Repair Services
-    </p>
-
-</footer>
-
-
-<!-- =========================================
-     FLOATING WHATSAPP BUTTON
-     ========================================= -->
-
-<a class="whatsapp-button"
-   href="https://wa.me/919447150744"
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-
-    💬
-
-</a>
-
-
-<!-- =========================================
-     FLOATING CALL BUTTON
-     ========================================= -->
-
-<a class="call-button"
-   href="tel:+919447667744"
-   aria-label="Call iCare Mukkam">
-
-    📞
-
-</a>
-
-
-</body>
-
-</html>
+/* =========================================
+   iCare Mukkam - Complete Website CSS
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #bfdbfe;
+}
+
+/* =========================================
+   HOME
+   ========================================= */
+
+#home {
+    min-height: 520px;
+    padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        rgba(239, 246, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+    );
+}
+
+#home h2 {
+    font-size: 46px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 19px;
+    color: #475569;
+    max-width: 750px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn,
+.btn-primary {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary {
+    background: #16a34a;
+    color: white;
+}
+
+.btn:hover,
+.btn-primary:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+section {
+    padding: 75px 8%;
+}
+
+/* =========================================
+   SECTION TITLE
+   ========================================= */
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #0f172a;
+    margin-bottom: 45px;
+}
+
+/* =========================================
+   SERVICES
+   ========================================= */
+
+.services {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+#about {
+    background: #ffffff;
+}
+
+#about .service-card {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+
+#contact {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+#contact .section-title {
+    color: white;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #020617;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* =========================================
+   WHATSAPP BUTTON
+   ========================================= */
+
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 28px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   CALL BUTTON
+   ========================================= */
+
+.call-button {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 58px;
+    height: 58px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.call-button:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   TABLET / MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        padding: 18px 15px;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: column;
+        font-size: 25px;
+    }
+
+    .logo img {
+        width: 65px !important;
+        height: 65px !important;
+        max-width: 65px !important;
+        max-height: 65px !important;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 7px 8px;
+    }
+
+    #home {
+        min-height: 480px;
+        padding: 70px 20px;
+    }
+
+    #home h2 {
+        font-size: 32px;
+    }
+
+    #home p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 55px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 28px 20px;
+    }
+
+    .whatsapp-button {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .call-button {
+        right: 15px;
+        bottom: 82px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .logo img {
+        width: 60px !important;
+        height: 60px !important;
+        max-width: 60px !important;
+        max-height: 60px !important;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 2px;
+    }
+
+    #home h2 {
+        font-size: 28px;
+    }
+
+    .btn,
+    .btn-primary {
+        width: 90%;
+        max-width: 280px;
+    }
+}
