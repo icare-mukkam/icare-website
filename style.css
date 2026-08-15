@@ -226,7 +226,12 @@ footer {
     .services {
         grid-template-columns: 1fr;
     }
-
+.logo img {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
     .service-card {
         padding: 25px 20px;
     }
