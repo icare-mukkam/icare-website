@@ -424,13 +424,14 @@ footer {
         width: 90%;
         max-width: 280px;
     }
-}
 .logo img {
-    width: 80px !important;
-    height: 80px !important;
-    max-width: 80px !important;
-    max-height: 80px !important;
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
+    min-width: 70px !important;
+    min-height: 70px !important;
     object-fit: contain !important;
     display: block !important;
 }
-}
+
