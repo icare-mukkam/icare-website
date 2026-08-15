@@ -470,7 +470,101 @@
     📞
 
 </a>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
+const firebaseConfig = {
+    apiKey: "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxwQ4wEhGc",
+    authDomain: "icare-mukkam.firebaseapp.com",
+    projectId: "icare-mukkam",
+    storageBucket: "icare-mukkam.firebasestorage.app",
+    messagingSenderId: "121404685611",
+    appId: "1:121404685611:web:177d545ffefc78f563996e"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const productsContainer = document.getElementById("products");
+
+async function loadProducts() {
+
+    if (!productsContainer) return;
+
+    productsContainer.innerHTML = "<p>Loading products...</p>";
+
+    try {
+
+        const snapshot = await getDocs(
+            collection(db, "products")
+        );
+
+        productsContainer.innerHTML = "";
+
+        if (snapshot.empty) {
+            productsContainer.innerHTML =
+                "<p>No products available.</p>";
+            return;
+        }
+
+        snapshot.forEach((doc) => {
+
+            const product = doc.data();
+
+            const card = document.createElement("div");
+
+            card.className = "product-card";
+
+            card.innerHTML = `
+                <img src="${product.image || 'logo.png'}"
+                     alt="${product.name || 'Product'}">
+
+                <h3>${product.name || 'Product'}</h3>
+
+                <p>${product.description || ''}</p>
+
+                <div class="product-price">
+                    ₹${Number(product.price || 0).toLocaleString("en-IN")}
+                </div>
+
+                <p>
+                    Stock:
+                    ${product.stock ?? 0}
+                </p>
+
+                <button
+                    onclick="addToCart('${doc.id}')">
+                    🛒 Add to Cart
+                </button>
+            `;
+
+            productsContainer.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        productsContainer.innerHTML =
+            "<p>Unable to load products.</p>";
+    }
+}
+
+window.addToCart = function(productId) {
+
+    alert("Product added to cart!");
+
+};
+
+loadProducts();
+
+</script>
 
 </body>
 
