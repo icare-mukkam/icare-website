@@ -33,7 +33,9 @@ header {
     gap: 20px;
 }
 
-/* Logo container */
+/* =========================================
+   LOGO
+   ========================================= */
 
 .logo {
     display: flex;
@@ -43,13 +45,13 @@ header {
     font-weight: bold;
 }
 
-/* Logo image size */
-
 .logo img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    display: block;
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
+    object-fit: contain !important;
+    display: block !important;
 }
 
 /* =========================================
@@ -77,7 +79,7 @@ nav a:hover {
 }
 
 /* =========================================
-   HOME / HERO
+   HOME
    ========================================= */
 
 #home {
@@ -88,12 +90,10 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(239, 246, 255, 0.95),
-            rgba(255, 255, 255, 0.95)
-        );
+    background: linear-gradient(
+        rgba(239, 246, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+    );
 }
 
 #home h2 {
@@ -142,7 +142,7 @@ nav a:hover {
 }
 
 /* =========================================
-   ALL SECTIONS
+   SECTIONS
    ========================================= */
 
 section {
@@ -167,7 +167,6 @@ section {
 .services {
     max-width: 1150px;
     margin: auto;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
@@ -178,9 +177,7 @@ section {
     padding: 30px 25px;
     border-radius: 16px;
     text-align: center;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
     transition: all 0.3s ease;
 }
 
@@ -250,34 +247,25 @@ footer {
 }
 
 /* =========================================
-   WHATSAPP FLOATING BUTTON
+   WHATSAPP BUTTON
    ========================================= */
 
 .whatsapp-button {
     position: fixed;
     right: 20px;
     bottom: 20px;
-
     width: 58px;
     height: 58px;
-
     background: #25D366;
     color: white;
-
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
-
     font-size: 28px;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-
     z-index: 9999;
-
     transition: 0.3s;
 }
 
@@ -286,34 +274,25 @@ footer {
 }
 
 /* =========================================
-   CALL FLOATING BUTTON
+   CALL BUTTON
    ========================================= */
 
 .call-button {
     position: fixed;
     right: 20px;
     bottom: 90px;
-
     width: 58px;
     height: 58px;
-
     background: #2563eb;
     color: white;
-
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
-
     font-size: 25px;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-
     z-index: 9999;
-
     transition: 0.3s;
 }
 
@@ -322,7 +301,7 @@ footer {
 }
 
 /* =========================================
-   MOBILE RESPONSIVE
+   TABLET / MOBILE
    ========================================= */
 
 @media (max-width: 768px) {
@@ -339,8 +318,10 @@ footer {
     }
 
     .logo img {
-        width: 65px;
-        height: 65px;
+        width: 65px !important;
+        height: 65px !important;
+        max-width: 65px !important;
+        max-height: 65px !important;
     }
 
     nav {
@@ -396,14 +377,16 @@ footer {
 }
 
 /* =========================================
-   SMALL MOBILE PHONES
+   SMALL MOBILE
    ========================================= */
 
 @media (max-width: 400px) {
 
     .logo img {
-        width: 55px;
-        height: 55px;
+        width: 80px !important;
+        height: 80px !important;
+        max-width: 80px !important;
+        max-height: 80px !important;
     }
 
     .logo {
@@ -424,14 +407,4 @@ footer {
         width: 90%;
         max-width: 280px;
     }
-.logo img {
-    width: 70px !important;
-    height: 70px !important;
-    max-width: 70px !important;
-    max-height: 70px !important;
-    min-width: 70px !important;
-    min-height: 70px !important;
-    object-fit: contain !important;
-    display: block !important;
 }
-
