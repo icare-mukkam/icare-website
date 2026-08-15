@@ -226,7 +226,7 @@ footer {
     .services {
         grid-template-columns: 1fr;
     }
-.logo img {
+.logo png {
     width: 90px;
     height: auto;
     display: block;
