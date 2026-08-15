@@ -426,10 +426,11 @@ footer {
     }
 }
 .logo img {
-    width: 50px !important;
-    height: 50px !important;
-    max-width: 50px !important;
-    max-height: 50px !important;
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
     object-fit: contain !important;
     display: block !important;
+}
 }
