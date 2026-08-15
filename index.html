@@ -6,9 +6,14 @@
 
 <title>iCare Mukkam | Mobile & Laptop Repair</title>
 
-<meta name="description" content="iCare Mukkam - Mobile, laptop repair and mobile accessories in Mukkam, Kozhikode.">
+<meta name="description" content="iCare Mukkam - Mobile, laptop repair and accessories in Mukkam, Kozhikode.">
 
 <style>
+
+/* =========================================
+   BASIC
+========================================= */
+
 *{
     margin:0;
     padding:0;
@@ -20,13 +25,15 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#f5f7fb;
     color:#1f2937;
     line-height:1.6;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 header{
     background:linear-gradient(135deg,#0f172a,#1e3a8a);
@@ -49,9 +56,15 @@ header{
 .logo img{
     width:90px;
     height:90px;
+    max-width:90px;
+    max-height:90px;
     object-fit:contain;
     display:block;
 }
+
+/* =========================================
+   NAVIGATION
+========================================= */
 
 nav{
     display:flex;
@@ -63,16 +76,21 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
+    font-size:16px;
     font-weight:bold;
     padding:8px 12px;
     border-radius:6px;
+    transition:.3s;
 }
 
 nav a:hover{
     background:rgba(255,255,255,.15);
+    color:#bfdbfe;
 }
 
-/* HOME */
+/* =========================================
+   HOME
+========================================= */
 
 #home{
     min-height:520px;
@@ -82,22 +100,32 @@ nav a:hover{
     align-items:center;
     justify-content:center;
     text-align:center;
-    background:linear-gradient(#eff6ff,#fff);
+
+    background:
+    linear-gradient(
+        rgba(239,246,255,.95),
+        rgba(255,255,255,.95)
+    );
 }
 
 #home h1{
-    font-size:48px;
+    font-size:46px;
+    line-height:1.2;
     color:#0f172a;
     margin-bottom:15px;
 }
 
 #home p{
     font-size:19px;
+    line-height:1.6;
     color:#475569;
+    max-width:750px;
     margin-bottom:10px;
 }
 
-/* BUTTONS */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .btn,
 .btn-primary{
@@ -106,9 +134,12 @@ nav a:hover{
     margin:10px 5px;
     border-radius:8px;
     text-decoration:none;
+    font-size:16px;
     font-weight:bold;
+    line-height:1.4;
     border:none;
     cursor:pointer;
+    transition:.3s;
 }
 
 .btn{
@@ -123,28 +154,35 @@ nav a:hover{
 
 .btn:hover,
 .btn-primary:hover{
+    transform:translateY(-3px);
     opacity:.9;
-    transform:translateY(-2px);
+    box-shadow:0 7px 18px rgba(0,0,0,.15);
 }
 
-/* SECTIONS */
+/* =========================================
+   SECTIONS
+========================================= */
 
 section{
-    padding:70px 8%;
+    padding:75px 8%;
 }
 
 .section-title{
     text-align:center;
     font-size:34px;
+    line-height:1.3;
     color:#0f172a;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
-/* SERVICES */
+/* =========================================
+   SERVICES
+========================================= */
 
 .services{
     max-width:1150px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:25px;
@@ -155,7 +193,15 @@ section{
     padding:30px 25px;
     border-radius:16px;
     text-align:center;
+
     box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
 .service-icon{
@@ -166,14 +212,19 @@ section{
 .service-card h3{
     color:#1e3a8a;
     font-size:22px;
+    line-height:1.4;
     margin-bottom:10px;
 }
 
 .service-card p{
     color:#64748b;
+    font-size:16px;
+    line-height:1.6;
 }
 
-/* PRODUCTS */
+/* =========================================
+   PRODUCTS
+========================================= */
 
 #shop{
     background:#f8fafc;
@@ -182,6 +233,7 @@ section{
 .products-grid{
     max-width:1200px;
     margin:auto;
+
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:25px;
@@ -192,46 +244,53 @@ section{
     padding:20px;
     border-radius:16px;
     text-align:center;
+
     box-shadow:0 5px 20px rgba(0,0,0,.08);
+
     transition:.3s;
 }
 
 .product-card:hover{
     transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
 
 .product-card img{
     width:100%;
     height:190px;
     object-fit:contain;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
 .product-card h3{
     color:#1e3a8a;
-    margin-bottom:8px;
+    font-size:22px;
+    line-height:1.4;
+    margin-bottom:10px;
 }
 
 .product-card p{
     color:#64748b;
-    font-size:14px;
+    font-size:16px;
+    line-height:1.6;
 }
 
 .product-price{
     color:#16a34a;
-    font-size:23px;
+    font-size:22px;
     font-weight:bold;
-    margin:10px 0;
+    margin:12px 0;
 }
 
 .product-card button{
     width:100%;
-    border:0;
+    border:none;
     background:#2563eb;
     color:white;
     padding:12px;
     border-radius:8px;
     cursor:pointer;
+    font-size:16px;
     font-weight:bold;
     margin-top:10px;
 }
@@ -240,7 +299,9 @@ section{
     background:#1d4ed8;
 }
 
-/* CART */
+/* =========================================
+   CART
+========================================= */
 
 #cart{
     background:white;
@@ -259,6 +320,7 @@ section{
     padding:15px;
     margin-bottom:10px;
     border-radius:10px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -272,7 +334,9 @@ section{
     margin-top:20px;
 }
 
-/* ABOUT */
+/* =========================================
+   ABOUT
+========================================= */
 
 #about{
     background:white;
@@ -283,7 +347,9 @@ section{
     margin:auto;
 }
 
-/* CONTACT */
+/* =========================================
+   CONTACT
+========================================= */
 
 #contact{
     background:#0f172a;
@@ -297,48 +363,95 @@ section{
 
 #contact p{
     font-size:18px;
+    line-height:1.6;
     margin-bottom:10px;
 }
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
     background:#020617;
     color:#cbd5e1;
     text-align:center;
     padding:25px 15px;
+    font-size:14px;
 }
 
-/* FLOATING BUTTONS */
+/* =========================================
+   WHATSAPP
+========================================= */
 
-.whatsapp-button,
-.call-button{
+.whatsapp-button{
     position:fixed;
     right:20px;
+    bottom:20px;
+
     width:58px;
     height:58px;
-    border-radius:50%;
+
+    background:#25D366;
     color:white;
+
+    border-radius:50%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-decoration:none;
-    font-size:27px;
-    z-index:9999;
+    font-size:28px;
+
     box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.3s;
 }
 
-.whatsapp-button{
-    bottom:20px;
-    background:#25D366;
+.whatsapp-button:hover{
+    transform:scale(1.1);
 }
+
+/* =========================================
+   CALL
+========================================= */
 
 .call-button{
+    position:fixed;
+    right:20px;
     bottom:90px;
+
+    width:58px;
+    height:58px;
+
     background:#2563eb;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    font-size:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.3s;
 }
 
-/* MOBILE */
+.call-button:hover{
+    transform:scale(1.1);
+}
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media(max-width:900px){
 
@@ -351,11 +464,15 @@ footer{
     }
 }
 
+/* =========================================
+   MOBILE
+========================================= */
+
 @media(max-width:768px){
 
     header{
         flex-direction:column;
-        padding:15px;
+        padding:18px 15px;
         text-align:center;
     }
 
@@ -367,9 +484,12 @@ footer{
     .logo img{
         width:90px;
         height:90px;
+        max-width:90px;
+        max-height:90px;
     }
 
     nav{
+        flex-wrap:wrap;
         justify-content:center;
     }
 
@@ -387,38 +507,85 @@ footer{
         font-size:34px;
     }
 
+    #home p{
+        font-size:17px;
+    }
+
     section{
         padding:55px 20px;
     }
 
     .section-title{
         font-size:28px;
+        margin-bottom:30px;
     }
 
     .services{
         grid-template-columns:1fr;
+        gap:20px;
     }
 
     .products-grid{
         grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .service-card{
+        padding:28px 20px;
+    }
+
+    .service-card h3,
+    .product-card h3{
+        font-size:20px;
+    }
+
+    .service-card p,
+    .product-card p{
+        font-size:16px;
+    }
+
+    .whatsapp-button{
+        right:15px;
+        bottom:15px;
+    }
+
+    .call-button{
+        right:15px;
+        bottom:82px;
     }
 }
 
-/* CART MOBILE */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-@media(max-width:500px){
+@media(max-width:400px){
 
-    .cart-item{
-        flex-direction:column;
-        text-align:center;
+    .logo img{
+        width:90px;
+        height:90px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav a{
+        font-size:13px;
+        margin:2px;
+    }
+
+    #home h1{
+        font-size:28px;
     }
 
     .btn,
     .btn-primary{
         width:90%;
-        max-width:300px;
+        max-width:280px;
     }
 }
+
 </style>
 </head>
 
@@ -456,21 +623,29 @@ footer{
 
 <h1>iCare Mukkam</h1>
 
-<p>Professional Mobile & Laptop Repair Services</p>
+<p>
+Professional Mobile & Laptop Repair Services
+</p>
 
-<p>Fast • Reliable • Quality Service</p>
+<p>
+Fast • Reliable • Quality Service
+</p>
 
 <div>
 
 <a class="btn-primary"
 href="https://wa.me/919447150744"
 target="_blank">
+
 💬 WhatsApp
+
 </a>
 
 <a class="btn"
 href="tel:+919447667744">
+
 📞 Call Now
+
 </a>
 
 </div>
@@ -489,39 +664,80 @@ Our Services
 <div class="services">
 
 <div class="service-card">
+
 <div class="service-icon">📱</div>
+
 <h3>Mobile Repair</h3>
-<p>Professional repair service for smartphones and mobile devices.</p>
+
+<p>
+Professional repair service for smartphones and mobile devices.
+</p>
+
 </div>
 
+
 <div class="service-card">
+
 <div class="service-icon">💻</div>
+
 <h3>Laptop Repair</h3>
-<p>Laptop hardware and software repair service.</p>
+
+<p>
+Laptop hardware and software repair service.
+</p>
+
 </div>
 
+
 <div class="service-card">
+
 <div class="service-icon">📲</div>
+
 <h3>Screen Replacement</h3>
-<p>Quality display and touch screen replacement.</p>
+
+<p>
+Quality display and touch screen replacement service.
+</p>
+
 </div>
 
+
 <div class="service-card">
+
 <div class="service-icon">🔋</div>
+
 <h3>Battery Replacement</h3>
-<p>Battery replacement for mobiles and laptops.</p>
+
+<p>
+Battery replacement for mobiles and laptops.
+</p>
+
 </div>
 
+
 <div class="service-card">
+
 <div class="service-icon">⚙️</div>
+
 <h3>Software Service</h3>
-<p>Software installation, updates and troubleshooting.</p>
+
+<p>
+Software installation, updates and troubleshooting.
+</p>
+
 </div>
 
+
 <div class="service-card">
+
 <div class="service-icon">🎧</div>
+
 <h3>Accessories</h3>
-<p>Mobile and laptop accessories available.</p>
+
+<p>
+Mobile and laptop accessories available at iCare Mukkam.
+</p>
+
 </div>
 
 </div>
@@ -568,12 +784,16 @@ Total: ₹0
 
 <button class="btn-primary"
 onclick="clearCart()">
+
 Clear Cart
+
 </button>
 
 <button class="btn"
 onclick="checkout()">
+
 Checkout
+
 </button>
 
 </div>
@@ -628,23 +848,34 @@ Our services include mobile repair, laptop repair, screen replacement, battery r
 Contact iCare Mukkam
 </h2>
 
-<p>📞 <strong>9447667744</strong></p>
+<p>
+📞 <strong>9447667744</strong>
+</p>
 
-<p>💬 WhatsApp: <strong>9447150744</strong></p>
+<p>
+💬 WhatsApp:
+<strong>9447150744</strong>
+</p>
 
-<p>📍 Mukkam, Kozhikode, Kerala</p>
+<p>
+📍 Mukkam, Kozhikode, Kerala
+</p>
 
 <br>
 
 <a class="btn-primary"
 href="https://wa.me/919447150744"
 target="_blank">
+
 💬 Chat on WhatsApp
+
 </a>
 
 <a class="btn"
 href="tel:+919447667744">
+
 📞 Call Us
+
 </a>
 
 </section>
@@ -654,9 +885,13 @@ href="tel:+919447667744">
 
 <footer>
 
-<p>© 2026 iCare Mukkam. All Rights Reserved.</p>
+<p>
+© 2026 iCare Mukkam. All Rights Reserved.
+</p>
 
-<p>Mobile & Laptop Repair Services</p>
+<p>
+Mobile & Laptop Repair Services
+</p>
 
 </footer>
 
@@ -665,16 +900,22 @@ href="tel:+919447667744">
 
 <a class="whatsapp-button"
 href="https://wa.me/919447150744"
-target="_blank">
+target="_blank"
+aria-label="WhatsApp">
+
 💬
+
 </a>
 
 
 <!-- FLOATING CALL -->
 
 <a class="call-button"
-href="tel:+919447667744">
+href="tel:+919447667744"
+aria-label="Call">
+
 📞
+
 </a>
 
 
@@ -683,36 +924,51 @@ href="tel:+919447667744">
 <script type="module">
 
 import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
+
 import {
+
 getFirestore,
 collection,
 getDocs
+
 }
+
 from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
 
-apiKey:"AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4EhGc",
+apiKey:
+"AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4EhGc",
 
-authDomain:"icare-mukkam.firebaseapp.com",
+authDomain:
+"icare-mukkam.firebaseapp.com",
 
-projectId:"icare-mukkam",
+projectId:
+"icare-mukkam",
 
-storageBucket:"icare-mukkam.firebasestorage.app",
+storageBucket:
+"icare-mukkam.firebasestorage.app",
 
-messagingSenderId:"121404685611",
+messagingSenderId:
+"121404685611",
 
-appId:"1:121404685611:web:177d545ffefc78f563996e"
+appId:
+"1:121404685611:web:177d545ffefc78f563996e"
 
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
+
+const db =
+getFirestore(app);
+
 
 const productsContainer =
 document.getElementById("products");
@@ -726,6 +982,7 @@ const snapshot =
 await getDocs(
 collection(db,"products")
 );
+
 
 productsContainer.innerHTML="";
 
@@ -742,20 +999,28 @@ return;
 
 snapshot.forEach(doc=>{
 
-const product=doc.data();
+const product =
+doc.data();
 
-const card=
+
+const card =
 document.createElement("div");
 
-card.className="product-card";
+
+card.className =
+"product-card";
+
 
 const image =
 product.image || "logo.png";
 
-card.innerHTML=`
 
-<img src="${image}"
-alt="${product.name || "Product"}">
+card.innerHTML = `
+
+<img
+src="${image}"
+alt="${product.name || "Product"}"
+>
 
 <h3>
 ${product.name || "Product"}
@@ -789,15 +1054,19 @@ ${Number(product.price || 0)}
 
 `;
 
+
 productsContainer.appendChild(card);
 
 });
 
-}catch(error){
+
+}
+
+catch(error){
 
 console.error(error);
 
-productsContainer.innerHTML=
+productsContainer.innerHTML =
 "<p>Products could not be loaded. Please check Firebase.</p>";
 
 }
@@ -805,22 +1074,32 @@ productsContainer.innerHTML=
 }
 
 
-window.addToCart=
+/* =========================================
+   ADD TO CART
+========================================= */
+
+window.addToCart =
 function(id,name,price){
 
-let cart=
+let cart =
 JSON.parse(
 localStorage.getItem("icareCart")
-)||[];
+) || [];
 
-const existing=
-cart.find(item=>item.id===id);
+
+const existing =
+cart.find(
+item => item.id === id
+);
+
 
 if(existing){
 
-existing.quantity++;
+existing.quantity += 1;
 
-}else{
+}
+
+else{
 
 cart.push({
 
@@ -833,60 +1112,80 @@ quantity:1
 
 }
 
+
 localStorage.setItem(
 "icareCart",
 JSON.stringify(cart)
 );
 
+
 displayCart();
 
-alert(name+" added to cart!");
+
+alert(
+name + " added to cart!"
+);
 
 };
 
 
-window.displayCart=function(){
+/* =========================================
+   DISPLAY CART
+========================================= */
 
-const cart=
+window.displayCart =
+function(){
+
+const cart =
 JSON.parse(
 localStorage.getItem("icareCart")
-)||[];
+) || [];
 
-const container=
+
+const container =
 document.getElementById("cartItems");
 
-const totalElement=
+
+const totalElement =
 document.getElementById("cartTotal");
 
-if(cart.length===0){
 
-container.innerHTML=
+if(cart.length === 0){
+
+container.innerHTML =
 "Your cart is empty.";
 
-totalElement.innerHTML=
+totalElement.innerHTML =
 "Total: ₹0";
 
 return;
 
 }
 
-let total=0;
 
-container.innerHTML="";
+let total = 0;
+
+container.innerHTML = "";
+
 
 cart.forEach((item,index)=>{
 
-const itemTotal=
-item.price*item.quantity;
+const itemTotal =
+item.price * item.quantity;
 
-total+=itemTotal;
 
-const div=
+total += itemTotal;
+
+
+const div =
 document.createElement("div");
 
-div.className="cart-item";
 
-div.innerHTML=`
+div.className =
+"cart-item";
+
+
+div.innerHTML = `
 
 <div>
 
@@ -922,29 +1221,55 @@ Remove
 
 `;
 
+
 container.appendChild(div);
 
 });
 
-totalElement.innerHTML=
-"Total: ₹"+
+
+totalElement.innerHTML =
+"Total: ₹" +
 total.toLocaleString("en-IN");
 
 };
 
 
-window.removeItem=function(index){
+/* =========================================
+   REMOVE ITEM
+========================================= */
 
-let cart=
+window.removeItem =
+function(index){
+
+let cart =
 JSON.parse(
 localStorage.getItem("icareCart")
-)||[];
+) || [];
+
 
 cart.splice(index,1);
+
 
 localStorage.setItem(
 "icareCart",
 JSON.stringify(cart)
+);
+
+
+displayCart();
+
+};
+
+
+/* =========================================
+   CLEAR CART
+========================================= */
+
+window.clearCart =
+function(){
+
+localStorage.removeItem(
+"icareCart"
 );
 
 displayCart();
@@ -952,23 +1277,20 @@ displayCart();
 };
 
 
-window.clearCart=function(){
+/* =========================================
+   CHECKOUT
+========================================= */
 
-localStorage.removeItem("icareCart");
+window.checkout =
+function(){
 
-displayCart();
-
-};
-
-
-window.checkout=function(){
-
-const cart=
+const cart =
 JSON.parse(
 localStorage.getItem("icareCart")
-)||[];
+) || [];
 
-if(cart.length===0){
+
+if(cart.length === 0){
 
 alert("Your cart is empty.");
 
@@ -976,12 +1298,17 @@ return;
 
 }
 
+
 alert(
-"Checkout system will be connected to Razorpay in the next step."
+"Checkout is ready for the next Razorpay integration step."
 );
 
 };
 
+
+/* =========================================
+   START
+========================================= */
 
 loadProducts();
 
