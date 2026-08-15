@@ -1,377 +1,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>iCare Mukkam | Mobile & Laptop Repair</title>
+<title>iCare Mukkam | Mobile & Laptop Repair</title>
 
-    <meta name="description"
-          content="iCare Mukkam - Mobile, laptop repair and accessories in Mukkam, Kozhikode.">
+<meta name="description" content="iCare Mukkam - Mobile, laptop repair and mobile accessories in Mukkam, Kozhikode.">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    padding:12px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    display:block;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:6px;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+/* HOME */
+
+#home{
+    min-height:520px;
+    padding:90px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(#eff6ff,#fff);
+}
+
+#home h1{
+    font-size:48px;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+#home p{
+    font-size:19px;
+    color:#475569;
+    margin-bottom:10px;
+}
+
+/* BUTTONS */
+
+.btn,
+.btn-primary{
+    display:inline-block;
+    padding:13px 25px;
+    margin:10px 5px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
+}
+
+.btn{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-primary{
+    background:#16a34a;
+    color:white;
+}
+
+.btn:hover,
+.btn-primary:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:34px;
+    color:#0f172a;
+    margin-bottom:40px;
+}
+
+/* SERVICES */
+
+.services{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    padding:30px 25px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.service-icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.service-card h3{
+    color:#1e3a8a;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.service-card p{
+    color:#64748b;
+}
+
+/* PRODUCTS */
+
+#shop{
+    background:#f8fafc;
+}
+
+.products-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.product-card{
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    height:190px;
+    object-fit:contain;
+    margin-bottom:12px;
+}
+
+.product-card h3{
+    color:#1e3a8a;
+    margin-bottom:8px;
+}
+
+.product-card p{
+    color:#64748b;
+    font-size:14px;
+}
+
+.product-price{
+    color:#16a34a;
+    font-size:23px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.product-card button{
+    width:100%;
+    border:0;
+    background:#2563eb;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.product-card button:hover{
+    background:#1d4ed8;
+}
+
+/* CART */
+
+#cart{
+    background:white;
+}
+
+.cart-box{
+    max-width:900px;
+    margin:auto;
+    background:#f8fafc;
+    padding:25px;
+    border-radius:16px;
+}
+
+.cart-item{
+    background:white;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.cart-total{
+    font-size:24px;
+    font-weight:bold;
+    text-align:right;
+    margin-top:20px;
+}
+
+/* ABOUT */
+
+#about{
+    background:white;
+}
+
+#about .service-card{
+    max-width:900px;
+    margin:auto;
+}
+
+/* CONTACT */
+
+#contact{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+}
+
+#contact .section-title{
+    color:white;
+}
+
+#contact p{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#020617;
+    color:#cbd5e1;
+    text-align:center;
+    padding:25px 15px;
+}
+
+/* FLOATING BUTTONS */
+
+.whatsapp-button,
+.call-button{
+    position:fixed;
+    right:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:27px;
+    z-index:9999;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.whatsapp-button{
+    bottom:20px;
+    background:#25D366;
+}
+
+.call-button{
+    bottom:90px;
+    background:#2563eb;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:15px;
+        text-align:center;
+    }
+
+    .logo{
+        flex-direction:column;
+        font-size:25px;
+    }
+
+    .logo img{
+        width:90px;
+        height:90px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:14px;
+        padding:7px 8px;
+    }
+
+    #home{
+        min-height:480px;
+        padding:70px 20px;
+    }
+
+    #home h1{
+        font-size:34px;
+    }
+
+    section{
+        padding:55px 20px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* CART MOBILE */
+
+@media(max-width:500px){
+
+    .cart-item{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .btn,
+    .btn-primary{
+        width:90%;
+        max-width:300px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
-    <div class="logo">
-        <img src="logo.png" alt="iCare Mukkam Logo">
-        <span>iCare Mukkam</span>
-    </div>
+<div class="logo">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#shop">Products</a>
-        <a href="#about">About</a>
-        <a href="#booking">Booking</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<img src="logo.png" alt="iCare Mukkam Logo">
+
+<span>iCare Mukkam</span>
+
+</div>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#shop">Products</a>
+<a href="#cart">Cart</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+</nav>
 
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="home">
 
-    <h2>iCare Mukkam</h2>
+<h1>iCare Mukkam</h1>
 
-    <p>
-        Professional Mobile & Laptop Repair Services
-    </p>
+<p>Professional Mobile & Laptop Repair Services</p>
 
-    <p>
-        Fast • Reliable • Quality Service
-    </p>
+<p>Fast • Reliable • Quality Service</p>
 
-    <div>
+<div>
 
-        <a class="btn-primary"
-           href="https://wa.me/919447150744"
-           target="_blank">
-            💬 WhatsApp
-        </a>
+<a class="btn-primary"
+href="https://wa.me/919447150744"
+target="_blank">
+💬 WhatsApp
+</a>
 
-        <a class="btn"
-           href="tel:+919447667744">
-            📞 Call Now
-        </a>
+<a class="btn"
+href="tel:+919447667744">
+📞 Call Now
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+<!-- SERVICES -->
 
 <section id="services">
 
-    <h2 class="section-title">
-        Our Services
-    </h2>
+<h2 class="section-title">
+Our Services
+</h2>
 
-    <div class="services">
+<div class="services">
 
-        <div class="service-card">
-            <div class="service-icon">📱</div>
-            <h3>Mobile Repair</h3>
-            <p>
-                Professional repair service for
-                smartphones and mobile devices.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">📱</div>
+<h3>Mobile Repair</h3>
+<p>Professional repair service for smartphones and mobile devices.</p>
+</div>
 
-        <div class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Laptop Repair</h3>
-            <p>
-                Laptop hardware and software
-                repair service.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">💻</div>
+<h3>Laptop Repair</h3>
+<p>Laptop hardware and software repair service.</p>
+</div>
 
-        <div class="service-card">
-            <div class="service-icon">📲</div>
-            <h3>Screen Replacement</h3>
-            <p>
-                Quality display and touch screen
-                replacement service.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">📲</div>
+<h3>Screen Replacement</h3>
+<p>Quality display and touch screen replacement.</p>
+</div>
 
-        <div class="service-card">
-            <div class="service-icon">🔋</div>
-            <h3>Battery Replacement</h3>
-            <p>
-                Battery replacement for mobiles
-                and laptops.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">🔋</div>
+<h3>Battery Replacement</h3>
+<p>Battery replacement for mobiles and laptops.</p>
+</div>
 
-        <div class="service-card">
-            <div class="service-icon">⚙️</div>
-            <h3>Software Service</h3>
-            <p>
-                Software installation, updates
-                and troubleshooting.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">⚙️</div>
+<h3>Software Service</h3>
+<p>Software installation, updates and troubleshooting.</p>
+</div>
 
-        <div class="service-card">
-            <div class="service-icon">🎧</div>
-            <h3>Accessories</h3>
-            <p>
-                Mobile and laptop accessories
-                available at iCare Mukkam.
-            </p>
-        </div>
+<div class="service-card">
+<div class="service-icon">🎧</div>
+<h3>Accessories</h3>
+<p>Mobile and laptop accessories available.</p>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- PRODUCTS -->
 
 <section id="shop">
 
-    <h2 class="section-title">
-        Our Products
-    </h2>
+<h2 class="section-title">
+Our Products
+</h2>
 
-    <div id="products"
-         class="products-grid">
+<div id="products" class="products-grid">
 
-        <p>
-            Loading products...
-        </p>
+<p>Loading products...</p>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- CART -->
+
+<section id="cart">
+
+<h2 class="section-title">
+Shopping Cart
+</h2>
+
+<div class="cart-box">
+
+<div id="cartItems">
+Your cart is empty.
+</div>
+
+<div id="cartTotal" class="cart-total">
+Total: ₹0
+</div>
+
+<div style="text-align:right;margin-top:15px;">
+
+<button class="btn-primary"
+onclick="clearCart()">
+Clear Cart
+</button>
+
+<button class="btn"
+onclick="checkout()">
+Checkout
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
 
 <section id="about">
 
-    <h2 class="section-title">
-        About iCare Mukkam
-    </h2>
+<h2 class="section-title">
+About iCare Mukkam
+</h2>
 
-    <div class="service-card">
+<div class="service-card">
 
-        <p>
-            Welcome to <strong>iCare Mukkam</strong>.
-        </p>
+<p>
+Welcome to <strong>iCare Mukkam</strong>.
+</p>
 
-        <br>
+<br>
 
-        <p>
-            We provide professional mobile and
-            laptop repair services with a focus
-            on quality, reliability and customer
-            satisfaction.
-        </p>
+<p>
+We provide professional mobile and laptop repair services with a focus on quality, reliability and customer satisfaction.
+</p>
 
-        <br>
+<br>
 
-        <p>
-            Our services include mobile repair,
-            laptop repair, screen replacement,
-            battery replacement, software service
-            and accessories.
-        </p>
+<p>
+Our services include mobile repair, laptop repair, screen replacement, battery replacement, software service and accessories.
+</p>
 
-        <br>
+<br>
 
-        <p>
-            📍 Mukkam, Kozhikode, Kerala
-        </p>
+<p>
+📍 Mukkam, Kozhikode, Kerala
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section>
-
-    <h2 class="section-title">
-        Why Choose iCare?
-    </h2>
-
-    <div class="services">
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ✅
-            </div>
-
-            <h3>Quality Service</h3>
-
-            <p>
-                Reliable and professional
-                repair service.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                ⚡
-            </div>
-
-            <h3>Fast Service</h3>
-
-            <p>
-                We try to complete repairs
-                as quickly as possible.
-            </p>
-
-        </div>
-
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                🤝
-            </div>
-
-            <h3>Customer Support</h3>
-
-            <p>
-                Friendly support and assistance
-                for our customers.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= BOOKING ================= -->
-
-<section id="booking">
-
-    <h2 class="section-title">
-        Book a Service
-    </h2>
-
-    <div class="service-card">
-
-        <p>
-            Need a repair? Contact us directly
-            through WhatsApp to book your service.
-        </p>
-
-        <br>
-
-        <a class="btn-primary"
-           href="https://wa.me/919447150744?text=Hello%20iCare%20Mukkam%2C%20I%20would%20like%20to%20book%20a%20service."
-           target="_blank">
-
-            📋 Book Service on WhatsApp
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
 
 <section id="contact">
 
-    <h2 class="section-title">
-        Contact iCare Mukkam
-    </h2>
+<h2 class="section-title">
+Contact iCare Mukkam
+</h2>
 
-    <p>
-        📞 <strong>9447667744</strong>
-    </p>
+<p>📞 <strong>9447667744</strong></p>
 
-    <p>
-        💬 WhatsApp:
-        <strong>9447150744</strong>
-    </p>
+<p>💬 WhatsApp: <strong>9447150744</strong></p>
 
-    <p>
-        📍 Mukkam, Kozhikode, Kerala
-    </p>
+<p>📍 Mukkam, Kozhikode, Kerala</p>
 
-    <br>
+<br>
 
-    <a class="btn-primary"
-       href="https://wa.me/919447150744"
-       target="_blank">
+<a class="btn-primary"
+href="https://wa.me/919447150744"
+target="_blank">
+💬 Chat on WhatsApp
+</a>
 
-        💬 Chat on WhatsApp
-
-    </a>
-
-    <a class="btn"
-       href="tel:+919447667744">
-
-        📞 Call Us
-
-    </a>
+<a class="btn"
+href="tel:+919447667744">
+📞 Call Us
+</a>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    <p>
-        © 2026 iCare Mukkam.
-        All Rights Reserved.
-    </p>
+<p>© 2026 iCare Mukkam. All Rights Reserved.</p>
 
-    <p>
-        Mobile & Laptop Repair Services
-    </p>
+<p>Mobile & Laptop Repair Services</p>
 
 </footer>
 
 
-<!-- ================= WHATSAPP ================= -->
+<!-- FLOATING WHATSAPP -->
 
 <a class="whatsapp-button"
-   href="https://wa.me/919447150744"
-   target="_blank"
-   aria-label="Chat on WhatsApp">
-
-    💬
-
+href="https://wa.me/919447150744"
+target="_blank">
+💬
 </a>
 
 
-<!-- ================= CALL ================= -->
+<!-- FLOATING CALL -->
 
 <a class="call-button"
-   href="tel:+919447667744"
-   aria-label="Call iCare Mukkam">
-
-    📞
-
+href="tel:+919447667744">
+📞
 </a>
 
 
-<!-- ================= FIREBASE ================= -->
+<!-- FIREBASE -->
 
 <script type="module">
 
@@ -379,32 +686,26 @@ import { initializeApp }
 from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 import {
-    getFirestore,
-    collection,
-    getDocs
+getFirestore,
+collection,
+getDocs
 }
 from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
 
 const firebaseConfig = {
 
-    apiKey:
-    "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxwQ4wEhGc",
+apiKey:"AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4EhGc",
 
-    authDomain:
-    "icare-mukkam.firebaseapp.com",
+authDomain:"icare-mukkam.firebaseapp.com",
 
-    projectId:
-    "icare-mukkam",
+projectId:"icare-mukkam",
 
-    storageBucket:
-    "icare-mukkam.firebasestorage.app",
+storageBucket:"icare-mukkam.firebasestorage.app",
 
-    messagingSenderId:
-    "121404685611",
+messagingSenderId:"121404685611",
 
-    appId:
-    "1:121404685611:web:177d545ffefc78f563996e"
+appId:"1:121404685611:web:177d545ffefc78f563996e"
 
 };
 
@@ -413,178 +714,280 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-
 const productsContainer =
-    document.getElementById("products");
+document.getElementById("products");
 
 
-async function loadProducts() {
+async function loadProducts(){
 
-    try {
+try{
 
-        const snapshot =
-            await getDocs(
-                collection(db, "products")
-            );
+const snapshot =
+await getDocs(
+collection(db,"products")
+);
 
-
-        productsContainer.innerHTML = "";
-
-
-        if (snapshot.empty) {
-
-            productsContainer.innerHTML =
-                "<p>No products available.</p>";
-
-            return;
-
-        }
+productsContainer.innerHTML="";
 
 
-        snapshot.forEach((doc) => {
+if(snapshot.empty){
 
-            const product = doc.data();
+productsContainer.innerHTML=
+"<p>No products available.</p>";
 
-
-            const card =
-                document.createElement("div");
-
-
-            card.className =
-                "product-card";
-
-
-            const image =
-                product.image &&
-                product.image !== "logo.png"
-                    ? product.image
-                    : "logo.png";
-
-
-            card.innerHTML = `
-
-                <img
-                    src="${image}"
-                    alt="${product.name || "Product"}"
-                >
-
-                <h3>
-                    ${product.name || "Product"}
-                </h3>
-
-                <p>
-                    ${product.description || ""}
-                </p>
-
-                <div class="product-price">
-                    ₹${Number(product.price || 0)
-                        .toLocaleString("en-IN")}
-                </div>
-
-                <p class="stock">
-                    Stock: ${product.stock || 0}
-                </p>
-
-                <button
-                    onclick="addToCart(
-                        '${doc.id}',
-                        '${(product.name || "").replace(/'/g, "\\'")}',
-                        ${Number(product.price || 0)}
-                    )">
-
-                    🛒 Add to Cart
-
-                </button>
-
-            `;
-
-
-            productsContainer
-                .appendChild(card);
-
-        });
-
-
-    } catch (error) {
-
-        console.error(
-            "Firebase Error:",
-            error
-        );
-
-
-        productsContainer.innerHTML = `
-
-            <div class="product-error">
-
-                <h3>
-                    Products could not be loaded
-                </h3>
-
-                <p>
-                    Please try again later.
-                </p>
-
-            </div>
-
-        `;
-
-    }
+return;
 
 }
 
 
-window.addToCart =
-function(id, name, price) {
+snapshot.forEach(doc=>{
 
-    let cart =
-        JSON.parse(
-            localStorage.getItem("icareCart")
-        ) || [];
+const product=doc.data();
+
+const card=
+document.createElement("div");
+
+card.className="product-card";
+
+const image =
+product.image || "logo.png";
+
+card.innerHTML=`
+
+<img src="${image}"
+alt="${product.name || "Product"}">
+
+<h3>
+${product.name || "Product"}
+</h3>
+
+<p>
+${product.description || ""}
+</p>
+
+<div class="product-price">
+
+₹${Number(product.price || 0)
+.toLocaleString("en-IN")}
+
+</div>
+
+<p>
+Stock: ${product.stock || 0}
+</p>
+
+<button
+onclick="addToCart(
+'${doc.id}',
+'${String(product.name || "Product").replace(/'/g,"\\'")}',
+${Number(product.price || 0)}
+)">
+
+🛒 Add to Cart
+
+</button>
+
+`;
+
+productsContainer.appendChild(card);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+productsContainer.innerHTML=
+"<p>Products could not be loaded. Please check Firebase.</p>";
+
+}
+
+}
 
 
-    const existing =
-        cart.find(
-            item => item.id === id
-        );
+window.addToCart=
+function(id,name,price){
+
+let cart=
+JSON.parse(
+localStorage.getItem("icareCart")
+)||[];
+
+const existing=
+cart.find(item=>item.id===id);
+
+if(existing){
+
+existing.quantity++;
+
+}else{
+
+cart.push({
+
+id:id,
+name:name,
+price:price,
+quantity:1
+
+});
+
+}
+
+localStorage.setItem(
+"icareCart",
+JSON.stringify(cart)
+);
+
+displayCart();
+
+alert(name+" added to cart!");
+
+};
 
 
-    if (existing) {
+window.displayCart=function(){
 
-        existing.quantity += 1;
+const cart=
+JSON.parse(
+localStorage.getItem("icareCart")
+)||[];
 
-    } else {
+const container=
+document.getElementById("cartItems");
 
-        cart.push({
+const totalElement=
+document.getElementById("cartTotal");
 
-            id: id,
-            name: name,
-            price: price,
-            quantity: 1
+if(cart.length===0){
 
-        });
+container.innerHTML=
+"Your cart is empty.";
 
-    }
+totalElement.innerHTML=
+"Total: ₹0";
+
+return;
+
+}
+
+let total=0;
+
+container.innerHTML="";
+
+cart.forEach((item,index)=>{
+
+const itemTotal=
+item.price*item.quantity;
+
+total+=itemTotal;
+
+const div=
+document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<div>
+
+<strong>
+${item.name}
+</strong>
+
+<br>
+
+₹${item.price.toLocaleString("en-IN")}
+× ${item.quantity}
+
+</div>
+
+<div>
+
+<button
+onclick="removeItem(${index})"
+style="
+padding:8px 12px;
+border:0;
+border-radius:6px;
+background:#dc2626;
+color:white;
+cursor:pointer;
+">
+
+Remove
+
+</button>
+
+</div>
+
+`;
+
+container.appendChild(div);
+
+});
+
+totalElement.innerHTML=
+"Total: ₹"+
+total.toLocaleString("en-IN");
+
+};
 
 
-    localStorage.setItem(
-        "icareCart",
-        JSON.stringify(cart)
-    );
+window.removeItem=function(index){
+
+let cart=
+JSON.parse(
+localStorage.getItem("icareCart")
+)||[];
+
+cart.splice(index,1);
+
+localStorage.setItem(
+"icareCart",
+JSON.stringify(cart)
+);
+
+displayCart();
+
+};
 
 
-    alert(
-        name +
-        " added to cart!"
-    );
+window.clearCart=function(){
+
+localStorage.removeItem("icareCart");
+
+displayCart();
+
+};
+
+
+window.checkout=function(){
+
+const cart=
+JSON.parse(
+localStorage.getItem("icareCart")
+)||[];
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+alert(
+"Checkout system will be connected to Razorpay in the next step."
+);
 
 };
 
 
 loadProducts();
 
-</script>
+displayCart();
 
+</script>
 
 </body>
 </html>
