@@ -94,7 +94,17 @@
     </div>
 
 </section>
+<section id="shop">
 
+    <h2 class="section-title">
+        Our Products
+    </h2>
+
+    <div id="products" class="products-grid">
+        Loading products...
+    </div>
+
+</section>
 
 <!-- =========================================
      SERVICES
@@ -569,3 +579,86 @@ loadProducts();
 </body>
 
 </html>
+/* =========================================
+   PRODUCTS
+   ========================================= */
+
+.products-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #16a34a;
+    margin: 12px 0;
+}
+
+.product-card button {
+    border: none;
+    background: #2563eb;
+    color: white;
+
+    padding: 11px 20px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product-card button:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
