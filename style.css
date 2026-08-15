@@ -46,10 +46,10 @@ header {
 }
 
 .logo img {
-    width: 70px !important;
-    height: 70px !important;
-    max-width: 70px !important;
-    max-height: 70px !important;
+    width: 90px !important;
+    height: 90px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
     object-fit: contain !important;
     display: block !important;
 }
@@ -318,10 +318,10 @@ footer {
     }
 
     .logo img {
-        width: 65px !important;
-        height: 65px !important;
-        max-width: 65px !important;
-        max-height: 65px !important;
+        width: 90px !important;
+        height: 90px !important;
+        max-width: 90px !important;
+        max-height: 90px !important;
     }
 
     nav {
@@ -383,10 +383,10 @@ footer {
 @media (max-width: 400px) {
 
     .logo img {
-        width: 80px !important;
-        height: 80px !important;
-        max-width: 80px !important;
-        max-height: 80px !important;
+        width: 90px !important;
+        height: 90px !important;
+        max-width: 90px !important;
+        max-height: 90px !important;
     }
 
     .logo {
