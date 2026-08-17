@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCare Mukkam | Shopping Cart</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; }
+        header { background: #1e3a8a; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        header a { color: white; text-decoration: none; font-weight: bold; }
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        h1 { text-align: center; margin-bottom: 25px; color: #1e3a8a; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #e2e8f0; }
+        .item-details h3 { font-size: 18px; margin-bottom: 5px; }
+        .item-details p { color: #64748b; }
+        .remove-btn { background: #dc2626; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+        .cart-summary { margin-top: 25px; text-align: right; }
+        .total-price { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
+        .btn-group { display: flex; justify-content: flex-end; gap: 10px; }
+        .clear-btn { background: #065f46; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .checkout-btn { background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>iCare Mukkam</h2>
+    <a href="index.html">← Back to Shop</a>
+</header>
+
+<div class="container">
+    <h1>Shopping Cart</h1>
+    
+    <div id="cartItems">
+        <!-- Cart items render here -->
+    </div>
+
+    <div class="cart-summary">
+        <div class="total-price" id="cartTotal">Total: ₹0</div>
+        <div class="btn-group">
+            <button class="clear-btn" id="clearCartBtn">Clear Cart</button>
+            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxwQ4wEhGc",
+        authDomain: "icare-mukkam.firebaseapp.com",
+        projectId: "icare-mukkam",
+        storageBucket: "icare-mukkam.firebasestorage.app",
+        messagingSenderId: "121404685611",
+        appId: "1:121404685611:web:177d545ffefc78f563996e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+        const cartItemsContainer = document.getElementById("cartItems");
+        const cartTotalContainer = document.getElementById("cartTotal");
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p style='text-align:center; padding: 20px;'>Your cart is empty.</p>";
+            cartTotalContainer.textContent = "Total: ₹0";
+            return;
+        }
+
+        cartItemsContainer.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price * (item.quantity || 1);
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "cart-item";
+            itemDiv.innerHTML = `
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>₹${item.price.toLocaleString()} × ${item.quantity || 1}</p>
+                </div>
+                <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+            `;
+            cartItemsContainer.appendChild(itemDiv);
+        });
+
+        cartTotalContainer.textContent = `Total: ₹${total.toLocaleString()}`;
+    }
+
+    window.removeItem = function(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+    };
+
+    document.getElementById("clearCartBtn").addEventListener("click", () => {
+        cart = [];
+        localStorage.removeItem("cart");
+        renderCart();
+    });
+
+    document.getElementById("checkoutBtn").addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        const totalAmount = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+
+        const options = {
+            "key": "rzp_test_YOUR_KEY_HERE", // Add your Razorpay Key ID here
+            "amount": totalAmount * 100,
+            "currency": "INR",
+            "name": "iCare Mukkam",
+            "description": "Purchase Payment",
+            "handler": function (response) {
+                alert("Payment Successful! ID: " + response.razorpay_payment_id);
+                localStorage.removeItem("cart");
+                window.location.href = "index.html";
+            },
+            "prefill": {
+                "email": auth.currentUser ? auth.currentUser.email : ""
+            },
+            "theme": {
+                "color": "#1e40af"
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+
+    renderCart();
+</script>
+
+</body>
+</html>
