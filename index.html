@@ -1,18 +1,30 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>iCare Mukkam | Mobile & Laptop Repair</title>
 
-<meta name="description" content="iCare Mukkam - Mobile, laptop repair and accessories in Mukkam, Kozhikode.">
+<meta name="description"
+content="iCare Mukkam - Mobile and laptop repair services, accessories and online shopping in Mukkam, Kozhikode.">
+
+<meta name="keywords"
+content="iCare Mukkam, mobile repair Mukkam, laptop repair Mukkam, mobile service Kozhikode">
+
+<meta name="author"
+content="iCare Mukkam">
+
 
 <style>
 
-/* =========================================
+/* =====================================================
    BASIC
-========================================= */
+===================================================== */
 
 *{
     margin:0;
@@ -25,15 +37,16 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
     color:#1f2937;
     line-height:1.6;
 }
 
-/* =========================================
+
+/* =====================================================
    HEADER
-========================================= */
+===================================================== */
 
 header{
     background:linear-gradient(135deg,#0f172a,#1e3a8a);
@@ -43,6 +56,9 @@ header{
     align-items:center;
     justify-content:space-between;
     gap:20px;
+    position:sticky;
+    top:0;
+    z-index:5000;
 }
 
 .logo{
@@ -54,17 +70,10 @@ header{
 }
 
 .logo img{
-    width:90px;
-    height:90px;
-    max-width:90px;
-    max-height:90px;
+    width:70px;
+    height:70px;
     object-fit:contain;
-    display:block;
 }
-
-/* =========================================
-   NAVIGATION
-========================================= */
 
 nav{
     display:flex;
@@ -76,29 +85,30 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
-    padding:8px 12px;
+    padding:8px 11px;
     border-radius:6px;
-    transition:.3s;
 }
 
 nav a:hover{
     background:rgba(255,255,255,.15);
-    color:#bfdbfe;
 }
 
-/* =========================================
+
+/* =====================================================
    HOME
-========================================= */
+===================================================== */
 
 #home{
     min-height:520px;
     padding:90px 20px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     text-align:center;
 
     background:
@@ -109,37 +119,41 @@ nav a:hover{
 }
 
 #home h1{
-    font-size:46px;
-    line-height:1.2;
+    font-size:48px;
     color:#0f172a;
     margin-bottom:15px;
 }
 
 #home p{
     font-size:19px;
-    line-height:1.6;
     color:#475569;
     max-width:750px;
-    margin-bottom:10px;
 }
 
-/* =========================================
+
+/* =====================================================
    BUTTONS
-========================================= */
+===================================================== */
 
 .btn,
 .btn-primary{
     display:inline-block;
+
     padding:13px 25px;
     margin:10px 5px;
+
     border-radius:8px;
+
     text-decoration:none;
+
     font-size:16px;
     font-weight:bold;
-    line-height:1.4;
+
     border:none;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:.2s;
 }
 
 .btn{
@@ -154,14 +168,14 @@ nav a:hover{
 
 .btn:hover,
 .btn-primary:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
     opacity:.9;
-    box-shadow:0 7px 18px rgba(0,0,0,.15);
 }
 
-/* =========================================
+
+/* =====================================================
    SECTIONS
-========================================= */
+===================================================== */
 
 section{
     padding:75px 8%;
@@ -169,62 +183,68 @@ section{
 
 .section-title{
     text-align:center;
+
     font-size:34px;
-    line-height:1.3;
+
     color:#0f172a;
+
     margin-bottom:45px;
 }
 
-/* =========================================
+
+/* =====================================================
    SERVICES
-========================================= */
+===================================================== */
 
 .services{
     max-width:1150px;
+
     margin:auto;
 
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:25px;
 }
 
 .service-card{
     background:white;
+
     padding:30px 25px;
+
     border-radius:16px;
+
     text-align:center;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-}
-
-.service-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.08);
 }
 
 .service-icon{
     font-size:48px;
+
     margin-bottom:15px;
 }
 
 .service-card h3{
     color:#1e3a8a;
+
     font-size:22px;
-    line-height:1.4;
+
     margin-bottom:10px;
 }
 
 .service-card p{
     color:#64748b;
-    font-size:16px;
-    line-height:1.6;
 }
 
-/* =========================================
+
+/* =====================================================
    PRODUCTS
-========================================= */
+===================================================== */
 
 #shop{
     background:#f8fafc;
@@ -232,66 +252,94 @@ section{
 
 .products-grid{
     max-width:1200px;
+
     margin:auto;
 
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+    repeat(4,1fr);
+
     gap:25px;
 }
 
 .product-card{
     background:white;
+
     padding:20px;
+
     border-radius:16px;
+
     text-align:center;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.08);
 
-    transition:.3s;
+    transition:.2s;
 }
 
 .product-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    transform:translateY(-4px);
 }
 
 .product-card img{
     width:100%;
+
     height:190px;
+
     object-fit:contain;
+
     margin-bottom:15px;
 }
 
 .product-card h3{
     color:#1e3a8a;
-    font-size:22px;
-    line-height:1.4;
-    margin-bottom:10px;
+
+    font-size:20px;
 }
 
-.product-card p{
+.product-description{
     color:#64748b;
-    font-size:16px;
-    line-height:1.6;
+
+    min-height:48px;
 }
 
 .product-price{
     color:#16a34a;
+
     font-size:22px;
+
     font-weight:bold;
+
     margin:12px 0;
+}
+
+.stock{
+    color:#64748b;
+
+    font-size:14px;
 }
 
 .product-card button{
     width:100%;
+
     border:none;
+
     background:#2563eb;
+
     color:white;
+
     padding:12px;
+
     border-radius:8px;
+
     cursor:pointer;
+
     font-size:16px;
+
     font-weight:bold;
+
     margin-top:10px;
 }
 
@@ -299,9 +347,32 @@ section{
     background:#1d4ed8;
 }
 
-/* =========================================
+.product-card button:disabled{
+    background:#cbd5e1;
+
+    cursor:not-allowed;
+}
+
+.loading{
+    text-align:center;
+
+    padding:30px;
+
+    grid-column:1/-1;
+}
+
+#productStatus{
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
    CART
-========================================= */
+===================================================== */
 
 #cart{
     background:white;
@@ -309,51 +380,107 @@ section{
 
 .cart-box{
     max-width:900px;
+
     margin:auto;
+
     background:#f8fafc;
+
     padding:25px;
+
     border-radius:16px;
 }
 
 .cart-item{
     background:white;
+
     padding:15px;
+
     margin-bottom:10px;
+
     border-radius:10px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:15px;
+}
+
+.quantity-controls{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:8px;
+}
+
+.quantity-controls button{
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.remove-btn{
+    margin-top:8px;
+
+    padding:8px 12px;
+
+    border:0;
+
+    border-radius:6px;
+
+    background:#dc2626;
+
+    color:white;
+
+    cursor:pointer;
 }
 
 .cart-total{
     font-size:24px;
+
     font-weight:bold;
+
     text-align:right;
+
     margin-top:20px;
 }
 
-/* =========================================
+
+/* =====================================================
    ABOUT
-========================================= */
+===================================================== */
 
 #about{
     background:white;
 }
 
-#about .service-card{
-    max-width:900px;
-    margin:auto;
-}
 
-/* =========================================
+/* =====================================================
    CONTACT
-========================================= */
+===================================================== */
 
 #contact{
     background:#0f172a;
+
     color:white;
+
     text-align:center;
 }
 
@@ -361,267 +488,319 @@ section{
     color:white;
 }
 
-#contact p{
-    font-size:18px;
-    line-height:1.6;
-    margin-bottom:10px;
-}
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer{
     background:#020617;
+
     color:#cbd5e1;
+
     text-align:center;
+
     padding:25px 15px;
-    font-size:14px;
 }
 
-/* =========================================
-   WHATSAPP
-========================================= */
 
-.whatsapp-button{
-    position:fixed;
-    right:20px;
-    bottom:20px;
+/* =====================================================
+   FLOATING BUTTONS
+===================================================== */
 
-    width:58px;
-    height:58px;
-
-    background:#25D366;
-    color:white;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-    font-size:28px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-
-    z-index:9999;
-
-    transition:.3s;
-}
-
-.whatsapp-button:hover{
-    transform:scale(1.1);
-}
-
-/* =========================================
-   CALL
-========================================= */
-
+.whatsapp-button,
 .call-button{
     position:fixed;
+
     right:20px;
-    bottom:90px;
 
     width:58px;
     height:58px;
 
-    background:#2563eb;
     color:white;
 
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     text-decoration:none;
-    font-size:25px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    font-size:28px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.25);
 
     z-index:9999;
-
-    transition:.3s;
 }
 
-.call-button:hover{
-    transform:scale(1.1);
+.whatsapp-button{
+    bottom:20px;
+
+    background:#25D366;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+.call-button{
+    bottom:90px;
+
+    background:#2563eb;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    z-index:10000;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal-box{
+    background:white;
+
+    width:100%;
+
+    max-width:500px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    padding:25px;
+
+    border-radius:16px;
+}
+
+.modal-box h2{
+    margin-bottom:20px;
+
+    color:#0f172a;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:8px;
+
+    font-size:16px;
+}
+
+.form-group textarea{
+    min-height:90px;
+
+    resize:vertical;
+}
+
+.modal-buttons{
+    display:flex;
+
+    gap:10px;
+
+    justify-content:flex-end;
+
+    flex-wrap:wrap;
+}
+
+.close-btn{
+    background:#64748b;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.pay-btn{
+    background:#16a34a;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.pay-btn:disabled{
+    background:#94a3b8;
+
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:900px){
 
     .products-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
 
     .services{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+        repeat(2,1fr);
     }
-}
 
-/* =========================================
-   MOBILE
-========================================= */
+}
 
 @media(max-width:768px){
 
     header{
         flex-direction:column;
-        padding:18px 15px;
+
         text-align:center;
     }
 
     .logo{
         flex-direction:column;
+
         font-size:25px;
     }
 
-    .logo img{
-        width:90px;
-        height:90px;
-        max-width:90px;
-        max-height:90px;
-    }
-
     nav{
-        flex-wrap:wrap;
         justify-content:center;
     }
 
-    nav a{
-        font-size:14px;
-        padding:7px 8px;
-    }
-
-    #home{
-        min-height:480px;
-        padding:70px 20px;
-    }
-
     #home h1{
-        font-size:34px;
-    }
-
-    #home p{
-        font-size:17px;
+        font-size:36px;
     }
 
     section{
         padding:55px 20px;
     }
 
-    .section-title{
-        font-size:28px;
-        margin-bottom:30px;
-    }
-
-    .services{
-        grid-template-columns:1fr;
-        gap:20px;
-    }
-
+    .services,
     .products-grid{
         grid-template-columns:1fr;
-        gap:20px;
     }
 
-    .service-card{
-        padding:28px 20px;
+    .cart-item{
+        flex-direction:column;
+
+        align-items:flex-start;
     }
 
-    .service-card h3,
-    .product-card h3{
-        font-size:20px;
-    }
-
-    .service-card p,
-    .product-card p{
-        font-size:16px;
-    }
-
-    .whatsapp-button{
-        right:15px;
-        bottom:15px;
-    }
-
-    .call-button{
-        right:15px;
-        bottom:82px;
-    }
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:400px){
-
-    .logo img{
-        width:90px;
-        height:90px;
-    }
-
-    .logo{
-        font-size:22px;
-    }
-
-    nav a{
-        font-size:13px;
-        margin:2px;
-    }
-
-    #home h1{
-        font-size:28px;
-    }
-
-    .btn,
-    .btn-primary{
-        width:90%;
-        max-width:280px;
-    }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
 <div class="logo">
 
-<img src="logo.png" alt="iCare Mukkam Logo">
+<img
+src="logo.png"
+alt="iCare Mukkam Logo"
+>
 
-<span>iCare Mukkam</span>
+<span>
+iCare Mukkam
+</span>
 
 </div>
 
+
 <nav>
 
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#shop">Products</a>
-<a href="#cart">Cart</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="#home">
+Home
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#shop">
+Products
+</a>
+
+<a href="#cart">
+Cart
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#booking">
+Booking
+</a>
+
+<a href="#contact">
+Contact
+</a>
 
 </nav>
 
 </header>
 
 
-<!-- HOME -->
+<!-- =====================================================
+     HOME
+===================================================== -->
 
 <section id="home">
 
-<h1>iCare Mukkam</h1>
+<h1>
+iCare Mukkam
+</h1>
 
 <p>
 Professional Mobile & Laptop Repair Services
@@ -631,21 +810,23 @@ Professional Mobile & Laptop Repair Services
 Fast • Reliable • Quality Service
 </p>
 
+
 <div>
 
-<a class="btn-primary"
+<a
+class="btn-primary"
 href="https://wa.me/919447150744"
-target="_blank">
-
+target="_blank"
+>
 💬 WhatsApp
-
 </a>
 
-<a class="btn"
-href="tel:+919447667744">
 
+<a
+class="btn"
+href="tel:+919447667744"
+>
 📞 Call Now
-
 </a>
 
 </div>
@@ -653,7 +834,9 @@ href="tel:+919447667744">
 </section>
 
 
-<!-- SERVICES -->
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
 <section id="services">
 
@@ -661,16 +844,23 @@ href="tel:+919447667744">
 Our Services
 </h2>
 
+
 <div class="services">
 
+
 <div class="service-card">
 
-<div class="service-icon">📱</div>
+<div class="service-icon">
+📱
+</div>
 
-<h3>Mobile Repair</h3>
+<h3>
+Mobile Repair
+</h3>
 
 <p>
-Professional repair service for smartphones and mobile devices.
+Professional repair service for
+smartphones and mobile devices.
 </p>
 
 </div>
@@ -678,12 +868,17 @@ Professional repair service for smartphones and mobile devices.
 
 <div class="service-card">
 
-<div class="service-icon">💻</div>
+<div class="service-icon">
+💻
+</div>
 
-<h3>Laptop Repair</h3>
+<h3>
+Laptop Repair
+</h3>
 
 <p>
-Laptop hardware and software repair service.
+Laptop hardware and software
+repair with reliable service.
 </p>
 
 </div>
@@ -691,12 +886,17 @@ Laptop hardware and software repair service.
 
 <div class="service-card">
 
-<div class="service-icon">📲</div>
+<div class="service-icon">
+📲
+</div>
 
-<h3>Screen Replacement</h3>
+<h3>
+Screen Replacement
+</h3>
 
 <p>
-Quality display and touch screen replacement service.
+Quality display and touch screen
+replacement service.
 </p>
 
 </div>
@@ -704,12 +904,17 @@ Quality display and touch screen replacement service.
 
 <div class="service-card">
 
-<div class="service-icon">🔋</div>
+<div class="service-icon">
+🔋
+</div>
 
-<h3>Battery Replacement</h3>
+<h3>
+Battery Replacement
+</h3>
 
 <p>
-Battery replacement for mobiles and laptops.
+Battery replacement service for
+mobiles and laptops.
 </p>
 
 </div>
@@ -717,12 +922,17 @@ Battery replacement for mobiles and laptops.
 
 <div class="service-card">
 
-<div class="service-icon">⚙️</div>
+<div class="service-icon">
+⚙️
+</div>
 
-<h3>Software Service</h3>
+<h3>
+Software Service
+</h3>
 
 <p>
-Software installation, updates and troubleshooting.
+Software installation, updates,
+troubleshooting and more.
 </p>
 
 </div>
@@ -730,12 +940,17 @@ Software installation, updates and troubleshooting.
 
 <div class="service-card">
 
-<div class="service-icon">🎧</div>
+<div class="service-icon">
+🎧
+</div>
 
-<h3>Accessories</h3>
+<h3>
+Accessories
+</h3>
 
 <p>
-Mobile and laptop accessories available at iCare Mukkam.
+Mobile and laptop accessories
+available at our shop.
 </p>
 
 </div>
@@ -745,7 +960,9 @@ Mobile and laptop accessories available at iCare Mukkam.
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
 <section id="shop">
 
@@ -753,16 +970,29 @@ Mobile and laptop accessories available at iCare Mukkam.
 Our Products
 </h2>
 
-<div id="products" class="products-grid">
 
-<p>Loading products...</p>
+<div id="productStatus">
+Products are loading...
+</div>
+
+
+<div
+id="products"
+class="products-grid"
+>
+
+<div class="loading">
+Loading products...
+</div>
 
 </div>
 
 </section>
 
 
-<!-- CART -->
+<!-- =====================================================
+     CART
+===================================================== -->
 
 <section id="cart">
 
@@ -770,30 +1000,43 @@ Our Products
 Shopping Cart
 </h2>
 
+
 <div class="cart-box">
+
 
 <div id="cartItems">
 Your cart is empty.
 </div>
 
-<div id="cartTotal" class="cart-total">
+
+<div
+id="cartTotal"
+class="cart-total"
+>
 Total: ₹0
 </div>
 
-<div style="text-align:right;margin-top:15px;">
 
-<button class="btn-primary"
-onclick="clearCart()">
+<div
+style="
+text-align:right;
+margin-top:15px;
+"
+>
 
+<button
+class="btn-primary"
+onclick="clearCart()"
+>
 Clear Cart
-
 </button>
 
-<button class="btn"
-onclick="checkout()">
 
+<button
+class="btn"
+onclick="checkout()"
+>
 Checkout
-
 </button>
 
 </div>
@@ -803,7 +1046,9 @@ Checkout
 </section>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section id="about">
 
@@ -811,22 +1056,30 @@ Checkout
 About iCare Mukkam
 </h2>
 
+
 <div class="service-card">
 
 <p>
-Welcome to <strong>iCare Mukkam</strong>.
+Welcome to
+<strong>iCare Mukkam</strong>.
 </p>
 
 <br>
 
 <p>
-We provide professional mobile and laptop repair services with a focus on quality, reliability and customer satisfaction.
+We provide professional mobile and
+laptop repair services with a focus
+on quality, reliability and customer
+satisfaction.
 </p>
 
 <br>
 
 <p>
-Our services include mobile repair, laptop repair, screen replacement, battery replacement, software service and accessories.
+Our services include mobile repair,
+laptop repair, screen replacement,
+battery replacement, software service
+and accessories.
 </p>
 
 <br>
@@ -840,7 +1093,117 @@ Our services include mobile repair, laptop repair, screen replacement, battery r
 </section>
 
 
-<!-- CONTACT -->
+<!-- =====================================================
+     WHY CHOOSE US
+===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+Why Choose iCare?
+</h2>
+
+
+<div class="services">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+✅
+</div>
+
+<h3>
+Quality Service
+</h3>
+
+<p>
+We focus on reliable and
+professional repair service.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+⚡
+</div>
+
+<h3>
+Fast Service
+</h3>
+
+<p>
+We try to complete repairs
+as quickly as possible.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🤝
+</div>
+
+<h3>
+Customer Support
+</h3>
+
+<p>
+Friendly support and assistance
+for our customers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section id="booking">
+
+<h2 class="section-title">
+Book a Service
+</h2>
+
+
+<div class="service-card">
+
+<p>
+Need a repair?
+Contact us directly through WhatsApp
+to book your service.
+</p>
+
+
+<br>
+
+
+<a
+class="btn-primary"
+href="https://wa.me/919447150744?text=Hello%20iCare%20Mukkam,%20I%20would%20like%20to%20book%20a%20service."
+target="_blank"
+>
+📋 Book Service on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section id="contact">
 
@@ -848,45 +1211,59 @@ Our services include mobile repair, laptop repair, screen replacement, battery r
 Contact iCare Mukkam
 </h2>
 
+
 <p>
-📞 <strong>9447667744</strong>
+📞
+<strong>
+9447667744
+</strong>
 </p>
+
 
 <p>
 💬 WhatsApp:
-<strong>9447150744</strong>
+<strong>
+9447150744
+</strong>
 </p>
+
 
 <p>
 📍 Mukkam, Kozhikode, Kerala
 </p>
 
+
 <br>
 
-<a class="btn-primary"
+
+<a
+class="btn-primary"
 href="https://wa.me/919447150744"
-target="_blank">
-
+target="_blank"
+>
 💬 Chat on WhatsApp
-
 </a>
 
-<a class="btn"
-href="tel:+919447667744">
 
+<a
+class="btn"
+href="tel:+919447667744"
+>
 📞 Call Us
-
 </a>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
 <p>
-© 2026 iCare Mukkam. All Rights Reserved.
+© 2026 iCare Mukkam.
+All Rights Reserved.
 </p>
 
 <p>
@@ -896,68 +1273,172 @@ Mobile & Laptop Repair Services
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
 
-<a class="whatsapp-button"
+<a
+class="whatsapp-button"
 href="https://wa.me/919447150744"
 target="_blank"
-aria-label="WhatsApp">
-
+aria-label="Chat on WhatsApp"
+>
 💬
-
 </a>
 
 
-<!-- FLOATING CALL -->
+<!-- =====================================================
+     FLOATING CALL
+===================================================== -->
 
-<a class="call-button"
+<a
+class="call-button"
 href="tel:+919447667744"
-aria-label="Call">
-
+aria-label="Call iCare Mukkam"
+>
 📞
-
 </a>
 
 
-<!-- FIREBASE -->
+<!-- =====================================================
+     CHECKOUT MODAL
+===================================================== -->
+
+<div
+id="checkoutModal"
+class="modal"
+>
+
+<div class="modal-box">
+
+<h2>
+Customer Details
+</h2>
+
+
+<div class="form-group">
+
+<label for="customerName">
+Name
+</label>
+
+<input
+id="customerName"
+type="text"
+placeholder="Your name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerPhone">
+Phone Number
+</label>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="Your phone number"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerAddress">
+Delivery Address
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="Your complete delivery address"
+></textarea>
+
+</div>
+
+
+<div class="modal-buttons">
+
+
+<button
+class="close-btn"
+onclick="closeCheckout()"
+>
+Cancel
+</button>
+
+
+<button
+id="payButton"
+class="pay-btn"
+onclick="startRazorpayPayment()"
+>
+💳 Pay with Razorpay
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     RAZORPAY CHECKOUT
+===================================================== -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+<!-- =====================================================
+     FIREBASE + WEBSITE LOGIC
+===================================================== -->
 
 <script type="module">
 
-import { initializeApp }
-
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 
 
 import {
-
-getFirestore,
-collection,
-getDocs
-
+    getFirestore,
+    collection,
+    getDocs
 }
+from
+"https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
 
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 
 const firebaseConfig = {
 
-apiKey:
-"AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4EhGc",
+    apiKey:
+    "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4EhGc",
 
-authDomain:
-"icare-mukkam.firebaseapp.com",
+    authDomain:
+    "icare-mukkam.firebaseapp.com",
 
-projectId:
-"icare-mukkam",
+    projectId:
+    "icare-mukkam",
 
-storageBucket:
-"icare-mukkam.firebasestorage.app",
+    storageBucket:
+    "icare-mukkam.firebasestorage.app",
 
-messagingSenderId:
-"121404685611",
+    messagingSenderId:
+    "121404685611",
 
-appId:
-"1:121404685611:web:177d545ffefc78f563996e"
+    appId:
+    "1:121404685611:web:177d545ffefc78f563996e"
 
 };
 
@@ -970,345 +1451,1466 @@ const db =
 getFirestore(app);
 
 
+/* =====================================================
+   RAZORPAY PUBLIC KEY
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   This is the PUBLIC Razorpay Key ID.
+
+   NEVER put Razorpay Secret Key here.
+
+   Secret Key must remain inside
+   Firebase Cloud Function.
+*/
+
+const RAZORPAY_KEY_ID =
+"rzp_live_TQXIRCZM7IND8V";
+
+
+/* =====================================================
+   YOUR DEPLOYED CLOUD RUN FUNCTIONS
+===================================================== */
+
+/*
+   These URLs are taken from the Firebase
+   Functions page you showed.
+
+   DO NOT change them to the old
+   cloudfunctions.net URLs.
+*/
+
+const CREATE_ORDER_URL =
+"https://createrazorpayorder-7fe4n4nnqq-el.a.run.app";
+
+
+const VERIFY_PAYMENT_URL =
+"https://verifyrazorpaypayment-7fe4n4nnqq-el.a.run.app";
+
+
+/* =====================================================
+   HTML ELEMENTS
+===================================================== */
+
 const productsContainer =
 document.getElementById("products");
 
 
+const productStatus =
+document.getElementById("productStatus");
+
+
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
+
 async function loadProducts(){
 
-try{
+    productsContainer.innerHTML =
+    '<div class="loading">Loading products...</div>';
 
-const snapshot =
-await getDocs(
-collection(db,"products")
-);
-
-
-productsContainer.innerHTML="";
+    productStatus.textContent =
+    "Products are loading...";
 
 
-if(snapshot.empty){
+    try{
 
-productsContainer.innerHTML=
-"<p>No products available.</p>";
+        const snapshot =
+        await getDocs(
+            collection(db,"products")
+        );
 
-return;
+
+        console.log(
+            "Products found:",
+            snapshot.size
+        );
+
+
+        if(snapshot.empty){
+
+            productsContainer.innerHTML = `
+
+                <div class="loading">
+
+                    <h3>
+                        No products available
+                    </h3>
+
+                    <p>
+                        Please add products from
+                        your Firebase products collection.
+                    </p>
+
+                </div>
+
+            `;
+
+
+            productStatus.textContent =
+            "No products available.";
+
+            return;
+        }
+
+
+        productsContainer.innerHTML =
+        "";
+
+
+        productStatus.textContent =
+        snapshot.size +
+        " product(s) available.";
+
+
+        snapshot.forEach(
+            (productDoc)=>{
+
+                const product =
+                productDoc.data();
+
+
+                const name =
+                product.name ||
+                "Product";
+
+
+                const description =
+                product.description ||
+                "";
+
+
+                const price =
+                Number(product.price || 0);
+
+
+                const stock =
+                Number(product.stock || 0);
+
+
+                const image =
+                product.image ||
+                "logo.png";
+
+
+                const card =
+                document.createElement("div");
+
+
+                card.className =
+                "product-card";
+
+
+                const img =
+                document.createElement("img");
+
+
+                img.src =
+                image;
+
+
+                img.alt =
+                name;
+
+
+                img.onerror =
+                function(){
+
+                    this.src =
+                    "logo.png";
+
+                };
+
+
+                const title =
+                document.createElement("h3");
+
+
+                title.textContent =
+                name;
+
+
+                const desc =
+                document.createElement("p");
+
+
+                desc.className =
+                "product-description";
+
+
+                desc.textContent =
+                description;
+
+
+                const priceDiv =
+                document.createElement("div");
+
+
+                priceDiv.className =
+                "product-price";
+
+
+                priceDiv.textContent =
+                "₹" +
+                price.toLocaleString("en-IN");
+
+
+                const stockText =
+                document.createElement("p");
+
+
+                stockText.className =
+                "stock";
+
+
+                stockText.textContent =
+                stock > 0
+                ?
+                "Stock: " + stock
+                :
+                "Out of Stock";
+
+
+                const button =
+                document.createElement("button");
+
+
+                if(stock <= 0){
+
+                    button.textContent =
+                    "Out of Stock";
+
+                    button.disabled =
+                    true;
+
+                }
+                else{
+
+                    button.textContent =
+                    "🛒 Add to Cart";
+
+
+                    button.onclick =
+                    function(){
+
+                        addToCart(
+                            productDoc.id,
+                            name,
+                            price,
+                            stock
+                        );
+
+                    };
+
+                }
+
+
+                card.appendChild(img);
+
+                card.appendChild(title);
+
+                card.appendChild(desc);
+
+                card.appendChild(priceDiv);
+
+                card.appendChild(stockText);
+
+                card.appendChild(button);
+
+
+                productsContainer.appendChild(
+                    card
+                );
+
+            }
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "PRODUCT LOAD ERROR:",
+            error
+        );
+
+
+        productStatus.textContent =
+        "Unable to load products.";
+
+
+        productsContainer.innerHTML = `
+
+            <div
+                class="loading"
+                style="color:#dc2626"
+            >
+
+                ❌ Products could not be loaded.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.code ||
+                    error.message ||
+                    "Unknown error"
+                )}
+
+            </div>
+
+        `;
+
+    }
 
 }
 
 
-snapshot.forEach(doc=>{
-
-const product =
-doc.data();
-
-
-const card =
-document.createElement("div");
-
-
-card.className =
-"product-card";
-
-
-const image =
-product.image || "logo.png";
-
-
-card.innerHTML = `
-
-<img
-src="${image}"
-alt="${product.name || "Product"}"
->
-
-<h3>
-${product.name || "Product"}
-</h3>
-
-<p>
-${product.description || ""}
-</p>
-
-<div class="product-price">
-
-₹${Number(product.price || 0)
-.toLocaleString("en-IN")}
-
-</div>
-
-<p>
-Stock: ${product.stock || 0}
-</p>
-
-<button
-onclick="addToCart(
-'${doc.id}',
-'${String(product.name || "Product").replace(/'/g,"\\'")}',
-${Number(product.price || 0)}
-)">
-
-🛒 Add to Cart
-
-</button>
-
-`;
-
-
-productsContainer.appendChild(card);
-
-});
-
-
-}
-
-catch(error){
-
-console.error(error);
-
-productsContainer.innerHTML =
-"<p>Products could not be loaded. Please check Firebase.</p>";
-
-}
-
-}
-
-
-/* =========================================
+/* =====================================================
    ADD TO CART
-========================================= */
+===================================================== */
 
 window.addToCart =
-function(id,name,price){
+function(
+    id,
+    name,
+    price,
+    stock
+){
 
-let cart =
-JSON.parse(
-localStorage.getItem("icareCart")
-) || [];
-
-
-const existing =
-cart.find(
-item => item.id === id
-);
-
-
-if(existing){
-
-existing.quantity += 1;
-
-}
-
-else{
-
-cart.push({
-
-id:id,
-name:name,
-price:price,
-quantity:1
-
-});
-
-}
+    let cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
 
 
-localStorage.setItem(
-"icareCart",
-JSON.stringify(cart)
-);
+    const existing =
+    cart.find(
+        item =>
+        item.id === id
+    );
 
 
-displayCart();
+    if(existing){
+
+        if(
+            existing.quantity >=
+            Number(stock)
+        ){
+
+            alert(
+                "Maximum available stock reached."
+            );
+
+            return;
+        }
 
 
-alert(
-name + " added to cart!"
-);
+        existing.quantity++;
+
+    }
+    else{
+
+        cart.push({
+
+            id:id,
+
+            name:name,
+
+            price:Number(price),
+
+            stock:Number(stock),
+
+            quantity:1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "icareCart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+
+    alert(
+        name +
+        " added to cart."
+    );
 
 };
 
 
-/* =========================================
+/* =====================================================
    DISPLAY CART
-========================================= */
+===================================================== */
 
 window.displayCart =
 function(){
 
-const cart =
-JSON.parse(
-localStorage.getItem("icareCart")
-) || [];
+    const cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
 
 
-const container =
-document.getElementById("cartItems");
+    const container =
+    document.getElementById(
+        "cartItems"
+    );
 
 
-const totalElement =
-document.getElementById("cartTotal");
+    const totalElement =
+    document.getElementById(
+        "cartTotal"
+    );
 
 
-if(cart.length === 0){
+    if(!cart.length){
 
-container.innerHTML =
-"Your cart is empty.";
-
-totalElement.innerHTML =
-"Total: ₹0";
-
-return;
-
-}
+        container.innerHTML =
+        "Your cart is empty.";
 
 
-let total = 0;
-
-container.innerHTML = "";
-
-
-cart.forEach((item,index)=>{
-
-const itemTotal =
-item.price * item.quantity;
+        totalElement.textContent =
+        "Total: ₹0";
 
 
-total += itemTotal;
+        return;
+    }
 
 
-const div =
-document.createElement("div");
+    let total =
+    0;
 
 
-div.className =
-"cart-item";
+    container.innerHTML =
+    "";
 
 
-div.innerHTML = `
+    cart.forEach(
+        (item,index)=>{
 
-<div>
-
-<strong>
-${item.name}
-</strong>
-
-<br>
-
-₹${item.price.toLocaleString("en-IN")}
-× ${item.quantity}
-
-</div>
-
-<div>
-
-<button
-onclick="removeItem(${index})"
-style="
-padding:8px 12px;
-border:0;
-border-radius:6px;
-background:#dc2626;
-color:white;
-cursor:pointer;
-">
-
-Remove
-
-</button>
-
-</div>
-
-`;
+            const itemTotal =
+            Number(item.price) *
+            Number(item.quantity);
 
 
-container.appendChild(div);
+            total +=
+            itemTotal;
 
-});
+
+            const div =
+            document.createElement("div");
 
 
-totalElement.innerHTML =
-"Total: ₹" +
-total.toLocaleString("en-IN");
+            div.className =
+            "cart-item";
+
+
+            div.innerHTML = `
+
+                <div>
+
+                    <strong>
+                        ${escapeHtml(item.name)}
+                    </strong>
+
+                    <br>
+
+                    ₹${Number(item.price)
+                        .toLocaleString("en-IN")}
+
+
+                    <div
+                        class="quantity-controls"
+                    >
+
+                        <button
+                            onclick="changeQuantity(${index},-1)"
+                        >
+                            −
+                        </button>
+
+
+                        <strong>
+                            ${item.quantity}
+                        </strong>
+
+
+                        <button
+                            onclick="changeQuantity(${index},1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        ₹${itemTotal
+                            .toLocaleString("en-IN")}
+                    </strong>
+
+                    <br>
+
+
+                    <button
+                        class="remove-btn"
+                        onclick="removeItem(${index})"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                div
+            );
+
+        }
+    );
+
+
+    totalElement.textContent =
+    "Total: ₹" +
+    total.toLocaleString("en-IN");
 
 };
 
 
-/* =========================================
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
+
+window.changeQuantity =
+function(
+    index,
+    change
+){
+
+    let cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
+
+
+    if(!cart[index])
+        return;
+
+
+    const newQuantity =
+    Number(cart[index].quantity) +
+    Number(change);
+
+
+    if(newQuantity <= 0){
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+    else if(
+        newQuantity >
+        Number(cart[index].stock)
+    ){
+
+        alert(
+            "Maximum available stock reached."
+        );
+
+        return;
+
+    }
+    else{
+
+        cart[index].quantity =
+        newQuantity;
+
+    }
+
+
+    localStorage.setItem(
+        "icareCart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+};
+
+
+/* =====================================================
    REMOVE ITEM
-========================================= */
+===================================================== */
 
 window.removeItem =
 function(index){
 
-let cart =
-JSON.parse(
-localStorage.getItem("icareCart")
-) || [];
+    let cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
 
 
-cart.splice(index,1);
+    cart.splice(
+        index,
+        1
+    );
 
 
-localStorage.setItem(
-"icareCart",
-JSON.stringify(cart)
-);
+    localStorage.setItem(
+        "icareCart",
+        JSON.stringify(cart)
+    );
 
 
-displayCart();
+    displayCart();
 
 };
 
 
-/* =========================================
+/* =====================================================
    CLEAR CART
-========================================= */
+===================================================== */
 
 window.clearCart =
 function(){
 
-localStorage.removeItem(
-"icareCart"
-);
+    const cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
 
-displayCart();
+
+    if(!cart.length)
+        return;
+
+
+    if(
+        confirm(
+            "Clear all products from cart?"
+        )
+    ){
+
+        localStorage.removeItem(
+            "icareCart"
+        );
+
+
+        displayCart();
+
+    }
 
 };
 
 
-/* =========================================
-   CHECKOUT
-========================================= */
+/* =====================================================
+   OPEN CHECKOUT
+===================================================== */
 
 window.checkout =
 function(){
 
-const cart =
-JSON.parse(
-localStorage.getItem("icareCart")
-) || [];
+    const cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
 
 
-if(cart.length === 0){
+    if(!cart.length){
 
-alert("Your cart is empty.");
+        alert(
+            "Your cart is empty."
+        );
 
-return;
+        return;
+    }
 
-}
 
-
-alert(
-"Checkout is ready for the next Razorpay integration step."
-);
+    document.getElementById(
+        "checkoutModal"
+    ).style.display =
+    "flex";
 
 };
 
 
-/* =========================================
-   START
-========================================= */
+/* =====================================================
+   CLOSE CHECKOUT
+===================================================== */
+
+window.closeCheckout =
+function(){
+
+    document.getElementById(
+        "checkoutModal"
+    ).style.display =
+    "none";
+
+};
+
+
+/* =====================================================
+   START RAZORPAY PAYMENT
+===================================================== */
+
+window.startRazorpayPayment =
+async function(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem(
+            "icareCart"
+        )
+    ) || [];
+
+
+    if(!cart.length){
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+    }
+
+
+    const name =
+    document.getElementById(
+        "customerName"
+    ).value.trim();
+
+
+    const phone =
+    document.getElementById(
+        "customerPhone"
+    ).value.trim();
+
+
+    const address =
+    document.getElementById(
+        "customerAddress"
+    ).value.trim();
+
+
+    if(
+        !name ||
+        !phone ||
+        !address
+    ){
+
+        alert(
+            "Please fill in all customer details."
+        );
+
+        return;
+    }
+
+
+    let total =
+    0;
+
+
+    cart.forEach(
+        item => {
+
+            total +=
+            Number(item.price) *
+            Number(item.quantity);
+
+        }
+    );
+
+
+    total =
+    Math.round(total);
+
+
+    if(total <= 0){
+
+        alert(
+            "Invalid order amount."
+        );
+
+        return;
+    }
+
+
+    if(
+        typeof Razorpay ===
+        "undefined"
+    ){
+
+        alert(
+            "Razorpay Checkout could not be loaded. Please refresh the page."
+        );
+
+        return;
+    }
+
+
+    const payButton =
+    document.getElementById(
+        "payButton"
+    );
+
+
+    payButton.disabled =
+    true;
+
+
+    payButton.textContent =
+    "Creating payment order...";
+
+
+    try{
+
+        console.log(
+            "Creating Razorpay order...",
+            {
+                amount:total,
+                url:CREATE_ORDER_URL
+            }
+        );
+
+
+        const response =
+        await fetch(
+            CREATE_ORDER_URL,
+            {
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                    "application/json",
+
+                    "Accept":
+                    "application/json"
+                },
+
+                body:JSON.stringify({
+
+                    amount:total,
+
+                    receipt:
+                    "icare_" +
+                    Date.now(),
+
+                    customerName:
+                    name,
+
+                    customerPhone:
+                    phone
+
+                })
+
+            }
+        );
+
+
+        const responseText =
+        await response.text();
+
+
+        console.log(
+            "Create order HTTP status:",
+            response.status
+        );
+
+
+        console.log(
+            "Create order response:",
+            responseText
+        );
+
+
+        let data;
+
+
+        try{
+
+            data =
+            JSON.parse(
+                responseText
+            );
+
+        }
+        catch(parseError){
+
+            throw new Error(
+                "Server returned an invalid response: " +
+                responseText.substring(0,300)
+            );
+
+        }
+
+
+        if(!response.ok){
+
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Cloud Function returned HTTP " +
+                response.status
+            );
+
+        }
+
+
+        /*
+         * Accept several common response formats.
+         */
+
+        const razorpayOrder =
+        data.order ||
+        data.razorpayOrder ||
+        null;
+
+
+        const orderId =
+        (
+            razorpayOrder &&
+            razorpayOrder.id
+        )
+        ||
+        data.orderId
+        ||
+        data.razorpay_order_id
+        ||
+        data.id
+        ||
+        null;
+
+
+        const orderAmount =
+        (
+            razorpayOrder &&
+            razorpayOrder.amount
+        )
+        ||
+        data.amount
+        ||
+        null;
+
+
+        if(!orderId){
+
+            console.error(
+                "ORDER ID MISSING. SERVER RESPONSE:",
+                data
+            );
+
+
+            throw new Error(
+                "Razorpay Order ID was not returned.\n\n" +
+                "Server response:\n" +
+                JSON.stringify(data)
+            );
+
+        }
+
+
+        /*
+         * Razorpay requires amount in paise.
+         *
+         * If the Cloud Function has returned
+         * the order amount, use that.
+         *
+         * Otherwise convert website total to paise.
+         */
+
+        const razorpayAmount =
+        Number(orderAmount) > 0
+        ?
+        Number(orderAmount)
+        :
+        Math.round(total * 100);
+
+
+        console.log(
+            "Razorpay Order ID:",
+            orderId
+        );
+
+
+        console.log(
+            "Razorpay Amount:",
+            razorpayAmount
+        );
+
+
+        const options = {
+
+            key:
+            RAZORPAY_KEY_ID,
+
+
+            amount:
+            razorpayAmount,
+
+
+            currency:
+            "INR",
+
+
+            name:
+            "iCare Mukkam",
+
+
+            description:
+            "iCare Mukkam Order",
+
+
+            order_id:
+            orderId,
+
+
+            prefill:{
+
+                name:
+                name,
+
+                contact:
+                phone
+
+            },
+
+
+            notes:{
+
+                customer_name:
+                name,
+
+                customer_phone:
+                phone
+
+            },
+
+
+            theme:{
+
+                color:
+                "#2563eb"
+
+            },
+
+
+            handler:
+            async function(
+                paymentResponse
+            ){
+
+                console.log(
+                    "Razorpay payment response:",
+                    paymentResponse
+                );
+
+
+                await verifyPayment(
+
+                    paymentResponse,
+
+                    {
+                        name,
+                        phone,
+                        address,
+                        cart,
+                        total
+                    }
+
+                );
+
+            },
+
+
+            modal:{
+
+                ondismiss:
+                function(){
+
+                    console.log(
+                        "Razorpay checkout closed."
+                    );
+
+                    payButton.disabled =
+                    false;
+
+                    payButton.textContent =
+                    "💳 Pay with Razorpay";
+
+                }
+
+            }
+
+        };
+
+
+        const razorpay =
+        new Razorpay(
+            options
+        );
+
+
+        razorpay.on(
+            "payment.failed",
+            function(response){
+
+                console.error(
+                    "Razorpay payment failed:",
+                    response.error
+                );
+
+
+                alert(
+
+                    "Payment failed.\n\n" +
+
+                    (
+                        response.error &&
+                        response.error.description
+                        ?
+                        response.error.description
+                        :
+                        "Please try again."
+                    )
+
+                );
+
+
+                payButton.disabled =
+                false;
+
+                payButton.textContent =
+                "💳 Pay with Razorpay";
+
+            }
+        );
+
+
+        razorpay.open();
+
+
+    }
+    catch(error){
+
+        console.error(
+            "RAZORPAY ORDER ERROR:",
+            error
+        );
+
+
+        alert(
+            "Payment could not be started.\n\n" +
+            error.message
+        );
+
+
+        payButton.disabled =
+        false;
+
+
+        payButton.textContent =
+        "💳 Pay with Razorpay";
+
+    }
+
+};
+
+
+/* =====================================================
+   VERIFY PAYMENT
+===================================================== */
+
+async function verifyPayment(
+    paymentResponse,
+    customerData
+){
+
+    try{
+
+        const response =
+        await fetch(
+            VERIFY_PAYMENT_URL,
+            {
+
+                method:"POST",
+
+                headers:{
+
+                    "Content-Type":
+                    "application/json",
+
+                    "Accept":
+                    "application/json"
+
+                },
+
+                body:JSON.stringify({
+
+                    razorpay_order_id:
+                    paymentResponse
+                    .razorpay_order_id,
+
+
+                    razorpay_payment_id:
+                    paymentResponse
+                    .razorpay_payment_id,
+
+
+                    razorpay_signature:
+                    paymentResponse
+                    .razorpay_signature,
+
+
+                    orderData:{
+
+                        customerName:
+                        customerData.name,
+
+
+                        customerPhone:
+                        customerData.phone,
+
+
+                        deliveryAddress:
+                        customerData.address,
+
+
+                        items:
+                        customerData.cart,
+
+
+                        total:
+                        customerData.total
+
+                    }
+
+                })
+
+            }
+        );
+
+
+        const responseText =
+        await response.text();
+
+
+        console.log(
+            "Verify response:",
+            responseText
+        );
+
+
+        let data;
+
+
+        try{
+
+            data =
+            JSON.parse(
+                responseText
+            );
+
+        }
+        catch(error){
+
+            throw new Error(
+                "Invalid verification server response."
+            );
+
+        }
+
+
+        if(
+            !response.ok ||
+            data.success !== true
+        ){
+
+            throw new Error(
+                data.message ||
+                data.error ||
+                "Payment verification failed."
+            );
+
+        }
+
+
+        localStorage.removeItem(
+            "icareCart"
+        );
+
+
+        displayCart();
+
+
+        closeCheckout();
+
+
+        document.getElementById(
+            "customerName"
+        ).value =
+        "";
+
+
+        document.getElementById(
+            "customerPhone"
+        ).value =
+        "";
+
+
+        document.getElementById(
+            "customerAddress"
+        ).value =
+        "";
+
+
+        const orderId =
+        data.orderId ||
+        data.razorpay_order_id ||
+        paymentResponse
+        .razorpay_order_id;
+
+
+        alert(
+
+            "🎉 Payment successful!\n\n" +
+
+            "Order ID: " +
+
+            orderId
+
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "VERIFY ERROR:",
+            error
+        );
+
+
+        alert(
+
+            "Payment was completed, " +
+            "but verification failed.\n\n" +
+
+            error.message +
+
+            "\n\nPlease contact iCare Mukkam."
+
+        );
+
+    }
+
+
+    const payButton =
+    document.getElementById(
+        "payButton"
+    );
+
+
+    payButton.disabled =
+    false;
+
+
+    payButton.textContent =
+    "💳 Pay with Razorpay";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL OUTSIDE CLICK
+===================================================== */
+
+document.getElementById(
+    "checkoutModal"
+).addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === this
+        ){
+
+            closeCheckout();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START WEBSITE
+===================================================== */
 
 loadProducts();
 
@@ -1316,5 +2918,7 @@ displayCart();
 
 </script>
 
+
 </body>
 </html>
+```
