@@ -1,9 +1,7 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -22,111 +20,9 @@
 
     <link rel="stylesheet"
           href="style.css">
-
-
-    <!-- =========================================
-         RAZORPAY CHECKOUT
-         ========================================= -->
-
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-
-    <style>
-
-        /* =========================================
-           PAYMENT SECTION
-           ========================================= */
-
-        #payment{
-            background:#f8fafc;
-        }
-
-        .payment-box{
-            max-width:600px;
-            margin:auto;
-            background:white;
-            padding:30px;
-            border-radius:16px;
-            box-shadow:0 5px 20px rgba(0,0,0,.08);
-        }
-
-        .payment-box h3{
-            text-align:center;
-            color:#1e3a8a;
-            margin-bottom:20px;
-        }
-
-        .payment-group{
-            margin-bottom:15px;
-        }
-
-        .payment-group label{
-            display:block;
-            font-weight:bold;
-            margin-bottom:6px;
-        }
-
-        .payment-group input{
-            width:100%;
-            padding:12px;
-            border:1px solid #cbd5e1;
-            border-radius:8px;
-            font-size:16px;
-        }
-
-        .payment-btn{
-            width:100%;
-            border:0;
-            background:#16a34a;
-            color:white;
-            padding:14px;
-            border-radius:8px;
-            cursor:pointer;
-            font-size:17px;
-            font-weight:bold;
-            margin-top:10px;
-        }
-
-        .payment-btn:hover{
-            background:#15803d;
-        }
-
-        .payment-btn:disabled{
-            background:#94a3b8;
-            cursor:not-allowed;
-        }
-
-        #paymentStatus{
-            text-align:center;
-            margin-top:15px;
-            font-weight:bold;
-        }
-
-        .payment-note{
-            text-align:center;
-            color:#64748b;
-            font-size:14px;
-            margin-top:15px;
-        }
-
-        .success-message{
-            display:none;
-            margin-top:20px;
-            padding:15px;
-            background:#dcfce7;
-            color:#166534;
-            border-radius:8px;
-            text-align:center;
-            font-weight:bold;
-        }
-
-    </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =========================================
      HEADER
@@ -143,7 +39,6 @@
 
     </div>
 
-
     <nav>
 
         <a href="#home">Home</a>
@@ -154,14 +49,11 @@
 
         <a href="#booking">Booking</a>
 
-        <a href="#payment">Payment</a>
-
         <a href="#contact">Contact</a>
 
     </nav>
 
 </header>
-
 
 
 <!-- =========================================
@@ -182,7 +74,6 @@
         Fast • Reliable • Quality Service
     </p>
 
-
     <div>
 
         <a class="btn-primary"
@@ -192,7 +83,6 @@
             💬 WhatsApp
 
         </a>
-
 
         <a class="btn"
            href="tel:+919447667744">
@@ -206,7 +96,6 @@
 </section>
 
 
-
 <!-- =========================================
      SERVICES
      ========================================= -->
@@ -217,9 +106,10 @@
         Our Services
     </h2>
 
-
     <div class="services">
 
+
+        <!-- Mobile Repair -->
 
         <div class="service-card">
 
@@ -239,6 +129,7 @@
         </div>
 
 
+        <!-- Laptop Repair -->
 
         <div class="service-card">
 
@@ -258,6 +149,7 @@
         </div>
 
 
+        <!-- Screen Replacement -->
 
         <div class="service-card">
 
@@ -277,6 +169,7 @@
         </div>
 
 
+        <!-- Battery -->
 
         <div class="service-card">
 
@@ -296,6 +189,7 @@
         </div>
 
 
+        <!-- Software -->
 
         <div class="service-card">
 
@@ -315,6 +209,7 @@
         </div>
 
 
+        <!-- Accessories -->
 
         <div class="service-card">
 
@@ -338,7 +233,6 @@
 </section>
 
 
-
 <!-- =========================================
      ABOUT
      ========================================= -->
@@ -348,7 +242,6 @@
     <h2 class="section-title">
         About iCare Mukkam
     </h2>
-
 
     <div class="service-card">
 
@@ -387,7 +280,6 @@
 </section>
 
 
-
 <!-- =========================================
      WHY CHOOSE US
      ========================================= -->
@@ -397,7 +289,6 @@
     <h2 class="section-title">
         Why Choose iCare?
     </h2>
-
 
     <div class="services">
 
@@ -420,7 +311,6 @@
         </div>
 
 
-
         <div class="service-card">
 
             <div class="service-icon">
@@ -437,7 +327,6 @@
             </p>
 
         </div>
-
 
 
         <div class="service-card">
@@ -462,7 +351,6 @@
 </section>
 
 
-
 <!-- =========================================
      BOOKING
      ========================================= -->
@@ -473,7 +361,6 @@
         Book a Service
     </h2>
 
-
     <div class="service-card">
 
         <p>
@@ -483,7 +370,6 @@
         </p>
 
         <br>
-
 
         <a class="btn-primary"
            href="https://wa.me/919447150744?text=Hello%20iCare%20Mukkam,%20I%20would%20like%20to%20book%20a%20service."
@@ -498,111 +384,6 @@
 </section>
 
 
-
-<!-- =========================================
-     RAZORPAY PAYMENT
-     ========================================= -->
-
-<section id="payment">
-
-    <h2 class="section-title">
-        Online Payment
-    </h2>
-
-
-    <div class="payment-box">
-
-        <h3>
-            💳 Pay iCare Mukkam
-        </h3>
-
-
-        <div class="payment-group">
-
-            <label for="customerName">
-                Customer Name
-            </label>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Enter your name"
-                autocomplete="name"
-            >
-
-        </div>
-
-
-
-        <div class="payment-group">
-
-            <label for="customerPhone">
-                Phone Number
-            </label>
-
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="Enter your phone number"
-                autocomplete="tel"
-            >
-
-        </div>
-
-
-
-        <div class="payment-group">
-
-            <label for="paymentAmount">
-                Amount (₹)
-            </label>
-
-            <input
-                type="number"
-                id="paymentAmount"
-                placeholder="Enter amount"
-                min="1"
-                step="0.01"
-            >
-
-        </div>
-
-
-
-        <button
-            type="button"
-            id="payButton"
-            class="payment-btn"
-            onclick="startRazorpayPayment()">
-
-            💳 Pay with Razorpay
-
-        </button>
-
-
-        <div
-            id="paymentStatus">
-        </div>
-
-
-        <div
-            id="successMessage"
-            class="success-message">
-        </div>
-
-
-        <p class="payment-note">
-
-            🔒 Secure payment powered by Razorpay
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
 <!-- =========================================
      CONTACT
      ========================================= -->
@@ -613,25 +394,20 @@
         Contact iCare Mukkam
     </h2>
 
-
     <p>
         📞 <strong>9447667744</strong>
     </p>
-
 
     <p>
         💬 WhatsApp:
         <strong>9447150744</strong>
     </p>
 
-
     <p>
         📍 Mukkam, Kozhikode, Kerala
     </p>
 
-
     <br>
-
 
     <a class="btn-primary"
        href="https://wa.me/919447150744"
@@ -641,16 +417,14 @@
 
     </a>
 
-
     <a class="btn"
-       href="tel:+919447667744">
+       href="tel:+9194476677744">
 
         📞 Call Us
 
     </a>
 
 </section>
-
 
 
 <!-- =========================================
@@ -671,9 +445,8 @@
 </footer>
 
 
-
 <!-- =========================================
-     FLOATING WHATSAPP
+     FLOATING WHATSAPP BUTTON
      ========================================= -->
 
 <a class="whatsapp-button"
@@ -686,9 +459,8 @@
 </a>
 
 
-
 <!-- =========================================
-     FLOATING CALL
+     FLOATING CALL BUTTON
      ========================================= -->
 
 <a class="call-button"
@@ -700,616 +472,6 @@
 </a>
 
 
-
-<!-- =========================================
-     FIREBASE + RAZORPAY
-     ========================================= -->
-
-<script type="module">
-
-
-/* =========================================
-   FIREBASE IMPORT
-   ========================================= */
-
-import {
-    initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-
-/* =========================================
-   FIREBASE CONFIG
-   ========================================= */
-
-const firebaseConfig = {
-
-    apiKey:
-    "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxQw4wEhGc",
-
-    authDomain:
-    "icare-mukkam.firebaseapp.com",
-
-    projectId:
-    "icare-mukkam",
-
-    storageBucket:
-    "icare-mukkam.firebasestorage.app",
-
-    messagingSenderId:
-    "121404685611",
-
-    appId:
-    "1:121404685611:web:177d545ffefc78f563996e"
-
-};
-
-
-const app =
-initializeApp(firebaseConfig);
-
-
-
-/* =========================================
-   RAZORPAY KEY ID
-   ========================================= */
-
-/*
-   IMPORTANT:
-
-   This is PUBLIC Razorpay Key ID.
-
-   NEVER put Razorpay Secret Key
-   in this HTML file.
-
-   Secret Key stays in Firebase
-   Cloud Function.
-*/
-
-const RAZORPAY_KEY_ID =
-"rzp_live_TQKlO3NMZLrc9y";
-
-
-
-/* =========================================
-   CLOUD FUNCTION URL
-   ========================================= */
-
-const CREATE_ORDER_URL =
-"https://createrazorpayorder-7fe4n4nnqq-el.a.run.app";
-
-
-const VERIFY_PAYMENT_URL =
-"https://verifyrazorpaypayment-7fe4n4nnqq-el.a.run.app";
-
-
-
-/* =========================================
-   ELEMENTS
-   ========================================= */
-
-const payButton =
-document.getElementById("payButton");
-
-const paymentStatus =
-document.getElementById("paymentStatus");
-
-const successMessage =
-document.getElementById("successMessage");
-
-
-
-/* =========================================
-   START RAZORPAY
-   ========================================= */
-
-window.startRazorpayPayment =
-async function(){
-
-    const name =
-    document
-    .getElementById("customerName")
-    .value
-    .trim();
-
-
-    const phone =
-    document
-    .getElementById("customerPhone")
-    .value
-    .trim();
-
-
-    const amount =
-    Number(
-        document
-        .getElementById("paymentAmount")
-        .value
-    );
-
-
-    /* =====================================
-       VALIDATION
-       ===================================== */
-
-    if(!name){
-
-        alert(
-            "Please enter your name."
-        );
-
-        return;
-
-    }
-
-
-    if(!phone){
-
-        alert(
-            "Please enter your phone number."
-        );
-
-        return;
-
-    }
-
-
-    if(!amount || amount <= 0){
-
-        alert(
-            "Please enter a valid payment amount."
-        );
-
-        return;
-
-    }
-
-
-
-    /* =====================================
-       CHECK RAZORPAY
-       ===================================== */
-
-    if(
-        typeof Razorpay ===
-        "undefined"
-    ){
-
-        alert(
-            "Razorpay Checkout could not be loaded. Please refresh the page."
-        );
-
-        return;
-
-    }
-
-
-
-    try{
-
-        payButton.disabled =
-        true;
-
-        payButton.textContent =
-        "Creating Payment...";
-
-
-        paymentStatus.style.color =
-        "#1e40af";
-
-
-        paymentStatus.textContent =
-        "Connecting to secure payment...";
-
-
-        successMessage.style.display =
-        "none";
-
-
-
-        /* =================================
-           CREATE ORDER
-           ================================= */
-
-        const response =
-        await fetch(
-            CREATE_ORDER_URL,
-            {
-
-                method:
-                "POST",
-
-                headers:{
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body:
-                JSON.stringify({
-
-                    amount:
-                    amount,
-
-                    receipt:
-                    "icare_" +
-                    Date.now()
-
-                })
-
-            }
-        );
-
-
-
-        const data =
-        await response.json();
-
-
-
-        if(
-            !response.ok ||
-            !data.success
-        ){
-
-            throw new Error(
-                data.message ||
-                "Unable to create payment order."
-            );
-
-        }
-
-
-
-        const razorpayOrder =
-        data.order;
-
-
-
-        /* =================================
-           RAZORPAY OPTIONS
-           ================================= */
-
-        const options = {
-
-            key:
-            RAZORPAY_KEY_ID,
-
-            amount:
-            razorpayOrder.amount,
-
-            currency:
-            "INR",
-
-            name:
-            "iCare Mukkam",
-
-            description:
-            "iCare Mukkam Payment",
-
-            order_id:
-            razorpayOrder.id,
-
-
-            prefill:{
-
-                name:
-                name,
-
-                contact:
-                phone
-
-            },
-
-
-            theme:{
-
-                color:
-                "#2563eb"
-
-            },
-
-
-            handler:
-            async function(
-                paymentResponse
-            ){
-
-                await verifyPayment(
-
-                    paymentResponse,
-
-                    {
-                        name:
-                        name,
-
-                        phone:
-                        phone,
-
-                        amount:
-                        amount
-                    }
-
-                );
-
-            },
-
-
-            modal:{
-
-                ondismiss:
-                function(){
-
-                    payButton.disabled =
-                    false;
-
-                    payButton.textContent =
-                    "💳 Pay with Razorpay";
-
-                    paymentStatus.textContent =
-                    "";
-
-                }
-
-            }
-
-        };
-
-
-
-        /* =================================
-           OPEN RAZORPAY
-           ================================= */
-
-        const razorpay =
-        new Razorpay(
-            options
-        );
-
-
-        razorpay.open();
-
-
-        payButton.textContent =
-        "Waiting for Payment...";
-
-
-    }
-
-    catch(error){
-
-        console.error(
-            "RAZORPAY ERROR:",
-            error
-        );
-
-
-        paymentStatus.style.color =
-        "#dc2626";
-
-
-        paymentStatus.textContent =
-        "Payment could not be started.";
-
-
-        alert(
-            "Payment could not be started:\n\n" +
-            error.message
-        );
-
-
-        payButton.disabled =
-        false;
-
-
-        payButton.textContent =
-        "💳 Pay with Razorpay";
-
-    }
-
-};
-
-
-
-/* =========================================
-   VERIFY PAYMENT
-   ========================================= */
-
-async function verifyPayment(
-
-    paymentResponse,
-
-    customerData
-
-){
-
-    try{
-
-        paymentStatus.style.color =
-        "#1e40af";
-
-
-        paymentStatus.textContent =
-        "Verifying payment...";
-
-
-        const response =
-        await fetch(
-            VERIFY_PAYMENT_URL,
-            {
-
-                method:
-                "POST",
-
-                headers:{
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body:
-                JSON.stringify({
-
-                    razorpay_order_id:
-                    paymentResponse
-                    .razorpay_order_id,
-
-                    razorpay_payment_id:
-                    paymentResponse
-                    .razorpay_payment_id,
-
-                    razorpay_signature:
-                    paymentResponse
-                    .razorpay_signature,
-
-
-                    orderData:{
-
-                        customerName:
-                        customerData.name,
-
-                        customerPhone:
-                        customerData.phone,
-
-                        amount:
-                        customerData.amount
-
-                    }
-
-                })
-
-            }
-        );
-
-
-
-        const data =
-        await response.json();
-
-
-
-        if(
-            !response.ok ||
-            !data.success
-        ){
-
-            throw new Error(
-                data.message ||
-                "Payment verification failed."
-            );
-
-        }
-
-
-
-        /* =================================
-           SUCCESS
-           ================================= */
-
-        paymentStatus.textContent =
-        "";
-
-
-        successMessage.style.display =
-        "block";
-
-
-        successMessage.innerHTML =
-
-            "🎉 Payment Successful!<br><br>" +
-
-            "Order ID: " +
-
-            (
-                data.orderId ||
-                paymentResponse
-                .razorpay_order_id
-            );
-
-
-
-        document
-        .getElementById(
-            "customerName"
-        )
-        .value = "";
-
-
-        document
-        .getElementById(
-            "customerPhone"
-        )
-        .value = "";
-
-
-        document
-        .getElementById(
-            "paymentAmount"
-        )
-        .value = "";
-
-
-        alert(
-
-            "🎉 Payment successful!\n\n" +
-
-            "Order ID: " +
-
-            (
-                data.orderId ||
-                paymentResponse
-                .razorpay_order_id
-            )
-
-        );
-
-
-    }
-
-    catch(error){
-
-        console.error(
-            "VERIFY PAYMENT ERROR:",
-            error
-        );
-
-
-        paymentStatus.style.color =
-        "#dc2626";
-
-
-        paymentStatus.textContent =
-        "Payment verification failed.";
-
-
-        alert(
-
-            "Payment was completed, " +
-            "but verification failed.\n\n" +
-
-            "Please contact iCare Mukkam."
-
-        );
-
-    }
-
-
-    finally{
-
-        payButton.disabled =
-        false;
-
-
-        payButton.textContent =
-        "💳 Pay with Razorpay";
-
-    }
-
-}
-
-</script>
-
-
 </body>
 
 </html>
-```
