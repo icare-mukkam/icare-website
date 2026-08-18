@@ -209,7 +209,6 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="cart-bottom"><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div><button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button></div>
 </div></div>
 
-<!-- ACCOUNT / LOGIN / REGISTER -->
 <div id="accountModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2 id="authTitle">Customer Login</h2><button class="close" onclick="closeAccount()">×</button></div>
@@ -227,6 +226,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="form-group"><label>Email</label><input id="loginEmail" type="email" autocomplete="email" placeholder="Your email address"></div>
 <div class="form-group"><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Your password"></div>
 <button id="loginBtn" class="primary-btn" onclick="loginCustomer()">Login</button>
+<button type="button" class="secondary-btn" style="margin-top:10px" onclick="resetCustomerPassword()">Forgot Password / Reset Password</button>
 <p class="auth-note">Login is required before checkout. Your account lets you use the same customer account for future orders.</p>
 </div>
 
@@ -236,7 +236,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="form-group"><label>Password</label><input id="registerPassword" type="password" autocomplete="new-password" placeholder="Minimum 6 characters"></div>
 <div class="form-group"><label>Confirm Password</label><input id="registerPassword2" type="password" autocomplete="new-password" placeholder="Re-enter password"></div>
 <button id="registerBtn" class="primary-btn" onclick="registerCustomer()">Create Account</button>
-<p class="auth-note">Your email and password are handled by Firebase Authentication. Never put a Firebase Admin/private key in this HTML file.</p>
+
 </div>
 </div>
 
@@ -244,14 +244,13 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="auth-avatar">👤</div>
 <h3 id="accountName">Customer</h3>
 <p id="accountEmail" class="auth-note"></p>
-<button class="secondary-btn" onclick="continueToCheckout()">Continue to Checkout</button>
+<button class="secondary-btn" onclick="continueToCheckout()">Forward</button>
 <br><br>
 <button class="primary-btn" onclick="logoutCustomer()">Logout</button>
 </div>
 </div>
 </div>
 
-<!-- CHECKOUT -->
 <div id="checkoutModal" class="modal">
 <div class="modal-box"><div class="modal-header"><h2>Customer Details</h2><button class="close" onclick="closeCheckout()">×</button></div>
 <div class="form-group"><label>Name</label><input id="customerName" type="text" placeholder="Your name"></div>
@@ -274,7 +273,8 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    updateProfile
+    updateProfile,
+    sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -309,7 +309,8 @@ function authErrorMessage(error){
         "auth/email-already-in-use":"An account already exists with this email.",
         "auth/weak-password":"Password must be at least 6 characters.",
         "auth/network-request-failed":"Network error. Please check your internet connection.",
-        "auth/too-many-requests":"Too many attempts. Please wait and try again."
+        "auth/too-many-requests":"Too many attempts. Please wait and try again.",
+        "auth/operation-not-allowed":"Email/Password sign-in is not enabled in Firebase Authentication."
     };
     return messages[code] || error?.message || "Something went wrong. Please try again.";
 }
@@ -317,9 +318,18 @@ function authErrorMessage(error){
 function showAuthMessage(type,message){
     const error=document.getElementById("authError");
     const success=document.getElementById("authSuccess");
-    error.style.display="none"; success.style.display="none";
-    if(type==="error"){error.textContent=message;error.style.display="block"}
-    else{success.textContent=message;success.style.display="block"}
+    error.style.display="none";
+    success.style.display="none";
+    error.textContent="";
+    success.textContent="";
+    if(!message) return;
+    if(type==="error"){
+        error.textContent=message;
+        error.style.display="block";
+    }else{
+        success.textContent=message;
+        success.style.display="block";
+    }
 }
 
 window.showAuthForm=function(type){
@@ -388,6 +398,26 @@ window.loginCustomer=async function(){
     finally{btn.disabled=false;btn.textContent="Login"}
 };
 
+window.resetCustomerPassword=async function(){
+    const email=document.getElementById("loginEmail").value.trim();
+    if(!email){
+        showAuthMessage("error","Please enter your email address first.");
+        document.getElementById("loginEmail").focus();
+        return;
+    }
+    try{
+        await sendPasswordResetEmail(auth,email);
+        showAuthMessage("success","Password reset link has been sent to your email. Please check your inbox and spam folder.");
+    }catch(error){
+        const code=error?.code||"";
+        if(code==="auth/user-not-found"){
+            showAuthMessage("error","No account was found with this email.");
+        }else{
+            showAuthMessage("error",authErrorMessage(error));
+        }
+    }
+};
+
 window.logoutCustomer=async function(){
     try{await signOut(auth);closeAccount();alert("You have been logged out.")}catch(error){alert(authErrorMessage(error))}
 };
@@ -421,9 +451,19 @@ async function loadProducts(){
         status.textContent=allProducts.length+" product(s) available.";
         renderProducts(currentProducts);
     }catch(error){
-        console.error("Firebase error:",error);
+        console.error("Firebase Firestore error:",error);
         status.textContent="Unable to load products.";
-        container.innerHTML='<div class="loading">❌ Products could not be loaded.<br><br>Please check Firebase Firestore rules and products collection.</div>';
+        let message="Products could not be loaded.";
+        if(error?.code==="permission-denied"){
+            message="❌ Firestore permission denied.<br><br>Set the <b>products</b> collection to allow public read access.";
+        }else if(error?.code==="failed-precondition"){
+            message="❌ Firestore database/index configuration problem.";
+        }else if(error?.code==="unavailable"){
+            message="❌ Firebase is temporarily unavailable. Please try again.";
+        }else{
+            message="❌ Products could not be loaded.<br><br><small>"+escapeHtml(error?.message||"Unknown Firebase error")+"</small>";
+        }
+        container.innerHTML='<div class="loading">'+message+'</div>';
     }
 }
 
