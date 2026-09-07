@@ -152,6 +152,34 @@ nav a:hover {
     transform: scale(1.02);
 }
 
+/* Book Service Button - Hero Section */
+.book-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #ff5a00;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 2px solid #ff5a00;
+    animation: pulse 2s infinite;
+}
+
+.book-btn:hover {
+    background: #ff5a00;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Pulse Animation - attracts attention */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 90, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 90, 0, 0); }
+}
+
 
 /* =========================================
    SECTION TITLE
@@ -293,6 +321,74 @@ section {
 
 
 /* =========================================
+   TECHNICIANS
+   ========================================= */
+
+.technician-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tech-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 90, 0, 0.1);
+    border-color: #ff5a00;
+}
+
+.tech-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff5a00;
+    margin-bottom: 12px;
+}
+
+.tech-card h3 {
+    color: #07182f;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.tech-card .tech-area {
+    color: #ff5a00;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tech-card .tech-exp {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.tech-card .tech-desc {
+    color: #4b5563;
+    font-size: 13px;
+    margin: 8px 0;
+    min-height: 40px;
+}
+
+.tech-card .tech-contact {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+
+/* =========================================
    ABOUT
    ========================================= */
 
@@ -398,6 +494,9 @@ footer p {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    .technician-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 850px) {
@@ -406,6 +505,10 @@ footer p {
     }
 
     .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .technician-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -423,6 +526,17 @@ footer p {
     #home h2 {
         font-size: 32px;
     }
+
+    /* Hero buttons stack on mobile */
+    #home div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #home div a {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 500px) {
@@ -431,6 +545,10 @@ footer p {
     }
 
     .services {
+        grid-template-columns: 1fr;
+    }
+
+    .technician-grid {
         grid-template-columns: 1fr;
     }
 
@@ -452,7 +570,8 @@ footer p {
     }
 
     .btn-primary,
-    .btn {
+    .btn,
+    .book-btn {
         padding: 12px 20px;
         font-size: 14px;
     }
