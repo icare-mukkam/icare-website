@@ -80,7 +80,7 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .product-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.09)}
 .product-image{height:220px;padding:0;display:flex;align-items:center;justify-content:center;background:#f8fafc;position:relative;overflow:hidden}
 .product-image .slide{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.product-image .slide img{width:100%;height:100%;object-fit:contain;padding:10px}
+.product-image .slide img{width:100%;height:100%;object-fit:contain;padding:10px;cursor:pointer}
 .slide-prev,.slide-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);color:white;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:18px;z-index:5;display:flex;align-items:center;justify-content:center;transition:.2s}
 .slide-prev:hover,.slide-next:hover{background:#ff5a00}
 .slide-prev{left:5px}.slide-next{right:5px}
@@ -133,6 +133,24 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .tech-card .tech-exp{color:#6b7280;font-size:13px}
 .tech-card .tech-desc{color:#4b5563;font-size:13px;margin:8px 0;min-height:40px}
 .tech-card .tech-contact{background:#f1f5f9;padding:6px 12px;border-radius:20px;font-size:13px;display:inline-block}
+/* ===== GALLERY MODAL ===== */
+.gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
+.gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
+.gallery-box .modal-header h2{color:white;font-size:20px}
+.gallery-box .modal-header .close{color:white;font-size:28px}
+.gallery-container{position:relative;width:100%;height:450px;overflow:hidden;border-radius:12px;background:#0d0d1a}
+.gallery-slider{display:flex;width:100%;height:100%;transition:transform 0.4s ease}
+.gallery-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:20px}
+.gallery-slide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.gallery-prev,.gallery-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer;transition:0.3s;z-index:10;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}
+.gallery-prev:hover,.gallery-next:hover{background:#ff5a00;transform:translateY(-50%) scale(1.1)}
+.gallery-prev{left:10px}.gallery-next{right:10px}
+.gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:15px;padding:5px 0}
+.gallery-dot{width:10px;height:10px;border-radius:50%;background:#4a4a6a;cursor:pointer;transition:0.3s;border:none}
+.gallery-dot.active{background:#ff5a00;transform:scale(1.3)}
+.gallery-dot:hover{background:#ff5a00}
+.gallery-counter{text-align:center;color:#94a3b8;font-size:14px;margin-top:8px}
+@media(max-width:600px){.gallery-container{height:300px}.gallery-prev,.gallery-next{width:32px;height:32px;font-size:16px}.gallery-box{padding:12px!important}}
 footer{background:#07182f;color:white;padding:45px 5%}.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
 footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0}footer p{color:#cbd5e1}
 .copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8}
@@ -390,6 +408,25 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
     </div>
 </div>
 
+<!-- ========== GALLERY MODAL (NEW) ========== -->
+<div id="galleryModal" class="modal" onclick="closeGalleryOutside(event)">
+    <div class="modal-box gallery-box">
+        <div class="modal-header">
+            <h2 id="galleryTitle">Product Gallery</h2>
+            <button class="close" onclick="closeGallery()">×</button>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+                <!-- Images will be loaded here -->
+            </div>
+            <button class="gallery-prev" onclick="galleryPrev()">‹</button>
+            <button class="gallery-next" onclick="galleryNext()">›</button>
+        </div>
+        <div class="gallery-dots" id="galleryDots"></div>
+        <div class="gallery-counter" id="galleryCounter">1 / 1</div>
+    </div>
+</div>
+
 <a class="whatsapp" href="https://wa.me/919447150744" target="_blank">💬</a>
 <a class="call" href="tel:+919447667744">📞</a>
 
@@ -431,6 +468,112 @@ let pendingCheckout = false;
 const $ = id => document.getElementById(id);
 const productStatus = $('productStatus');
 const productsContainer = $('products');
+
+// ========== GALLERY FUNCTIONS (NEW) ==========
+let galleryImages = [];
+let galleryCurrentIndex = 0;
+
+window.openGallery = function(productId) {
+    const product = allProducts.find(p => p.id === productId);
+    if (!product) {
+        alert('Product not found');
+        return;
+    }
+
+    if (product.images && Array.isArray(product.images) && product.images.length > 0) {
+        galleryImages = product.images;
+    } else if (product.image && product.image !== '' && product.image !== 'logo.png') {
+        galleryImages = [product.image];
+    } else {
+        galleryImages = ['logo.png'];
+    }
+
+    galleryCurrentIndex = 0;
+    document.getElementById('galleryTitle').textContent = product.name || 'Product Gallery';
+    document.getElementById('galleryModal').style.display = 'flex';
+    renderGallery();
+};
+
+window.closeGallery = function() {
+    document.getElementById('galleryModal').style.display = 'none';
+};
+
+window.closeGalleryOutside = function(event) {
+    if (event.target.id === 'galleryModal') {
+        closeGallery();
+    }
+};
+
+function renderGallery() {
+    const slider = document.getElementById('gallerySlider');
+    const dots = document.getElementById('galleryDots');
+    const counter = document.getElementById('galleryCounter');
+
+    slider.innerHTML = '';
+    galleryImages.forEach((img, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'gallery-slide';
+        slide.style.transform = `translateX(${index * 100}%)`;
+        slide.innerHTML = `<img src="${escapeHtml(img)}" alt="Product Image ${index + 1}" onerror="this.src='logo.png'">`;
+        slider.appendChild(slide);
+    });
+
+    updateGalleryPosition();
+
+    dots.innerHTML = '';
+    galleryImages.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = `gallery-dot ${index === galleryCurrentIndex ? 'active' : ''}`;
+        dot.onclick = () => goToGallery(index);
+        dots.appendChild(dot);
+    });
+
+    counter.textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
+}
+
+function updateGalleryPosition() {
+    const slider = document.getElementById('gallerySlider');
+    const slides = slider.querySelectorAll('.gallery-slide');
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${(index - galleryCurrentIndex) * 100}%)`;
+    });
+
+    const dots = document.querySelectorAll('.gallery-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === galleryCurrentIndex);
+    });
+
+    document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
+}
+
+window.galleryNext = function() {
+    if (galleryCurrentIndex < galleryImages.length - 1) {
+        galleryCurrentIndex++;
+        updateGalleryPosition();
+    }
+};
+
+window.galleryPrev = function() {
+    if (galleryCurrentIndex > 0) {
+        galleryCurrentIndex--;
+        updateGalleryPosition();
+    }
+};
+
+window.goToGallery = function(index) {
+    if (index >= 0 && index < galleryImages.length) {
+        galleryCurrentIndex = index;
+        updateGalleryPosition();
+    }
+};
+
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById('galleryModal').style.display === 'flex') {
+        if (e.key === 'ArrowRight') galleryNext();
+        if (e.key === 'ArrowLeft') galleryPrev();
+        if (e.key === 'Escape') closeGallery();
+    }
+});
 
 // ========== DROPDOWN TOGGLE ==========
 window.toggleDropdown = function() {
@@ -487,7 +630,6 @@ window.submitBooking = async function() {
     btn.textContent = 'Submitting...';
 
     try {
-        // ===== SAVE TO FIRESTORE =====
         await addDoc(collection(db, "bookings"), {
             name: name,
             phone: phone,
@@ -500,30 +642,29 @@ window.submitBooking = async function() {
             createdAt: new Date()
         });
 
-// ===== SEND EMAIL NOTIFICATION VIA EMAILJS =====
-try {
-    const templateParams = {
-        customer_name: name,
-        customer_phone: phone,
-        customer_email: email || 'Not provided',
-        customer_address: address,
-        service_type: service,
-        description: description || 'No description',
-        booking_date: new Date().toLocaleString('en-IN', { 
-            day: '2-digit', 
-            month: 'short', 
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        })
-    };
+        try {
+            const templateParams = {
+                customer_name: name,
+                customer_phone: phone,
+                customer_email: email || 'Not provided',
+                customer_address: address,
+                service_type: service,
+                description: description || 'No description',
+                booking_date: new Date().toLocaleString('en-IN', { 
+                    day: '2-digit', 
+                    month: 'short', 
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
 
-    await emailjs.send('service_qw9w2il', 'template_955n8pp', templateParams);
-    console.log('✅ Email sent successfully!');
-} catch (emailError) {
-    console.error('❌ Email error:', emailError);
-    // Email fails, but booking still saved
-}
+            await emailjs.send('service_qw9w2il', 'template_955n8pp', templateParams);
+            console.log('✅ Email sent successfully!');
+        } catch (emailError) {
+            console.error('❌ Email error:', emailError);
+        }
+
         msg.textContent = '✅ Booking submitted successfully! We will contact you soon.';
         msg.className = 'msg success';
         msg.style.display = 'block';
@@ -973,7 +1114,9 @@ function renderProducts(list) {
             const displayStyle = idx === 0 ? 'flex' : 'none';
             slidesHtml += `
                 <div class="slide" data-index="${idx}" style="display:${displayStyle};width:100%;height:100%;align-items:center;justify-content:center;">
-                    <img src="${escapeHtml(img)}" alt="${escapeHtml(p.name)}" onerror="this.src='logo.png'" style="max-width:100%;max-height:100%;object-fit:contain;padding:10px;">
+                    <img src="${escapeHtml(img)}" alt="${escapeHtml(p.name)}" 
+                         onclick="openGallery('${p.id}')" 
+                         style="cursor:pointer; max-width:100%; max-height:100%; object-fit:contain; padding:10px;">
                 </div>
             `;
             dotsHtml += `<span class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" onclick="changeProductImage(this)"></span>`;
