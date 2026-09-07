@@ -500,31 +500,30 @@ window.submitBooking = async function() {
             createdAt: new Date()
         });
 
-        // ===== SEND EMAIL NOTIFICATION VIA EMAILJS =====
-        try {
-            const templateParams = {
-                customer_name: name,
-                customer_phone: phone,
-                customer_email: email || 'Not provided',
-                customer_address: address,
-                service_type: service,
-                description: description || 'No description',
-                booking_date: new Date().toLocaleString('en-IN', { 
-                    day: '2-digit', 
-                    month: 'short', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                })
-            };
+// ===== SEND EMAIL NOTIFICATION VIA EMAILJS =====
+try {
+    const templateParams = {
+        customer_name: name,
+        customer_phone: phone,
+        customer_email: email || 'Not provided',
+        customer_address: address,
+        service_type: service,
+        description: description || 'No description',
+        booking_date: new Date().toLocaleString('en-IN', { 
+            day: '2-digit', 
+            month: 'short', 
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        })
+    };
 
-            await emailjs.send('service_xmt4jfd', 'template_955n8pp', templateParams);
-            console.log('✅ Email sent successfully!');
-        } catch (emailError) {
-            console.error('❌ Email error:', emailError);
-            // Email fails, but booking still saved
-        }
-
+    await emailjs.send('service_qw9w2il', 'template_955n8pp', templateParams);
+    console.log('✅ Email sent successfully!');
+} catch (emailError) {
+    console.error('❌ Email error:', emailError);
+    // Email fails, but booking still saved
+}
         msg.textContent = '✅ Booking submitted successfully! We will contact you soon.';
         msg.className = 'msg success';
         msg.style.display = 'block';
