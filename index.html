@@ -1877,4 +1877,74 @@ displayCart();
 document.getElementById('searchInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') window.searchCurrentTab(); });
 </script>
 </body>
+.order-card{border:1px solid #e5e7eb;border-radius:10px;padding:15px;margin-bottom:15px}
+</style>
+</head>
+<body>
+
+<!-- ================= fixG Legal Footer Start ================= -->
+<footer style="background-color: #07182f; color: #ffffff; padding: 30px 20px; font-family: Arial, sans-serif; text-align: center; border-top: 1px solid #29405c;">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <p style="margin-bottom: 12px; font-size: 14px; color: #cbd5e1;">
+      &copy; 2026 <strong>fixG</strong>. All rights reserved. | Mobiles, Laptops, Accessories & Service, Mukkam
+    </p>
+    
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 13px;">
+      <a href="javascript:void(0)" onclick="openFixgModal('privacy')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Privacy Policy</a> |
+      <a href="javascript:void(0)" onclick="openFixgModal('terms')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Terms & Conditions</a> |
+      <a href="javascript:void(0)" onclick="openFixgModal('refund')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Cancellation & Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Legal Pop-up Modal Window -->
+<div id="fixgLegalModal" style="display: none; position: fixed; z-index: 999999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); overflow: auto;">
+  <div style="background-color: #ffffff; color: #111827; margin: 6% auto; padding: 25px; border-radius: 12px; width: 90%; max-width: 650px; position: relative; font-family: Arial, sans-serif; text-align: left; line-height: 1.6; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <span onclick="closeFixgModal()" style="position: absolute; right: 20px; top: 12px; font-size: 28px; font-weight: bold; cursor: pointer; color: #6b7280;">&times;</span>
+    <div id="fixgModalContent"></div>
+  </div>
+</div>
+
+<script>
+  const fixgLegalTexts = {
+    privacy: `
+      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Privacy Policy</h2>
+      <p>At <strong>fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p>
+      <p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>
+    `,
+    terms: `
+      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Terms & Conditions</h2>
+      <p><strong>1. Scope of Service:</strong> fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p>
+      <p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. fixG is not responsible for any accidental data loss during the service process.</p>
+      <p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p>
+      <p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>
+    `,
+    refund: `
+      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Cancellation & Refund Policy</h2>
+      <p><strong>1. Cancellations:</strong> Service bookings can be cancelled free of cost before our technician initiates work on your device.</p>
+      <p><strong>2. Refunds:</strong> If an advance payment was made online via Razorpay and the order/service is cancelled prior to processing, eligible refunds will be credited back to your original payment method within 5 to 7 business days.</p>
+      <p><strong>3. Warranty Policy:</strong> Replaced spare parts carry specific warranty terms as printed on the official bill. Warranty covers manufacturing defects only and excludes physical damage, screen breakage, or liquid damage caused after delivery.</p>
+    `
+  };
+
+  function openFixgModal(type) {
+    document.getElementById('fixgModalContent').innerHTML = fixgLegalTexts[type];
+    document.getElementById('fixgLegalModal').style.display = 'block';
+  }
+
+  function closeFixgModal() {
+    document.getElementById('fixgLegalModal').style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById('fixgLegalModal');
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
+<!-- ================= fixG Legal Footer End ================= -->
+
+</body>
 </html>
+
