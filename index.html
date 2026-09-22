@@ -4,12 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>fixG | Mobiles, Laptops, Accessories & Service</title>
-<meta name="description" content="fixG - Mobiles, laptops, accessories and professional repair service.">
-
-<!-- ===== EMAILJS SDK ===== -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-
+<meta name="description" content="fixG - Mobiles, laptops, accessories and professional repair service in Mukkam, Kozhikode, Kerala.">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -30,7 +26,6 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .user-action{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .navbar{border-top:1px solid #eee}
 .nav-inner{max-width:1400px;margin:auto;padding:0 4%;display:flex;align-items:center;overflow-x:auto;gap:5px}
-/* ---- DROPDOWN ---- */
 .dropdown{position:relative;display:inline-block}
 .dropbtn{background:#ff5a00!important;color:white!important;border:none;padding:14px 18px;font-weight:bold;font-size:14px;border-radius:6px 6px 0 0;cursor:pointer;transition:.2s}
 .dropbtn:hover{background:#e84d00!important}
@@ -111,13 +106,16 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .modal-box.wide{max-width:800px}
 .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .form-group{margin-bottom:14px}.form-group label{display:block;font-weight:bold;margin-bottom:5px}
-.form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:7px;font-size:15px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:7px;font-size:15px}
 .form-group textarea{min-height:90px}
 .auth-tabs{display:flex;gap:8px;margin-bottom:20px}.auth-tab{flex:1;padding:11px;border:1px solid #ddd;background:#f8fafc;border-radius:7px;font-weight:bold;cursor:pointer}
 .auth-tab.active{background:#ff5a00;color:white;border-color:#ff5a00}
 .auth-note{font-size:13px;color:#6b7280;margin:10px 0 15px;line-height:1.5}
 .auth-error{display:none;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;padding:10px;border-radius:7px;margin-bottom:12px;font-size:13px}
 .auth-success{display:none;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;padding:10px;border-radius:7px;margin-bottom:12px;font-size:13px}
+.msg{display:none;padding:10px;border-radius:7px;margin-bottom:12px;font-size:13px}
+.msg.error{display:block;background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+.msg.success{display:block;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
 .primary-btn{width:100%;border:0;background:#ff5a00;color:white;padding:13px;border-radius:8px;font-weight:bold;font-size:15px;cursor:pointer}
 .secondary-btn{width:100%;border:1px solid #ff5a00;background:white;color:#ff5a00;padding:12px;border-radius:8px;font-weight:bold;cursor:pointer}
 .auth-user-box{display:none;text-align:center}.auth-avatar{width:70px;height:70px;border-radius:50%;background:#fff1e8;color:#ff5a00;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px}
@@ -133,7 +131,17 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .tech-card .tech-exp{color:#6b7280;font-size:13px}
 .tech-card .tech-desc{color:#4b5563;font-size:13px;margin:8px 0;min-height:40px}
 .tech-card .tech-contact{background:#f1f5f9;padding:6px 12px;border-radius:20px;font-size:13px;display:inline-block}
-/* ===== GALLERY MODAL ===== */
+.service-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-menu-card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;box-shadow:0 4px 14px rgba(7,24,47,.05)}
+.service-menu-card h3{margin:0 0 8px;color:#07182f;font-size:18px}
+.service-menu-card p{margin:0;color:#6b7280;font-size:13.5px;line-height:1.5}
+.service-menu-tag{display:inline-block;margin-top:12px;padding:5px 10px;background:#fff1e9;color:#e63f00;border-radius:999px;font-size:11.5px;font-weight:800}
+.brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.brand-chip{background:white;border:1px solid #e5e7eb;border-radius:10px;padding:14px 10px;text-align:center;font-weight:800;font-size:13px;transition:.2s;cursor:pointer}
+.brand-chip:hover{border-color:#ff5a00;color:#ff5a00;transform:translateY(-2px)}
+.service-menu-section-title{font-size:22px;color:#07182f;margin:30px 0 14px;font-weight:800}
+.service-menu-section-title:first-child{margin-top:0}
+.service-menu-note{background:#fff7f1;border-left:4px solid #ff5a00;padding:14px 16px;border-radius:10px;margin-top:24px;color:#5d3a27;font-size:13.5px}
 .gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
 .gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
 .gallery-box .modal-header h2{color:white;font-size:20px}
@@ -151,236 +159,39 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .gallery-dot:hover{background:#ff5a00}
 .gallery-counter{text-align:center;color:#94a3b8;font-size:14px;margin-top:8px}
 @media(max-width:600px){.gallery-container{height:300px}.gallery-prev,.gallery-next{width:32px;height:32px;font-size:16px}.gallery-box{padding:12px!important}}
-
-/* ===== PRODUCT DETAIL OVERLAY (FULL PAGE) ===== */
-.product-detail-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: 99999;
-    overflow-y: auto;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    backdrop-filter: blur(6px);
-}
-.product-detail-overlay.active {
-    display: flex;
-}
-.product-detail-container {
-    max-width: 1100px;
-    width: 100%;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    animation: fadeInUp 0.4s ease;
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px) scale(0.96); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-}
-.product-detail-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 24px;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-}
-.product-detail-header h2 {
-    font-size: 20px;
-    color: #07182f;
-}
-.detail-close {
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #111827;
-    transition: 0.3s;
-    padding: 0 8px;
-}
-.detail-close:hover {
-    color: #ff5a00;
-    transform: rotate(90deg);
-}
-.product-detail-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 24px;
-    background: white;
-}
-.detail-image-section {
-    position: relative;
-    background: #f8fafc;
-    border-radius: 12px;
-    overflow: hidden;
-    height: 400px;
-}
-.detail-slider {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s ease;
-}
-.detail-slide {
-    min-width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-.detail-slide img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 8px;
-    cursor: zoom-in;
-}
-.detail-prev,
-.detail-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-}
-.detail-prev:hover,
-.detail-next:hover {
-    background: #ff5a00;
-}
-.detail-prev { left: 10px; }
-.detail-next { right: 10px; }
-.detail-dots {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-}
-.detail-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #d1d5db;
-    cursor: pointer;
-    border: none;
-    transition: 0.3s;
-}
-.detail-dot.active {
-    background: #ff5a00;
-    transform: scale(1.3);
-}
-.detail-info-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.detail-info-section h1 {
-    font-size: 28px;
-    color: #07182f;
-    margin-bottom: 8px;
-}
-.detail-info-section #detailDesc {
-    font-size: 16px;
-    color: #6b7280;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-.detail-price {
-    font-size: 32px;
-    font-weight: bold;
-    color: #ff5a00;
-    margin-bottom: 6px;
-}
-.detail-old-price {
-    font-size: 18px;
-    color: #9ca3af;
-    text-decoration: line-through;
-    margin-left: 10px;
-}
-.detail-stock {
-    font-size: 16px;
-    color: #16a34a;
-    margin-bottom: 20px;
-}
-.detail-actions {
-    display: flex;
-    gap: 12px;
-}
-.detail-actions button {
-    flex: 1;
-    padding: 14px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.detail-add-cart {
-    border: 2px solid #ff5a00;
-    background: white;
-    color: #ff5a00;
-}
-.detail-add-cart:hover {
-    background: #fff1e8;
-}
-.detail-buy-now {
-    border: none;
-    background: #ff5a00;
-    color: white;
-}
-.detail-buy-now:hover {
-    background: #e84d00;
-}
-@media (max-width: 800px) {
-    .product-detail-body {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 16px;
-    }
-    .detail-image-section {
-        height: 300px;
-    }
-    .detail-info-section h1 {
-        font-size: 22px;
-    }
-    .detail-price {
-        font-size: 26px;
-    }
-    .detail-actions {
-        flex-direction: column;
-    }
-    .product-detail-overlay {
-        padding: 10px;
-    }
-}
-@media (max-width: 500px) {
-    .detail-image-section {
-        height: 220px;
-    }
-    .product-detail-container {
-        border-radius: 12px;
-    }
-}
-
+.product-detail-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;overflow-y:auto;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.product-detail-overlay.active{display:flex}
+.product-detail-container{max-width:1100px;width:100%;background:white;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6);animation:fadeInUp 0.4s ease}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.product-detail-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
+.product-detail-header h2{font-size:20px;color:#07182f}
+.detail-close{background:none;border:none;font-size:28px;cursor:pointer;color:#111827;transition:0.3s;padding:0 8px}
+.detail-close:hover{color:#ff5a00;transform:rotate(90deg)}
+.product-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:24px;background:white}
+.detail-image-section{position:relative;background:#f8fafc;border-radius:12px;overflow:hidden;height:400px}
+.detail-slider{display:flex;width:100%;height:100%;transition:transform 0.4s ease}
+.detail-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:10px}
+.detail-slide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;cursor:zoom-in}
+.detail-prev,.detail-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:white;border:none;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;z-index:10;transition:0.3s}
+.detail-prev:hover,.detail-next:hover{background:#ff5a00}
+.detail-prev{left:10px}.detail-next{right:10px}
+.detail-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.detail-dot{width:10px;height:10px;border-radius:50%;background:#d1d5db;cursor:pointer;border:none;transition:0.3s}
+.detail-dot.active{background:#ff5a00;transform:scale(1.3)}
+.detail-info-section{display:flex;flex-direction:column;justify-content:center}
+.detail-info-section h1{font-size:28px;color:#07182f;margin-bottom:8px}
+.detail-info-section #detailDesc{font-size:16px;color:#6b7280;line-height:1.7;margin-bottom:16px}
+.detail-price{font-size:32px;font-weight:bold;color:#ff5a00;margin-bottom:6px}
+.detail-old-price{font-size:18px;color:#9ca3af;text-decoration:line-through;margin-left:10px}
+.detail-stock{font-size:16px;color:#16a34a;margin-bottom:20px}
+.detail-actions{display:flex;gap:12px}
+.detail-actions button{flex:1;padding:14px;border-radius:8px;font-weight:bold;font-size:16px;cursor:pointer;transition:0.3s}
+.detail-add-cart{border:2px solid #ff5a00;background:white;color:#ff5a00}
+.detail-add-cart:hover{background:#fff1e8}
+.detail-buy-now{border:none;background:#ff5a00;color:white}
+.detail-buy-now:hover{background:#e84d00}
+@media(max-width:800px){.product-detail-body{grid-template-columns:1fr;gap:20px;padding:16px}.detail-image-section{height:300px}.detail-info-section h1{font-size:22px}.detail-price{font-size:26px}.detail-actions{flex-direction:column}.product-detail-overlay{padding:10px}}
+@media(max-width:500px){.detail-image-section{height:220px}.product-detail-container{border-radius:12px}}
 footer{background:#07182f;color:white;padding:45px 5%}.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
 footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0}footer p{color:#cbd5e1}
 .copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8}
@@ -393,13 +204,14 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 .order-card .order-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .order-card .order-items{font-size:14px;color:#4b5563;margin-top:4px}
 .order-card .order-address{font-size:13px;color:#6b7280;margin-top:6px}
-@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
 .topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo{min-width:auto}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
 .hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:38px}.hero-devices{font-size:70px;bottom:10px;opacity:.35}
 .features{grid-template-columns:repeat(2,1fr);padding:0 12px}.categories{grid-template-columns:repeat(4,1fr)}.banners{grid-template-columns:1fr}#shop .products-grid{grid-template-columns:repeat(2,1fr)}
 .section{padding:40px 15px}.service-grid{grid-template-columns:1fr}.technician-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
 .order-card .order-details{grid-template-columns:1fr}
+.service-menu-grid{grid-template-columns:1fr}.brand-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:480px){
 .categories{grid-template-columns:repeat(3,1fr)}#shop .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}.product-image{height:150px}.product-info{padding:10px}.product-name{font-size:14px}.price{font-size:17px}.product-actions{flex-direction:column}
@@ -417,16 +229,15 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <header>
 <div class="main-header">
 <a href="#home" class="logo">
-  <svg viewBox="0 0 220 75" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="fixGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff6a00"/><stop offset="100%" stop-color="#e63f00"/></linearGradient></defs>
-    <g transform="translate(8,5) rotate(12)"><rect x="0" y="0" width="25" height="42" rx="5" fill="none" stroke="#ff5a00" stroke-width="5"/><circle cx="12.5" cy="35" r="2" fill="#ff5a00"/></g>
-    <text x="38" y="51" font-family="Arial Black,Arial,sans-serif" font-size="48" font-weight="900" letter-spacing="-4">
-      <tspan fill="#1e3a8a">fix</tspan><tspan fill="url(#fixGradient)">G</tspan>
-    </text>
-  </svg>
+<svg viewBox="0 0 220 75" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="fixGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff6a00"/><stop offset="100%" stop-color="#e63f00"/></linearGradient></defs>
+<g transform="translate(8,5) rotate(12)"><rect x="0" y="0" width="25" height="42" rx="5" fill="none" stroke="#ff5a00" stroke-width="5"/><circle cx="12.5" cy="35" r="2" fill="#ff5a00"/></g>
+<text x="38" y="51" font-family="Arial Black,Arial,sans-serif" font-size="48" font-weight="900" letter-spacing="-4">
+<tspan fill="#1e3a8a">fix</tspan><tspan fill="url(#fixGradient)">G</tspan>
+</text>
+</svg>
 </a>
 <div class="search-box"><input id="searchInput" type="search" placeholder="Search current tab..."><button onclick="searchCurrentTab()">🔍</button></div>
-
 <div class="header-actions">
 <button class="header-action" onclick="scrollToSection('shop')"><span>🛍️</span>Shop</button>
 <button class="header-action" id="myOrdersBtn" onclick="openMyOrders()" style="display:none;"><span>📋</span>My Orders</button>
@@ -437,42 +248,44 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 
 <div class="navbar"><div class="nav-inner">
-  <div class="dropdown">
-    <button class="dropbtn" onclick="toggleDropdown()">☰ All Categories</button>
-    <div id="categoryDropdown" class="dropdown-content">
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Mobile')">📱 Mobiles</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Laptop')">💻 Laptops</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Tablet')">📲 Tablets</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Watch')">⌚ Smart Watch</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Earbud')">🎧 Earbuds</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('Accessory')">🔌 Accessories</a>
-      <a href="#shop" onclick="switchTab('products'); filterCategory('TV')">📺 TV & Audio</a>
-      <a href="#shop" onclick="switchTab('parts')">🧩 Spare Parts</a>
-      <a href="#shop" onclick="switchTab('services')">🔧 Services</a>
-      <a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
-    </div>
-  </div>
-  <a href="#shop" onclick="switchTab('products')">Products</a>
-  <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
-  <a href="#shop" onclick="switchTab('services')">Services</a>
-  <a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
+<div class="dropdown">
+<button class="dropbtn" onclick="toggleDropdown()">☰ All Categories</button>
+<div id="categoryDropdown" class="dropdown-content">
+<a href="#shop" onclick="switchTab('products'); filterCategory('Mobile')">📱 Mobiles</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('Laptop')">💻 Laptops</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('Tablet')">📲 Tablets</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('Watch')">⌚ Smart Watch</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('Earbud')">🎧 Earbuds</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('Accessory')">🔌 Accessories</a>
+<a href="#shop" onclick="switchTab('products'); filterCategory('TV')">📺 TV & Audio</a>
+<a href="#shop" onclick="switchTab('parts')">🧩 Spare Parts</a>
+<a href="#shop" onclick="switchTab('services')">🔧 Services</a>
+<a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
+<a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
+</div>
+</div>
+<a href="#shop" onclick="switchTab('products')">Products</a>
+<a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
+<a href="#shop" onclick="switchTab('services')">Services</a>
+<a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
+<a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
 </div></div>
 </header>
 
 <section id="home" class="hero">
-  <div class="hero-box">
-    <div class="hero-content">
-      <small>WELCOME TO fixG</small>
-      <h1>YOUR TECH.<br><strong>OUR CARE.</strong></h1>
-      <p>Mobiles | Laptops | Accessories | Spare Parts | Repair</p>
-      <div class="hero-buttons">
-        <a class="shop-btn" href="#shop">🛍️ Shop Now →</a>
-        <a class="service-btn" href="#services">🔧 Our Services</a>
-        <a class="book-btn" href="#" onclick="openBooking(); return false;">📅 Book Service</a>
-      </div>
-    </div>
-    <div class="hero-devices">📱 💻 ⌚ 🎧</div>
-  </div>
+<div class="hero-box">
+<div class="hero-content">
+<small>WELCOME TO fixG</small>
+<h1>YOUR TECH.<br><strong>OUR CARE.</strong></h1>
+<p>Mobiles | Laptops | Accessories | Spare Parts | Repair</p>
+<div class="hero-buttons">
+<a class="shop-btn" href="#shop">🛍️ Shop Now →</a>
+<a class="service-btn" href="#services">🔧 Our Services</a>
+<a class="book-btn" href="#" onclick="openBooking(); return false;">📅 Book Service</a>
+</div>
+</div>
+<div class="hero-devices">📱 💻 ⌚ 🎧</div>
+</div>
 </section>
 
 <div class="features">
@@ -492,7 +305,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="category" onclick="filterCategory('Accessory')"><div class="category-icon">🔌</div><p>Accessories</p></div>
 <div class="category" onclick="filterCategory('TV')"><div class="category-icon">📺</div><p>TV & Audio</p></div>
 <div class="category" onclick="switchTab('parts')"><div class="category-icon">🧩</div><p>Spare Parts</p></div>
-<div class="category" onclick="switchTab('services')"><div class="category-icon">🔧</div><p>Repair Services</p></div>
+<div class="category" onclick="switchTab('servicemenu')"><div class="category-icon">📋</div><p>Service Menu</p></div>
 </div></section>
 
 <section class="section"><div class="banners">
@@ -503,14 +316,13 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 
 <section id="shop" class="section">
 <div class="section-head"><h2>Store</h2><a href="#shop" class="view-all" onclick="clearFilters()">View All →</a></div>
-
 <div class="shop-tabs">
 <button class="shop-tab active" data-tab="products" onclick="switchTab('products')">📦 Products</button>
 <button class="shop-tab" data-tab="parts" onclick="switchTab('parts')">🧩 Spare Parts</button>
 <button class="shop-tab" data-tab="services" onclick="switchTab('services')">🔧 Services</button>
+<button class="shop-tab" data-tab="servicemenu" onclick="switchTab('servicemenu')">📋 Service Menu</button>
 <button class="shop-tab" data-tab="technicians" onclick="switchTab('technicians')">👨‍🔧 Technicians</button>
 </div>
-
 <div id="productStatus" style="margin-bottom:15px;color:#6b7280">Loading...</div>
 <div id="products" class="products-grid"><div class="loading">Loading...</div></div>
 </section>
@@ -531,21 +343,22 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 
 <footer><div class="footer-grid">
 <div><h3>fixG</h3><p>Mobiles | Laptops | Accessories | Spare Parts | Service</p><br><p>Professional technology products and repair services.</p></div>
-<div><h3>Shop</h3><a href="#shop" onclick="switchTab('products')">Products</a><a href="#shop" onclick="switchTab('parts')">Spare Parts</a><a href="#shop" onclick="switchTab('services')">Services</a><a href="#shop" onclick="switchTab('technicians')">Technicians</a></div>
+<div><h3>Shop</h3><a href="#shop" onclick="switchTab('products')">Products</a><a href="#shop" onclick="switchTab('parts')">Spare Parts</a><a href="#shop" onclick="switchTab('services')">Services</a><a href="#shop" onclick="switchTab('servicemenu')">Service Menu</a><a href="#shop" onclick="switchTab('technicians')">Technicians</a></div>
 <div>
-  <h3>Support</h3>
-  <a href="https://wa.me/919447150744?text=Hi%20fixG,%20I%20need%20repair%20service" target="_blank" style="color: inherit; text-decoration: none;">Repair Service</a>
-  <a href="https://wa.me/919447150744" target="_blank" style="color: inherit; text-decoration: none;">WhatsApp</a>
-  <a href="tel:+919447667744" style="color: inherit; text-decoration: none;">Call Us</a>
+<h3>Support</h3>
+<a href="https://wa.me/919447150744?text=Hi%20fixG,%20I%20need%20repair%20service" target="_blank">Repair Service</a>
+<a href="https://wa.me/919447150744" target="_blank">WhatsApp</a>
+<a href="tel:+919447667744">Call Us</a>
 </div>
 <div>
-  <h3>Contact</h3>
-  <p><a href="tel:+919447667744" style="color: inherit; text-decoration: none;">📞 9447667744</a></p>
-  <p><a href="https://wa.me/919447150744" target="_blank" style="color: inherit; text-decoration: none;">💬 9447150744</a></p>
-  <p>📍 Mukkam, Kozhikode</p>
+<h3>Contact</h3>
+<p><a href="tel:+919447667744" style="color:#cbd5e1;">📞 9447667744</a></p>
+<p><a href="https://wa.me/919447150744" target="_blank" style="color:#cbd5e1;">💬 9447150744</a></p>
+<p>📍 Mukkam, Kozhikode</p>
 </div>
-
-</div><div class="copyright">© 2026 fixG. All Rights Reserved.</div></footer>
+</div>
+<div class="copyright">© 2026 fixG. All Rights Reserved. | <a href="javascript:void(0)" onclick="openFixgModal('privacy')" style="color:#ff5a00;display:inline;">Privacy Policy</a> | <a href="javascript:void(0)" onclick="openFixgModal('terms')" style="color:#ff5a00;display:inline;">Terms</a> | <a href="javascript:void(0)" onclick="openFixgModal('refund')" style="color:#ff5a00;display:inline;">Refund Policy</a></div>
+</footer>
 
 <div id="cartOverlay" class="cart-overlay" onclick="closeCartOutside(event)">
 <div class="cart-drawer"><div class="cart-title"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
@@ -596,148 +409,98 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div></div>
 
 <div id="ordersModal" class="modal" onclick="closeOrdersOutside(event)">
-    <div class="modal-box wide">
-        <div class="modal-header">
-            <h2>📋 My Orders</h2>
-            <button class="close" onclick="closeMyOrders()">×</button>
-        </div>
-        <div id="ordersList" style="max-height:60vh;overflow-y:auto;">
-            <p style="color:#6b7280;">Loading your orders...</p>
-        </div>
-    </div>
+<div class="modal-box wide">
+<div class="modal-header"><h2>📋 My Orders</h2><button class="close" onclick="closeMyOrders()">×</button></div>
+<div id="ordersList" style="max-height:60vh;overflow-y:auto;"><p style="color:#6b7280;">Loading your orders...</p></div>
+</div>
 </div>
 
-<!-- ========== BOOKING MODAL ========== -->
 <div id="bookingModal" class="modal">
-    <div class="modal-box">
-        <div class="modal-header">
-            <h2>🔧 Book Repair Service</h2>
-            <button class="close" onclick="closeBooking()">×</button>
-        </div>
-        <div id="bookingMsg" class="msg"></div>
-        <div class="form-group">
-            <label>Full Name</label>
-            <input id="bookName" type="text" placeholder="Your full name">
-        </div>
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input id="bookPhone" type="tel" placeholder="Your phone number">
-        </div>
-        <div class="form-group">
-            <label>Email (optional)</label>
-            <input id="bookEmail" type="email" placeholder="Your email address">
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <textarea id="bookAddress" placeholder="Your complete address"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Service Type</label>
-            <select id="bookService">
-                <option value="Mobile Repair">📱 Mobile Repair</option>
-                <option value="Laptop Repair">💻 Laptop Repair</option>
-                <option value="Screen Replacement">📲 Screen Replacement</option>
-                <option value="Battery Replacement">🔋 Battery Replacement</option>
-                <option value="Software Service">⚙️ Software Service</option>
-                <option value="Other">🔧 Other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Device Details / Description</label>
-            <textarea id="bookDescription" placeholder="Tell us about your device and issue..."></textarea>
-        </div>
-        <button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
-    </div>
+<div class="modal-box">
+<div class="modal-header"><h2>🔧 Book Repair Service</h2><button class="close" onclick="closeBooking()">×</button></div>
+<div id="bookingMsg" class="msg"></div>
+<div class="form-group"><label>Full Name</label><input id="bookName" type="text" placeholder="Your full name"></div>
+<div class="form-group"><label>Phone Number</label><input id="bookPhone" type="tel" placeholder="Your phone number"></div>
+<div class="form-group"><label>Email (optional)</label><input id="bookEmail" type="email" placeholder="Your email address"></div>
+<div class="form-group"><label>Address</label><textarea id="bookAddress" placeholder="Your complete address"></textarea></div>
+<div class="form-group"><label>Service Type</label>
+<select id="bookService">
+<option value="Mobile Repair">📱 Mobile Repair</option>
+<option value="Laptop Repair">💻 Laptop Repair</option>
+<option value="Screen Replacement">📲 Screen Replacement</option>
+<option value="Battery Replacement">🔋 Battery Replacement</option>
+<option value="Software Service">⚙️ Software Service</option>
+<option value="Other">🔧 Other</option>
+</select></div>
+<div class="form-group"><label>Device Details / Description</label><textarea id="bookDescription" placeholder="Tell us about your device and issue..."></textarea></div>
+<button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
+</div>
 </div>
 
-<!-- ========== GALLERY MODAL ========== -->
 <div id="galleryModal" class="modal" onclick="closeGalleryOutside(event)">
-    <div class="modal-box gallery-box">
-        <div class="modal-header">
-            <h2 id="galleryTitle">Product Gallery</h2>
-            <button class="close" onclick="closeGallery()">×</button>
-        </div>
-        <div class="gallery-container">
-            <div class="gallery-slider" id="gallerySlider">
-                <!-- Images will be loaded here -->
-            </div>
-            <button class="gallery-prev" onclick="galleryPrev()">‹</button>
-            <button class="gallery-next" onclick="galleryNext()">›</button>
-        </div>
-        <div class="gallery-dots" id="galleryDots"></div>
-        <div class="gallery-counter" id="galleryCounter">1 / 1</div>
-    </div>
+<div class="modal-box gallery-box">
+<div class="modal-header"><h2 id="galleryTitle">Product Gallery</h2><button class="close" onclick="closeGallery()">×</button></div>
+<div class="gallery-container">
+<div class="gallery-slider" id="gallerySlider"></div>
+<button class="gallery-prev" onclick="galleryPrev()">‹</button>
+<button class="gallery-next" onclick="galleryNext()">›</button>
+</div>
+<div class="gallery-dots" id="galleryDots"></div>
+<div class="gallery-counter" id="galleryCounter">1 / 1</div>
+</div>
 </div>
 
-<!-- ========== PRODUCT DETAIL OVERLAY (FULL PAGE) ========== -->
 <div id="productDetail" class="product-detail-overlay">
-    <div class="product-detail-container">
-        <div class="product-detail-header">
-            <h2 id="detailTitle">Product Details</h2>
-            <button class="detail-close" onclick="closeProductDetail()">✕</button>
-        </div>
-        <div class="product-detail-body">
-            <div class="detail-image-section">
-                <div class="detail-slider" id="detailSlider">
-                    <!-- Images loaded here -->
-                </div>
-                <button class="detail-prev" onclick="detailPrev()">‹</button>
-                <button class="detail-next" onclick="detailNext()">›</button>
-                <div class="detail-dots" id="detailDots"></div>
-            </div>
-            <div class="detail-info-section">
-                <h1 id="detailName">Product Name</h1>
-                <p id="detailDesc">Description</p>
-                <div class="detail-price" id="detailPrice">₹0</div>
-                <div class="detail-stock" id="detailStock">In Stock</div>
-                <div class="detail-actions">
-                    <button class="detail-add-cart" id="detailAddCart" onclick="detailAddToCart()">🛒 Add to Cart</button>
-                    <button class="detail-buy-now" id="detailBuyNow" onclick="detailBuyNow()">Buy Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="product-detail-container">
+<div class="product-detail-header">
+<h2 id="detailTitle">Product Details</h2>
+<button class="detail-close" onclick="closeProductDetail()">✕</button>
+</div>
+<div class="product-detail-body">
+<div class="detail-image-section">
+<div class="detail-slider" id="detailSlider"></div>
+<button class="detail-prev" onclick="detailPrev()">‹</button>
+<button class="detail-next" onclick="detailNext()">›</button>
+<div class="detail-dots" id="detailDots"></div>
+</div>
+<div class="detail-info-section">
+<h1 id="detailName">Product Name</h1>
+<p id="detailDesc">Description</p>
+<div class="detail-price" id="detailPrice">₹0</div>
+<div class="detail-stock" id="detailStock">In Stock</div>
+<div class="detail-actions">
+<button class="detail-add-cart" id="detailAddCart" onclick="detailAddToCart()">🛒 Add to Cart</button>
+<button class="detail-buy-now" id="detailBuyNow" onclick="detailBuyNow()">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 
-<!-- ========== PROFILE MODAL ========== -->
 <div id="profileModal" class="modal">
-    <div class="modal-box">
-        <div class="modal-header">
-            <h2>👤 My Profile</h2>
-            <button class="close" onclick="closeProfile()">×</button>
-        </div>
-        <div id="profileMsg" class="msg"></div>
-        <div class="form-group">
-            <label>Full Name</label>
-            <input id="profileName" type="text" placeholder="Your full name">
-        </div>
-        <div class="form-group">
-            <label>Phone Number</label>
-            <input id="profilePhone" type="tel" placeholder="Your phone number">
-        </div>
-        <div class="form-group">
-            <label>Email (Read-only)</label>
-            <input id="profileEmail" type="email" disabled style="background:#f3f4f6;">
-        </div>
-        <div class="form-group">
-            <label>Delivery Address</label>
-            <textarea id="profileAddress" placeholder="Your complete delivery address"></textarea>
-        </div>
-        <button class="primary-btn" onclick="saveProfile()">💾 Save Profile</button>
-    </div>
+<div class="modal-box">
+<div class="modal-header"><h2>👤 My Profile</h2><button class="close" onclick="closeProfile()">×</button></div>
+<div id="profileMsg" class="msg"></div>
+<div class="form-group"><label>Full Name</label><input id="profileName" type="text" placeholder="Your full name"></div>
+<div class="form-group"><label>Phone Number</label><input id="profilePhone" type="tel" placeholder="Your phone number"></div>
+<div class="form-group"><label>Email (Read-only)</label><input id="profileEmail" type="email" disabled style="background:#f3f4f6;"></div>
+<div class="form-group"><label>Delivery Address</label><textarea id="profileAddress" placeholder="Your complete delivery address"></textarea></div>
+<button class="primary-btn" onclick="saveProfile()">💾 Save Profile</button>
+</div>
+</div>
+
+<div id="fixgLegalModal" style="display:none;position:fixed;z-index:999999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);overflow:auto;">
+<div style="background:#fff;color:#111827;margin:6% auto;padding:25px;border-radius:12px;width:90%;max-width:650px;position:relative;line-height:1.6;box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+<span onclick="closeFixgModal()" style="position:absolute;right:20px;top:12px;font-size:28px;font-weight:bold;cursor:pointer;color:#6b7280;">×</span>
+<div id="fixgModalContent"></div>
+</div>
 </div>
 
 <a class="whatsapp" href="https://wa.me/919447150744" target="_blank">💬</a>
 <a class="call" href="tel:+919447667744">📞</a>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<!-- ===== EMAILJS INITIALIZATION ===== -->
-<script type="text/javascript">
-    (function() {
-        emailjs.init("Q6LuADmh9NzTPVmBj");
-    })();
-</script>
+<script>emailjs.init("Q6LuADmh9NzTPVmBj");</script>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
@@ -765,407 +528,286 @@ let allProducts = [], allParts = [], allServices = [], allTechnicians = [];
 let currentTab = 'products';
 let pendingCheckout = false;
 
-const $ = id => document.getElementById(id);
-const productStatus = $('productStatus');
-const productsContainer = $('products');
+const productStatus = document.getElementById('productStatus');
+const productsContainer = document.getElementById('products');
 
-// ========== GALLERY FUNCTIONS ==========
+/* ===== SERVICE MENU DATA ===== */
+const MOBILE_SERVICES = [
+["Mobile Service Mukkam","Complete mobile phone service in Mukkam for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
+["Smartphone Service Mukkam","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
+["Android Mobile Service Mukkam","Android mobile service for supported devices, including display, battery, charging, software, camera, network and motherboard-related problems."],
+["Mobile Display Service Mukkam","Mobile display service for broken screens, no display, touch problems and display-related faults."],
+["Mobile Battery Service Mukkam","Mobile battery service for battery replacement, fast drain, heating and battery-related faults."],
+["Mobile Charging Service Mukkam","Mobile charging service for charging-port, charging-IC, slow-charging and not-charging problems."],
+["Mobile Software Service Mukkam","Mobile software service for software problems, boot loops, hanging, restarting and update-related faults."],
+["Mobile Camera Service Mukkam","Mobile camera service for front camera, rear camera, camera glass, OIS and camera-related faults."],
+["Mobile Speaker Service Mukkam","Mobile speaker and microphone service for sound, earpiece and audio-related problems."],
+["Mobile Network Service Mukkam","Mobile network and signal service for signal, SIM, antenna, baseband and network-related faults."],
+["Mobile Motherboard Service Mukkam","Advanced mobile motherboard service for no power, short circuit, charging, network, IC and board-level faults."],
+["Mobile Water Damage Service Mukkam","Mobile water-damage diagnosis and service for supported smartphones and electronic components."],
+["Mobile Not Charging Service","Diagnosis and service for smartphones that do not charge, charge slowly or disconnect while charging."],
+["Mobile Not Turning On Service","Diagnosis and service for smartphones with no power, dead-phone and power-related problems."],
+["Mobile Battery Drain Service","Diagnosis and service for fast battery drain, battery heating and abnormal power consumption."],
+["Mobile Heating Problem Service","Diagnosis and service for overheating and abnormal heating caused by supported hardware or software faults."],
+["Mobile Touch Problem Service","Service for touch response problems, touch IC faults and touch-related display issues."],
+["Mobile Network Problem Service","Service for signal loss, SIM detection, network and communication-related faults."],
+["Mobile SIM Problem Service","Service for SIM detection, SIM reader, SIM slot and related network faults."],
+["Mobile Dead Phone Service","Advanced diagnosis and board-level service for supported dead or no-power smartphones."]
+];
+
+const BRANDS = [
+"iPhone Service Mukkam","Samsung Service Mukkam","OnePlus Service Mukkam",
+"Xiaomi Service Mukkam","Vivo Service Mukkam","OPPO Service Mukkam",
+"Realme Service Mukkam","Motorola Service Mukkam","POCO Service Mukkam",
+"iQOO Service Mukkam","Nothing Service Mukkam","CMF Service Mukkam",
+"Google Pixel Service Mukkam","Tecno Service Mukkam","Infinix Service Mukkam",
+"HONOR Service Mukkam","Nokia Service Mukkam","HMD Service Mukkam",
+"Lava Service Mukkam","ASUS Mobile Service Mukkam","Sony Mobile Service Mukkam",
+"Huawei Service Mukkam","ZTE Service Mukkam","Nubia Service Mukkam",
+"Micromax Service Mukkam","Gionee Service Mukkam","Itel Service Mukkam",
+"Alcatel Service Mukkam","Blackview Service Mukkam","BLU Mobile Service Mukkam",
+"Coolpad Service Mukkam","Cubot Service Mukkam","Doogee Service Mukkam",
+"Fairphone Service Mukkam","Sharp Mobile Service Mukkam","Ulefone Service Mukkam",
+"UMIDIGI Service Mukkam","Wiko Mobile Service Mukkam","TCL Mobile Service Mukkam",
+"HTC Service Mukkam","Lenovo Mobile Service Mukkam"
+];
+
+const ADVANCED_SERVICES = [
+"Mobile IC Service","Mobile Chip-Level Service","Micro-Soldering Service",
+"Mobile PCB Service","Mobile Short Circuit Service","Mobile Dead Phone Diagnostics",
+"Mobile Motherboard Diagnostics","Charging IC Service","Power IC Service",
+"Audio IC Service","Wi-Fi IC Service","Baseband IC Service","Touch IC Service",
+"CPU Reballing","RAM Repair","NAND Repair","UFS Repair","FPC Connector Service",
+"Connector Replacement","No Display Service","No Backlight Service",
+"Network & Signal IC Service","Wireless Charging Service","Fast Charging Service"
+];
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function renderServiceMenu(filter=""){
+  const q = (filter || "").toLowerCase().trim();
+  const svc = MOBILE_SERVICES.filter(x => (x[0]+" "+x[1]).toLowerCase().includes(q));
+  const brd = BRANDS.filter(x => x.toLowerCase().includes(q));
+  const adv = ADVANCED_SERVICES.filter(x => x.toLowerCase().includes(q));
+  let html = "";
+  if (svc.length) {
+    html += `<h3 class="service-menu-section-title">🔧 Mobile Services in Mukkam</h3><div class="service-menu-grid">` +
+      svc.map(x => `<article class="service-menu-card"><h3>${escapeHtml(x[0])}</h3><p>${escapeHtml(x[1])}</p><span class="service-menu-tag">Mobile Service</span></article>`).join("") + `</div>`;
+  }
+  if (brd.length) {
+    html += `<h3 class="service-menu-section-title">📱 Brand Services</h3><div class="brand-grid">` +
+      brd.map(x => `<div class="brand-chip">${escapeHtml(x)}</div>`).join("") + `</div>`;
+  }
+  if (adv.length) {
+    html += `<h3 class="service-menu-section-title">🛠️ Advanced Mobile Service</h3><div class="service-menu-grid">` +
+      adv.map(x => `<article class="service-menu-card"><h3>${escapeHtml(x)}</h3><p>Board-level and component-level service for supported mobile devices, subject to diagnosis and model-specific requirements.</p><span class="service-menu-tag">Advanced Service</span></article>`).join("") + `</div>`;
+  }
+  if (!svc.length && !brd.length && !adv.length) {
+    html = `<div class="loading">No matching services found.</div>`;
+  }
+  html += `<div class="service-menu-note"><strong>Note:</strong> Spare-part availability can vary by brand and model. Please contact fixG before visiting if you need a specific part or model-specific service. 📍 Mukkam, Kozhikode, Kerala — 📞 9447667744</div>`;
+  productsContainer.className = "service-menu-wrapper";
+  productsContainer.innerHTML = html;
+}
+
+/* ===== GALLERY ===== */
 let galleryImages = [];
 let galleryCurrentIndex = 0;
-
 window.openGallery = function(productId) {
-    const product = allProducts.find(p => p.id === productId);
-    if (!product) {
-        alert('Product not found');
-        return;
-    }
-
-    if (product.images && Array.isArray(product.images) && product.images.length > 0) {
-        galleryImages = product.images;
-    } else if (product.image && product.image !== '' && product.image !== 'logo.png') {
-        galleryImages = [product.image];
-    } else {
-        galleryImages = ['logo.png'];
-    }
-
-    galleryCurrentIndex = 0;
-    document.getElementById('galleryTitle').textContent = product.name || 'Product Gallery';
-    document.getElementById('galleryModal').style.display = 'flex';
-    renderGallery();
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) { alert('Product not found'); return; }
+  if (product.images && Array.isArray(product.images) && product.images.length > 0) galleryImages = product.images;
+  else if (product.image && product.image !== '' && product.image !== 'logo.png') galleryImages = [product.image];
+  else galleryImages = ['logo.png'];
+  galleryCurrentIndex = 0;
+  document.getElementById('galleryTitle').textContent = product.name || 'Product Gallery';
+  document.getElementById('galleryModal').style.display = 'flex';
+  renderGallery();
 };
-
-window.closeGallery = function() {
-    document.getElementById('galleryModal').style.display = 'none';
-};
-
-window.closeGalleryOutside = function(event) {
-    if (event.target.id === 'galleryModal') {
-        closeGallery();
-    }
-};
-
+window.closeGallery = function() { document.getElementById('galleryModal').style.display = 'none'; };
+window.closeGalleryOutside = function(event) { if (event.target.id === 'galleryModal') closeGallery(); };
 function renderGallery() {
-    const slider = document.getElementById('gallerySlider');
-    const dots = document.getElementById('galleryDots');
-    const counter = document.getElementById('galleryCounter');
-
-    slider.innerHTML = '';
-    galleryImages.forEach((img, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'gallery-slide';
-        slide.style.transform = `translateX(${index * 100}%)`;
-        slide.innerHTML = `<img src="${escapeHtml(img)}" alt="Product Image ${index + 1}" onerror="this.src='logo.png'">`;
-        slider.appendChild(slide);
-    });
-
-    updateGalleryPosition();
-
-    dots.innerHTML = '';
-    galleryImages.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.className = `gallery-dot ${index === galleryCurrentIndex ? 'active' : ''}`;
-        dot.onclick = () => goToGallery(index);
-        dots.appendChild(dot);
-    });
-
-    counter.textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
+  const slider = document.getElementById('gallerySlider');
+  const dots = document.getElementById('galleryDots');
+  slider.innerHTML = '';
+  galleryImages.forEach((img) => {
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
+    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`;
+    slider.appendChild(slide);
+  });
+  updateGalleryPosition();
+  dots.innerHTML = '';
+  galleryImages.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = `gallery-dot ${index === galleryCurrentIndex ? 'active' : ''}`;
+    dot.onclick = () => goToGallery(index);
+    dots.appendChild(dot);
+  });
+  document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
 }
-
 function updateGalleryPosition() {
-    const slider = document.getElementById('gallerySlider');
-    const slides = slider.querySelectorAll('.gallery-slide');
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${(index - galleryCurrentIndex) * 100}%)`;
-    });
-
-    const dots = document.querySelectorAll('.gallery-dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === galleryCurrentIndex);
-    });
-
-    document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
+  document.getElementById('gallerySlider').style.transform = `translateX(-${galleryCurrentIndex * 100}%)`;
+  document.querySelectorAll('.gallery-dot').forEach((dot, index) => dot.classList.toggle('active', index === galleryCurrentIndex));
+  document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
 }
+window.galleryNext = function() { if (galleryCurrentIndex < galleryImages.length - 1) { galleryCurrentIndex++; updateGalleryPosition(); } };
+window.galleryPrev = function() { if (galleryCurrentIndex > 0) { galleryCurrentIndex--; updateGalleryPosition(); } };
+window.goToGallery = function(index) { if (index >= 0 && index < galleryImages.length) { galleryCurrentIndex = index; updateGalleryPosition(); } };
 
-window.galleryNext = function() {
-    if (galleryCurrentIndex < galleryImages.length - 1) {
-        galleryCurrentIndex++;
-        updateGalleryPosition();
-    }
-};
-
-window.galleryPrev = function() {
-    if (galleryCurrentIndex > 0) {
-        galleryCurrentIndex--;
-        updateGalleryPosition();
-    }
-};
-
-window.goToGallery = function(index) {
-    if (index >= 0 && index < galleryImages.length) {
-        galleryCurrentIndex = index;
-        updateGalleryPosition();
-    }
-};
-
-document.addEventListener('keydown', function(e) {
-    if (document.getElementById('galleryModal').style.display === 'flex') {
-        if (e.key === 'ArrowRight') galleryNext();
-        if (e.key === 'ArrowLeft') galleryPrev();
-        if (e.key === 'Escape') closeGallery();
-    }
-    if (document.getElementById('productDetail').classList.contains('active')) {
-        if (e.key === 'ArrowRight') detailNext();
-        if (e.key === 'ArrowLeft') detailPrev();
-        if (e.key === 'Escape') closeProductDetail();
-    }
-});
-
-// ========== PRODUCT DETAIL VIEW ==========
-let detailProductId = null;
-let detailImages = [];
-let detailCurrentIndex = 0;
-
+/* ===== PRODUCT DETAIL ===== */
+let detailProductId = null, detailImages = [], detailCurrentIndex = 0;
 window.openProductDetail = function(productId) {
-    const product = allProducts.find(p => p.id === productId);
-    if (!product) {
-        alert('Product not found');
-        return;
-    }
-
-    detailProductId = productId;
-
-    // Get images
-    if (product.images && Array.isArray(product.images) && product.images.length > 0) {
-        detailImages = product.images;
-    } else if (product.image && product.image !== '' && product.image !== 'logo.png') {
-        detailImages = [product.image];
-    } else {
-        detailImages = ['logo.png'];
-    }
-
-    detailCurrentIndex = 0;
-
-    // Set title
-    document.getElementById('detailTitle').textContent = product.name || 'Product Details';
-
-    // Set info
-    document.getElementById('detailName').textContent = product.name || 'Product';
-    document.getElementById('detailDesc').textContent = product.description || 'No description available.';
-
-    // Price
-    let priceHtml = `₹${Number(product.price || 0).toLocaleString('en-IN')}`;
-    if (product.oldPrice && product.oldPrice > product.price) {
-        priceHtml += ` <span class="detail-old-price">₹${Number(product.oldPrice).toLocaleString('en-IN')}</span>`;
-    }
-    document.getElementById('detailPrice').innerHTML = priceHtml;
-
-    // Stock
-    const stockEl = document.getElementById('detailStock');
-    if (product.stock > 0) {
-        stockEl.textContent = `✅ In Stock: ${product.stock}`;
-        stockEl.style.color = '#16a34a';
-    } else {
-        stockEl.textContent = '❌ Out of Stock';
-        stockEl.style.color = '#dc2626';
-    }
-
-    // Render slider
-    renderDetailSlider();
-
-    // Show overlay
-    document.getElementById('productDetail').classList.add('active');
-    document.body.style.overflow = 'hidden';
+  const product = allProducts.find(p => p.id === productId);
+  if (!product) { alert('Product not found'); return; }
+  detailProductId = productId;
+  if (product.images && Array.isArray(product.images) && product.images.length > 0) detailImages = product.images;
+  else if (product.image && product.image !== '' && product.image !== 'logo.png') detailImages = [product.image];
+  else detailImages = ['logo.png'];
+  detailCurrentIndex = 0;
+  document.getElementById('detailTitle').textContent = product.name || 'Product Details';
+  document.getElementById('detailName').textContent = product.name || 'Product';
+  document.getElementById('detailDesc').textContent = product.description || 'No description available.';
+  let priceHtml = `₹${Number(product.price || 0).toLocaleString('en-IN')}`;
+  if (product.oldPrice && product.oldPrice > product.price) priceHtml += ` <span class="detail-old-price">₹${Number(product.oldPrice).toLocaleString('en-IN')}</span>`;
+  document.getElementById('detailPrice').innerHTML = priceHtml;
+  const stockEl = document.getElementById('detailStock');
+  if (product.stock > 0) { stockEl.textContent = `✅ In Stock: ${product.stock}`; stockEl.style.color = '#16a34a'; }
+  else { stockEl.textContent = '❌ Out of Stock'; stockEl.style.color = '#dc2626'; }
+  renderDetailSlider();
+  document.getElementById('productDetail').classList.add('active');
+  document.body.style.overflow = 'hidden';
 };
-
 window.closeProductDetail = function() {
-    document.getElementById('productDetail').classList.remove('active');
-    document.body.style.overflow = 'auto';
+  document.getElementById('productDetail').classList.remove('active');
+  document.body.style.overflow = 'auto';
 };
-
 function renderDetailSlider() {
-    const slider = document.getElementById('detailSlider');
-    const dots = document.getElementById('detailDots');
-
-    slider.innerHTML = '';
-    detailImages.forEach((img, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'detail-slide';
-        slide.style.transform = `translateX(${index * 100}%)`;
-        slide.innerHTML = `<img src="${escapeHtml(img)}" alt="Product Image ${index + 1}" onerror="this.src='logo.png'" onclick="openGallery('${detailProductId}')">`;
-        slider.appendChild(slide);
-    });
-
-    updateDetailPosition();
-
-    dots.innerHTML = '';
-    detailImages.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.className = `detail-dot ${index === detailCurrentIndex ? 'active' : ''}`;
-        dot.onclick = () => goToDetail(index);
-        dots.appendChild(dot);
-    });
+  const slider = document.getElementById('detailSlider');
+  const dots = document.getElementById('detailDots');
+  slider.innerHTML = '';
+  detailImages.forEach((img) => {
+    const slide = document.createElement('div');
+    slide.className = 'detail-slide';
+    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`;
+    slider.appendChild(slide);
+  });
+  updateDetailPosition();
+  dots.innerHTML = '';
+  detailImages.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = `detail-dot ${index === detailCurrentIndex ? 'active' : ''}`;
+    dot.onclick = () => goToDetail(index);
+    dots.appendChild(dot);
+  });
 }
-
 function updateDetailPosition() {
-    const slider = document.getElementById('detailSlider');
-    const slides = slider.querySelectorAll('.detail-slide');
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${(index - detailCurrentIndex) * 100}%)`;
-    });
-
-    const dots = document.querySelectorAll('.detail-dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === detailCurrentIndex);
-    });
+  document.getElementById('detailSlider').style.transform = `translateX(-${detailCurrentIndex * 100}%)`;
+  document.querySelectorAll('.detail-dot').forEach((dot, index) => dot.classList.toggle('active', index === detailCurrentIndex));
 }
-
-window.detailNext = function() {
-    if (detailCurrentIndex < detailImages.length - 1) {
-        detailCurrentIndex++;
-        updateDetailPosition();
-    }
-};
-
-window.detailPrev = function() {
-    if (detailCurrentIndex > 0) {
-        detailCurrentIndex--;
-        updateDetailPosition();
-    }
-};
-
-window.goToDetail = function(index) {
-    if (index >= 0 && index < detailImages.length) {
-        detailCurrentIndex = index;
-        updateDetailPosition();
-    }
-};
-
+window.detailNext = function() { if (detailCurrentIndex < detailImages.length - 1) { detailCurrentIndex++; updateDetailPosition(); } };
+window.detailPrev = function() { if (detailCurrentIndex > 0) { detailCurrentIndex--; updateDetailPosition(); } };
+window.goToDetail = function(index) { if (index >= 0 && index < detailImages.length) { detailCurrentIndex = index; updateDetailPosition(); } };
 window.detailAddToCart = function() {
-    const product = allProducts.find(p => p.id === detailProductId);
-    if (!product) return;
-    if (product.stock <= 0) {
-        alert('This product is out of stock.');
-        return;
-    }
-    window.addToCart(product);
+  const product = allProducts.find(p => p.id === detailProductId);
+  if (!product) return;
+  if (product.stock <= 0) { alert('This product is out of stock.'); return; }
+  window.addToCart(product);
 };
-
 window.detailBuyNow = function() {
-    const product = allProducts.find(p => p.id === detailProductId);
-    if (!product) return;
-    if (product.stock <= 0) {
-        alert('This product is out of stock.');
-        return;
-    }
-    window.addToCart(product);
-    window.openCart();
+  const product = allProducts.find(p => p.id === detailProductId);
+  if (!product) return;
+  if (product.stock <= 0) { alert('This product is out of stock.'); return; }
+  window.addToCart(product);
+  window.openCart();
 };
 
-// ========== PROFILE FUNCTIONS ==========
+/* ===== PROFILE ===== */
 window.openProfile = function() {
-    if (!auth.currentUser) {
-        alert('Please login first.');
-        return;
-    }
-    document.getElementById('profileModal').style.display = 'flex';
-    loadProfile();
+  if (!auth.currentUser) { alert('Please login first.'); return; }
+  document.getElementById('profileModal').style.display = 'flex';
+  loadProfile();
 };
-
 window.closeProfile = function() {
-    document.getElementById('profileModal').style.display = 'none';
-    document.getElementById('profileMsg').style.display = 'none';
+  document.getElementById('profileModal').style.display = 'none';
+  document.getElementById('profileMsg').style.display = 'none';
 };
-
 async function loadProfile() {
-    const user = auth.currentUser;
-    if (!user) return;
-
-    const msg = document.getElementById('profileMsg');
-    msg.style.display = 'none';
-
-    try {
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        
-        document.getElementById('profileEmail').value = user.email || '';
-
-        if (docSnap.exists()) {
-            const data = docSnap.data();
-            document.getElementById('profileName').value = data.name || user.displayName || '';
-            document.getElementById('profilePhone').value = data.phone || '';
-            document.getElementById('profileAddress').value = data.address || '';
-        } else {
-            document.getElementById('profileName').value = user.displayName || '';
-            document.getElementById('profilePhone').value = '';
-            document.getElementById('profileAddress').value = '';
-        }
-    } catch (error) {
-        console.error('Error loading profile:', error);
-        msg.textContent = 'Could not load profile.';
-        msg.className = 'msg error';
-        msg.style.display = 'block';
+  const user = auth.currentUser; if (!user) return;
+  const msg = document.getElementById('profileMsg'); msg.style.display = 'none';
+  try {
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+    document.getElementById('profileEmail').value = user.email || '';
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      document.getElementById('profileName').value = data.name || user.displayName || '';
+      document.getElementById('profilePhone').value = data.phone || '';
+      document.getElementById('profileAddress').value = data.address || '';
+    } else {
+      document.getElementById('profileName').value = user.displayName || '';
     }
+  } catch (error) {
+    console.error('Error loading profile:', error);
+    msg.textContent = 'Could not load profile.';
+    msg.className = 'msg error'; msg.style.display = 'block';
+  }
 }
-
 window.saveProfile = async function() {
-    const user = auth.currentUser;
-    if (!user) {
-        alert('Please login first.');
-        return;
-    }
-
-    const name = document.getElementById('profileName').value.trim();
-    const phone = document.getElementById('profilePhone').value.trim();
-    const address = document.getElementById('profileAddress').value.trim();
-
-    const msg = document.getElementById('profileMsg');
-    msg.style.display = 'none';
-
-    if (!name) {
-        msg.textContent = 'Name is required.';
-        msg.className = 'msg error';
-        msg.style.display = 'block';
-        return;
-    }
-
-    try {
-        await setDoc(doc(db, "users", user.uid), {
-            name: name,
-            phone: phone || '',
-            address: address || '',
-            email: user.email || '',
-            updatedAt: new Date()
-        }, { merge: true });
-
-        if (name !== user.displayName) {
-            await updateProfile(user, { displayName: name });
-        }
-
-        msg.textContent = '✅ Profile saved successfully!';
-        msg.className = 'msg success';
-        msg.style.display = 'block';
-
-        document.getElementById('accountLabel').textContent = name;
-
-        // Auto-fill checkout if open
-        const customerName = document.getElementById('customerName');
-        const customerPhone = document.getElementById('customerPhone');
-        const customerAddress = document.getElementById('customerAddress');
-        if (customerName) customerName.value = name;
-        if (customerPhone) customerPhone.value = phone;
-        if (customerAddress) customerAddress.value = address;
-
-        setTimeout(() => {
-            msg.style.display = 'none';
-        }, 3000);
-
-    } catch (error) {
-        console.error('Error saving profile:', error);
-        msg.textContent = '❌ Could not save profile.';
-        msg.className = 'msg error';
-        msg.style.display = 'block';
-    }
+  const user = auth.currentUser;
+  if (!user) { alert('Please login first.'); return; }
+  const name = document.getElementById('profileName').value.trim();
+  const phone = document.getElementById('profilePhone').value.trim();
+  const address = document.getElementById('profileAddress').value.trim();
+  const msg = document.getElementById('profileMsg'); msg.style.display = 'none';
+  if (!name) { msg.textContent = 'Name is required.'; msg.className = 'msg error'; msg.style.display = 'block'; return; }
+  try {
+    await setDoc(doc(db, "users", user.uid), { name, phone: phone || '', address: address || '', email: user.email || '', updatedAt: new Date() }, { merge: true });
+    if (name !== user.displayName) { await updateProfile(user, { displayName: name }); }
+    msg.textContent = '✅ Profile saved successfully!'; msg.className = 'msg success'; msg.style.display = 'block';
+    document.getElementById('accountLabel').textContent = name;
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+  } catch (error) {
+    console.error('Error saving profile:', error);
+    msg.textContent = '❌ Could not save profile.'; msg.className = 'msg error'; msg.style.display = 'block';
+  }
 };
-
-// ========== CHECKOUT AUTO-FILL ==========
 async function loadProfileForCheckout() {
-    const user = auth.currentUser;
-    if (!user) return;
-
-    try {
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        const nameInput = $('customerName');
-        const phoneInput = $('customerPhone');
-        const addressInput = $('customerAddress');
-
-        if (docSnap.exists()) {
-            const data = docSnap.data();
-            if (!nameInput.value) nameInput.value = data.name || user.displayName || '';
-            if (!phoneInput.value) phoneInput.value = data.phone || '';
-            if (!addressInput.value) addressInput.value = data.address || '';
-        } else {
-            if (!nameInput.value) nameInput.value = user.displayName || '';
-        }
-    } catch (error) {
-        console.error('Error loading profile for checkout:', error);
+  const user = auth.currentUser; if (!user) return;
+  try {
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+    const nameInput = document.getElementById('customerName');
+    const phoneInput = document.getElementById('customerPhone');
+    const addressInput = document.getElementById('customerAddress');
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      if (!nameInput.value) nameInput.value = data.name || user.displayName || '';
+      if (!phoneInput.value) phoneInput.value = data.phone || '';
+      if (!addressInput.value) addressInput.value = data.address || '';
+    } else {
+      if (!nameInput.value) nameInput.value = user.displayName || '';
     }
+  } catch (error) { console.error('Error loading profile for checkout:', error); }
 }
-
 function openCheckoutForUser() {
-    const user = auth.currentUser;
-    if (!user) { pendingCheckout = true; openAccount(); return; }
-    closeAccount();
-    closeCart();
-    $('checkoutModal').style.display = "flex";
-    loadProfileForCheckout();
+  const user = auth.currentUser;
+  if (!user) { pendingCheckout = true; openAccount(); return; }
+  closeAccount();
+  closeCart();
+  document.getElementById('checkoutModal').style.display = "flex";
+  loadProfileForCheckout();
 }
 
-// ========== DROPDOWN TOGGLE ==========
-window.toggleDropdown = function() {
-  document.getElementById('categoryDropdown').classList.toggle('show');
-};
-
+/* ===== DROPDOWN ===== */
+window.toggleDropdown = function() { document.getElementById('categoryDropdown').classList.toggle('show'); };
 document.addEventListener('click', function(event) {
   const dropdown = document.getElementById('categoryDropdown');
   const button = document.querySelector('.dropbtn');
@@ -1173,791 +815,605 @@ document.addEventListener('click', function(event) {
     dropdown.classList.remove('show');
   }
 });
-
 document.querySelectorAll('.dropdown-content a').forEach(link => {
-  link.addEventListener('click', function() {
-    document.getElementById('categoryDropdown').classList.remove('show');
-  });
+  link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
 });
 
-// ========== BOOKING FUNCTIONS ==========
+/* ===== BOOKING ===== */
 window.openBooking = function() {
-    document.getElementById('bookingModal').style.display = 'flex';
-    const user = auth.currentUser;
-    if (user) {
-        document.getElementById('bookName').value = user.displayName || '';
-        document.getElementById('bookEmail').value = user.email || '';
-    }
+  document.getElementById('bookingModal').style.display = 'flex';
+  const user = auth.currentUser;
+  if (user) {
+    document.getElementById('bookName').value = user.displayName || '';
+    document.getElementById('bookEmail').value = user.email || '';
+  }
 };
-
 window.closeBooking = function() {
-    document.getElementById('bookingModal').style.display = 'none';
-    document.getElementById('bookingMsg').style.display = 'none';
+  document.getElementById('bookingModal').style.display = 'none';
+  document.getElementById('bookingMsg').style.display = 'none';
 };
-
 window.submitBooking = async function() {
-    const name = document.getElementById('bookName').value.trim();
-    const phone = document.getElementById('bookPhone').value.trim();
-    const email = document.getElementById('bookEmail').value.trim();
-    const address = document.getElementById('bookAddress').value.trim();
-    const service = document.getElementById('bookService').value;
-    const description = document.getElementById('bookDescription').value.trim();
-
-    const msg = document.getElementById('bookingMsg');
-    if (!name || !phone || !address) {
-        msg.textContent = 'Please fill in Name, Phone, and Address.';
-        msg.className = 'msg error';
-        msg.style.display = 'block';
-        return;
-    }
-
-    const btn = event.target;
-    btn.disabled = true;
-    btn.textContent = 'Submitting...';
-
+  const name = document.getElementById('bookName').value.trim();
+  const phone = document.getElementById('bookPhone').value.trim();
+  const email = document.getElementById('bookEmail').value.trim();
+  const address = document.getElementById('bookAddress').value.trim();
+  const service = document.getElementById('bookService').value;
+  const description = document.getElementById('bookDescription').value.trim();
+  const msg = document.getElementById('bookingMsg');
+  if (!name || !phone || !address) {
+    msg.textContent = 'Please fill in Name, Phone, and Address.';
+    msg.className = 'msg error'; msg.style.display = 'block'; return;
+  }
+  const btn = event.target; btn.disabled = true; btn.textContent = 'Submitting...';
+  try {
+    await addDoc(collection(db, "bookings"), {
+      name, phone, email: email || '', address, service, description: description || '',
+      userId: auth.currentUser?.uid || '', status: 'Pending', createdAt: new Date()
+    });
     try {
-        await addDoc(collection(db, "bookings"), {
-            name: name,
-            phone: phone,
-            email: email || '',
-            address: address,
-            service: service,
-            description: description || '',
-            userId: auth.currentUser?.uid || '',
-            status: 'Pending',
-            createdAt: new Date()
-        });
-
-        try {
-            const templateParams = {
-                customer_name: name,
-                customer_phone: phone,
-                customer_email: email || 'Not provided',
-                customer_address: address,
-                service_type: service,
-                description: description || 'No description',
-                booking_date: new Date().toLocaleString('en-IN', { 
-                    day: '2-digit', 
-                    month: 'short', 
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                })
-            };
-
-            await emailjs.send('service_qw9w2il', 'template_955n8pp', templateParams);
-            console.log('✅ Email sent successfully!');
-        } catch (emailError) {
-            console.error('❌ Email error:', emailError);
-        }
-
-        msg.textContent = '✅ Booking submitted successfully! We will contact you soon.';
-        msg.className = 'msg success';
-        msg.style.display = 'block';
-
-        document.getElementById('bookName').value = '';
-        document.getElementById('bookPhone').value = '';
-        document.getElementById('bookEmail').value = '';
-        document.getElementById('bookAddress').value = '';
-        document.getElementById('bookDescription').value = '';
-
-        setTimeout(() => {
-            closeBooking();
-        }, 3000);
-
-    } catch (error) {
-        console.error('Booking error:', error);
-        msg.textContent = '❌ Could not submit booking. Please try again.';
-        msg.className = 'msg error';
-        msg.style.display = 'block';
-    } finally {
-        btn.disabled = false;
-        btn.textContent = '📅 Book Now';
-    }
+      await emailjs.send('service_qw9w2il', 'template_955n8pp', {
+        customer_name: name, customer_phone: phone,
+        customer_email: email || 'Not provided',
+        customer_address: address, service_type: service,
+        description: description || 'No description',
+        booking_date: new Date().toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+      });
+    } catch (emailError) { console.error('Email error:', emailError); }
+    msg.textContent = '✅ Booking submitted successfully! We will contact you soon.';
+    msg.className = 'msg success'; msg.style.display = 'block';
+    document.getElementById('bookName').value = '';
+    document.getElementById('bookPhone').value = '';
+    document.getElementById('bookEmail').value = '';
+    document.getElementById('bookAddress').value = '';
+    document.getElementById('bookDescription').value = '';
+    setTimeout(() => { closeBooking(); }, 3000);
+  } catch (error) {
+    console.error('Booking error:', error);
+    msg.textContent = '❌ Could not submit booking. Please try again.';
+    msg.className = 'msg error'; msg.style.display = 'block';
+  } finally { btn.disabled = false; btn.textContent = '📅 Book Now'; }
 };
 
-// ========== AUTH FUNCTIONS ==========
+/* ===== AUTH ===== */
 function authErrorMessage(error) {
-    const code = error?.code || "";
-    const messages = {
-        "auth/invalid-email": "Please enter a valid email address.",
-        "auth/missing-password": "Please enter your password.",
-        "auth/invalid-credential": "Email or password is incorrect.",
-        "auth/user-not-found": "No account was found with this email.",
-        "auth/wrong-password": "Email or password is incorrect.",
-        "auth/email-already-in-use": "An account already exists with this email.",
-        "auth/weak-password": "Password must be at least 6 characters.",
-        "auth/network-request-failed": "Network error. Please check your internet connection.",
-        "auth/too-many-requests": "Too many attempts. Please wait and try again."
-    };
-    return messages[code] || error?.message || "Something went wrong. Please try again.";
+  const code = error?.code || "";
+  const messages = {
+    "auth/invalid-email": "Please enter a valid email address.",
+    "auth/missing-password": "Please enter your password.",
+    "auth/invalid-credential": "Email or password is incorrect.",
+    "auth/user-not-found": "No account was found with this email.",
+    "auth/wrong-password": "Email or password is incorrect.",
+    "auth/email-already-in-use": "An account already exists with this email.",
+    "auth/weak-password": "Password must be at least 6 characters.",
+    "auth/network-request-failed": "Network error. Please check your internet connection.",
+    "auth/too-many-requests": "Too many attempts. Please wait and try again."
+  };
+  return messages[code] || error?.message || "Something went wrong. Please try again.";
 }
-
 function showAuthMessage(type, message) {
-    const error = $('authError');
-    const success = $('authSuccess');
-    error.style.display = "none";
-    success.style.display = "none";
-    error.textContent = "";
-    success.textContent = "";
-    if (!message) return;
-    if (type === "error") {
-        error.textContent = message;
-        error.style.display = "block";
-    } else {
-        success.textContent = message;
-        success.style.display = "block";
-    }
+  const error = document.getElementById('authError');
+  const success = document.getElementById('authSuccess');
+  error.style.display = "none"; success.style.display = "none";
+  error.textContent = ""; success.textContent = "";
+  if (!message) return;
+  if (type === "error") { error.textContent = message; error.style.display = "block"; }
+  else { success.textContent = message; success.style.display = "block"; }
 }
-
 window.showAuthForm = function(type) {
-    const login = type === "login";
-    $('loginForm').style.display = login ? "block" : "none";
-    $('registerForm').style.display = login ? "none" : "block";
-    $('loginTab').classList.toggle("active", login);
-    $('registerTab').classList.toggle("active", !login);
-    $('authTitle').textContent = login ? "Customer Login" : "Create Customer Account";
-    showAuthMessage("success", "");
+  const login = type === "login";
+  document.getElementById('loginForm').style.display = login ? "block" : "none";
+  document.getElementById('registerForm').style.display = login ? "none" : "block";
+  document.getElementById('loginTab').classList.toggle("active", login);
+  document.getElementById('registerTab').classList.toggle("active", !login);
+  document.getElementById('authTitle').textContent = login ? "Customer Login" : "Create Customer Account";
+  showAuthMessage("success", "");
 };
-
 window.openAccount = function() {
-    $('accountModal').style.display = "flex";
-    const user = auth.currentUser;
-    if (user) showLoggedInBox(user);
-    else showAuthForms();
+  document.getElementById('accountModal').style.display = "flex";
+  const user = auth.currentUser;
+  if (user) showLoggedInBox(user); else showAuthForms();
 };
-
 window.closeAccount = function() {
-    $('accountModal').style.display = "none";
-    showAuthMessage("success", "");
+  document.getElementById('accountModal').style.display = "none";
+  showAuthMessage("success", "");
 };
-
 function showAuthForms() {
-    $('authForms').style.display = "block";
-    $('loggedInBox').style.display = "none";
-    showAuthForm("login");
+  document.getElementById('authForms').style.display = "block";
+  document.getElementById('loggedInBox').style.display = "none";
+  showAuthForm("login");
 }
-
 function showLoggedInBox(user) {
-    $('authForms').style.display = "none";
-    $('loggedInBox').style.display = "block";
-    $('accountName').textContent = user.displayName || "Customer";
-    $('accountEmail').textContent = user.email || "";
+  document.getElementById('authForms').style.display = "none";
+  document.getElementById('loggedInBox').style.display = "block";
+  document.getElementById('accountName').textContent = user.displayName || "Customer";
+  document.getElementById('accountEmail').textContent = user.email || "";
 }
-
 window.registerCustomer = async function() {
-    const name = $('registerName').value.trim();
-    const email = $('registerEmail').value.trim();
-    const password = $('registerPassword').value;
-    const password2 = $('registerPassword2').value;
-    if (!name || !email || !password || !password2) { showAuthMessage("error", "Please fill in all fields."); return; }
-    if (password.length < 6) { showAuthMessage("error", "Password must be at least 6 characters."); return; }
-    if (password !== password2) { showAuthMessage("error", "Passwords do not match."); return; }
-    const btn = $('registerBtn');
-    btn.disabled = true;
-    btn.textContent = "Creating Account...";
-    try {
-        const credential = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(credential.user, { displayName: name });
-        showAuthMessage("success", "Account created successfully.");
-        showLoggedInBox(auth.currentUser);
-        if (pendingCheckout) { pendingCheckout = false; setTimeout(openCheckoutForUser, 300); }
-    } catch (error) { showAuthMessage("error", authErrorMessage(error)); }
-    finally { btn.disabled = false; btn.textContent = "Create Account"; }
+  const name = document.getElementById('registerName').value.trim();
+  const email = document.getElementById('registerEmail').value.trim();
+  const password = document.getElementById('registerPassword').value;
+  const password2 = document.getElementById('registerPassword2').value;
+  if (!name || !email || !password || !password2) { showAuthMessage("error", "Please fill in all fields."); return; }
+  if (password.length < 6) { showAuthMessage("error", "Password must be at least 6 characters."); return; }
+  if (password !== password2) { showAuthMessage("error", "Passwords do not match."); return; }
+  const btn = document.getElementById('registerBtn');
+  btn.disabled = true; btn.textContent = "Creating Account...";
+  try {
+    const credential = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(credential.user, { displayName: name });
+    showAuthMessage("success", "Account created successfully.");
+    showLoggedInBox(auth.currentUser);
+    if (pendingCheckout) { pendingCheckout = false; setTimeout(openCheckoutForUser, 300); }
+  } catch (error) { showAuthMessage("error", authErrorMessage(error)); }
+  finally { btn.disabled = false; btn.textContent = "Create Account"; }
 };
-
 window.loginCustomer = async function() {
-    const email = $('loginEmail').value.trim();
-    const password = $('loginPassword').value;
-    if (!email || !password) { showAuthMessage("error", "Please enter your email and password."); return; }
-    const btn = $('loginBtn');
-    btn.disabled = true;
-    btn.textContent = "Logging in...";
-    try {
-        await signInWithEmailAndPassword(auth, email, password);
-        showAuthMessage("success", "Login successful.");
-        if (pendingCheckout) { pendingCheckout = false; setTimeout(openCheckoutForUser, 300); }
-        else { showLoggedInBox(auth.currentUser); }
-    } catch (error) { showAuthMessage("error", authErrorMessage(error)); }
-    finally { btn.disabled = false; btn.textContent = "Login"; }
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  if (!email || !password) { showAuthMessage("error", "Please enter your email and password."); return; }
+  const btn = document.getElementById('loginBtn');
+  btn.disabled = true; btn.textContent = "Logging in...";
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    showAuthMessage("success", "Login successful.");
+    if (pendingCheckout) { pendingCheckout = false; setTimeout(openCheckoutForUser, 300); }
+    else { showLoggedInBox(auth.currentUser); }
+  } catch (error) { showAuthMessage("error", authErrorMessage(error)); }
+  finally { btn.disabled = false; btn.textContent = "Login"; }
 };
-
 window.resetCustomerPassword = async function() {
-    const email = $('loginEmail').value.trim();
-    if (!email) { showAuthMessage("error", "Please enter your email address first."); $('loginEmail').focus(); return; }
-    try {
-        await sendPasswordResetEmail(auth, email);
-        showAuthMessage("success", "Password reset link has been sent to your email.");
-    } catch (error) {
-        const code = error?.code || "";
-        if (code === "auth/user-not-found") { showAuthMessage("error", "No account was found with this email."); }
-        else { showAuthMessage("error", authErrorMessage(error)); }
-    }
+  const email = document.getElementById('loginEmail').value.trim();
+  if (!email) { showAuthMessage("error", "Please enter your email address first."); document.getElementById('loginEmail').focus(); return; }
+  try {
+    await sendPasswordResetEmail(auth, email);
+    showAuthMessage("success", "Password reset link has been sent to your email.");
+  } catch (error) {
+    const code = error?.code || "";
+    if (code === "auth/user-not-found") { showAuthMessage("error", "No account was found with this email."); }
+    else { showAuthMessage("error", authErrorMessage(error)); }
+  }
 };
-
 window.logoutCustomer = async function() {
-    try { await signOut(auth); closeAccount(); alert("You have been logged out."); }
-    catch (error) { alert(authErrorMessage(error)); }
+  try { await signOut(auth); closeAccount(); alert("You have been logged out."); }
+  catch (error) { alert(authErrorMessage(error)); }
 };
 
-// ========== CART FUNCTIONS ==========
+/* ===== CART ===== */
 function getCart() { return JSON.parse(localStorage.getItem("fixGCart")) || []; }
 function saveCart(cart) { localStorage.setItem("fixGCart", JSON.stringify(cart)); displayCart(); }
-
 function displayCart() {
-    const cart = getCart();
-    const container = $('cartItems');
-    const totalElement = $('cartTotal');
-    const countElement = $('cartCount');
-    let total = 0, count = 0;
-    if (!cart.length) { container.innerHTML = "<p>Your cart is empty.</p>"; totalElement.textContent = "₹0"; countElement.textContent = "0"; return; }
-    container.innerHTML = "";
-    cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        count += item.quantity;
-        const div = document.createElement("div");
-        div.className = "cart-item";
-        div.innerHTML = `
-            <div><div class="cart-item-name">${escapeHtml(item.name)}</div>
-            <div>₹${Number(item.price).toLocaleString("en-IN")}</div>
-            <div class="qty"><button onclick="changeQuantity(${index},-1)">−</button><strong>${item.quantity}</strong><button onclick="changeQuantity(${index},1)">+</button></div>
-            <button class="remove" onclick="removeItem(${index})">Remove</button></div>
-            <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>`;
-        container.appendChild(div);
-    });
-    totalElement.textContent = "₹" + total.toLocaleString("en-IN");
-    countElement.textContent = count;
+  const cart = getCart();
+  const container = document.getElementById('cartItems');
+  const totalElement = document.getElementById('cartTotal');
+  const countElement = document.getElementById('cartCount');
+  let total = 0, count = 0;
+  if (!cart.length) {
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    totalElement.textContent = "₹0"; countElement.textContent = "0"; return;
+  }
+  container.innerHTML = "";
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal; count += item.quantity;
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `<div><div class="cart-item-name">${escapeHtml(item.name)}</div>
+      <div class="qty"><button onclick="changeQuantity(${index},-1)">−</button><strong>${item.quantity}</strong><button onclick="changeQuantity(${index},1)">+</button></div>
+      <button class="remove" onclick="removeItem(${index})">Remove</button></div>
+      <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>`;
+    container.appendChild(div);
+  });
+  totalElement.textContent = "₹" + total.toLocaleString("en-IN");
+  countElement.textContent = count;
 }
-
 window.changeQuantity = function(index, change) {
-    const cart = getCart();
-    if (!cart[index]) return;
-    const newQty = cart[index].quantity + change;
-    if (newQty <= 0) cart.splice(index, 1);
-    else if (newQty > Number(cart[index].stock)) { alert("Maximum stock reached."); return; }
-    else cart[index].quantity = newQty;
-    saveCart(cart);
+  const cart = getCart(); if (!cart[index]) return;
+  const newQty = cart[index].quantity + change;
+  if (newQty <= 0) cart.splice(index, 1);
+  else if (newQty > Number(cart[index].stock)) { alert("Maximum stock reached."); return; }
+  else cart[index].quantity = newQty;
+  saveCart(cart);
 };
-
-window.removeItem = function(index) {
-    const cart = getCart();
-    cart.splice(index, 1);
-    saveCart(cart);
-};
-
-window.openCart = function() { $('cartOverlay').style.display = "block"; };
-window.closeCart = function() { $('cartOverlay').style.display = "none"; };
+window.removeItem = function(index) { const cart = getCart(); cart.splice(index, 1); saveCart(cart); };
+window.openCart = function() { document.getElementById('cartOverlay').style.display = "block"; };
+window.closeCart = function() { document.getElementById('cartOverlay').style.display = "none"; };
 window.closeCartOutside = function(event) { if (event.target.id === "cartOverlay") closeCart(); };
-
 window.addToCart = function(product) {
-    const cart = getCart();
-    const existing = cart.find(item => item.id === product.id);
-    if (existing) {
-        if (existing.quantity >= product.stock) { alert("Maximum available stock reached."); return; }
-        existing.quantity++;
-    } else {
-        cart.push({ id: product.id, name: product.name, price: product.price, stock: product.stock, quantity: 1 });
-    }
-    saveCart(cart);
-    alert(product.name + " added to cart.");
+  const cart = getCart();
+  const existing = cart.find(item => item.id === product.id);
+  if (existing) {
+    if (existing.quantity >= product.stock) { alert("Maximum available stock reached."); return; }
+    existing.quantity++;
+  } else {
+    cart.push({ id: product.id, name: product.name, price: product.price, stock: product.stock, quantity: 1 });
+  }
+  saveCart(cart);
+  alert(product.name + " added to cart.");
 };
-
 window.buyNow = function(product) { window.addToCart(product); openCart(); };
 window.addToCartFromProduct = function(id) {
-    const product = allProducts.find(p => p.id === id);
-    if (!product) { alert('Product not found'); return; }
-    window.addToCart(product);
+  const product = allProducts.find(p => p.id === id);
+  if (!product) { alert('Product not found'); return; }
+  window.addToCart(product);
 };
 window.buyNowFromProduct = function(id) {
-    const product = allProducts.find(p => p.id === id);
-    if (!product) { alert('Product not found'); return; }
-    window.buyNow(product);
+  const product = allProducts.find(p => p.id === id);
+  if (!product) { alert('Product not found'); return; }
+  window.buyNow(product);
 };
 window.addToCartFromPart = function(id) {
-    const part = allParts.find(p => p.id === id);
-    if (!part) { alert('Spare part not found'); return; }
-    const cartItem = { id: part.id, name: part.name + ' (Spare Part)', price: part.price, stock: part.stock, quantity: 1 };
-    const cart = getCart();
-    const existing = cart.find(item => item.id === part.id);
-    if (existing) { if (existing.quantity >= part.stock) { alert("Maximum available stock reached."); return; } existing.quantity++; }
-    else { cart.push(cartItem); }
-    saveCart(cart);
-    alert(part.name + " added to cart.");
+  const part = allParts.find(p => p.id === id);
+  if (!part) { alert('Spare part not found'); return; }
+  const cart = getCart();
+  const existing = cart.find(item => item.id === part.id);
+  if (existing) {
+    if (existing.quantity >= part.stock) { alert("Maximum available stock reached."); return; }
+    existing.quantity++;
+  } else {
+    cart.push({ id: part.id, name: part.name + ' (Spare Part)', price: part.price, stock: part.stock, quantity: 1 });
+  }
+  saveCart(cart); alert(part.name + " added to cart.");
 };
 window.buyNowFromPart = function(id) { window.addToCartFromPart(id); openCart(); };
 
-// ========== CHECKOUT & PAYMENT ==========
+/* ===== CHECKOUT & PAYMENT ===== */
 window.checkout = function() {
-    const cart = getCart();
-    if (!cart.length) { alert("Your cart is empty."); return; }
-    if (!auth.currentUser) {
-        pendingCheckout = true;
-        closeCart();
-        $('accountModal').style.display = "flex";
-        showAuthForms();
-        return;
-    }
-    openCheckoutForUser();
+  const cart = getCart();
+  if (!cart.length) { alert("Your cart is empty."); return; }
+  if (!auth.currentUser) {
+    pendingCheckout = true; closeCart();
+    document.getElementById('accountModal').style.display = "flex"; showAuthForms();
+    return;
+  }
+  openCheckoutForUser();
 };
-
 window.continueToCheckout = function() { pendingCheckout = false; openCheckoutForUser(); };
-window.closeCheckout = function() { $('checkoutModal').style.display = "none"; };
-
+window.closeCheckout = function() { document.getElementById('checkoutModal').style.display = "none"; };
 window.startRazorpayPayment = async function() {
-    const cart = getCart();
-    if (!cart.length) { alert("Your cart is empty."); return; }
-    if (!auth.currentUser) { closeCheckout(); pendingCheckout = true; openAccount(); return; }
-    const name = $('customerName').value.trim();
-    const phone = $('customerPhone').value.trim();
-    const address = $('customerAddress').value.trim();
-    if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
-    let total = 0;
-    cart.forEach(item => { total += Number(item.price) * Number(item.quantity); });
-    if (total <= 0) { alert("Invalid order amount."); return; }
-    if (typeof window.Razorpay === "undefined") { alert("Razorpay Checkout is not loaded."); return; }
-    try {
-        const response = await fetch(CREATE_ORDER_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ amount: total, receipt: "fixG_" + Date.now(), customerName: name, customerPhone: phone })
-        });
-        let data;
-        try { data = await response.json(); } catch (e) { throw new Error("Server did not return valid JSON."); }
-        const orderId = data.order?.id || data.order_id || data.razorpay_order_id || data.id || null;
-        const orderAmount = data.order?.amount || data.amount || Math.round(total * 100);
-        if (!response.ok || !orderId) throw new Error(data.message || data.error || "Razorpay Order ID was not returned.");
-        const options = {
-            key: RAZORPAY_KEY_ID, amount: Number(orderAmount), currency: "INR", name: "fixG",
-            description: "fixG Online Order", order_id: orderId,
-            prefill: { name: name, contact: phone, email: auth.currentUser.email || "" },
-            notes: { customer_name: name, customer_phone: phone, customer_email: auth.currentUser.email || "", firebase_uid: auth.currentUser.uid },
-            theme: { color: "#ff5a00" },
-            handler: async function(paymentResponse) {
-                await verifyPayment(paymentResponse, { name, phone, address, cart, total, email: auth.currentUser.email, uid: auth.currentUser.uid });
-            }
-        };
-        closeCheckout();
-        const razorpay = new window.Razorpay(options);
-        razorpay.on("payment.failed", function(response) { alert("Payment failed.\n\n" + (response.error?.description || "Please try again.")); });
-        razorpay.open();
-    } catch (error) { alert("Payment could not be started.\n\n" + error.message); }
+  const cart = getCart();
+  if (!cart.length) { alert("Your cart is empty."); return; }
+  if (!auth.currentUser) { closeCheckout(); pendingCheckout = true; openAccount(); return; }
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('customerPhone').value.trim();
+  const address = document.getElementById('customerAddress').value.trim();
+  if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
+  let total = 0;
+  cart.forEach(item => { total += Number(item.price) * Number(item.quantity); });
+  if (total <= 0) { alert("Invalid order amount."); return; }
+  if (typeof window.Razorpay === "undefined") { alert("Razorpay Checkout is not loaded."); return; }
+  try {
+    const response = await fetch(CREATE_ORDER_URL, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: total, receipt: "fixG_" + Date.now(), customerName: name, customerPhone: phone })
+    });
+    let data;
+    try { data = await response.json(); } catch (e) { throw new Error("Server did not return valid JSON."); }
+    const orderId = data.order?.id || data.order_id || data.razorpay_order_id || data.id || null;
+    const orderAmount = data.order?.amount || data.amount || Math.round(total * 100);
+    if (!response.ok || !orderId) throw new Error(data.message || data.error || "Razorpay Order ID was not returned.");
+    const options = {
+      key: RAZORPAY_KEY_ID, amount: Number(orderAmount), currency: "INR", name: "fixG",
+      description: "fixG Online Order", order_id: orderId,
+      prefill: { name, contact: phone, email: auth.currentUser.email || "" },
+      notes: { customer_name: name, customer_phone: phone, customer_email: auth.currentUser.email || "", firebase_uid: auth.currentUser.uid },
+      theme: { color: "#ff5a00" },
+      handler: async function(paymentResponse) {
+        await verifyPayment(paymentResponse, { name, phone, address, cart, total, email: auth.currentUser.email, uid: auth.currentUser.uid });
+      }
+    };
+    closeCheckout();
+    const razorpay = new window.Razorpay(options);
+    razorpay.on("payment.failed", function(response) { alert("Payment failed.\n\n" + (response.error?.description || "Please try again.")); });
+    razorpay.open();
+  } catch (error) { alert("Payment could not be started.\n\n" + error.message); }
 };
-
 async function verifyPayment(paymentResponse, customerData) {
-    try {
-        const response = await fetch(VERIFY_PAYMENT_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                razorpay_order_id: paymentResponse.razorpay_order_id,
-                razorpay_payment_id: paymentResponse.razorpay_payment_id,
-                razorpay_signature: paymentResponse.razorpay_signature,
-                orderData: {
-                    customerName: customerData.name,
-                    customerPhone: customerData.phone,
-                    deliveryAddress: customerData.address,
-                    customerEmail: customerData.email,
-                    customerUid: customerData.uid,
-                    items: customerData.cart,
-                    total: customerData.total,
-                    createdAt: new Date()
-                }
-            })
-        });
-        const data = await response.json();
-        if (!response.ok || !data.success) throw new Error(data.message || "Payment verification failed.");
-        localStorage.removeItem("fixGCart");
-        displayCart();
-        $('customerName').value = "";
-        $('customerPhone').value = "";
-        $('customerAddress').value = "";
-        alert("🎉 Payment Successful!\n\nOrder ID: " + (data.orderId || paymentResponse.razorpay_order_id) + "\n\nThank you for shopping with fixG.");
-    } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact fixG."); }
+  try {
+    const response = await fetch(VERIFY_PAYMENT_URL, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        razorpay_order_id: paymentResponse.razorpay_order_id,
+        razorpay_payment_id: paymentResponse.razorpay_payment_id,
+        razorpay_signature: paymentResponse.razorpay_signature,
+        orderData: {
+          customerName: customerData.name, customerPhone: customerData.phone,
+          deliveryAddress: customerData.address, customerEmail: customerData.email,
+          customerUid: customerData.uid, items: customerData.cart,
+          total: customerData.total, createdAt: new Date()
+        }
+      })
+    });
+    const data = await response.json();
+    if (!response.ok || !data.success) throw new Error(data.message || "Payment verification failed.");
+    localStorage.removeItem("fixGCart");
+    displayCart();
+    document.getElementById('customerName').value = "";
+    document.getElementById('customerPhone').value = "";
+    document.getElementById('customerAddress').value = "";
+    alert("🎉 Payment Successful!\n\nOrder ID: " + (data.orderId || paymentResponse.razorpay_order_id) + "\n\nThank you for shopping with fixG.");
+  } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact fixG."); }
 }
 
-// ========== MY ORDERS ==========
+/* ===== MY ORDERS ===== */
 window.openMyOrders = function() {
-    if (!auth.currentUser) { alert("Please login first to view your orders."); openAccount(); return; }
-    document.getElementById('ordersModal').style.display = 'flex';
-    loadCustomerOrders();
+  if (!auth.currentUser) { alert("Please login first to view your orders."); openAccount(); return; }
+  document.getElementById('ordersModal').style.display = 'flex';
+  loadCustomerOrders();
 };
 window.closeMyOrders = function() { document.getElementById('ordersModal').style.display = 'none'; };
 window.closeOrdersOutside = function(event) { if (event.target.id === 'ordersModal') closeMyOrders(); };
-
 async function loadCustomerOrders() {
-    const container = document.getElementById('ordersList');
-    const user = auth.currentUser;
-    if (!user) { container.innerHTML = '<p>Please login to see your orders.</p>'; return; }
-    container.innerHTML = '<p style="color:#6b7280;">Fetching your orders...</p>';
-    try {
-        const q = query(collection(db, "orders"), where("customerUid", "==", user.uid));
-        const querySnapshot = await getDocs(q);
-        if (querySnapshot.empty) {
-            container.innerHTML = `<div style="text-align:center;padding:40px;"><span style="font-size:48px;">📭</span><h3>No orders yet</h3><p style="color:#6b7280;">Start shopping to see your orders here!</p><a href="#shop" onclick="closeMyOrders()" style="color:#ff5a00;font-weight:bold;">Continue Shopping →</a></div>`;
-            return;
-        }
-        let html = '';
-        querySnapshot.forEach(doc => {
-            const data = doc.data();
-            const items = Array.isArray(data.items) ? data.items.map(i => `${escapeHtml(i.name)} (×${i.quantity || 1})`).join('<br>') : '—';
-            let dateStr = 'N/A';
-            if (data.createdAt) { const date = new Date(data.createdAt.seconds * 1000 || data.createdAt); dateStr = date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }); }
-            html += `<div class="order-card"><div class="order-header"><div><strong>Order ID:</strong> <span class="order-id">${doc.id.slice(0,12)}</span></div><div><span class="status-badge">✅ ${data.paymentStatus || data.status || 'Paid'}</span></div></div><div class="order-details"><div><strong>📅 Date:</strong> ${dateStr}</div><div><strong>💰 Total:</strong> ₹${Number(data.total || 0).toLocaleString('en-IN')}</div></div><div style="margin-top:8px;"><strong>📦 Items:</strong><div class="order-items">${items}</div></div><div class="order-address">📍 ${data.deliveryAddress || data.address || 'Address not provided'}</div></div>`;
-        });
-        container.innerHTML = html;
-    } catch (error) {
-        console.error("Error loading orders:", error);
-        container.innerHTML = `<p style="color:#dc2626;">Could not load orders. Please try again later.</p>`;
+  const container = document.getElementById('ordersList');
+  const user = auth.currentUser;
+  if (!user) { container.innerHTML = '<p>Please login to see your orders.</p>'; return; }
+  container.innerHTML = '<p style="color:#6b7280;">Fetching your orders...</p>';
+  try {
+    const q = query(collection(db, "orders"), where("customerUid", "==", user.uid));
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.empty) {
+      container.innerHTML = `<div style="text-align:center;padding:40px;"><span style="font-size:48px;">📭</span><h3>No orders yet</h3><p style="color:#6b7280;">Start shopping to see your orders here!</p><a href="#shop" onclick="closeMyOrders()" style="color:#ff5a00;font-weight:bold;">Continue Shopping →</a></div>`;
+      return;
     }
+    let html = '';
+    querySnapshot.forEach(d => {
+      const data = d.data();
+      const items = Array.isArray(data.items) ? data.items.map(i => `${escapeHtml(i.name)} (×${i.quantity || 1})`).join('<br>') : '—';
+      let dateStr = 'N/A';
+      if (data.createdAt) {
+        const date = new Date(data.createdAt.seconds * 1000 || data.createdAt);
+        dateStr = date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      }
+      html += `<div class="order-card">
+        <div class="order-header"><div><strong>Order ID:</strong> <span class="order-id">${d.id.slice(0,12)}</span></div><div><span class="status-badge">✅ ${data.paymentStatus || data.status || 'Paid'}</span></div></div>
+        <div class="order-details"><div><strong>📅 Date:</strong> ${dateStr}</div><div><strong>💰 Total:</strong> ₹${Number(data.total || 0).toLocaleString('en-IN')}</div></div>
+        <div style="margin-top:8px;"><strong>📦 Items:</strong><div class="order-items">${items}</div></div>
+        <div class="order-address">📍 ${escapeHtml(data.deliveryAddress || data.address || 'Address not provided')}</div>
+      </div>`;
+    });
+    container.innerHTML = html;
+  } catch (error) {
+    console.error("Error loading orders:", error);
+    container.innerHTML = '<p style="color:#dc2626;">Could not load orders. Please try again later.</p>';
+  }
 }
 
-// ========== SLIDER FUNCTIONS ==========
+/* ===== SLIDER (small cards) ===== */
 window.changeProductImage = function(dot) {
-    const slider = dot.closest('.image-slider');
-    const slides = slider.querySelectorAll('.slide');
-    const dots = slider.querySelectorAll('.dot');
-    const index = parseInt(dot.dataset.index);
-    slides.forEach((s, i) => s.style.display = i === index ? 'flex' : 'none');
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  const slider = dot.closest('.image-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  const index = parseInt(dot.dataset.index);
+  slides.forEach((s, i) => s.style.display = i === index ? 'flex' : 'none');
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
 };
-
 window.nextImage = function(btn) {
-    const slider = btn.closest('.image-slider');
-    const slides = slider.querySelectorAll('.slide');
-    const dots = slider.querySelectorAll('.dot');
-    let currentIndex = 0;
-    slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
-    const nextIndex = (currentIndex + 1) % slides.length;
-    slides.forEach((s, i) => s.style.display = i === nextIndex ? 'flex' : 'none');
-    dots.forEach((d, i) => d.classList.toggle('active', i === nextIndex));
+  const slider = btn.closest('.image-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  let currentIndex = 0;
+  slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
+  const nextIndex = (currentIndex + 1) % slides.length;
+  slides.forEach((s, i) => s.style.display = i === nextIndex ? 'flex' : 'none');
+  dots.forEach((d, i) => d.classList.toggle('active', i === nextIndex));
 };
-
 window.prevImage = function(btn) {
-    const slider = btn.closest('.image-slider');
-    const slides = slider.querySelectorAll('.slide');
-    const dots = slider.querySelectorAll('.dot');
-    let currentIndex = 0;
-    slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
-    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-    slides.forEach((s, i) => s.style.display = i === prevIndex ? 'flex' : 'none');
-    dots.forEach((d, i) => d.classList.toggle('active', i === prevIndex));
+  const slider = btn.closest('.image-slider');
+  const slides = slider.querySelectorAll('.slide');
+  const dots = slider.querySelectorAll('.dot');
+  let currentIndex = 0;
+  slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
+  const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+  slides.forEach((s, i) => s.style.display = i === prevIndex ? 'flex' : 'none');
+  dots.forEach((d, i) => d.classList.toggle('active', i === prevIndex));
 };
 
-// ========== LOAD DATA ==========
+/* ===== LOAD DATA ===== */
 async function loadAllData() {
-    productStatus.textContent = 'Loading products, spare parts, services and technicians...';
-    try {
-        const [prodSnap, partSnap, servSnap, techSnap] = await Promise.all([
-            getDocs(collection(db, "products")),
-            getDocs(collection(db, "spareParts")),
-            getDocs(collection(db, "services")),
-            getDocs(collection(db, "technicians"))
-        ]);
-        allProducts = prodSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-        allParts = partSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-        allServices = servSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-        allTechnicians = techSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-        productStatus.textContent = `Loaded: ${allProducts.length} products, ${allParts.length} spare parts, ${allServices.length} services, ${allTechnicians.length} technicians.`;
-        renderCurrentTab();
-    } catch (error) {
-        console.error("Firestore load error:", error);
-        productStatus.innerHTML = "❌ Error loading data. Please refresh.";
-        productsContainer.innerHTML = `<div class="loading">${escapeHtml(error.message)}</div>`;
-    }
-}
-
-// ========== RENDER FUNCTIONS ==========
-function renderProducts(list) {
-    if (!list || list.length === 0) {
-        productsContainer.innerHTML = `<div class="loading">No products found.</div>`;
-        return;
-    }
-    let html = '';
-    list.forEach(p => {
-        let images = [];
-        if (p.images && Array.isArray(p.images) && p.images.length > 0) {
-            images = p.images;
-        } else if (p.image && p.image !== '' && p.image !== 'logo.png') {
-            images = [p.image];
-        } else {
-            images = ['logo.png'];
-        }
-
-        let slidesHtml = '';
-        let dotsHtml = '';
-        images.forEach((img, idx) => {
-            const displayStyle = idx === 0 ? 'flex' : 'none';
-            slidesHtml += `
-                <div class="slide" data-index="${idx}" style="display:${displayStyle};width:100%;height:100%;align-items:center;justify-content:center;">
-                    <img src="${escapeHtml(img)}" alt="${escapeHtml(p.name)}" style="max-width:100%;max-height:100%;object-fit:contain;padding:10px;">
-                </div>
-            `;
-            dotsHtml += `<span class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" onclick="changeProductImage(this)"></span>`;
-        });
-
-        const hasMultipleImages = images.length > 1;
-        const navHtml = hasMultipleImages ? `
-            <button class="slide-prev" onclick="event.stopPropagation(); prevImage(this)">‹</button>
-            <button class="slide-next" onclick="event.stopPropagation(); nextImage(this)">›</button>
-            <div class="slide-dots">${dotsHtml}</div>
-        ` : '';
-
-        html += `
-            <div class="product-card" onclick="openProductDetail('${p.id}')">
-                <div class="product-image">
-                    <div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;">
-                        ${slidesHtml}
-                        ${navHtml}
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">${escapeHtml(p.name)}</div>
-                    <div class="product-desc">${escapeHtml(p.description || '')}</div>
-                    <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')}
-                        ${p.oldPrice && p.oldPrice > p.price ? `<span class="old-price">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>` : ''}
-                    </div>
-                    <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
-                    <div class="product-actions">
-                        <button class="add-cart" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
-                        <button class="buy-now" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    productsContainer.innerHTML = html;
-}
-
-function renderParts(list) {
-    if (!list || list.length === 0) {
-        productsContainer.innerHTML = `<div class="loading">No spare parts found.</div>`;
-        return;
-    }
-    let html = '';
-    list.forEach(p => {
-        const imgSrc = p.image && p.image !== '' ? p.image : 'logo.png';
-        html += `
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;">
-                        <div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;">
-                            <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(p.name)}" onerror="this.src='logo.png'" style="max-width:100%;max-height:100%;object-fit:contain;padding:10px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">${escapeHtml(p.name)}</div>
-                    <div class="product-desc">${escapeHtml(p.model || '')} • ${escapeHtml(p.type || '')}</div>
-                    <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')}</div>
-                    <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
-                    <div class="product-actions">
-                        <button class="add-cart" onclick="event.stopPropagation(); addToCartFromPart('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
-                        <button class="buy-now" onclick="event.stopPropagation(); buyNowFromPart('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    productsContainer.innerHTML = html;
-}
-
-function renderServices(list) {
-    if (!list || list.length === 0) {
-        productsContainer.innerHTML = `<div class="loading">No services available.</div>`;
-        return;
-    }
-    let html = '';
-    list.forEach(s => {
-        const imgSrc = s.image && s.image !== '' ? s.image : null;
-        const imageHtml = imgSrc 
-            ? `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(s.name)}" style="max-width:100%;max-height:100%;object-fit:contain;padding:10px;" onerror="this.style.display='none';">` 
-            : `<span style="font-size:60px;">🔧</span>`;
-        html += `
-            <div class="product-card">
-                <div class="product-image">
-                    <div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;">
-                        <div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;background:#f0f4ff;">
-                            ${imageHtml}
-                        </div>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">${escapeHtml(s.name)}</div>
-                    <div class="product-desc">${escapeHtml(s.description || s.category || '')}</div>
-                    <div class="price">₹${Number(s.price||0).toLocaleString('en-IN')}</div>
-                    <div class="stock">⏱ ${escapeHtml(s.estimatedTime || '')}</div>
-                    <div class="product-actions">
-                        <button class="add-cart" disabled style="background:#ddd;color:#666;border:none;">Book</button>
-                        <button class="buy-now" onclick="alert('Please contact us to book this service.')">Contact</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-    productsContainer.innerHTML = html;
-}
-
-function renderTechnicians(list) {
-    if (!list || list.length === 0) {
-        productsContainer.innerHTML = `<div class="loading">No technicians found.</div>`;
-        return;
-    }
-    let html = `<div class="technician-grid">`;
-    list.forEach(t => {
-        const imgSrc = t.image && t.image !== '' ? t.image : 'logo.png';
-        html += `
-            <div class="tech-card">
-                <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(t.name)}" onerror="this.src='logo.png'">
-                <h3>${escapeHtml(t.name)}</h3>
-                <div class="tech-area">📍 ${escapeHtml(t.area)}</div>
-                <div class="tech-exp">${t.experience || 0} years of experience</div>
-                <div class="tech-desc">${escapeHtml(t.description || '')}</div>
-                ${t.contact ? `<div class="tech-contact">📞 ${escapeHtml(t.contact)}</div>` : ''}
-            </div>
-        `;
-    });
-    html += `</div>`;
-    productsContainer.innerHTML = html;
-}
-
-// ========== TAB SWITCHING & SEARCH ==========
-window.switchTab = function(tab) {
-    currentTab = tab;
-    document.querySelectorAll('.shop-tab').forEach(btn => { btn.classList.toggle('active', btn.dataset.tab === tab); });
-    $('searchInput').value = '';
+  productStatus.textContent = 'Loading products, spare parts, services and technicians...';
+  try {
+    const [prodSnap, partSnap, servSnap, techSnap] = await Promise.all([
+      getDocs(collection(db, "products")),
+      getDocs(collection(db, "spareParts")),
+      getDocs(collection(db, "services")),
+      getDocs(collection(db, "technicians"))
+    ]);
+    allProducts = prodSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+    allParts = partSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+    allServices = servSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+    allTechnicians = techSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+    productStatus.textContent = `Loaded: ${allProducts.length} products, ${allParts.length} spare parts, ${allServices.length} services, ${allTechnicians.length} technicians.`;
     renderCurrentTab();
-    document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-};
+  } catch (error) {
+    console.error("Firestore load error:", error);
+    productStatus.innerHTML = "❌ Error loading data. Please refresh.";
+    productsContainer.innerHTML = `<div class="loading">${escapeHtml(error.message)}</div>`;
+  }
+}
 
+/* ===== RENDER ===== */
+function renderProducts(list) {
+  productsContainer.className = "products-grid";
+  if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No products found.</div>`; return; }
+  let html = '';
+  list.forEach(p => {
+    let images = [];
+    if (p.images && Array.isArray(p.images) && p.images.length > 0) images = p.images;
+    else if (p.image && p.image !== '' && p.image !== 'logo.png') images = [p.image];
+    else images = ['logo.png'];
+    let slidesHtml = '', dotsHtml = '';
+    images.forEach((img, idx) => {
+      const displayStyle = idx === 0 ? 'flex' : 'none';
+      slidesHtml += `<div class="slide" data-index="${idx}" style="display:${displayStyle};"><img src="${escapeHtml(img)}" alt=""></div>`;
+      dotsHtml += `<span class="dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" onclick="event.stopPropagation(); changeProductImage(this)"></span>`;
+    });
+    const hasMultiple = images.length > 1;
+    const navHtml = hasMultiple ? `<button class="slide-prev" onclick="event.stopPropagation(); prevImage(this)">‹</button><button class="slide-next" onclick="event.stopPropagation(); nextImage(this)">›</button><div class="slide-dots">${dotsHtml}</div>` : '';
+    html += `<div class="product-card" onclick="openProductDetail('${p.id}')">
+      <div class="product-image"><div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;">${slidesHtml} ${navHtml}</div></div>
+      <div class="product-info">
+        <div class="product-name">${escapeHtml(p.name)}</div>
+        <div class="product-desc">${escapeHtml(p.description || '')}</div>
+        <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')} ${p.oldPrice && p.oldPrice > p.price ? `<span class="old-price">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`: ''}</div>
+        <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
+        <div class="product-actions">
+          <button class="add-cart" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
+          <button class="buy-now" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
+        </div>
+      </div>
+    </div>`;
+  });
+  productsContainer.innerHTML = html;
+}
+function renderParts(list) {
+  productsContainer.className = "products-grid";
+  if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No spare parts found.</div>`; return; }
+  let html = '';
+  list.forEach(p => {
+    const imgSrc = p.image && p.image !== '' ? p.image : 'logo.png';
+    html += `<div class="product-card">
+      <div class="product-image"><div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;"><div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;"><img src="${escapeHtml(imgSrc)}" alt=""></div></div></div>
+      <div class="product-info">
+        <div class="product-name">${escapeHtml(p.name)}</div>
+        <div class="product-desc">${escapeHtml(p.type || '')}</div>
+        <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')}</div>
+        <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
+        <div class="product-actions">
+          <button class="add-cart" onclick="event.stopPropagation(); addToCartFromPart('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
+          <button class="buy-now" onclick="event.stopPropagation(); buyNowFromPart('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
+        </div>
+      </div>
+    </div>`;
+  });
+  productsContainer.innerHTML = html;
+}
+function renderServices(list) {
+  productsContainer.className = "products-grid";
+  if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No services available.</div>`; return; }
+  let html = '';
+  list.forEach(s => {
+    const imgSrc = s.image && s.image !== '' ? s.image : null;
+    const imageHtml = imgSrc ? `<img src="${escapeHtml(imgSrc)}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;padding:10px;" onerror="this.style.display='none';">` : `<span style="font-size:60px;">🔧</span>`;
+    html += `<div class="product-card">
+      <div class="product-image"><div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;"><div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;background:#f0f4ff;">${imageHtml}</div></div></div>
+      <div class="product-info">
+        <div class="product-name">${escapeHtml(s.name)}</div>
+        <div class="product-desc">${escapeHtml(s.description || s.category || '')}</div>
+        <div class="price">₹${Number(s.price||0).toLocaleString('en-IN')}</div>
+        <div class="stock">⏱ ${escapeHtml(s.estimatedTime || '')}</div>
+        <div class="product-actions">
+          <button class="add-cart" disabled style="background:#ddd;color:#666;border:none;">Book</button>
+          <button class="buy-now" onclick="openBooking()">Contact</button>
+        </div>
+      </div>
+    </div>`;
+  });
+  productsContainer.innerHTML = html;
+}
+function renderTechnicians(list) {
+  productsContainer.className = "";
+  if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No technicians found.</div>`; return; }
+  let html = `<div class="technician-grid">`;
+  list.forEach(t => {
+    const imgSrc = t.image && t.image !== '' ? t.image : 'logo.png';
+    html += `<div class="tech-card">
+      <img src="${escapeHtml(imgSrc)}" alt="">
+      <h3>${escapeHtml(t.name)}</h3>
+      <div class="tech-area">📍 ${escapeHtml(t.area || '')}</div>
+      <div class="tech-exp">${t.experience || 0} years of experience</div>
+      <div class="tech-desc">${escapeHtml(t.description || '')}</div>
+      ${t.contact ? `<div class="tech-contact">📞 ${escapeHtml(t.contact)}</div>`: ''}
+    </div>`;
+  });
+  html += `</div>`;
+  productsContainer.innerHTML = html;
+}
+
+/* ===== TAB SWITCHING ===== */
+window.switchTab = function(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.shop-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
+  document.getElementById('searchInput').value = '';
+  renderCurrentTab();
+  document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+};
 function renderCurrentTab() {
-    const search = $('searchInput').value.trim().toLowerCase();
-    let list = [], renderFn;
-    if (currentTab === 'products') {
-        list = allProducts.filter(p => !search || p.name.toLowerCase().includes(search) || (p.description||'').toLowerCase().includes(search) || (p.category||'').toLowerCase().includes(search));
-        renderFn = renderProducts;
-    } else if (currentTab === 'parts') {
-        list = allParts.filter(p => !search || p.name.toLowerCase().includes(search) || (p.model||'').toLowerCase().includes(search) || (p.type||'').toLowerCase().includes(search) || (p.description||'').toLowerCase().includes(search));
-        renderFn = renderParts;
-    } else if (currentTab === 'services') {
-        list = allServices.filter(s => !search || s.name.toLowerCase().includes(search) || (s.description||'').toLowerCase().includes(search) || (s.category||'').toLowerCase().includes(search));
-        renderFn = renderServices;
-    } else if (currentTab === 'technicians') {
-        list = allTechnicians.filter(t => !search || t.name.toLowerCase().includes(search) || (t.area||'').toLowerCase().includes(search) || (t.description||'').toLowerCase().includes(search));
-        renderFn = renderTechnicians;
-    } else {
-        list = []; renderFn = renderProducts;
-    }
-    renderFn(list);
+  const search = document.getElementById('searchInput').value.trim().toLowerCase();
+  let list = [], renderFn;
+  if (currentTab === 'products') {
+    list = allProducts.filter(p => !search || p.name.toLowerCase().includes(search) || (p.description||'').toLowerCase().includes(search) || (p.category||'').toLowerCase().includes(search));
+    renderFn = renderProducts;
+  } else if (currentTab === 'parts') {
+    list = allParts.filter(p => !search || p.name.toLowerCase().includes(search) || (p.model||'').toLowerCase().includes(search) || (p.type||'').toLowerCase().includes(search) || (p.description||'').toLowerCase().includes(search));
+    renderFn = renderParts;
+  } else if (currentTab === 'services') {
+    list = allServices.filter(s => !search || s.name.toLowerCase().includes(search) || (s.description||'').toLowerCase().includes(search) || (s.category||'').toLowerCase().includes(search));
+    renderFn = renderServices;
+  } else if (currentTab === 'technicians') {
+    list = allTechnicians.filter(t => !search || t.name.toLowerCase().includes(search) || (t.area||'').toLowerCase().includes(search) || (t.description||'').toLowerCase().includes(search));
+    renderFn = renderTechnicians;
+  } else if (currentTab === 'servicemenu') {
+    productStatus.textContent = `Showing Mobile Services, Brand Services and Advanced Services available in Mukkam.`;
+    renderServiceMenu(search);
+    return;
+  } else { list = []; renderFn = renderProducts; }
+  renderFn(list);
 }
 window.searchCurrentTab = function() { renderCurrentTab(); };
-
 window.filterCategory = function(cat) {
-    switchTab('products');
-    const filtered = allProducts.filter(p => (p.category || '').toLowerCase().includes(cat.toLowerCase()) || p.name.toLowerCase().includes(cat.toLowerCase()));
-    renderProducts(filtered);
-    productStatus.textContent = `Showing ${filtered.length} product(s) in category "${cat}".`;
+  switchTab('products');
+  const filtered = allProducts.filter(p => (p.category || '').toLowerCase().includes(cat.toLowerCase()) || p.name.toLowerCase().includes(cat.toLowerCase()));
+  renderProducts(filtered);
+  productStatus.textContent = `Showing ${filtered.length} product(s) in category "${cat}".`;
 };
-window.clearFilters = function() { $('searchInput').value = ''; renderCurrentTab(); document.getElementById('shop').scrollIntoView({ behavior: 'smooth' }); };
+window.clearFilters = function() {
+  document.getElementById('searchInput').value = '';
+  renderCurrentTab();
+  document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+};
 window.scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
-function escapeHtml(value) { return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
 
-// ========== AUTH STATE OBSERVER ==========
-onAuthStateChanged(auth, user => {
-    const label = $('accountLabel');
-    const myOrdersBtn = $('myOrdersBtn');
-    const myProfileBtn = $('myProfileBtn');
-    if (user) {
-        label.textContent = user.displayName || "Account";
-        $('accountButton').title = user.email || "Account";
-        myOrdersBtn.style.display = 'inline-block';
-        myProfileBtn.style.display = 'inline-block';
-    } else {
-        label.textContent = "Login";
-        $('accountButton').title = "Customer Login";
-        myOrdersBtn.style.display = 'none';
-        myProfileBtn.style.display = 'none';
-        closeMyOrders();
-        closeProfile();
-    }
+/* ===== LEGAL MODAL ===== */
+const fixgLegalTexts = {
+privacy: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Privacy Policy</h2><p>At <strong>fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p><p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>`,
+terms: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Terms & Conditions</h2><p><strong>1. Scope of Service:</strong> fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p><p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. fixG is not responsible for any accidental data loss during the service process.</p><p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p><p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>`,
+refund: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Cancellation & Refund Policy</h2><p><strong>1. Cancellations:</strong> Service bookings can be cancelled free of cost before our technician initiates work on your device.</p><p><strong>2. Refunds:</strong> If an advance payment was made online via Razorpay and the order/service is cancelled prior to processing, eligible refunds will be credited back to your original payment method within 5 to 7 business days.</p><p><strong>3. Warranty Policy:</strong> Replaced spare parts carry specific warranty terms as printed on the official bill. Warranty covers manufacturing defects only and excludes physical damage, screen breakage, or liquid damage caused after delivery.</p>`
+};
+window.openFixgModal = function(type) {
+  document.getElementById('fixgModalContent').innerHTML = fixgLegalTexts[type];
+  document.getElementById('fixgLegalModal').style.display = 'block';
+};
+window.closeFixgModal = function() { document.getElementById('fixgLegalModal').style.display = 'none'; };
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('fixgLegalModal');
+  if (e.target === modal) modal.style.display = 'none';
 });
 
-// ========== INIT ==========
+/* ===== AUTH STATE ===== */
+onAuthStateChanged(auth, user => {
+  const label = document.getElementById('accountLabel');
+  const myOrdersBtn = document.getElementById('myOrdersBtn');
+  const myProfileBtn = document.getElementById('myProfileBtn');
+  if (user) {
+    label.textContent = user.displayName || "Account";
+    document.getElementById('accountButton').title = user.email || "Account";
+    myOrdersBtn.style.display = 'inline-block';
+    myProfileBtn.style.display = 'inline-block';
+  } else {
+    label.textContent = "Login";
+    document.getElementById('accountButton').title = "Customer Login";
+    myOrdersBtn.style.display = 'none';
+    myProfileBtn.style.display = 'none';
+    closeMyOrders();
+    closeProfile();
+  }
+});
+
+/* ===== INIT ===== */
 loadAllData();
 displayCart();
-document.getElementById('searchInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') window.searchCurrentTab(); });
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') window.searchCurrentTab();
+});
 </script>
-</body>
-<style>
-.order-card{border:1px solid #e5e7eb;border-radius:10px;padding:15px;margin-bottom:15px}
-</style>
-
-</head>
-<body>
-
-<!-- ================= fixG Legal Footer Start ================= -->
-<footer style="background-color: #07182f; color: #ffffff; padding: 30px 20px; font-family: Arial, sans-serif; text-align: center; border-top: 1px solid #29405c;">
-  <div style="max-width: 1400px; margin: 0 auto;">
-    <p style="margin-bottom: 12px; font-size: 14px; color: #cbd5e1;">
-      &copy; 2026 <strong>fixG</strong>. All rights reserved. | Mobiles, Laptops, Accessories & Service, Mukkam
-    </p>
-    
-    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 13px;">
-      <a href="javascript:void(0)" onclick="openFixgModal('privacy')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Privacy Policy</a> |
-      <a href="javascript:void(0)" onclick="openFixgModal('terms')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Terms & Conditions</a> |
-      <a href="javascript:void(0)" onclick="openFixgModal('refund')" style="color: #ff5a00; text-decoration: none; font-weight: bold;">Cancellation & Refund Policy</a>
-    </div>
-  </div>
-</footer>
-
-<!-- Legal Pop-up Modal Window -->
-<div id="fixgLegalModal" style="display: none; position: fixed; z-index: 999999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); overflow: auto;">
-  <div style="background-color: #ffffff; color: #111827; margin: 6% auto; padding: 25px; border-radius: 12px; width: 90%; max-width: 650px; position: relative; font-family: Arial, sans-serif; text-align: left; line-height: 1.6; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-    <span onclick="closeFixgModal()" style="position: absolute; right: 20px; top: 12px; font-size: 28px; font-weight: bold; cursor: pointer; color: #6b7280;">&times;</span>
-    <div id="fixgModalContent"></div>
-  </div>
-</div>
-
-<script>
-  const fixgLegalTexts = {
-    privacy: `
-      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Privacy Policy</h2>
-      <p>At <strong>fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p>
-      <p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>
-    `,
-    terms: `
-      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Terms & Conditions</h2>
-      <p><strong>1. Scope of Service:</strong> fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p>
-      <p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. fixG is not responsible for any accidental data loss during the service process.</p>
-      <p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p>
-      <p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>
-    `,
-    refund: `
-      <h2 style="color:#07182f; border-bottom:2px solid #ff5a00; padding-bottom:8px; margin-bottom:15px;">Cancellation & Refund Policy</h2>
-      <p><strong>1. Cancellations:</strong> Service bookings can be cancelled free of cost before our technician initiates work on your device.</p>
-      <p><strong>2. Refunds:</strong> If an advance payment was made online via Razorpay and the order/service is cancelled prior to processing, eligible refunds will be credited back to your original payment method within 5 to 7 business days.</p>
-      <p><strong>3. Warranty Policy:</strong> Replaced spare parts carry specific warranty terms as printed on the official bill. Warranty covers manufacturing defects only and excludes physical damage, screen breakage, or liquid damage caused after delivery.</p>
-    `
-  };
-
-  function openFixgModal(type) {
-    document.getElementById('fixgModalContent').innerHTML = fixgLegalTexts[type];
-    document.getElementById('fixgLegalModal').style.display = 'block';
-  }
-
-  function closeFixgModal() {
-    document.getElementById('fixgLegalModal').style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById('fixgLegalModal');
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  }
-</script>
-<!-- ================= fixG Legal Footer End ================= -->
-
 </body>
 </html>
-
