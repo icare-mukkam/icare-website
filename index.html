@@ -531,20 +531,20 @@ let pendingCheckout = false;
 const productStatus = document.getElementById('productStatus');
 const productsContainer = document.getElementById('products');
 
-/* ===== SERVICE MENU DATA ===== */
+/* ===== SERVICE MENU DATA (Mukkam removed from all service names) ===== */
 const MOBILE_SERVICES = [
-["Mobile Service Mukkam","Complete mobile phone service in Mukkam for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
-["Smartphone Service Mukkam","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
-["Android Mobile Service Mukkam","Android mobile service for supported devices, including display, battery, charging, software, camera, network and motherboard-related problems."],
-["Mobile Display Service Mukkam","Mobile display service for broken screens, no display, touch problems and display-related faults."],
-["Mobile Battery Service Mukkam","Mobile battery service for battery replacement, fast drain, heating and battery-related faults."],
-["Mobile Charging Service Mukkam","Mobile charging service for charging-port, charging-IC, slow-charging and not-charging problems."],
-["Mobile Software Service Mukkam","Mobile software service for software problems, boot loops, hanging, restarting and update-related faults."],
-["Mobile Camera Service Mukkam","Mobile camera service for front camera, rear camera, camera glass, OIS and camera-related faults."],
-["Mobile Speaker Service Mukkam","Mobile speaker and microphone service for sound, earpiece and audio-related problems."],
-["Mobile Network Service Mukkam","Mobile network and signal service for signal, SIM, antenna, baseband and network-related faults."],
-["Mobile Motherboard Service Mukkam","Advanced mobile motherboard service for no power, short circuit, charging, network, IC and board-level faults."],
-["Mobile Water Damage Service Mukkam","Mobile water-damage diagnosis and service for supported smartphones and electronic components."],
+["Mobile Service","Complete mobile phone service for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
+["Smartphone Service","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
+["Android Mobile Service","Android mobile service for supported devices, including display, battery, charging, software, camera, network and motherboard-related problems."],
+["Mobile Display Service","Mobile display service for broken screens, no display, touch problems and display-related faults."],
+["Mobile Battery Service","Mobile battery service for battery replacement, fast drain, heating and battery-related faults."],
+["Mobile Charging Service","Mobile charging service for charging-port, charging-IC, slow-charging and not-charging problems."],
+["Mobile Software Service","Mobile software service for software problems, boot loops, hanging, restarting and update-related faults."],
+["Mobile Camera Service","Mobile camera service for front camera, rear camera, camera glass, OIS and camera-related faults."],
+["Mobile Speaker Service","Mobile speaker and microphone service for sound, earpiece and audio-related problems."],
+["Mobile Network Service","Mobile network and signal service for signal, SIM, antenna, baseband and network-related faults."],
+["Mobile Motherboard Service","Advanced mobile motherboard service for no power, short circuit, charging, network, IC and board-level faults."],
+["Mobile Water Damage Service","Mobile water-damage diagnosis and service for supported smartphones and electronic components."],
 ["Mobile Not Charging Service","Diagnosis and service for smartphones that do not charge, charge slowly or disconnect while charging."],
 ["Mobile Not Turning On Service","Diagnosis and service for smartphones with no power, dead-phone and power-related problems."],
 ["Mobile Battery Drain Service","Diagnosis and service for fast battery drain, battery heating and abnormal power consumption."],
@@ -556,20 +556,20 @@ const MOBILE_SERVICES = [
 ];
 
 const BRANDS = [
-"iPhone Service Mukkam","Samsung Service Mukkam","OnePlus Service Mukkam",
-"Xiaomi Service Mukkam","Vivo Service Mukkam","OPPO Service Mukkam",
-"Realme Service Mukkam","Motorola Service Mukkam","POCO Service Mukkam",
-"iQOO Service Mukkam","Nothing Service Mukkam","CMF Service Mukkam",
-"Google Pixel Service Mukkam","Tecno Service Mukkam","Infinix Service Mukkam",
-"HONOR Service Mukkam","Nokia Service Mukkam","HMD Service Mukkam",
-"Lava Service Mukkam","ASUS Mobile Service Mukkam","Sony Mobile Service Mukkam",
-"Huawei Service Mukkam","ZTE Service Mukkam","Nubia Service Mukkam",
-"Micromax Service Mukkam","Gionee Service Mukkam","Itel Service Mukkam",
-"Alcatel Service Mukkam","Blackview Service Mukkam","BLU Mobile Service Mukkam",
-"Coolpad Service Mukkam","Cubot Service Mukkam","Doogee Service Mukkam",
-"Fairphone Service Mukkam","Sharp Mobile Service Mukkam","Ulefone Service Mukkam",
-"UMIDIGI Service Mukkam","Wiko Mobile Service Mukkam","TCL Mobile Service Mukkam",
-"HTC Service Mukkam","Lenovo Mobile Service Mukkam"
+"iPhone Service","Samsung Service","OnePlus Service",
+"Xiaomi Service","Vivo Service","OPPO Service",
+"Realme Service","Motorola Service","POCO Service",
+"iQOO Service","Nothing Service","CMF Service",
+"Google Pixel Service","Tecno Service","Infinix Service",
+"HONOR Service","Nokia Service","HMD Service",
+"Lava Service","ASUS Mobile Service","Sony Mobile Service",
+"Huawei Service","ZTE Service","Nubia Service",
+"Micromax Service","Gionee Service","Itel Service",
+"Alcatel Service","Blackview Service","BLU Mobile Service",
+"Coolpad Service","Cubot Service","Doogee Service",
+"Fairphone Service","Sharp Mobile Service","Ulefone Service",
+"UMIDIGI Service","Wiko Mobile Service","TCL Mobile Service",
+"HTC Service","Lenovo Mobile Service"
 ];
 
 const ADVANCED_SERVICES = [
@@ -598,7 +598,7 @@ function renderServiceMenu(filter=""){
   const adv = ADVANCED_SERVICES.filter(x => x.toLowerCase().includes(q));
   let html = "";
   if (svc.length) {
-    html += `<h3 class="service-menu-section-title">🔧 Mobile Services in Mukkam</h3><div class="service-menu-grid">` +
+    html += `<h3 class="service-menu-section-title">🔧 Mobile Services</h3><div class="service-menu-grid">` +
       svc.map(x => `<article class="service-menu-card"><h3>${escapeHtml(x[0])}</h3><p>${escapeHtml(x[1])}</p><span class="service-menu-tag">Mobile Service</span></article>`).join("") + `</div>`;
   }
   if (brd.length) {
@@ -1352,7 +1352,7 @@ function renderCurrentTab() {
     list = allTechnicians.filter(t => !search || t.name.toLowerCase().includes(search) || (t.area||'').toLowerCase().includes(search) || (t.description||'').toLowerCase().includes(search));
     renderFn = renderTechnicians;
   } else if (currentTab === 'servicemenu') {
-    productStatus.textContent = `Showing Mobile Services, Brand Services and Advanced Services available in Mukkam.`;
+    productStatus.textContent = `Showing Mobile Services, Brand Services and Advanced Services.`;
     renderServiceMenu(search);
     return;
   } else { list = []; renderFn = renderProducts; }
