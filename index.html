@@ -3,19 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>fixG | Mobiles, Laptops, Accessories & Service</title>
-<meta name="description" content="fixG - Mobiles, laptops, accessories and professional repair service in Mukkam, Kozhikode, Kerala.">
+<title>iCare Mukkam | Mobile Service, Repair & Mobiles in Mukkam</title>
+<meta name="description" content="iCare Mukkam / fixG offers mobile, iPhone, Samsung, laptop, tablet and smart device service, repair, accessories and spare parts in Mukkam, Kozhikode, Kerala.">
+<meta name="keywords" content="mobile service Mukkam, iPhone service Mukkam, Samsung service Mukkam, mobile repair Mukkam, iCare Mukkam, fixG Mukkam, laptop service Mukkam, mobile shop Mukkam">
+<meta name="author" content="iCare Mukkam / fixG">
+<meta property="og:title" content="iCare Mukkam | Mobile Service & Repair">
+<meta property="og:description" content="Professional mobile, laptop and electronic device service in Mukkam, Kozhikode.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.fixg.in">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827}
-.topbar{background:#ff5a00;color:white;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px}
-.topbar a{color:white;text-decoration:none;margin-left:18px}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827;padding-bottom:70px}
+.topbar{background:#ff5a00;color:white;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
+.topbar a{color:white;text-decoration:none;margin-left:18px;font-weight:bold}
+.topbar a:hover{text-decoration:underline}
+.topbar .loc{font-weight:bold}
 header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .main-header{max-width:1400px;margin:auto;padding:14px 4%;display:flex;align-items:center;gap:25px}
-.logo{min-width:170px;text-decoration:none;display:flex;align-items:center}
-.logo svg{width:155px;height:auto}
+.logo-wrap{min-width:200px;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start}
+.logo-wrap svg{width:155px;height:auto}
+.logo-tagline{font-size:11px;color:#6b7280;font-weight:bold;margin-top:-4px;margin-left:4px;letter-spacing:0.3px}
+.logo-tagline strong{color:#ff5a00}
 .search-box{flex:1;display:flex;max-width:650px}
 .search-box input{width:100%;padding:13px 18px;border:1px solid #ddd;border-right:0;border-radius:8px 0 0 8px;outline:none;font-size:15px}
 .search-box button{width:55px;border:0;background:#ff5a00;color:white;border-radius:0 8px 8px 0;font-size:20px;cursor:pointer}
@@ -38,24 +48,30 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .nav-inner a:hover{color:#ff5a00}
 @media(max-width:800px){.dropdown-content{position:fixed;left:0;top:60px;width:100%;max-height:80vh;overflow-y:auto;border-radius:0 0 12px 12px}}
 .hero{max-width:1400px;margin:20px auto;padding:0 4%}
-.hero-box{min-height:390px;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 80% 30%,#ff7a1a 0,#ff5a00 25%,#07182f 70%);color:white;display:flex;align-items:center;position:relative}
-.hero-content{width:55%;padding:55px;position:relative;z-index:2}
-.hero-content small{color:#ff9a5c;font-size:17px;font-weight:bold}
-.hero-content h1{font-size:52px;line-height:1.05;margin:12px 0}
+.hero-box{min-height:420px;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 80% 30%,#ff7a1a 0,#ff5a00 25%,#07182f 70%);color:white;display:flex;align-items:center;position:relative}
+.hero-content{width:60%;padding:55px;position:relative;z-index:2}
+.hero-content small{color:#ff9a5c;font-size:16px;font-weight:bold;letter-spacing:1px}
+.hero-content h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0}
 .hero-content h1 strong{color:#ff5a00}
-.hero-content p{font-size:19px;margin-bottom:25px;color:#e5e7eb}
-.hero-buttons a{display:inline-block;padding:13px 24px;margin-right:8px;border-radius:8px;text-decoration:none;font-weight:bold}
-.shop-btn{background:#ff5a00;color:white}.service-btn{background:white;color:#111827}
-.book-btn{display:inline-block;background:#ffffff;color:#ff5a00;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;transition:0.3s;border:2px solid #ff5a00;animation:pulse 2s infinite}
+.hero-content .tagline{font-size:clamp(15px,2vw,18px);margin-bottom:8px;color:#dbe5f2}
+.hero-content .subtext{font-size:14px;color:#ffb98a;margin-bottom:22px;font-weight:bold}
+.hero-buttons a{display:inline-block;padding:13px 24px;margin:4px 6px 4px 0;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px}
+.shop-btn{background:#ff5a00;color:white;border:2px solid #ff5a00}
+.shop-btn:hover{background:#e84d00}
+.service-btn{background:white;color:#111827;border:2px solid white}
+.book-btn{display:inline-block;background:#ffffff;color:#ff5a00;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;transition:0.3s;border:2px solid #ff5a00;animation:pulse 2s infinite}
 .book-btn:hover{background:#ff5a00;color:white;transform:scale(1.05)}
+.whatsapp-btn{background:#25d366;color:white;border:2px solid #25d366}
+.whatsapp-btn:hover{background:#1eb455}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,0,0.4)}70%{box-shadow:0 0 0 10px rgba(255,90,0,0)}100%{box-shadow:0 0 0 0 rgba(255,90,0,0)}}
-.hero-devices{position:absolute;right:4%;bottom:0;font-size:130px;letter-spacing:-35px;opacity:.95}
+.hero-devices{position:absolute;right:4%;bottom:0;font-size:130px;letter-spacing:-35px;opacity:.85}
+@media(max-width:800px){.hero-devices{font-size:70px;opacity:.3}}
 .features{max-width:1400px;margin:20px auto;padding:0 4%;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .feature{background:white;padding:20px;border-radius:10px;display:flex;gap:13px;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .feature-icon{font-size:28px;color:#ff5a00}.feature strong{display:block}.feature small{color:#6b7280}
 .section{max-width:1400px;margin:0 auto;padding:55px 4%}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
-.section-head h2{font-size:28px}.view-all{color:#ff5a00;text-decoration:none;font-weight:bold}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;flex-wrap:wrap;gap:10px}
+.section-head h2{font-size:28px;color:#07182f}.view-all{color:#ff5a00;text-decoration:none;font-weight:bold}
 .categories{display:grid;grid-template-columns:repeat(9,1fr);gap:15px}
 .category{background:white;padding:18px 10px;border-radius:12px;text-align:center;cursor:pointer;border:1px solid #eee;transition:.2s}
 .category:hover{border-color:#ff5a00;transform:translateY(-3px)}
@@ -120,8 +136,17 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .secondary-btn{width:100%;border:1px solid #ff5a00;background:white;color:#ff5a00;padding:12px;border-radius:8px;font-weight:bold;cursor:pointer}
 .auth-user-box{display:none;text-align:center}.auth-avatar{width:70px;height:70px;border-radius:50%;background:#fff1e8;color:#ff5a00;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px}
 .pay-button{width:100%;border:0;background:#16a34a;color:white;padding:14px;border-radius:8px;font-weight:bold;font-size:16px;cursor:pointer}
-.info-section{background:white}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service-card{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee}.service-card .icon{font-size:38px;margin-bottom:10px}.service-card h3{margin-bottom:8px}
+.info-section{background:white}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee;transition:.2s}
+.service-card:hover{border-color:#ff5a00;transform:translateY(-3px)}
+.service-card .icon{font-size:38px;margin-bottom:10px}
+.service-card h3{margin-bottom:8px;color:#07182f;font-size:17px}
+.service-card p{color:#6b7280;font-size:13.5px}
+.service-card .service-cta{display:flex;gap:6px;margin-top:12px}
+.service-card .service-cta a,.service-card .service-cta button{flex:1;text-align:center;padding:7px 8px;border-radius:6px;font-size:12px;font-weight:bold;border:none;cursor:pointer;text-decoration:none}
+.service-card .s-call{background:#2563eb;color:white}
+.service-card .s-wa{background:#25d366;color:white}
 .technician-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .tech-card{background:white;border-radius:12px;padding:20px;text-align:center;border:1px solid #e5e7eb;transition:.2s}
 .tech-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.08)}
@@ -142,6 +167,22 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .service-menu-section-title{font-size:22px;color:#07182f;margin:30px 0 14px;font-weight:800}
 .service-menu-section-title:first-child{margin-top:0}
 .service-menu-note{background:#fff7f1;border-left:4px solid #ff5a00;padding:14px 16px;border-radius:10px;margin-top:24px;color:#5d3a27;font-size:13.5px}
+/* Contact / Location */
+.contact-section{background:white}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
+.contact-info{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee}
+.contact-info h3{color:#07182f;margin-bottom:15px;font-size:20px}
+.contact-line{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;font-size:15px}
+.contact-line .ci{font-size:22px;line-height:1}
+.contact-line strong{display:block;color:#07182f}
+.contact-line span{color:#6b7280;font-size:14px}
+.contact-line a{color:#ff5a00;font-weight:bold;text-decoration:none}
+.map-box{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee;text-align:center}
+.map-box h3{color:#07182f;margin-bottom:12px;font-size:20px}
+.map-box iframe{width:100%;height:230px;border:0;border-radius:10px}
+.directions-btn{display:inline-block;margin-top:14px;background:#ff5a00;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold}
+.directions-btn:hover{background:#e84d00}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 .gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
 .gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
 .gallery-box .modal-header h2{color:white;font-size:20px}
@@ -192,11 +233,29 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .detail-buy-now:hover{background:#e84d00}
 @media(max-width:800px){.product-detail-body{grid-template-columns:1fr;gap:20px;padding:16px}.detail-image-section{height:300px}.detail-info-section h1{font-size:22px}.detail-price{font-size:26px}.detail-actions{flex-direction:column}.product-detail-overlay{padding:10px}}
 @media(max-width:500px){.detail-image-section{height:220px}.product-detail-container{border-radius:12px}}
-footer{background:#07182f;color:white;padding:45px 5%}.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
-footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0}footer p{color:#cbd5e1}
-.copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8}
+footer{background:#07182f;color:white;padding:45px 5%}
+.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:35px}
+footer h3{margin-bottom:12px;color:#ff5a00;font-size:16px}
+footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0;font-size:14px}
+footer a:hover{color:#ff5a00}
+footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
+.footer-social{display:flex;gap:10px;margin-top:14px}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:#152a44;border-radius:50%;margin:0;font-size:18px;color:white}
+.footer-social a:hover{background:#ff5a00;color:white}
+.copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8;font-size:13px}
+.copyright a{display:inline;color:#ff5a00;margin:0 4px}
+/* Floating buttons */
 .whatsapp,.call{position:fixed;right:20px;width:56px;height:56px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:25px;z-index:7000;box-shadow:0 5px 20px rgba(0,0,0,.25)}
 .whatsapp{bottom:20px;background:#25d366}.call{bottom:88px;background:#2563eb}
+/* Mobile sticky CTA bar */
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;box-shadow:0 -4px 15px rgba(0,0,0,.08);z-index:8000}
+.mobile-cta-bar a{flex:1;text-align:center;padding:12px 5px;text-decoration:none;font-size:12px;font-weight:bold;color:#111827;display:flex;flex-direction:column;align-items:center;gap:3px}
+.mobile-cta-bar a .mci{font-size:20px}
+.mobile-cta-bar a:hover{background:#fff7f1;color:#ff5a00}
+.mobile-cta-bar a.call-m{color:#2563eb}
+.mobile-cta-bar a.wa-m{color:#25d366}
+.mobile-cta-bar a.book-m{color:#ff5a00}
+@media(max-width:800px){.mobile-cta-bar{display:flex}.whatsapp,.call{display:none}body{padding-bottom:75px}}
 .order-card{border:1px solid #e5e7eb;border-radius:10px;padding:15px;margin-bottom:15px;background:#fafafa}
 .order-card .order-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .order-card .order-id{font-family:monospace;background:#eee;padding:2px 8px;border-radius:4px;font-size:13px}
@@ -204,31 +263,36 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 .order-card .order-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .order-card .order-items{font-size:14px;color:#4b5563;margin-top:4px}
 .order-card .order-address{font-size:13px;color:#6b7280;margin-top:6px}
-@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
-.topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo{min-width:auto}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
-.hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:38px}.hero-devices{font-size:70px;bottom:10px;opacity:.35}
+.topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo-wrap{min-width:auto}.logo-tagline{font-size:10px}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
+.hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:36px}.hero-devices{font-size:70px;bottom:10px;opacity:.25}
 .features{grid-template-columns:repeat(2,1fr);padding:0 12px}.categories{grid-template-columns:repeat(4,1fr)}.banners{grid-template-columns:1fr}#shop .products-grid{grid-template-columns:repeat(2,1fr)}
-.section{padding:40px 15px}.service-grid{grid-template-columns:1fr}.technician-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
+.section{padding:40px 15px}.service-grid{grid-template-columns:1fr 1fr}.technician-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
 .order-card .order-details{grid-template-columns:1fr}
 .service-menu-grid{grid-template-columns:1fr}.brand-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:480px){
 .categories{grid-template-columns:repeat(3,1fr)}#shop .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}.product-image{height:150px}.product-info{padding:10px}.product-name{font-size:14px}.price{font-size:17px}.product-actions{flex-direction:column}
-.features{grid-template-columns:1fr}.technician-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.hero-content h1{font-size:32px}.hero-content p{font-size:16px}
+.features{grid-template-columns:1fr}.technician-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.hero-content h1{font-size:30px}.hero-content p{font-size:15px}.service-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<!-- ===== TOPBAR ===== -->
 <div class="topbar">
-<div>📍 Mukkam, Kozhikode, Kerala</div>
-<div><a href="tel:+919447667744">📞 9447667744</a><a href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+<div class="loc">📍 Mukkam, Kozhikode, Kerala</div>
+<div>
+<a href="tel:+919447667744">📞 Call: 9447667744</a>
+<a href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a>
+</div>
 </div>
 
+<!-- ===== HEADER ===== -->
 <header>
 <div class="main-header">
-<a href="#home" class="logo">
+<a href="#home" class="logo-wrap">
 <svg viewBox="0 0 220 75" xmlns="http://www.w3.org/2000/svg">
 <defs><linearGradient id="fixGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff6a00"/><stop offset="100%" stop-color="#e63f00"/></linearGradient></defs>
 <g transform="translate(8,5) rotate(12)"><rect x="0" y="0" width="25" height="42" rx="5" fill="none" stroke="#ff5a00" stroke-width="5"/><circle cx="12.5" cy="35" r="2" fill="#ff5a00"/></g>
@@ -236,6 +300,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <tspan fill="#1e3a8a">fix</tspan><tspan fill="url(#fixGradient)">G</tspan>
 </text>
 </svg>
+<span class="logo-tagline">by <strong>iCare Mukkam</strong></span>
 </a>
 <div class="search-box"><input id="searchInput" type="search" placeholder="Search current tab..."><button onclick="searchCurrentTab()">🔍</button></div>
 <div class="header-actions">
@@ -257,7 +322,6 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <a href="#shop" onclick="switchTab('products'); filterCategory('Watch')">⌚ Smart Watch</a>
 <a href="#shop" onclick="switchTab('products'); filterCategory('Earbud')">🎧 Earbuds</a>
 <a href="#shop" onclick="switchTab('products'); filterCategory('Accessory')">🔌 Accessories</a>
-<a href="#shop" onclick="switchTab('products'); filterCategory('TV')">📺 TV & Audio</a>
 <a href="#shop" onclick="switchTab('parts')">🧩 Spare Parts</a>
 <a href="#shop" onclick="switchTab('services')">🔧 Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
@@ -268,33 +332,37 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
 <a href="#shop" onclick="switchTab('services')">Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
-<a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
+<a href="#contact">Contact</a>
 </div></div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section id="home" class="hero">
 <div class="hero-box">
 <div class="hero-content">
-<small>WELCOME TO fixG</small>
-<h1>YOUR TECH.<br><strong>OUR CARE.</strong></h1>
-<p>Mobiles | Laptops | Accessories | Spare Parts | Repair</p>
+<small>WELCOME TO fixG • iCARE MUKKAM</small>
+<h1>Mobile Service &amp; Repair<br><strong>in Mukkam</strong></h1>
+<div class="tagline">Mobiles • Laptops • Tablets • Smart Watch • Accessories</div>
+<div class="subtext">From iCare Mukkam — Your trusted device sales &amp; service platform</div>
 <div class="hero-buttons">
-<a class="shop-btn" href="#shop">🛍️ Shop Now →</a>
-<a class="service-btn" href="#services">🔧 Our Services</a>
-<a class="book-btn" href="#" onclick="openBooking(); return false;">📅 Book Service</a>
+<a class="shop-btn" href="#shop">🛍️ Shop Now</a>
+<a class="book-btn" href="#" onclick="openBooking(); return false;">🔧 Book Service</a>
+<a class="whatsapp-btn" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp Us</a>
 </div>
 </div>
 <div class="hero-devices">📱 💻 ⌚ 🎧</div>
 </div>
 </section>
 
+<!-- ===== TRUST FEATURES ===== -->
 <div class="features">
-<div class="feature"><div class="feature-icon">✓</div><div><strong>Original Products</strong><small>Genuine & Trusted</small></div></div>
-<div class="feature"><div class="feature-icon">₹</div><div><strong>Best Price</strong><small>Great Deals</small></div></div>
-<div class="feature"><div class="feature-icon">🚚</div><div><strong>Fast Service</strong><small>Quick & Reliable</small></div></div>
-<div class="feature"><div class="feature-icon">🛠</div><div><strong>Expert Support</strong><small>Professional Care</small></div></div>
+<div class="feature"><div class="feature-icon">✓</div><div><strong>Genuine Products</strong><small>Original & Trusted</small></div></div>
+<div class="feature"><div class="feature-icon">🔧</div><div><strong>Professional Service</strong><small>Expert Technicians</small></div></div>
+<div class="feature"><div class="feature-icon">⚡</div><div><strong>Fast Turnaround</strong><small>Quick & Reliable</small></div></div>
+<div class="feature"><div class="feature-icon">🤝</div><div><strong>Trusted Support</strong><small>Friendly Care</small></div></div>
 </div>
 
+<!-- ===== SHOP BY CATEGORY ===== -->
 <section class="section"><div class="section-head"><h2>Shop by Category</h2><a href="#shop" class="view-all" onclick="clearFilters()">View All →</a></div>
 <div class="categories">
 <div class="category" onclick="filterCategory('Mobile')"><div class="category-icon">📱</div><p>Mobiles</p></div>
@@ -303,17 +371,19 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="category" onclick="filterCategory('Watch')"><div class="category-icon">⌚</div><p>Smart Watch</p></div>
 <div class="category" onclick="filterCategory('Earbud')"><div class="category-icon">🎧</div><p>Earbuds</p></div>
 <div class="category" onclick="filterCategory('Accessory')"><div class="category-icon">🔌</div><p>Accessories</p></div>
-<div class="category" onclick="filterCategory('TV')"><div class="category-icon">📺</div><p>TV & Audio</p></div>
 <div class="category" onclick="switchTab('parts')"><div class="category-icon">🧩</div><p>Spare Parts</p></div>
+<div class="category" onclick="switchTab('services')"><div class="category-icon">🔧</div><p>Services</p></div>
 <div class="category" onclick="switchTab('servicemenu')"><div class="category-icon">📋</div><p>Service Menu</p></div>
 </div></section>
 
+<!-- ===== BANNERS ===== -->
 <section class="section"><div class="banners">
 <div class="banner"><h3>Latest Mobiles</h3><p>Discover new smartphones at great prices.</p><a href="#shop" onclick="switchTab('products')">Shop Now →</a></div>
 <div class="banner"><h3>Spare Parts</h3><p>Genuine mobile spare parts available.</p><a href="#shop" onclick="switchTab('parts')">Explore →</a></div>
-<div class="banner"><h3>Repair Services</h3><p>Expert repair at your doorstep.</p><a href="#" onclick="openBooking(); return false;">📅 Book Now →</a></div>
+<div class="banner"><h3>Repair Services</h3><p>Expert repair for all supported devices.</p><a href="#" onclick="openBooking(); return false;">📅 Book Now →</a></div>
 </div></section>
 
+<!-- ===== STORE ===== -->
 <section id="shop" class="section">
 <div class="section-head"><h2>Store</h2><a href="#shop" class="view-all" onclick="clearFilters()">View All →</a></div>
 <div class="shop-tabs">
@@ -327,45 +397,186 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div id="products" class="products-grid"><div class="loading">Loading...</div></div>
 </section>
 
-<section id="services" class="section info-section"><div class="section-head"><h2>Our Services</h2><a href="#shop" onclick="switchTab('services')" class="view-all">View All →</a></div>
-<div class="service-grid" id="serviceStaticGrid">
-<div class="service-card"><div class="icon">📱</div><h3>Mobile Repair</h3><p>Professional smartphone repair service.</p></div>
-<div class="service-card"><div class="icon">💻</div><h3>Laptop Repair</h3><p>Hardware and software repair service.</p></div>
-<div class="service-card"><div class="icon">📲</div><h3>Screen Replacement</h3><p>Display and touch replacement service.</p></div>
-<div class="service-card"><div class="icon">🔋</div><h3>Battery Replacement</h3><p>Mobile and laptop battery replacement.</p></div>
-<div class="service-card"><div class="icon">⚙️</div><h3>Software Service</h3><p>Installation, updates and troubleshooting.</p></div>
-<div class="service-card"><div class="icon">🎧</div><h3>Accessories</h3><p>Quality mobile and laptop accessories.</p></div>
-</div></section>
-
-<section class="section"><div class="section-head"><h2>About fixG</h2></div>
-<div class="service-card"><p><strong>fixG</strong> provides mobiles, laptops, accessories, spare parts and professional repair services in Mukkam, Kozhikode.</p><br><p>Our goal is to provide reliable products, quality repair and friendly customer support.</p><br><p>📍 Mukkam, Kozhikode, Kerala</p></div>
+<!-- ===== OUR SERVICES (Expanded) ===== -->
+<section id="services" class="section info-section">
+<div class="section-head"><h2>Our Services </h2><a href="#shop" onclick="switchTab('servicemenu')" class="view-all">View All Services →</a></div>
+<div class="service-grid">
+<div class="service-card">
+<div class="icon">📱</div><h3>Mobile Service</h3>
+<p>Complete mobile phone service for display, battery, charging, camera, speaker &amp; software problems.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon"></div><h3>iPhone Service</h3>
+<p>Display, battery, charging, software, camera and motherboard-related service for iPhone.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">📱</div><h3>Samsung Service</h3>
+<p>Samsung smartphone service for display, battery, charging, software and hardware problems.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">📲</div><h3>Display Replacement</h3>
+<p>Screen and display replacement for smartphones, tablets and supported devices.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">🔋</div><h3>Battery Replacement</h3>
+<p>Mobile and laptop battery replacement with quality parts.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">⚡</div><h3>Charging Problem</h3>
+<p>Charging port, charging IC, slow-charging and not-charging service.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">🛠️</div><h3>Motherboard Service</h3>
+<p>Advanced board-level service for no-power, short-circuit and IC-related faults.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">💻</div><h3>Laptop Service</h3>
+<p>Laptop hardware, software, display, battery and keyboard service.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">💧</div><h3>Water Damage Service</h3>
+<p>Water-damage diagnosis and service for supported smartphones and electronic components.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">📶</div><h3>Network / Signal Problem</h3>
+<p>Signal, SIM detection, antenna, baseband and network-related faults.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">📷</div><h3>Camera Problem</h3>
+<p>Front camera, rear camera, camera glass and camera-related service.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+<div class="service-card">
+<div class="icon">🔊</div><h3>Speaker / Mic Service</h3>
+<p>Speaker, earpiece, microphone and audio-related problems.</p>
+<div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
+</div>
+</div>
 </section>
 
-<footer><div class="footer-grid">
-<div><h3>fixG</h3><p>Mobiles | Laptops | Accessories | Spare Parts | Service</p><br><p>Professional technology products and repair services.</p></div>
-<div><h3>Shop</h3><a href="#shop" onclick="switchTab('products')">Products</a><a href="#shop" onclick="switchTab('parts')">Spare Parts</a><a href="#shop" onclick="switchTab('services')">Services</a><a href="#shop" onclick="switchTab('servicemenu')">Service Menu</a><a href="#shop" onclick="switchTab('technicians')">Technicians</a></div>
+<!-- ===== ABOUT ===== -->
+<section class="section"><div class="section-head"><h2>About iCare Mukkam / fixG</h2></div>
+<div class="service-card">
+<p><strong>iCare Mukkam</strong> — operating as <strong>fixG</strong> — provides mobiles, laptops, tablets, smart watches, accessories, spare parts and professional repair services in Mukkam, Kozhikode.</p>
+<br>
+<p>Our goal is to provide reliable products, quality repair and friendly customer support to every customer who walks in or orders online.</p>
+<br>
+<p>📍 Mukkam, Kozhikode, Kerala &nbsp; | &nbsp; 📞 9447667744</p>
+</div>
+</section>
+
+<!-- ===== CONTACT + MAPS ===== -->
+<section id="contact" class="section contact-section">
+<div class="section-head"><h2>Visit Our Shop</h2></div>
+<div class="contact-grid">
+<div class="contact-info">
+<h3>📍 iCare Mukkam / fixG</h3>
+<div class="contact-line">
+<div class="ci">📍</div>
+<div><strong>Address</strong><span>Mukkam, Kozhikode, Kerala</span></div>
+</div>
+<div class="contact-line">
+<div class="ci">📞</div>
+<div><strong>Call Us</strong><span><a href="tel:+919447667744">9447667744</a></span></div>
+</div>
+<div class="contact-line">
+<div class="ci">💬</div>
+<div><strong>WhatsApp</strong><span><a href="https://wa.me/919447150744" target="_blank">9447150744</a></span></div>
+</div>
+<div class="contact-line">
+<div class="ci">🕒</div>
+<div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: 10:00 AM – 5:00 PM</span></div>
+</div>
+<div class="service-cta" style="margin-top:18px">
+<a class="s-call" href="tel:+919447667744" style="padding:12px;font-size:14px">📞 Call Now</a>
+<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank" style="padding:12px;font-size:14px">💬 WhatsApp</a>
+</div>
+</div>
+<div class="map-box">
+<h3>🗺️ Find Us on Maps</h3>
+<iframe src="https://www.google.com/maps?q=11.3236107486801,75.99420794889538&z=17&output=embed" loading="lazy" allowfullscreen></iframe>
+<a class="directions-btn" href="https://maps.app.goo.gl/W7sTrMjrqtDBVLgV8" target="_blank">📍 Get Directions</a>
+</div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+<div class="footer-grid">
 <div>
-<h3>Support</h3>
-<a href="https://wa.me/919447150744?text=Hi%20fixG,%20I%20need%20repair%20service" target="_blank">Repair Service</a>
-<a href="https://wa.me/919447150744" target="_blank">WhatsApp</a>
-<a href="tel:+919447667744">Call Us</a>
+<h3>fixG <span style="color:#cbd5e1;font-size:13px;font-weight:normal">by iCare Mukkam</span></h3>
+<p>Mobiles • Laptops • Tablets • Smart Watch • Accessories • Spare Parts • Service</p>
+<p style="margin-top:10px">📍 Mukkam, Kozhikode, Kerala</p>
+<div class="footer-social">
+<a href="https://www.instagram.com/icaremukkam/" target="_blank" title="Instagram">📷</a>
+<a href="https://www.facebook.com/icare.mukkam" target="_blank" title="Facebook">📘</a>
+<a href="https://wa.me/919447150744" target="_blank" title="WhatsApp">💬</a>
+<a href="https://maps.app.goo.gl/W7sTrMjrqtDBVLgV8" target="_blank" title="Google Business">📍</a>
+</div>
+</div>
+<div>
+<h3>Shop</h3>
+<a href="#shop" onclick="switchTab('products')">Mobiles</a>
+<a href="#shop" onclick="switchTab('products')">Laptops</a>
+<a href="#shop" onclick="switchTab('products')">Tablets</a>
+<a href="#shop" onclick="switchTab('products')">Accessories</a>
+<a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
+</div>
+<div>
+<h3>Services</h3>
+<a href="#services">Mobile Service</a>
+<a href="#services">iPhone Service</a>
+<a href="#services">Samsung Service</a>
+<a href="#services">Laptop Service</a>
+<a href="#services">Display Replacement</a>
+<a href="#services">Battery Service</a>
 </div>
 <div>
 <h3>Contact</h3>
-<p><a href="tel:+919447667744" style="color:#cbd5e1;">📞 9447667744</a></p>
-<p><a href="https://wa.me/919447150744" target="_blank" style="color:#cbd5e1;">💬 9447150744</a></p>
+<p>📞 <a href="tel:+919447667744" style="display:inline">9447667744</a></p>
+<p>💬 <a href="https://wa.me/919447150744" target="_blank" style="display:inline">9447150744</a></p>
 <p>📍 Mukkam, Kozhikode</p>
+<p>🕒 Mon–Sat: 9:30 AM – 8:00 PM</p>
+<a href="#" onclick="openBooking(); return false;" style="color:#ff5a00;font-weight:bold;margin-top:8px">🔧 Book Repair Service →</a>
 </div>
 </div>
-<div class="copyright">© 2026 fixG. All Rights Reserved. | <a href="javascript:void(0)" onclick="openFixgModal('privacy')" style="color:#ff5a00;display:inline;">Privacy Policy</a> | <a href="javascript:void(0)" onclick="openFixgModal('terms')" style="color:#ff5a00;display:inline;">Terms</a> | <a href="javascript:void(0)" onclick="openFixgModal('refund')" style="color:#ff5a00;display:inline;">Refund Policy</a></div>
+<div class="copyright">
+© 2026 fixG by iCare Mukkam. All Rights Reserved.
+<a href="javascript:void(0)" onclick="openFixgModal('privacy')">Privacy Policy</a> |
+<a href="javascript:void(0)" onclick="openFixgModal('terms')">Terms</a> |
+<a href="javascript:void(0)" onclick="openFixgModal('refund')">Refund Policy</a>
+</div>
 </footer>
 
+<!-- ===== FLOATING BUTTONS (Desktop) ===== -->
+<a class="whatsapp" href="https://wa.me/919447150744" target="_blank">💬</a>
+<a class="call" href="tel:+919447667744">📞</a>
+
+<!-- ===== STICKY MOBILE CTA BAR ===== -->
+<div class="mobile-cta-bar">
+<a class="call-m" href="tel:+919447667744"><span class="mci">📞</span>Call</a>
+<a class="wa-m" href="https://wa.me/919447150744" target="_blank"><span class="mci">💬</span>WhatsApp</a>
+<a class="book-m" href="#" onclick="openBooking(); return false;"><span class="mci">🔧</span>Book Service</a>
+</div>
+
+<!-- ===== CART ===== -->
 <div id="cartOverlay" class="cart-overlay" onclick="closeCartOutside(event)">
 <div class="cart-drawer"><div class="cart-title"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
 <div id="cartItems">Your cart is empty.</div>
 <div class="cart-bottom"><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div><button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button></div>
 </div></div>
 
+<!-- ===== ACCOUNT MODAL ===== -->
 <div id="accountModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2 id="authTitle">Customer Login</h2><button class="close" onclick="closeAccount()">×</button></div>
@@ -400,6 +611,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div></div>
 
+<!-- ===== CHECKOUT MODAL ===== -->
 <div id="checkoutModal" class="modal">
 <div class="modal-box"><div class="modal-header"><h2>Customer Details</h2><button class="close" onclick="closeCheckout()">×</button></div>
 <div class="form-group"><label>Name</label><input id="customerName" type="text" placeholder="Your name"></div>
@@ -408,6 +620,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <button class="pay-button" onclick="startRazorpayPayment()">💳 Pay Securely with Razorpay</button>
 </div></div>
 
+<!-- ===== ORDERS MODAL ===== -->
 <div id="ordersModal" class="modal" onclick="closeOrdersOutside(event)">
 <div class="modal-box wide">
 <div class="modal-header"><h2>📋 My Orders</h2><button class="close" onclick="closeMyOrders()">×</button></div>
@@ -415,6 +628,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div>
 
+<!-- ===== BOOKING MODAL (Expanded) ===== -->
 <div id="bookingModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>🔧 Book Repair Service</h2><button class="close" onclick="closeBooking()">×</button></div>
@@ -425,18 +639,25 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 <div class="form-group"><label>Address</label><textarea id="bookAddress" placeholder="Your complete address"></textarea></div>
 <div class="form-group"><label>Service Type</label>
 <select id="bookService">
-<option value="Mobile Repair">📱 Mobile Repair</option>
-<option value="Laptop Repair">💻 Laptop Repair</option>
-<option value="Screen Replacement">📲 Screen Replacement</option>
-<option value="Battery Replacement">🔋 Battery Replacement</option>
-<option value="Software Service">⚙️ Software Service</option>
+<option value="Mobile Service">📱 Mobile Service</option>
+<option value="iPhone Service"> iPhone Service</option>
+<option value="Samsung Service">📱 Samsung Service</option>
+<option value="Other Brand Mobile Service">📱 Other Brand Mobile Service</option>
+<option value="Laptop Service">💻 Laptop Service</option>
+<option value="MacBook Service">💻 MacBook Service</option>
+<option value="Tablet / iPad Service">📲 Tablet / iPad Service</option>
+<option value="Smart Watch Service">⌚ Smart Watch Service</option>
+<option value="Spare Parts Enquiry">🧩 Spare Parts Enquiry</option>
 <option value="Other">🔧 Other</option>
 </select></div>
-<div class="form-group"><label>Device Details / Description</label><textarea id="bookDescription" placeholder="Tell us about your device and issue..."></textarea></div>
+<div class="form-group"><label>Device Brand</label><input id="bookBrand" type="text" placeholder="e.g. Apple, Samsung, Xiaomi"></div>
+<div class="form-group"><label>Device Model</label><input id="bookModel" type="text" placeholder="e.g. iPhone 13, Galaxy S21"></div>
+<div class="form-group"><label>Problem / Service Required</label><textarea id="bookDescription" placeholder="Tell us about the issue (display, battery, charging, software, etc.)"></textarea></div>
 <button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
 </div>
 </div>
 
+<!-- ===== GALLERY MODAL ===== -->
 <div id="galleryModal" class="modal" onclick="closeGalleryOutside(event)">
 <div class="modal-box gallery-box">
 <div class="modal-header"><h2 id="galleryTitle">Product Gallery</h2><button class="close" onclick="closeGallery()">×</button></div>
@@ -450,6 +671,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div>
 
+<!-- ===== PRODUCT DETAIL ===== -->
 <div id="productDetail" class="product-detail-overlay">
 <div class="product-detail-container">
 <div class="product-detail-header">
@@ -477,6 +699,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div>
 
+<!-- ===== PROFILE MODAL ===== -->
 <div id="profileModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>👤 My Profile</h2><button class="close" onclick="closeProfile()">×</button></div>
@@ -489,6 +712,7 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div>
 
+<!-- ===== LEGAL MODAL ===== -->
 <div id="fixgLegalModal" style="display:none;position:fixed;z-index:999999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);overflow:auto;">
 <div style="background:#fff;color:#111827;margin:6% auto;padding:25px;border-radius:12px;width:90%;max-width:650px;position:relative;line-height:1.6;box-shadow:0 10px 30px rgba(0,0,0,0.5);">
 <span onclick="closeFixgModal()" style="position:absolute;right:20px;top:12px;font-size:28px;font-weight:bold;cursor:pointer;color:#6b7280;">×</span>
@@ -496,8 +720,51 @@ footer h3{margin-bottom:12px}footer a{display:block;color:#cbd5e1;text-decoratio
 </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/919447150744" target="_blank">💬</a>
-<a class="call" href="tel:+919447667744">📞</a>
+<!-- ===== LOCAL BUSINESS SCHEMA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "iCare Mukkam / fixG",
+  "image": "https://www.fixg.in/logo.png",
+  "url": "https://www.fixg.in",
+  "telephone": "+919447667744",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mukkam",
+    "addressLocality": "Mukkam",
+    "addressRegion": "Kerala",
+    "postalCode": "673602",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "11.3236107486801",
+    "longitude": "75.99420794889538"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:30",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "₹₹",
+  "description": "iCare Mukkam / fixG - Mobile, iPhone, Samsung, laptop, tablet and smart device service, repair, accessories and spare parts in Mukkam, Kozhikode, Kerala.",
+  "areaServed": "Mukkam, Kozhikode, Kerala",
+  "sameAs": [
+    "https://www.instagram.com/icaremukkam/",
+    "https://www.facebook.com/icare.mukkam"
+  ]
+}
+</script>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>emailjs.init("Q6LuADmh9NzTPVmBj");</script>
@@ -531,7 +798,7 @@ let pendingCheckout = false;
 const productStatus = document.getElementById('productStatus');
 const productsContainer = document.getElementById('products');
 
-/* ===== SERVICE MENU DATA (Mukkam removed from all service names) ===== */
+/* ===== SERVICE MENU DATA ===== */
 const MOBILE_SERVICES = [
 ["Mobile Service","Complete mobile phone service for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
 ["Smartphone Service","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
@@ -583,12 +850,7 @@ const ADVANCED_SERVICES = [
 ];
 
 function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+  return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 function renderServiceMenu(filter=""){
@@ -609,17 +871,14 @@ function renderServiceMenu(filter=""){
     html += `<h3 class="service-menu-section-title">🛠️ Advanced Mobile Service</h3><div class="service-menu-grid">` +
       adv.map(x => `<article class="service-menu-card"><h3>${escapeHtml(x)}</h3><p>Board-level and component-level service for supported mobile devices, subject to diagnosis and model-specific requirements.</p><span class="service-menu-tag">Advanced Service</span></article>`).join("") + `</div>`;
   }
-  if (!svc.length && !brd.length && !adv.length) {
-    html = `<div class="loading">No matching services found.</div>`;
-  }
-  html += `<div class="service-menu-note"><strong>Note:</strong> Spare-part availability can vary by brand and model. Please contact fixG before visiting if you need a specific part or model-specific service. 📍 Mukkam, Kozhikode, Kerala — 📞 9447667744</div>`;
+  if (!svc.length && !brd.length && !adv.length) html = `<div class="loading">No matching services found.</div>`;
+  html += `<div class="service-menu-note"><strong>Note:</strong> Spare-part availability can vary by brand and model. Please contact iCare Mukkam / fixG before visiting if you need a specific part. 📍 Mukkam, Kozhikode, Kerala — 📞 9447667744</div>`;
   productsContainer.className = "service-menu-wrapper";
   productsContainer.innerHTML = html;
 }
 
 /* ===== GALLERY ===== */
-let galleryImages = [];
-let galleryCurrentIndex = 0;
+let galleryImages = [], galleryCurrentIndex = 0;
 window.openGallery = function(productId) {
   const product = allProducts.find(p => p.id === productId);
   if (!product) { alert('Product not found'); return; }
@@ -638,18 +897,15 @@ function renderGallery() {
   const dots = document.getElementById('galleryDots');
   slider.innerHTML = '';
   galleryImages.forEach((img) => {
-    const slide = document.createElement('div');
-    slide.className = 'gallery-slide';
-    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`;
-    slider.appendChild(slide);
+    const slide = document.createElement('div'); slide.className = 'gallery-slide';
+    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`; slider.appendChild(slide);
   });
   updateGalleryPosition();
   dots.innerHTML = '';
   galleryImages.forEach((_, index) => {
     const dot = document.createElement('button');
     dot.className = `gallery-dot ${index === galleryCurrentIndex ? 'active' : ''}`;
-    dot.onclick = () => goToGallery(index);
-    dots.appendChild(dot);
+    dot.onclick = () => goToGallery(index); dots.appendChild(dot);
   });
   document.getElementById('galleryCounter').textContent = `${galleryCurrentIndex + 1} / ${galleryImages.length}`;
 }
@@ -690,22 +946,18 @@ window.closeProductDetail = function() {
   document.body.style.overflow = 'auto';
 };
 function renderDetailSlider() {
-  const slider = document.getElementById('detailSlider');
-  const dots = document.getElementById('detailDots');
+  const slider = document.getElementById('detailSlider'), dots = document.getElementById('detailDots');
   slider.innerHTML = '';
   detailImages.forEach((img) => {
-    const slide = document.createElement('div');
-    slide.className = 'detail-slide';
-    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`;
-    slider.appendChild(slide);
+    const slide = document.createElement('div'); slide.className = 'detail-slide';
+    slide.innerHTML = `<img src="${escapeHtml(img)}" alt="">`; slider.appendChild(slide);
   });
   updateDetailPosition();
   dots.innerHTML = '';
   detailImages.forEach((_, index) => {
     const dot = document.createElement('button');
     dot.className = `detail-dot ${index === detailCurrentIndex ? 'active' : ''}`;
-    dot.onclick = () => goToDetail(index);
-    dots.appendChild(dot);
+    dot.onclick = () => goToDetail(index); dots.appendChild(dot);
   });
 }
 function updateDetailPosition() {
@@ -725,15 +977,13 @@ window.detailBuyNow = function() {
   const product = allProducts.find(p => p.id === detailProductId);
   if (!product) return;
   if (product.stock <= 0) { alert('This product is out of stock.'); return; }
-  window.addToCart(product);
-  window.openCart();
+  window.addToCart(product); window.openCart();
 };
 
 /* ===== PROFILE ===== */
 window.openProfile = function() {
   if (!auth.currentUser) { alert('Please login first.'); return; }
-  document.getElementById('profileModal').style.display = 'flex';
-  loadProfile();
+  document.getElementById('profileModal').style.display = 'flex'; loadProfile();
 };
 window.closeProfile = function() {
   document.getElementById('profileModal').style.display = 'none';
@@ -751,13 +1001,10 @@ async function loadProfile() {
       document.getElementById('profileName').value = data.name || user.displayName || '';
       document.getElementById('profilePhone').value = data.phone || '';
       document.getElementById('profileAddress').value = data.address || '';
-    } else {
-      document.getElementById('profileName').value = user.displayName || '';
-    }
+    } else { document.getElementById('profileName').value = user.displayName || ''; }
   } catch (error) {
     console.error('Error loading profile:', error);
-    msg.textContent = 'Could not load profile.';
-    msg.className = 'msg error'; msg.style.display = 'block';
+    msg.textContent = 'Could not load profile.'; msg.className = 'msg error'; msg.style.display = 'block';
   }
 }
 window.saveProfile = async function() {
@@ -792,18 +1039,14 @@ async function loadProfileForCheckout() {
       if (!nameInput.value) nameInput.value = data.name || user.displayName || '';
       if (!phoneInput.value) phoneInput.value = data.phone || '';
       if (!addressInput.value) addressInput.value = data.address || '';
-    } else {
-      if (!nameInput.value) nameInput.value = user.displayName || '';
-    }
+    } else { if (!nameInput.value) nameInput.value = user.displayName || ''; }
   } catch (error) { console.error('Error loading profile for checkout:', error); }
 }
 function openCheckoutForUser() {
   const user = auth.currentUser;
   if (!user) { pendingCheckout = true; openAccount(); return; }
-  closeAccount();
-  closeCart();
-  document.getElementById('checkoutModal').style.display = "flex";
-  loadProfileForCheckout();
+  closeAccount(); closeCart();
+  document.getElementById('checkoutModal').style.display = "flex"; loadProfileForCheckout();
 }
 
 /* ===== DROPDOWN ===== */
@@ -811,9 +1054,7 @@ window.toggleDropdown = function() { document.getElementById('categoryDropdown')
 document.addEventListener('click', function(event) {
   const dropdown = document.getElementById('categoryDropdown');
   const button = document.querySelector('.dropbtn');
-  if (dropdown && button && !dropdown.contains(event.target) && !button.contains(event.target)) {
-    dropdown.classList.remove('show');
-  }
+  if (dropdown && button && !dropdown.contains(event.target) && !button.contains(event.target)) dropdown.classList.remove('show');
 });
 document.querySelectorAll('.dropdown-content a').forEach(link => {
   link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
@@ -838,6 +1079,8 @@ window.submitBooking = async function() {
   const email = document.getElementById('bookEmail').value.trim();
   const address = document.getElementById('bookAddress').value.trim();
   const service = document.getElementById('bookService').value;
+  const brand = document.getElementById('bookBrand').value.trim();
+  const model = document.getElementById('bookModel').value.trim();
   const description = document.getElementById('bookDescription').value.trim();
   const msg = document.getElementById('bookingMsg');
   if (!name || !phone || !address) {
@@ -847,24 +1090,24 @@ window.submitBooking = async function() {
   const btn = event.target; btn.disabled = true; btn.textContent = 'Submitting...';
   try {
     await addDoc(collection(db, "bookings"), {
-      name, phone, email: email || '', address, service, description: description || '',
-      userId: auth.currentUser?.uid || '', status: 'Pending', createdAt: new Date()
+      name, phone, email: email || '', address, service,
+      brand: brand || '', model: model || '',
+      description: description || '', userId: auth.currentUser?.uid || '',
+      status: 'Pending', createdAt: new Date()
     });
     try {
       await emailjs.send('service_qw9w2il', 'template_955n8pp', {
         customer_name: name, customer_phone: phone,
-        customer_email: email || 'Not provided',
-        customer_address: address, service_type: service,
-        description: description || 'No description',
+        customer_email: email || 'Not provided', customer_address: address,
+        service_type: service, description: `Brand: ${brand || 'N/A'} | Model: ${model || 'N/A'} | Issue: ${description || 'N/A'}`,
         booking_date: new Date().toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
       });
     } catch (emailError) { console.error('Email error:', emailError); }
-    msg.textContent = '✅ Booking submitted successfully! We will contact you soon.';
+    msg.textContent = '✅ Booking submitted! We will contact you soon.';
     msg.className = 'msg success'; msg.style.display = 'block';
-    document.getElementById('bookName').value = '';
-    document.getElementById('bookPhone').value = '';
-    document.getElementById('bookEmail').value = '';
-    document.getElementById('bookAddress').value = '';
+    document.getElementById('bookName').value = ''; document.getElementById('bookPhone').value = '';
+    document.getElementById('bookEmail').value = ''; document.getElementById('bookAddress').value = '';
+    document.getElementById('bookBrand').value = ''; document.getElementById('bookModel').value = '';
     document.getElementById('bookDescription').value = '';
     setTimeout(() => { closeBooking(); }, 3000);
   } catch (error) {
@@ -891,8 +1134,7 @@ function authErrorMessage(error) {
   return messages[code] || error?.message || "Something went wrong. Please try again.";
 }
 function showAuthMessage(type, message) {
-  const error = document.getElementById('authError');
-  const success = document.getElementById('authSuccess');
+  const error = document.getElementById('authError'), success = document.getElementById('authSuccess');
   error.style.display = "none"; success.style.display = "none";
   error.textContent = ""; success.textContent = "";
   if (!message) return;
@@ -936,8 +1178,7 @@ window.registerCustomer = async function() {
   if (!name || !email || !password || !password2) { showAuthMessage("error", "Please fill in all fields."); return; }
   if (password.length < 6) { showAuthMessage("error", "Password must be at least 6 characters."); return; }
   if (password !== password2) { showAuthMessage("error", "Passwords do not match."); return; }
-  const btn = document.getElementById('registerBtn');
-  btn.disabled = true; btn.textContent = "Creating Account...";
+  const btn = document.getElementById('registerBtn'); btn.disabled = true; btn.textContent = "Creating Account...";
   try {
     const credential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(credential.user, { displayName: name });
@@ -951,8 +1192,7 @@ window.loginCustomer = async function() {
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
   if (!email || !password) { showAuthMessage("error", "Please enter your email and password."); return; }
-  const btn = document.getElementById('loginBtn');
-  btn.disabled = true; btn.textContent = "Logging in...";
+  const btn = document.getElementById('loginBtn'); btn.disabled = true; btn.textContent = "Logging in...";
   try {
     await signInWithEmailAndPassword(auth, email, password);
     showAuthMessage("success", "Login successful.");
@@ -995,16 +1235,14 @@ function displayCart() {
   cart.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     total += itemTotal; count += item.quantity;
-    const div = document.createElement("div");
-    div.className = "cart-item";
+    const div = document.createElement("div"); div.className = "cart-item";
     div.innerHTML = `<div><div class="cart-item-name">${escapeHtml(item.name)}</div>
       <div class="qty"><button onclick="changeQuantity(${index},-1)">−</button><strong>${item.quantity}</strong><button onclick="changeQuantity(${index},1)">+</button></div>
       <button class="remove" onclick="removeItem(${index})">Remove</button></div>
       <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>`;
     container.appendChild(div);
   });
-  totalElement.textContent = "₹" + total.toLocaleString("en-IN");
-  countElement.textContent = count;
+  totalElement.textContent = "₹" + total.toLocaleString("en-IN"); countElement.textContent = count;
 }
 window.changeQuantity = function(index, change) {
   const cart = getCart(); if (!cart[index]) return;
@@ -1024,11 +1262,8 @@ window.addToCart = function(product) {
   if (existing) {
     if (existing.quantity >= product.stock) { alert("Maximum available stock reached."); return; }
     existing.quantity++;
-  } else {
-    cart.push({ id: product.id, name: product.name, price: product.price, stock: product.stock, quantity: 1 });
-  }
-  saveCart(cart);
-  alert(product.name + " added to cart.");
+  } else { cart.push({ id: product.id, name: product.name, price: product.price, stock: product.stock, quantity: 1 }); }
+  saveCart(cart); alert(product.name + " added to cart.");
 };
 window.buyNow = function(product) { window.addToCart(product); openCart(); };
 window.addToCartFromProduct = function(id) {
@@ -1049,9 +1284,7 @@ window.addToCartFromPart = function(id) {
   if (existing) {
     if (existing.quantity >= part.stock) { alert("Maximum available stock reached."); return; }
     existing.quantity++;
-  } else {
-    cart.push({ id: part.id, name: part.name + ' (Spare Part)', price: part.price, stock: part.stock, quantity: 1 });
-  }
+  } else { cart.push({ id: part.id, name: part.name + ' (Spare Part)', price: part.price, stock: part.stock, quantity: 1 }); }
   saveCart(cart); alert(part.name + " added to cart.");
 };
 window.buyNowFromPart = function(id) { window.addToCartFromPart(id); openCart(); };
@@ -1062,8 +1295,7 @@ window.checkout = function() {
   if (!cart.length) { alert("Your cart is empty."); return; }
   if (!auth.currentUser) {
     pendingCheckout = true; closeCart();
-    document.getElementById('accountModal').style.display = "flex"; showAuthForms();
-    return;
+    document.getElementById('accountModal').style.display = "flex"; showAuthForms(); return;
   }
   openCheckoutForUser();
 };
@@ -1092,7 +1324,7 @@ window.startRazorpayPayment = async function() {
     const orderAmount = data.order?.amount || data.amount || Math.round(total * 100);
     if (!response.ok || !orderId) throw new Error(data.message || data.error || "Razorpay Order ID was not returned.");
     const options = {
-      key: RAZORPAY_KEY_ID, amount: Number(orderAmount), currency: "INR", name: "fixG",
+      key: RAZORPAY_KEY_ID, amount: Number(orderAmount), currency: "INR", name: "fixG by iCare Mukkam",
       description: "fixG Online Order", order_id: orderId,
       prefill: { name, contact: phone, email: auth.currentUser.email || "" },
       notes: { customer_name: name, customer_phone: phone, customer_email: auth.currentUser.email || "", firebase_uid: auth.currentUser.uid },
@@ -1125,20 +1357,17 @@ async function verifyPayment(paymentResponse, customerData) {
     });
     const data = await response.json();
     if (!response.ok || !data.success) throw new Error(data.message || "Payment verification failed.");
-    localStorage.removeItem("fixGCart");
-    displayCart();
-    document.getElementById('customerName').value = "";
-    document.getElementById('customerPhone').value = "";
+    localStorage.removeItem("fixGCart"); displayCart();
+    document.getElementById('customerName').value = ""; document.getElementById('customerPhone').value = "";
     document.getElementById('customerAddress').value = "";
-    alert("🎉 Payment Successful!\n\nOrder ID: " + (data.orderId || paymentResponse.razorpay_order_id) + "\n\nThank you for shopping with fixG.");
-  } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact fixG."); }
+    alert("🎉 Payment Successful!\n\nOrder ID: " + (data.orderId || paymentResponse.razorpay_order_id) + "\n\nThank you for shopping with fixG!");
+  } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact iCare Mukkam / fixG."); }
 }
 
 /* ===== MY ORDERS ===== */
 window.openMyOrders = function() {
   if (!auth.currentUser) { alert("Please login first to view your orders."); openAccount(); return; }
-  document.getElementById('ordersModal').style.display = 'flex';
-  loadCustomerOrders();
+  document.getElementById('ordersModal').style.display = 'flex'; loadCustomerOrders();
 };
 window.closeMyOrders = function() { document.getElementById('ordersModal').style.display = 'none'; };
 window.closeOrdersOutside = function(event) { if (event.target.id === 'ordersModal') closeMyOrders(); };
@@ -1180,16 +1409,14 @@ async function loadCustomerOrders() {
 /* ===== SLIDER (small cards) ===== */
 window.changeProductImage = function(dot) {
   const slider = dot.closest('.image-slider');
-  const slides = slider.querySelectorAll('.slide');
-  const dots = slider.querySelectorAll('.dot');
+  const slides = slider.querySelectorAll('.slide'), dots = slider.querySelectorAll('.dot');
   const index = parseInt(dot.dataset.index);
   slides.forEach((s, i) => s.style.display = i === index ? 'flex' : 'none');
   dots.forEach((d, i) => d.classList.toggle('active', i === index));
 };
 window.nextImage = function(btn) {
   const slider = btn.closest('.image-slider');
-  const slides = slider.querySelectorAll('.slide');
-  const dots = slider.querySelectorAll('.dot');
+  const slides = slider.querySelectorAll('.slide'), dots = slider.querySelectorAll('.dot');
   let currentIndex = 0;
   slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
   const nextIndex = (currentIndex + 1) % slides.length;
@@ -1198,8 +1425,7 @@ window.nextImage = function(btn) {
 };
 window.prevImage = function(btn) {
   const slider = btn.closest('.image-slider');
-  const slides = slider.querySelectorAll('.slide');
-  const dots = slider.querySelectorAll('.dot');
+  const slides = slider.querySelectorAll('.slide'), dots = slider.querySelectorAll('.dot');
   let currentIndex = 0;
   slides.forEach((s, i) => { if (s.style.display !== 'none') currentIndex = i; });
   const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
@@ -1353,8 +1579,7 @@ function renderCurrentTab() {
     renderFn = renderTechnicians;
   } else if (currentTab === 'servicemenu') {
     productStatus.textContent = `Showing Mobile Services, Brand Services and Advanced Services.`;
-    renderServiceMenu(search);
-    return;
+    renderServiceMenu(search); return;
   } else { list = []; renderFn = renderProducts; }
   renderFn(list);
 }
@@ -1366,16 +1591,15 @@ window.filterCategory = function(cat) {
   productStatus.textContent = `Showing ${filtered.length} product(s) in category "${cat}".`;
 };
 window.clearFilters = function() {
-  document.getElementById('searchInput').value = '';
-  renderCurrentTab();
+  document.getElementById('searchInput').value = ''; renderCurrentTab();
   document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
 };
 window.scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
 
 /* ===== LEGAL MODAL ===== */
 const fixgLegalTexts = {
-privacy: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Privacy Policy</h2><p>At <strong>fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p><p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>`,
-terms: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Terms & Conditions</h2><p><strong>1. Scope of Service:</strong> fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p><p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. fixG is not responsible for any accidental data loss during the service process.</p><p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p><p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>`,
+privacy: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Privacy Policy</h2><p>At <strong>iCare Mukkam / fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p><p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>`,
+terms: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Terms & Conditions</h2><p><strong>1. Scope of Service:</strong> iCare Mukkam / fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p><p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. iCare Mukkam / fixG is not responsible for any accidental data loss during the service process.</p><p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p><p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>`,
 refund: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Cancellation & Refund Policy</h2><p><strong>1. Cancellations:</strong> Service bookings can be cancelled free of cost before our technician initiates work on your device.</p><p><strong>2. Refunds:</strong> If an advance payment was made online via Razorpay and the order/service is cancelled prior to processing, eligible refunds will be credited back to your original payment method within 5 to 7 business days.</p><p><strong>3. Warranty Policy:</strong> Replaced spare parts carry specific warranty terms as printed on the official bill. Warranty covers manufacturing defects only and excludes physical damage, screen breakage, or liquid damage caused after delivery.</p>`
 };
 window.openFixgModal = function(type) {
@@ -1403,8 +1627,7 @@ onAuthStateChanged(auth, user => {
     document.getElementById('accountButton').title = "Customer Login";
     myOrdersBtn.style.display = 'none';
     myProfileBtn.style.display = 'none';
-    closeMyOrders();
-    closeProfile();
+    closeMyOrders(); closeProfile();
   }
 });
 
