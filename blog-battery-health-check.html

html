@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mobile Battery Health എങ്ങനെ Check ചെയ്യാം? | fixG Blog</title>
+<meta name="description" content="Mobile battery health എങ്ങനെ check ചെയ്യാം എന്ന് വിശദമായി അറിയൂ. Android, iPhone battery health check tips by fixG - iCare Mukkam.">
+<meta name="keywords" content="mobile battery health check, battery drain fix Mukkam, battery health Android, iPhone battery health, iCare Mukkam">
+<meta property="og:title" content="Mobile Battery Health എങ്ങനെ Check ചെയ്യാം?">
+<meta property="og:url" content="https://www.fixg.in/blog-battery-health-check.html">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.7}
+.topbar{background:#ff5a00;color:white;padding:10px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
+.topbar a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+header{background:white;padding:14px 5%;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.logo{font-size:26px;font-weight:900;color:#07182f;text-decoration:none;display:inline-block}
+.logo span{color:#ff5a00}
+.logo small{font-size:11px;color:#6b7280;display:block;margin-top:-4px}
+.container{max-width:800px;margin:auto;padding:40px 5%}
+.breadcrumb{font-size:13px;color:#6b7280;margin-bottom:15px}
+.breadcrumb a{color:#ff5a00;text-decoration:none}
+.article{background:white;border-radius:14px;padding:35px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.article h1{font-size:clamp(24px,4vw,34px);color:#07182f;line-height:1.3;margin-bottom:15px}
+.meta{color:#6b7280;font-size:14px;margin-bottom:25px;padding-bottom:15px;border-bottom:1px solid #eee}
+.article h2{font-size:22px;color:#07182f;margin:25px 0 12px}
+.article h3{font-size:18px;color:#ff5a00;margin:20px 0 10px}
+.article p{margin-bottom:14px;color:#374151}
+.article ul,.article ol{margin:14px 0 14px 25px;color:#374151}
+.article li{margin-bottom:8px}
+.tip-box{background:#fff7f1;border-left:4px solid #ff5a00;padding:16px 20px;border-radius:8px;margin:20px 0;color:#5d3a27}
+.tip-box strong{color:#07182f;display:block;margin-bottom:6px}
+.cta-box{background:#07182f;color:white;text-align:center;padding:35px 20px;border-radius:14px;margin-top:30px}
+.cta-box h2{color:white;margin-bottom:12px;font-size:22px}
+.cta-box p{margin-bottom:18px;color:#dbe5f2}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;margin:4px}
+.btn-call{background:#ff5a00;color:white}
+.btn-wa{background:#25d366;color:white}
+.related{background:white;border-radius:14px;padding:25px;margin-top:25px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.related h3{color:#07182f;margin-bottom:15px;font-size:18px}
+.related a{display:block;padding:12px 0;border-bottom:1px solid #eee;color:#ff5a00;text-decoration:none;font-weight:bold}
+.related a:last-child{border-bottom:none}
+footer{background:#07182f;color:#cbd5e1;text-align:center;padding:30px 5%;margin-top:40px;font-size:14px}
+footer a{color:#ff5a00;text-decoration:none;margin:0 8px}
+@media(max-width:600px){.article{padding:22px}.container{padding:25px 15px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>📍 Mukkam, Kozhikode, Kerala</div>
+  <div>
+    <a href="tel:+919447667744">📞 9447667744</a>
+    <a href="https://wa.me/919447150744">💬 WhatsApp</a>
+  </div>
+</div>
+
+<header>
+  <a href="https://www.fixg.in/" class="logo">fix<span>G</span><small>by iCare Mukkam</small></a>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="https://www.fixg.in/">Home</a> › 
+    <a href="blog.html">Blog</a> › 
+    Battery Health Check
+  </div>
+
+  <article class="article">
+    <h1>🔋 Mobile Battery Health എങ്ങനെ Check ചെയ്യാം?</h1>
+    <div class="meta">📅 September 27, 2026 | ✍️ fixG Team</div>
+
+    <p>നിങ്ങളുടെ മൊബൈൽ ബാറ്ററി പെട്ടെന്ന് തീരുന്നുണ്ടോ? ചാർജിംഗ് കഴിഞ്ഞ് കുറച്ച് സമയത്തിനുള്ളിൽ തന്നെ ഫോൺ ഓഫ് ആകുന്നുണ്ടോ? എങ്കിൽ നിങ്ങളുടെ ബാറ്ററി ഹെൽത്ത് പരിശോധിക്കേണ്ട സമയമായിരിക്കാം. ഈ ലേഖനത്തിൽ എങ്ങനെ battery health check ചെയ്യാം എന്ന് വിശദമായി പറയുന്നു.</p>
+
+    <h2>📱 Android-ൽ Battery Health Check ചെയ്യാൻ</h2>
+    <ol>
+      <li><strong>Settings</strong> തുറക്കുക</li>
+      <li><strong>Battery</strong> അല്ലെങ്കിൽ <strong>Battery & Device Care</strong> ക്ലിക്ക് ചെയ്യുക</li>
+      <li><strong>Battery Usage</strong> അല്ലെങ്കിൽ <strong>Battery Health</strong> കാണുക</li>
+      <li>Battery Health % കാണും</li>
+    </ol>
+
+    <div class="tip-box">
+      <strong>💡 Reading Battery Health %:</strong>
+      80%-ന് മുകളിൽ = നല്ലത് ✅<br>
+      70-80% = മോശമല്ല ⚠️<br>
+      70%-ന് താഴെ = ബാറ്ററി മാറ്റേണ്ടതുണ്ട് ❌
+    </div>
+
+    <h2>🍎 iPhone-ൽ Battery Health Check ചെയ്യാൻ</h2>
+    <ol>
+      <li><strong>Settings</strong> തുറക്കുക</li>
+      <li><strong>Battery</strong> ക്ലിക്ക് ചെയ്യുക</li>
+      <li><strong>Battery Health & Charging</strong> ക്ലിക്ക് ചെയ്യുക</li>
+      <li><strong>Maximum Capacity</strong> കാണുക</li>
+    </ol>
+
+    <p>iPhone-ൽ 80%-ന് താഴെയാണെങ്കിൽ Apple "Service Recommended" എന്ന് കാണിക്കും.</p>
+
+    <h2>⚠️ ബാറ്ററി മോശമാണെന്നതിന്റെ Signs</h2>
+    <ul>
+      <li>⚡ പെട്ടെന്ന് ചാർജ് തീരുന്നു</li>
+      <li>🔥 ഫോൺ ചൂടാകുന്നു (ഉപയോഗിക്കുമ്പോൾ / ചാർജ് ചെയ്യുമ്പോൾ)</li>
+      <li>📉 30% കാണിക്കുമ്പോൾ ഓഫ് ആകുന്നു</li>
+      <li>🔋 ബാറ്ററി swell ആകുന്നു (back panel ഉയരുന്നു)</li>
+      <li>🐌 Slow charging</li>
+      <li>📊 Battery % കൃത്യമല്ല</li>
+    </ul>
+
+    <h2>🛠️ ബാറ്ററി നന്നാക്കാൻ എന്ത് ചെയ്യാം?</h2>
+
+    <h3>1. Battery Calibration</h3>
+    <p>ഫോൺ 0% വരെ ഉപയോഗിച്ച്, വീണ്ടും 100% വരെ ചാർജ് ചെയ്യുക. ഇത് ബാറ്ററി കൃത്യമായി കാണിക്കാൻ സഹായിക്കും.</p>
+
+    <h3>2. Background Apps കുറയ്ക്കുക</h3>
+    <p>അനാവശ്യമായ apps uninstall ചെയ്യുക. Background-ൽ run ചെയ്യുന്ന apps ബാറ്ററി കൂടുതൽ ഉപയോഗിക്കുന്നു.</p>
+
+    <h3>3. Screen Brightness കുറയ്ക്കുക</h3>
+    <p>Auto-brightness ON ചെയ്യുക. Screen brightness കുറയ്ക്കുന്നത് ബാറ്ററി ലാഭിക്കാൻ സഹായിക്കും.</p>
+
+    <h3>4. Location Services കുറയ്ക്കുക</h3>
+    <p>GPS location services background-ൽ run ചെയ്യുമ്പോൾ battery drain കൂടും. ആവശ്യമുള്ളപ്പോൾ മാത്രം ON ചെയ്യുക.</p>
+
+    <h3>5. Live Wallpapers ഒഴിവാക്കുക</h3>
+    <p>Static wallpaper ഉപയോഗിക്കുന്നത് കൂടുതൽ battery efficient ആണ്.</p>
+
+    <h3>6. Battery Replacement</h3>
+    <p>മേൽപ്പറഞ്ഞ എല്ലാം ചെയ്തിട്ടും പ്രശ്നം തുടരുന്നുണ്ടെങ്കിൽ, ബാറ്ററി മാറ്റേണ്ടതുണ്ട്. fixG-ൽ quality ബാറ്ററികൾ ലഭ്യമാണ്.</p>
+
+    <div class="tip-box">
+      <strong>🎯 fixG Tip:</strong>
+      ബാറ്ററി പ്രശ്നങ്ങൾ ഉണ്ടെങ്കിൽ ഞങ്ങളെ contact ചെയ്യൂ. Free diagnosis നൽകുന്നു!
+    </div>
+
+    <div class="cta-box">
+      <h2>ബാറ്ററി പ്രശ്നമുണ്ടോ?</h2>
+      <p>ഞങ്ങളെ contact ചെയ്യൂ — ഉടൻ സഹായിക്കാം!</p>
+      <a href="tel:+919447667744" class="btn btn-call">📞 Call 9447667744</a>
+      <a href="https://wa.me/919447150744" class="btn btn-wa">💬 WhatsApp</a>
+    </div>
+  </article>
+
+  <div class="related">
+    <h3>📚 Related Articles</h3>
+    <a href="blog-iphone-service-cost.html">📱 iPhone Service-ന് എത്ര രൂപ ചെലവാകും?</a>
+    <a href="blog-display-break-guide.html">📲 Mobile Display Break ആയാൽ എന്ത് ചെയ്യണം?</a>
+    <a href="blog-laptop-slow-fix.html">💻 Laptop Slow ആകുന്നത് എങ്ങനെ Fix ചെയ്യാം?</a>
+    <a href="blog-water-damage-guide.html">💧 Mobile Water Damage-ൽ എന്ത് ചെയ്യണം?</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 fixG by iCare Mukkam. All Rights Reserved.
+  <br><br>
+  <a href="https://www.fixg.in/">Home</a> |
+  <a href="https://www.fixg.in/blog.html">Blog</a> |
+  <a href="https://www.fixg.in/#contact">Contact</a>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mobile Battery Health എങ്ങനെ Check ചെയ്യാം?",
+  "description": "Mobile battery health എങ്ങനെ check ചെയ്യാം - Android, iPhone tips",
+  "author": {"@type": "Organization", "name": "fixG by iCare Mukkam"},
+  "publisher": {"@type": "Organization", "name": "fixG by iCare Mukkam"},
+  "datePublished": "2026-09-27"
+}
+</script>
+
+</body>
+</html>
