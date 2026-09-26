@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block admin pages from search engines
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /cart.html
+Disallow: /404.html
+
 Sitemap: https://www.fixg.in/sitemap.xml
