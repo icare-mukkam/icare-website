@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FAQ | fixG - iCare Mukkam</title>
+<meta name="description" content="Frequently asked questions about mobile, laptop repair services at fixG - iCare Mukkam. Warranty, pricing, service time and more.">
+<meta name="keywords" content="mobile repair FAQ, service questions, iCare Mukkam FAQ, repair warranty, mobile service Mukkam">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.7}
+.topbar{background:#ff5a00;color:white;padding:10px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
+.topbar a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+header{background:white;padding:14px 5%;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.logo{font-size:26px;font-weight:900;color:#07182f;text-decoration:none;display:inline-block}
+.logo span{color:#ff5a00}
+.logo small{font-size:11px;color:#6b7280;display:block;margin-top:-4px}
+.hero{background:linear-gradient(135deg,#07182f,#ff5a00);color:white;padding:70px 5%;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,44px);margin-bottom:15px}
+.hero p{font-size:17px;max-width:700px;margin:0 auto;color:#dbe5f2}
+.container{max-width:900px;margin:auto;padding:50px 5%}
+.faq-item{background:white;border-radius:14px;margin-bottom:15px;box-shadow:0 4px 14px rgba(0,0,0,.06);overflow:hidden}
+.faq-question{padding:22px 25px;font-weight:bold;color:#07182f;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:.2s;font-size:16px}
+.faq-question:hover{background:#fff7f1}
+.faq-question .icon{color:#ff5a00;font-size:22px;transition:.3s}
+.faq-item.open .faq-question{background:#fff7f1;border-bottom:1px solid #ffe4d1}
+.faq-item.open .faq-question .icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 25px}
+.faq-item.open .faq-answer{max-height:500px;padding:20px 25px}
+.faq-answer p{color:#4b5563;font-size:14.5px;margin-bottom:10px}
+.faq-answer ul{margin-left:20px;color:#4b5563;font-size:14.5px}
+.faq-answer li{margin-bottom:6px}
+.faq-category{font-size:13px;color:#ff5a00;font-weight:bold;text-transform:uppercase;letter-spacing:1px;margin:35px 0 15px}
+.cta-box{background:#07182f;color:white;text-align:center;padding:40px 20px;border-radius:14px;margin-top:40px}
+.cta-box h2{color:white;margin-bottom:12px;font-size:24px}
+.cta-box p{margin-bottom:20px;color:#dbe5f2}
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:15px;margin:4px}
+.btn-call{background:#ff5a00;color:white}
+.btn-wa{background:#25d366;color:white}
+footer{background:#07182f;color:#cbd5e1;text-align:center;padding:30px 5%;margin-top:40px;font-size:14px}
+footer a{color:#ff5a00;text-decoration:none;margin:0 8px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>📍 Mukkam, Kozhikode, Kerala</div>
+  <div>
+    <a href="tel:+919447667744">📞 9447667744</a>
+    <a href="https://wa.me/919447150744">💬 WhatsApp</a>
+  </div>
+</div>
+
+<header>
+  <a href="https://www.fixg.in/" class="logo">fix<span>G</span><small>by iCare Mukkam</small></a>
+</header>
+
+<section class="hero">
+  <h1>❓ Frequently Asked Questions</h1>
+  <p>Common questions about our services</p>
+</section>
+
+<div class="container">
+
+  <div class="faq-category">🔧 Service & Repair</div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Mobile repair-ന് എത്ര സമയമെടുക്കും?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Most repairs same-day ആണ്:</p>
+      <ul>
+        <li>Battery replacement — 15-30 minutes</li>
+        <li>Display replacement — 1-2 hours</li>
+        <li>Software service — 30-60 minutes</li>
+        <li>Motherboard service — 2-3 days</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Warranty ഉണ്ടോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes, replaced parts-ന് warranty ഉണ്ട്:</p>
+      <ul>
+        <li>Display — 3-6 months</li>
+        <li>Battery — 3-6 months</li>
+        <li>Other parts — 3 months</li>
+      </ul>
+      <p>Warranty covers manufacturing defects only. Physical damage, water damage cover ചെയ്യില്ല.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Original parts ഉപയോഗിക്കുന്നുണ്ടോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes! ഞങ്ങൾ only:</p>
+      <ul>
+        <li>✅ Genuine original parts</li>
+        <li>✅ High-quality OEM parts</li>
+        <li>✅ Service-center quality parts</li>
+      </ul>
+      <p>Cheap duplicate parts ഞങ്ങൾ ഒരിക്കലും ഉപയോഗിക്കുന്നില്ല.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Free diagnosis ഉണ്ടോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes! 100% free diagnosis. Device കാണിച്ചാൽ:</p>
+      <ul>
+        <li>Problem identify ചെയ്യും</li>
+        <li>Estimate തരും</li>
+        <li>Repair വേണോ എന്ന് decide ചെയ്യാം</li>
+      </ul>
+      <p>No obligation to repair!</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Data safe ആണോ repair സമയത്ത്?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes, but we recommend:</p>
+      <ul>
+        <li>📱 Repair-ന് മുൻപ് backup എടുക്കുക</li>
+        <li>🔒 Screen lock password നൽകുക</li>
+        <li>📧 Important files cloud-ൽ save ചെയ്യുക</li>
+      </ul>
+      <p>Software service-ൽ data loss chance ഉണ്ട് — backup ഉറപ്പാക്കുക!</p>
+    </div>
+  </div>
+
+  <div class="faq-category">💰 Pricing & Payment</div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Payment options എന്തൊക്കെ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>ഞങ്ങൾ accept ചെയ്യുന്നു:</p>
+      <ul>
+        <li>💵 Cash</li>
+        <li>📱 UPI (GPay, PhonePe, Paytm)</li>
+        <li>💳 Debit / Credit Card</li>
+        <li>🌐 Online (Website-ൽ Razorpay വഴി)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Estimate മുൻപേ അറിയാൻ പറ്റുമോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Yes! WhatsApp-ൽ:</p>
+      <ul>
+        <li>📸 Device photo അയക്കുക</li>
+        <li>📝 Problem describe ചെയ്യുക</li>
+        <li>📱 Model number നൽകുക</li>
+      </ul>
+      <p>ഞങ്ങൾ preliminary estimate തരും.</p>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Repair ചെയ്തില്ലെങ്കിൽ charge ഉണ്ടോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>No charge for diagnosis. Repair ചെയ്യാതെ device തിരികെ വാങ്ങാം — free!</p>
+      <p>However, if we've already opened/attempted repair, small service charge ഉണ്ടാകാം.</p>
+    </div>
+  </div>
+
+  <div class="faq-category">📦 Products & Orders</div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Online order ചെയ്താൽ delivery എപ്പോൾ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Delivery time:</p>
+      <ul>
+        <li>📍 Mukkam area — Same day</li>
+        <li>📍 Kozhikode district — 1-2 days</li>
+        <li>📍 Kerala — 3-5 days</li>
+        <li>📍 Outside Kerala — 5-7 days</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Product return/exchange policy?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>Returns accepted if:</p>
+      <ul>
+        <li>Product damaged on arrival</li>
+        <li>Wrong product delivered</li>
+        <li>Manufacturing defect (within 7 days)</li>
+      </ul>
+      <p>Original packaging ഉണ്ടായിരിക്കണം.</p>
+    </div>
+  </div>
+
+  <div class="faq-category">📍 Location & Hours</div>
+
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Shop location എവിടെ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p><strong>iCare Mobile Shop</strong><br>
+      Main Road, Mukkam<br>
+      Kozhikode, Kerala - 673602</p>
+      <p>📍 <a href="https://maps.app.goo.gl/W7sTrMjrqtDBVLgV8" target="_blank" style="color:#ff5a00">Get Directions →</a></p>
+    </div>
+  </div>
+
+    <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Working hours എന്തൊക്കെ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p><strong>Monday - Saturday:</strong> 9:30 AM - 8:00 PM<br>
+      <strong>Sunday:</strong> Closed</p>
+      <p>Public holidays-ൽ hours change ആകാം. WhatsApp-ൽ confirm ചെയ്യൂ.</p>
+    </div>
+  </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-question">
+      <span>Home service ഉണ്ടോ?</span>
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      <p>✅ <strong>Yes! Home service available ആണ്.</strong></p>
+      <p>Mukkam + nearby areas-ൽ home service നൽകുന്നു. ബുക്ക് ചെയ്യാൻ 3 വഴികൾ:</p>
+      <ul>
+        <li>🌐 <strong>Online Booking:</strong> <a href="https://www.fixg.in/#booking" style="color:#ff5a00;font-weight:bold">fixg.in → Book Service</a> (Service Type-ൽ "Home Service" select ചെയ്യുക)</li>
+        <li>📞 <strong>Call:</strong> <a href="tel:+919447667744" style="color:#ff5a00;font-weight:bold">9447667744</a></li>
+        <li>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919447150744" style="color:#ff5a00;font-weight:bold">9447150744</a></li>
+      </ul>
+      <p><strong>Note:</strong> Home service-ന് additional charges ഉണ്ടാകാം (distance അനുസരിച്ച്). Mukkam town-ൽ free home service.</p>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>More Questions?</h2>
+    <p>ഞങ്ങളെ contact ചെയ്യൂ — ഉടൻ മറുപടി തരാം!</p>
+    <a href="tel:+919447667744" class="btn btn-call">📞 Call Now</a>
+    <a href="https://wa.me/919447150744" class="btn btn-wa">💬 WhatsApp</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 fixG by iCare Mukkam. All Rights Reserved.
+  <br><br>
+  <a href="https://www.fixg.in/">Home</a> |
+  <a href="https://www.fixg.in/blog.html">Blog</a> |
+  <a href="https://www.fixg.in/#contact">Contact</a>
+</footer>
+
+<script>
+function toggleFAQ(item) {
+  item.classList.toggle('open');
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Mobile repair-ന് എത്ര സമയമെടുക്കും?", "acceptedAnswer": {"@type": "Answer", "text": "Most repairs same-day. Battery 15-30 min, Display 1-2 hours, Motherboard 2-3 days."}},
+    {"@type": "Question", "name": "Warranty ഉണ്ടോ?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 3-6 months warranty on replaced parts (manufacturing defects only)."}},
+    {"@type": "Question", "name": "Free diagnosis ഉണ്ടോ?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, 100% free diagnosis with no obligation to repair."}}
+  ]
+}
+</script>
+
+</body>
+</html>
