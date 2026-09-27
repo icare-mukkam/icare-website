@@ -247,7 +247,7 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 @media(max-width:800px){.product-detail-body{grid-template-columns:1fr;gap:20px;padding:16px}.detail-image-section{height:300px}.detail-info-section h1{font-size:22px}.detail-price{font-size:26px}.detail-actions{flex-direction:column}.product-detail-overlay{padding:10px}}
 @media(max-width:500px){.detail-image-section{height:220px}.product-detail-container{border-radius:12px}}
 footer{background:#07182f;color:white;padding:45px 5%}
-.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:30px}
+.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:35px}
 footer h3{margin-bottom:12px;color:#ff5a00;font-size:16px}
 footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0;font-size:14px}
 footer a:hover{color:#ff5a00}
@@ -281,7 +281,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 .order-card .order-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .order-card .order-items{font-size:14px;color:#4b5563;margin-top:4px}
 .order-card .order-address{font-size:13px;color:#6b7280;margin-top:6px}
-@media(max-width:1100px){.footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:25px}#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}{.footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:25px}#shop .products-grid{grid-template-columns:r{#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
 .topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo-wrap{min-width:auto}.logo-tagline{font-size:10px}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
 .hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:36px}.hero-devices{font-size:70px;bottom:10px;opacity:.25}
@@ -344,23 +344,12 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <a href="#shop" onclick="switchTab('services')">🔧 Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
 <a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
-<hr style="border:0;border-top:1px solid #eee;margin:6px 0;">
-<a href="about.html">ℹ️ About Us</a>
-<a href="offers.html">🎉 Offers & Deals</a>
-<a href="gallery.html">📸 Work Gallery</a>
-<a href="reviews.html">⭐ Customer Reviews</a>
-<a href="faq.html">❓ FAQ</a>
 </div>
 </div>
 <a href="#shop" onclick="switchTab('products')">Products</a>
 <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
 <a href="#shop" onclick="switchTab('services')">Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
-<a href="about.html">ℹ️ About</a>
-<a href="offers.html">🎉 Offers</a>
-<a href="gallery.html">📸 Gallery</a>
-<a href="reviews.html">⭐ Reviews</a>
-<a href="faq.html">❓ FAQ</a>
 <a href="blog.html">📚 Blog</a>
 <a href="#contact">Contact</a>
 </div></div>
@@ -1525,8 +1514,8 @@ function renderProducts(list) {
         <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')} ${p.oldPrice && p.oldPrice > p.price ? `<span class="old-price">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`: ''}</div>
         <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
         <div class="product-actions">
-         <button class="add-cart${p.stock <= 0 ? ' out-stock' : ''}" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
-<button class="buy-now${p.stock <= 0 ? ' out-stock' : ''}" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
+          <button class="add-cart" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
+          <button class="buy-now" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
         </div>
       </div>
     </div>`;
