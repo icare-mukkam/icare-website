@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>iCare Mukkam | Mobile Service, Repair & Mobiles in Mukkam</title>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FPEM6F74L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,7 +23,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827;padding-bottom:70px}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827}
 .topbar{background:#ff5a00;color:white;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
 .topbar a{color:white;text-decoration:none;margin-left:18px;font-weight:bold}
 .topbar a:hover{text-decoration:underline}
@@ -174,6 +175,7 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .service-menu-section-title{font-size:22px;color:#07182f;margin:30px 0 14px;font-weight:800}
 .service-menu-section-title:first-child{margin-top:0}
 .service-menu-note{background:#fff7f1;border-left:4px solid #ff5a00;padding:14px 16px;border-radius:10px;margin-top:24px;color:#5d3a27;font-size:13.5px}
+/* Contact / Location */
 .contact-section{background:white}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
 .contact-info{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee}
@@ -188,6 +190,11 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .map-box iframe{width:100%;height:230px;border:0;border-radius:10px}
 .directions-btn{display:inline-block;margin-top:14px;background:#ff5a00;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold}
 .directions-btn:hover{background:#e84d00}
+/* FIX: Contact info call/WhatsApp buttons */
+.contact-info .service-cta{display:flex;gap:8px;margin-top:18px}
+.contact-info .service-cta a{flex:1;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;color:white;display:inline-block}
+.contact-info .service-cta .s-call{background:#2563eb}
+.contact-info .service-cta .s-wa{background:#25d366}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 .gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
 .gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
@@ -240,7 +247,7 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 @media(max-width:800px){.product-detail-body{grid-template-columns:1fr;gap:20px;padding:16px}.detail-image-section{height:300px}.detail-info-section h1{font-size:22px}.detail-price{font-size:26px}.detail-actions{flex-direction:column}.product-detail-overlay{padding:10px}}
 @media(max-width:500px){.detail-image-section{height:220px}.product-detail-container{border-radius:12px}}
 footer{background:#07182f;color:white;padding:45px 5%}
-.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:35px}
+.footer-grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.2fr;gap:30px}
 footer h3{margin-bottom:12px;color:#ff5a00;font-size:16px}
 footer a{display:block;color:#cbd5e1;text-decoration:none;margin:7px 0;font-size:14px}
 footer a:hover{color:#ff5a00}
@@ -255,8 +262,10 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 .footer-social a:hover{transform:translateY(-3px)}
 .copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8;font-size:13px}
 .copyright a{display:inline;color:#ff5a00;margin:0 4px}
+/* Floating buttons */
 .whatsapp,.call{position:fixed;right:20px;width:56px;height:56px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:25px;z-index:7000;box-shadow:0 5px 20px rgba(0,0,0,.25)}
 .whatsapp{bottom:20px;background:#25d366}.call{bottom:88px;background:#2563eb}
+/* Mobile sticky CTA bar */
 .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;box-shadow:0 -4px 15px rgba(0,0,0,.08);z-index:8000}
 .mobile-cta-bar a{flex:1;text-align:center;padding:12px 5px;text-decoration:none;font-size:12px;font-weight:bold;color:#111827;display:flex;flex-direction:column;align-items:center;gap:3px}
 .mobile-cta-bar a .mci{font-size:20px}
@@ -272,7 +281,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 .order-card .order-details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .order-card .order-items{font-size:14px;color:#4b5563;margin-top:4px}
 .order-card .order-address{font-size:13px;color:#6b7280;margin-top:6px}
-@media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){.footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:25px}#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}{.footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:25px}#shop .products-grid{grid-template-columns:r{#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
 .topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo-wrap{min-width:auto}.logo-tagline{font-size:10px}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
 .hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:36px}.hero-devices{font-size:70px;bottom:10px;opacity:.25}
@@ -289,6 +298,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </head>
 <body>
 
+<!-- ===== TOPBAR ===== -->
 <div class="topbar">
 <div class="loc">📍 Mukkam, Kozhikode, Kerala</div>
 <div>
@@ -297,6 +307,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== HEADER ===== -->
 <header>
 <div class="main-header">
 <a href="#home" class="logo-wrap">
@@ -333,17 +344,29 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <a href="#shop" onclick="switchTab('services')">🔧 Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
 <a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
+<hr style="border:0;border-top:1px solid #eee;margin:6px 0;">
+<a href="about.html">ℹ️ About Us</a>
+<a href="offers.html">🎉 Offers & Deals</a>
+<a href="gallery.html">📸 Work Gallery</a>
+<a href="reviews.html">⭐ Customer Reviews</a>
+<a href="faq.html">❓ FAQ</a>
 </div>
 </div>
 <a href="#shop" onclick="switchTab('products')">Products</a>
 <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
 <a href="#shop" onclick="switchTab('services')">Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
+<a href="about.html">ℹ️ About</a>
+<a href="offers.html">🎉 Offers</a>
+<a href="gallery.html">📸 Gallery</a>
+<a href="reviews.html">⭐ Reviews</a>
+<a href="faq.html">❓ FAQ</a>
 <a href="blog.html">📚 Blog</a>
 <a href="#contact">Contact</a>
 </div></div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section id="home" class="hero">
 <div class="hero-box">
 <div class="hero-content">
@@ -361,6 +384,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </section>
 
+<!-- ===== TRUST FEATURES ===== -->
 <div class="features">
 <div class="feature"><div class="feature-icon">✓</div><div><strong>Genuine Products</strong><small>Original & Trusted</small></div></div>
 <div class="feature"><div class="feature-icon">🔧</div><div><strong>Professional Service</strong><small>Expert Technicians</small></div></div>
@@ -368,6 +392,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="feature"><div class="feature-icon">🤝</div><div><strong>Trusted Support</strong><small>Friendly Care</small></div></div>
 </div>
 
+<!-- ===== SHOP BY CATEGORY ===== -->
 <section class="section"><div class="section-head"><h2>Shop by Category</h2><a href="#shop" class="view-all" onclick="clearFilters()">View All →</a></div>
 <div class="categories">
 <div class="category" onclick="filterCategory('Mobile')"><div class="category-icon">📱</div><p>Mobiles</p></div>
@@ -381,12 +406,14 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="category" onclick="switchTab('servicemenu')"><div class="category-icon">📋</div><p>Service Menu</p></div>
 </div></section>
 
+<!-- ===== BANNERS ===== -->
 <section class="section"><div class="banners">
 <div class="banner"><h3>Latest Mobiles</h3><p>Discover new smartphones at great prices.</p><a href="#shop" onclick="switchTab('products')">Shop Now →</a></div>
 <div class="banner"><h3>Spare Parts</h3><p>Genuine mobile spare parts available.</p><a href="#shop" onclick="switchTab('parts')">Explore →</a></div>
 <div class="banner"><h3>Repair Services</h3><p>Expert repair for all supported devices.</p><a href="#" onclick="openBooking(); return false;">📅 Book Now →</a></div>
 </div></section>
 
+<!-- ===== STORE ===== -->
 <section id="shop" class="section">
 <div class="section-head"><h2>Store</h2><a href="#shop" class="view-all" onclick="clearFilters()">View All →</a></div>
 <div class="shop-tabs">
@@ -400,6 +427,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div id="products" class="products-grid"><div class="loading">Loading...</div></div>
 </section>
 
+<!-- ===== OUR SERVICES (Expanded) ===== -->
 <section id="services" class="section info-section">
 <div class="section-head"><h2>Our Services </h2><a href="#shop" onclick="switchTab('servicemenu')" class="view-all">View All Services →</a></div>
 <div class="service-grid">
@@ -409,7 +437,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
 <div class="service-card">
-<div class="icon">🍎</div><h3>iPhone Service</h3>
+<div class="icon">📱</div><h3>iPhone Service</h3>
 <p>Display, battery, charging, software, camera and motherboard-related service for iPhone.</p>
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
@@ -466,6 +494,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </section>
 
+<!-- ===== ABOUT ===== -->
 <section class="section"><div class="section-head"><h2>About iCare Mukkam / fixG</h2></div>
 <div class="service-card">
 <p><strong>iCare Mukkam</strong> — operating as <strong>fixG</strong> — provides mobiles, laptops, tablets, smart watches, accessories, spare parts and professional repair services in Mukkam, Kozhikode.</p>
@@ -476,6 +505,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </section>
 
+<!-- ===== CONTACT + MAPS ===== -->
 <section id="contact" class="section contact-section">
 <div class="section-head"><h2>Visit Our Shop</h2></div>
 <div class="contact-grid">
@@ -497,9 +527,9 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="ci">🕒</div>
 <div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: Closed</span></div>
 </div>
-<div class="service-cta" style="margin-top:18px">
-<a class="s-call" href="tel:+919447667744" style="padding:12px;font-size:14px">📞 Call Now</a>
-<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank" style="padding:12px;font-size:14px">💬 WhatsApp</a>
+<div class="service-cta">
+<a class="s-call" href="tel:+919447667744">📞 Call Now</a>
+<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank">💬 WhatsApp</a>
 </div>
 </div>
 <div class="map-box">
@@ -510,6 +540,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
 <div class="footer-grid">
 <div>
@@ -540,12 +571,12 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 <div>
 <h3>Services</h3>
-<a href="iphone-service-mukkam.html">iPhone Service</a>
-<a href="samsung-service-mukkam.html">Samsung Service</a>
-<a href="mobile-display-repair-mukkam.html">Display Repair</a>
-<a href="mobile-battery-replacement-mukkam.html">Battery Service</a>
-<a href="laptop-service-mukkam.html">Laptop Service</a>
-<a href="mobile-motherboard-service-mukkam.html">Motherboard Service</a>
+<a href="#services">Mobile Service</a>
+<a href="#services">iPhone Service</a>
+<a href="#services">Samsung Service</a>
+<a href="#services">Laptop Service</a>
+<a href="#services">Display Replacement</a>
+<a href="#services">Battery Service</a>
 </div>
 <div>
 <h3>Contact</h3>
@@ -564,21 +595,25 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </footer>
 
+<!-- ===== FLOATING BUTTONS (Desktop) ===== -->
 <a class="whatsapp" href="https://wa.me/919447150744" target="_blank">💬</a>
 <a class="call" href="tel:+919447667744">📞</a>
 
+<!-- ===== STICKY MOBILE CTA BAR ===== -->
 <div class="mobile-cta-bar">
 <a class="call-m" href="tel:+919447667744"><span class="mci">📞</span>Call</a>
 <a class="wa-m" href="https://wa.me/919447150744" target="_blank"><span class="mci">💬</span>WhatsApp</a>
 <a class="book-m" href="#" onclick="openBooking(); return false;"><span class="mci">🔧</span>Book Service</a>
 </div>
 
+<!-- ===== CART ===== -->
 <div id="cartOverlay" class="cart-overlay" onclick="closeCartOutside(event)">
 <div class="cart-drawer"><div class="cart-title"><h2>Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
 <div id="cartItems">Your cart is empty.</div>
 <div class="cart-bottom"><div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div><button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button></div>
 </div></div>
 
+<!-- ===== ACCOUNT MODAL ===== -->
 <div id="accountModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2 id="authTitle">Customer Login</h2><button class="close" onclick="closeAccount()">×</button></div>
@@ -613,6 +648,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div></div>
 
+<!-- ===== CHECKOUT MODAL ===== -->
 <div id="checkoutModal" class="modal">
 <div class="modal-box"><div class="modal-header"><h2>Customer Details</h2><button class="close" onclick="closeCheckout()">×</button></div>
 <div class="form-group"><label>Name</label><input id="customerName" type="text" placeholder="Your name"></div>
@@ -621,6 +657,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <button class="pay-button" onclick="startRazorpayPayment()">💳 Pay Securely with Razorpay</button>
 </div></div>
 
+<!-- ===== ORDERS MODAL ===== -->
 <div id="ordersModal" class="modal" onclick="closeOrdersOutside(event)">
 <div class="modal-box wide">
 <div class="modal-header"><h2>📋 My Orders</h2><button class="close" onclick="closeMyOrders()">×</button></div>
@@ -628,6 +665,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== BOOKING MODAL (Expanded) ===== -->
 <div id="bookingModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>🔧 Book Repair Service</h2><button class="close" onclick="closeBooking()">×</button></div>
@@ -636,16 +674,9 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="form-group"><label>Phone Number</label><input id="bookPhone" type="tel" placeholder="Your phone number"></div>
 <div class="form-group"><label>Email (optional)</label><input id="bookEmail" type="email" placeholder="Your email address"></div>
 <div class="form-group"><label>Address</label><textarea id="bookAddress" placeholder="Your complete address"></textarea></div>
-<div class="form-group">
-<label>Service Location</label>
-<select id="bookLocation">
-<option value="Shop Visit">🏪 Shop Visit (iCare Mukkam)</option>
-<option value="Home Service">🏠 Home Service - Pickup & Deliver (Additional charges may apply)</option>
-</select>
-</div>
 <div class="form-group"><label>Service Type</label>
 <select id="bookService">
-<optgroup label="🏠 Home Service (Pickup & Deliver)">
+<optgroup label="🏠 Home Service">
 <option value="Home Service - Mobile Repair">🏠 Home Service - Mobile Repair</option>
 <option value="Home Service - Laptop Repair">🏠 Home Service - Laptop Repair</option>
 <option value="Home Service - Display Replacement">🏠 Home Service - Display</option>
@@ -654,7 +685,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </optgroup>
 <optgroup label="🔧 Shop Service">
 <option value="Mobile Service">📱 Mobile Service</option>
-<option value="iPhone Service">🍎 iPhone Service</option>
+<option value="iPhone Service">📱 iPhone Service</option>
 <option value="Samsung Service">📱 Samsung Service</option>
 <option value="Other Brand Mobile Service">📱 Other Brand Mobile Service</option>
 <option value="Laptop Service">💻 Laptop Service</option>
@@ -668,10 +699,11 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="form-group"><label>Device Brand</label><input id="bookBrand" type="text" placeholder="e.g. Apple, Samsung, Xiaomi"></div>
 <div class="form-group"><label>Device Model</label><input id="bookModel" type="text" placeholder="e.g. iPhone 13, Galaxy S21"></div>
 <div class="form-group"><label>Problem / Service Required</label><textarea id="bookDescription" placeholder="Tell us about the issue (display, battery, charging, software, etc.)"></textarea></div>
-<button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
+<button id="bookSubmitBtn" class="primary-btn" onclick="submitBooking(this)">📅 Book Now</button>
 </div>
 </div>
 
+<!-- ===== GALLERY MODAL ===== -->
 <div id="galleryModal" class="modal" onclick="closeGalleryOutside(event)">
 <div class="modal-box gallery-box">
 <div class="modal-header"><h2 id="galleryTitle">Product Gallery</h2><button class="close" onclick="closeGallery()">×</button></div>
@@ -685,6 +717,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== PRODUCT DETAIL ===== -->
 <div id="productDetail" class="product-detail-overlay">
 <div class="product-detail-container">
 <div class="product-detail-header">
@@ -712,6 +745,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== PROFILE MODAL (FIXED) ===== -->
 <div id="profileModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>👤 My Profile</h2><button class="close" onclick="closeProfile()">×</button></div>
@@ -724,6 +758,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== LEGAL MODAL ===== -->
 <div id="fixgLegalModal" style="display:none;position:fixed;z-index:999999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);backdrop-filter:blur(5px);overflow:auto;">
 <div style="background:#fff;color:#111827;margin:6% auto;padding:25px;border-radius:12px;width:90%;max-width:650px;position:relative;line-height:1.6;box-shadow:0 10px 30px rgba(0,0,0,0.5);">
 <span onclick="closeFixgModal()" style="position:absolute;right:20px;top:12px;font-size:28px;font-weight:bold;cursor:pointer;color:#6b7280;">×</span>
@@ -731,6 +766,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
+<!-- ===== LOCAL BUSINESS SCHEMA ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -802,6 +838,7 @@ let pendingCheckout = false;
 const productStatus = document.getElementById('productStatus');
 const productsContainer = document.getElementById('products');
 
+/* ===== SERVICE MENU DATA ===== */
 const MOBILE_SERVICES = [
 ["Mobile Service","Complete mobile phone service for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
 ["Smartphone Service","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
@@ -880,6 +917,7 @@ function renderServiceMenu(filter=""){
   productsContainer.innerHTML = html;
 }
 
+/* ===== GALLERY ===== */
 let galleryImages = [], galleryCurrentIndex = 0;
 window.openGallery = function(productId) {
   const product = allProducts.find(p => p.id === productId);
@@ -920,6 +958,7 @@ window.galleryNext = function() { if (galleryCurrentIndex < galleryImages.length
 window.galleryPrev = function() { if (galleryCurrentIndex > 0) { galleryCurrentIndex--; updateGalleryPosition(); } };
 window.goToGallery = function(index) { if (index >= 0 && index < galleryImages.length) { galleryCurrentIndex = index; updateGalleryPosition(); } };
 
+/* ===== PRODUCT DETAIL ===== */
 let detailProductId = null, detailImages = [], detailCurrentIndex = 0;
 window.openProductDetail = function(productId) {
   const product = allProducts.find(p => p.id === productId);
@@ -981,6 +1020,7 @@ window.detailBuyNow = function() {
   window.addToCart(product); window.openCart();
 };
 
+/* ===== PROFILE ===== */
 window.openProfile = function() {
   if (!auth.currentUser) { alert('Please login first.'); return; }
   document.getElementById('profileModal').style.display = 'flex'; loadProfile();
@@ -1049,6 +1089,7 @@ function openCheckoutForUser() {
   document.getElementById('checkoutModal').style.display = "flex"; loadProfileForCheckout();
 }
 
+/* ===== DROPDOWN ===== */
 window.toggleDropdown = function() { document.getElementById('categoryDropdown').classList.toggle('show'); };
 document.addEventListener('click', function(event) {
   const dropdown = document.getElementById('categoryDropdown');
@@ -1059,6 +1100,7 @@ document.querySelectorAll('.dropdown-content a').forEach(link => {
   link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
 });
 
+/* ===== BOOKING (FIXED - uses 'this' from button) ===== */
 window.openBooking = function() {
   document.getElementById('bookingModal').style.display = 'flex';
   const user = auth.currentUser;
@@ -1071,13 +1113,12 @@ window.closeBooking = function() {
   document.getElementById('bookingModal').style.display = 'none';
   document.getElementById('bookingMsg').style.display = 'none';
 };
-window.submitBooking = async function() {
+window.submitBooking = async function(btn) {
   const name = document.getElementById('bookName').value.trim();
   const phone = document.getElementById('bookPhone').value.trim();
   const email = document.getElementById('bookEmail').value.trim();
   const address = document.getElementById('bookAddress').value.trim();
   const service = document.getElementById('bookService').value;
-  const location = document.getElementById('bookLocation') ? document.getElementById('bookLocation').value : 'Shop Visit';
   const brand = document.getElementById('bookBrand').value.trim();
   const model = document.getElementById('bookModel').value.trim();
   const description = document.getElementById('bookDescription').value.trim();
@@ -1086,11 +1127,13 @@ window.submitBooking = async function() {
     msg.textContent = 'Please fill in Name, Phone, and Address.';
     msg.className = 'msg error'; msg.style.display = 'block'; return;
   }
-  const btn = event.target; btn.disabled = true; btn.textContent = 'Submitting...';
+  const submitBtn = btn || document.getElementById('bookSubmitBtn');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true; submitBtn.textContent = 'Submitting...';
   try {
     await addDoc(collection(db, "bookings"), {
       name, phone, email: email || '', address, service,
-      location: location,
+      location: 'Shop Visit',
       brand: brand || '', model: model || '',
       description: description || '', userId: auth.currentUser?.uid || '',
       status: 'Pending', createdAt: new Date()
@@ -1099,8 +1142,7 @@ window.submitBooking = async function() {
       await emailjs.send('service_qw9w2il', 'template_955n8pp', {
         customer_name: name, customer_phone: phone,
         customer_email: email || 'Not provided', customer_address: address,
-        service_type: service,
-        description: `Location: ${location} | Brand: ${brand || 'N/A'} | Model: ${model || 'N/A'} | Issue: ${description || 'N/A'}`,
+        service_type: service, description: `Brand: ${brand || 'N/A'} | Model: ${model || 'N/A'} | Issue: ${description || 'N/A'}`,
         booking_date: new Date().toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
       });
     } catch (emailError) { console.error('Email error:', emailError); }
@@ -1115,9 +1157,10 @@ window.submitBooking = async function() {
     console.error('Booking error:', error);
     msg.textContent = '❌ Could not submit booking. Please try again.';
     msg.className = 'msg error'; msg.style.display = 'block';
-  } finally { btn.disabled = false; btn.textContent = '📅 Book Now'; }
+  } finally { submitBtn.disabled = false; submitBtn.textContent = originalText; }
 };
 
+/* ===== AUTH ===== */
 function authErrorMessage(error) {
   const code = error?.code || "";
   const messages = {
@@ -1218,6 +1261,7 @@ window.logoutCustomer = async function() {
   catch (error) { alert(authErrorMessage(error)); }
 };
 
+/* ===== CART ===== */
 function getCart() { return JSON.parse(localStorage.getItem("fixGCart")) || []; }
 function saveCart(cart) { localStorage.setItem("fixGCart", JSON.stringify(cart)); displayCart(); }
 function displayCart() {
@@ -1288,6 +1332,7 @@ window.addToCartFromPart = function(id) {
 };
 window.buyNowFromPart = function(id) { window.addToCartFromPart(id); openCart(); };
 
+/* ===== CHECKOUT & PAYMENT ===== */
 window.checkout = function() {
   const cart = getCart();
   if (!cart.length) { alert("Your cart is empty."); return; }
@@ -1362,6 +1407,7 @@ async function verifyPayment(paymentResponse, customerData) {
   } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact iCare Mukkam / fixG."); }
 }
 
+/* ===== MY ORDERS ===== */
 window.openMyOrders = function() {
   if (!auth.currentUser) { alert("Please login first to view your orders."); openAccount(); return; }
   document.getElementById('ordersModal').style.display = 'flex'; loadCustomerOrders();
@@ -1403,6 +1449,7 @@ async function loadCustomerOrders() {
   }
 }
 
+/* ===== SLIDER (small cards) ===== */
 window.changeProductImage = function(dot) {
   const slider = dot.closest('.image-slider');
   const slides = slider.querySelectorAll('.slide'), dots = slider.querySelectorAll('.dot');
@@ -1429,6 +1476,7 @@ window.prevImage = function(btn) {
   dots.forEach((d, i) => d.classList.toggle('active', i === prevIndex));
 };
 
+/* ===== LOAD DATA ===== */
 async function loadAllData() {
   productStatus.textContent = 'Loading products, spare parts, services and technicians...';
   try {
@@ -1451,6 +1499,7 @@ async function loadAllData() {
   }
 }
 
+/* ===== RENDER ===== */
 function renderProducts(list) {
   productsContainer.className = "products-grid";
   if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No products found.</div>`; return; }
@@ -1476,8 +1525,8 @@ function renderProducts(list) {
         <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')} ${p.oldPrice && p.oldPrice > p.price ? `<span class="old-price">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`: ''}</div>
         <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
         <div class="product-actions">
-          <button class="add-cart" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
-          <button class="buy-now" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled class="out-stock"' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
+         <button class="add-cart${p.stock <= 0 ? ' out-stock' : ''}" onclick="event.stopPropagation(); addToCartFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled' : ''}>${p.stock > 0 ? '🛒 Add' : 'Out of Stock'}</button>
+<button class="buy-now${p.stock <= 0 ? ' out-stock' : ''}" onclick="event.stopPropagation(); buyNowFromProduct('${p.id}')" ${p.stock <= 0 ? 'disabled' : ''}>${p.stock > 0 ? 'Buy Now' : 'Unavailable'}</button>
         </div>
       </div>
     </div>`;
@@ -1548,6 +1597,7 @@ function renderTechnicians(list) {
   productsContainer.innerHTML = html;
 }
 
+/* ===== TAB SWITCHING ===== */
 window.switchTab = function(tab) {
   currentTab = tab;
   document.querySelectorAll('.shop-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
@@ -1589,6 +1639,7 @@ window.clearFilters = function() {
 };
 window.scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
 
+/* ===== LEGAL MODAL ===== */
 const fixgLegalTexts = {
 privacy: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Privacy Policy</h2><p>At <strong>iCare Mukkam / fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p><p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>`,
 terms: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Terms & Conditions</h2><p><strong>1. Scope of Service:</strong> iCare Mukkam / fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p><p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. iCare Mukkam / fixG is not responsible for any accidental data loss during the service process.</p><p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p><p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>`,
@@ -1604,6 +1655,7 @@ window.addEventListener('click', function(e) {
   if (e.target === modal) modal.style.display = 'none';
 });
 
+/* ===== AUTH STATE ===== */
 onAuthStateChanged(auth, user => {
   const label = document.getElementById('accountLabel');
   const myOrdersBtn = document.getElementById('myOrdersBtn');
@@ -1622,6 +1674,7 @@ onAuthStateChanged(auth, user => {
   }
 });
 
+/* ===== INIT ===== */
 loadAllData();
 displayCart();
 document.getElementById('searchInput').addEventListener('keydown', function(e) {
