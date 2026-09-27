@@ -23,7 +23,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827;padding-bottom:70px}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827}
 .topbar{background:#ff5a00;color:white;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
 .topbar a{color:white;text-decoration:none;margin-left:18px;font-weight:bold}
 .topbar a:hover{text-decoration:underline}
@@ -190,6 +190,11 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .map-box iframe{width:100%;height:230px;border:0;border-radius:10px}
 .directions-btn{display:inline-block;margin-top:14px;background:#ff5a00;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold}
 .directions-btn:hover{background:#e84d00}
+/* FIX: Contact info call/WhatsApp buttons */
+.contact-info .service-cta{display:flex;gap:8px;margin-top:18px}
+.contact-info .service-cta a{flex:1;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;color:white;display:inline-block}
+.contact-info .service-cta .s-call{background:#2563eb}
+.contact-info .service-cta .s-wa{background:#25d366}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 .gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
 .gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
@@ -421,7 +426,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
 <div class="service-card">
-<div class="icon"></div><h3>iPhone Service</h3>
+<div class="icon">📱</div><h3>iPhone Service</h3>
 <p>Display, battery, charging, software, camera and motherboard-related service for iPhone.</p>
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
@@ -509,11 +514,11 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 <div class="contact-line">
 <div class="ci">🕒</div>
-<div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: 10:00 AM – 5:00 PM</span></div>
+<div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: Closed</span></div>
 </div>
-<div class="service-cta" style="margin-top:18px">
-<a class="s-call" href="tel:+919447667744" style="padding:12px;font-size:14px">📞 Call Now</a>
-<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank" style="padding:12px;font-size:14px">💬 WhatsApp</a>
+<div class="service-cta">
+<a class="s-call" href="tel:+919447667744">📞 Call Now</a>
+<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank">💬 WhatsApp</a>
 </div>
 </div>
 <div class="map-box">
@@ -660,8 +665,16 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="form-group"><label>Address</label><textarea id="bookAddress" placeholder="Your complete address"></textarea></div>
 <div class="form-group"><label>Service Type</label>
 <select id="bookService">
+<optgroup label="🏠 Home Service">
+<option value="Home Service - Mobile Repair">🏠 Home Service - Mobile Repair</option>
+<option value="Home Service - Laptop Repair">🏠 Home Service - Laptop Repair</option>
+<option value="Home Service - Display Replacement">🏠 Home Service - Display</option>
+<option value="Home Service - Battery Replacement">🏠 Home Service - Battery</option>
+<option value="Home Service - Other">🏠 Home Service - Other</option>
+</optgroup>
+<optgroup label="🔧 Shop Service">
 <option value="Mobile Service">📱 Mobile Service</option>
-<option value="iPhone Service"> iPhone Service</option>
+<option value="iPhone Service">📱 iPhone Service</option>
 <option value="Samsung Service">📱 Samsung Service</option>
 <option value="Other Brand Mobile Service">📱 Other Brand Mobile Service</option>
 <option value="Laptop Service">💻 Laptop Service</option>
@@ -670,11 +683,12 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <option value="Smart Watch Service">⌚ Smart Watch Service</option>
 <option value="Spare Parts Enquiry">🧩 Spare Parts Enquiry</option>
 <option value="Other">🔧 Other</option>
+</optgroup>
 </select></div>
 <div class="form-group"><label>Device Brand</label><input id="bookBrand" type="text" placeholder="e.g. Apple, Samsung, Xiaomi"></div>
 <div class="form-group"><label>Device Model</label><input id="bookModel" type="text" placeholder="e.g. iPhone 13, Galaxy S21"></div>
 <div class="form-group"><label>Problem / Service Required</label><textarea id="bookDescription" placeholder="Tell us about the issue (display, battery, charging, software, etc.)"></textarea></div>
-<button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
+<button id="bookSubmitBtn" class="primary-btn" onclick="submitBooking(this)">📅 Book Now</button>
 </div>
 </div>
 
@@ -720,7 +734,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
-<!-- ===== PROFILE MODAL ===== -->
+<!-- ===== PROFILE MODAL (FIXED) ===== -->
 <div id="profileModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>👤 My Profile</h2><button class="close" onclick="closeProfile()">×</button></div>
@@ -769,12 +783,6 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
       "opens": "09:30",
       "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "10:00",
-      "closes": "17:00"
     }
   ],
   "priceRange": "₹₹",
@@ -1081,7 +1089,7 @@ document.querySelectorAll('.dropdown-content a').forEach(link => {
   link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
 });
 
-/* ===== BOOKING ===== */
+/* ===== BOOKING (FIXED - uses 'this' from button) ===== */
 window.openBooking = function() {
   document.getElementById('bookingModal').style.display = 'flex';
   const user = auth.currentUser;
@@ -1094,7 +1102,7 @@ window.closeBooking = function() {
   document.getElementById('bookingModal').style.display = 'none';
   document.getElementById('bookingMsg').style.display = 'none';
 };
-window.submitBooking = async function() {
+window.submitBooking = async function(btn) {
   const name = document.getElementById('bookName').value.trim();
   const phone = document.getElementById('bookPhone').value.trim();
   const email = document.getElementById('bookEmail').value.trim();
@@ -1108,10 +1116,13 @@ window.submitBooking = async function() {
     msg.textContent = 'Please fill in Name, Phone, and Address.';
     msg.className = 'msg error'; msg.style.display = 'block'; return;
   }
-  const btn = event.target; btn.disabled = true; btn.textContent = 'Submitting...';
+  const submitBtn = btn || document.getElementById('bookSubmitBtn');
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true; submitBtn.textContent = 'Submitting...';
   try {
     await addDoc(collection(db, "bookings"), {
       name, phone, email: email || '', address, service,
+      location: 'Shop Visit',
       brand: brand || '', model: model || '',
       description: description || '', userId: auth.currentUser?.uid || '',
       status: 'Pending', createdAt: new Date()
@@ -1135,7 +1146,7 @@ window.submitBooking = async function() {
     console.error('Booking error:', error);
     msg.textContent = '❌ Could not submit booking. Please try again.';
     msg.className = 'msg error'; msg.style.display = 'block';
-  } finally { btn.disabled = false; btn.textContent = '📅 Book Now'; }
+  } finally { submitBtn.disabled = false; submitBtn.textContent = originalText; }
 };
 
 /* ===== AUTH ===== */
