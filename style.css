@@ -487,7 +487,7 @@ footer p {
 
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE (Original)
    ========================================= */
 
 @media (max-width: 1100px) {
@@ -574,5 +574,72 @@ footer p {
     .book-btn {
         padding: 12px 20px;
         font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   NEW: MOBILE UI/UX FIXES (Overrides)
+   ========================================= */
+
+@media (max-width: 850px) {
+    
+    /* 1. ബാനറിലെ ടെക്സ്റ്റുകൾക്ക് വ്യക്തത നൽകാൻ (Text Readability) */
+    #home h2, #home p, #home div {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* കറുത്ത നിഴൽ ചേർക്കുന്നു */
+    }
+    
+    #home p {
+        color: #ffffff; /* ഇളം ചാരനിറത്തിന് പകരം തെളിച്ചമുള്ള വെളുപ്പ് */
+        font-weight: 500;
+    }
+
+    #home h2 span {
+        text-shadow: none; /* ഓറഞ്ച് അക്ഷരങ്ങൾക്ക് നിഴൽ വേണ്ട */
+    }
+
+    /* 2. നാവിഗേഷൻ മെനു മുറിയാതെ സൈഡിലേക്ക് സ്ക്രോൾ ചെയ്യാൻ (Horizontal Scroll) */
+    nav {
+        flex-wrap: nowrap !important; /* പല വരികളായി മാറുന്നത് തടയുന്നു */
+        overflow-x: auto; /* സൈഡിലേക്ക് സ്ക്രോൾ ചെയ്യാൻ അനുവദിക്കുന്നു */
+        white-space: nowrap;
+        width: 100%;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch; /* iOS-ൽ സ്മൂത്ത് സ്ക്രോൾ ചെയ്യാൻ */
+    }
+    
+    nav a {
+        flex-shrink: 0; /* ലിങ്കുകൾ ചുരുങ്ങിപ്പോകുന്നത് തടയുന്നു */
+        padding: 8px 14px;
+        font-size: 14px;
+        background: #f6f7f9; /* ചെറിയ ഒരു ബാക്ക്ഗ്രൗണ്ട് നൽകാൻ (ഓപ്ഷണൽ) */
+        border-radius: 20px;
+        border-bottom: none;
+    }
+
+    nav a:hover {
+        background: #ffe4d6;
+        color: #ff5a00;
+    }
+
+    /* 3. ഹീറോ സെക്ഷനിലെ ബട്ടണുകൾ കൂടുതൽ വലുതാക്കാൻ (Better Touch Targets) */
+    #home div a {
+        width: 100%;
+        max-width: 100%; 
+        margin-bottom: 10px;
+        padding: 15px 20px; /* വിരൽ കൊണ്ട് അമർത്താൻ എളുപ്പമാകാൻ */
+    }
+
+    /* 4. സെർച്ച് ബാർ മുറിയാതിരിക്കാൻ (Search Bar Fix) */
+    /* നിങ്ങളുടെ സെർച്ച് ബാറിന്റെ ക്ലാസ് നെയിം ഇവിടെ ചേർക്കുക */
+    .search-bar, .search-container, form {
+        width: 100% !important;
+        max-width: 100%;
+    }
+    
+    .search-bar input, .search-container input {
+        width: 80% !important; /* ഇൻപുട്ട് ഫീൽഡിന് കൂടുതൽ സ്ഥലം നൽകുന്നു */
+        padding: 12px;
     }
 }
