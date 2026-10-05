@@ -23,7 +23,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827;padding-bottom:70px}
 .topbar{background:#ff5a00;color:white;padding:8px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
 .topbar a{color:white;text-decoration:none;margin-left:18px;font-weight:bold}
 .topbar a:hover{text-decoration:underline}
@@ -31,9 +31,9 @@ body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827}
 header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .main-header{max-width:1400px;margin:auto;padding:14px 4%;display:flex;align-items:center;gap:25px}
 .logo-wrap{min-width:200px;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start}
-.logo-wrap svg{width:155px;height:auto}
-.logo-tagline{font-size:11px;color:#6b7280;font-weight:bold;margin-top:-4px;margin-left:4px;letter-spacing:0.3px}
-.logo-tagline strong{color:#ff5a00}
+/* പുതിയ ലോഗോയ്ക്കുള്ള CSS */
+.logo-wrap a { display: block; text-decoration: none; }
+.logo-wrap .site-logo { width: 100%; max-width: 220px; height: auto; display: block; }
 .search-box{flex:1;display:flex;max-width:650px}
 .search-box input{width:100%;padding:13px 18px;border:1px solid #ddd;border-right:0;border-radius:8px 0 0 8px;outline:none;font-size:15px}
 .search-box button{width:55px;border:0;background:#ff5a00;color:white;border-radius:0 8px 8px 0;font-size:20px;cursor:pointer}
@@ -190,11 +190,6 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .map-box iframe{width:100%;height:230px;border:0;border-radius:10px}
 .directions-btn{display:inline-block;margin-top:14px;background:#ff5a00;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold}
 .directions-btn:hover{background:#e84d00}
-/* FIX: Contact info call/WhatsApp buttons */
-.contact-info .service-cta{display:flex;gap:8px;margin-top:18px}
-.contact-info .service-cta a{flex:1;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:bold;text-decoration:none;color:white;display:inline-block}
-.contact-info .service-cta .s-call{background:#2563eb}
-.contact-info .service-cta .s-wa{background:#25d366}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 .gallery-box{max-width:800px!important;padding:20px!important;background:#1a1a2e!important;border-radius:16px!important}
 .gallery-box .modal-header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:15px}
@@ -283,7 +278,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 .order-card .order-address{font-size:13px;color:#6b7280;margin-top:6px}
 @media(max-width:1100px){#shop .products-grid{grid-template-columns:repeat(4,1fr)}.categories{grid-template-columns:repeat(5,1fr)}.technician-grid{grid-template-columns:repeat(3,1fr)}.service-menu-grid{grid-template-columns:repeat(2,1fr)}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
-.topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo-wrap{min-width:auto}.logo-tagline{font-size:10px}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
+.topbar{display:none}.main-header{flex-wrap:wrap;padding:12px 15px;gap:12px}.logo-wrap{min-width:auto}.logo-wrap .site-logo{max-width:160px}.search-box{order:3;flex-basis:100%}.header-actions{margin-left:auto;gap:10px}.header-action{font-size:11px}
 .hero{padding:0 12px}.hero-box{min-height:430px}.hero-content{width:100%;padding:35px 25px}.hero-content h1{font-size:36px}.hero-devices{font-size:70px;bottom:10px;opacity:.25}
 .features{grid-template-columns:repeat(2,1fr);padding:0 12px}.categories{grid-template-columns:repeat(4,1fr)}.banners{grid-template-columns:1fr}#shop .products-grid{grid-template-columns:repeat(2,1fr)}
 .section{padding:40px 15px}.service-grid{grid-template-columns:1fr 1fr}.technician-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
@@ -310,15 +305,9 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <!-- ===== HEADER ===== -->
 <header>
 <div class="main-header">
+<!-- പുതിയ ലോഗോ ഇവിടെ ചേർത്തിരിക്കുന്നു -->
 <a href="#home" class="logo-wrap">
-<svg viewBox="0 0 220 75" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="fixGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff6a00"/><stop offset="100%" stop-color="#e63f00"/></linearGradient></defs>
-<g transform="translate(8,5) rotate(12)"><rect x="0" y="0" width="25" height="42" rx="5" fill="none" stroke="#ff5a00" stroke-width="5"/><circle cx="12.5" cy="35" r="2" fill="#ff5a00"/></g>
-<text x="38" y="51" font-family="Arial Black,Arial,sans-serif" font-size="48" font-weight="900" letter-spacing="-4">
-<tspan fill="#1e3a8a">fix</tspan><tspan fill="url(#fixGradient)">G</tspan>
-</text>
-</svg>
-<span class="logo-tagline">by <strong>iCare Mukkam</strong></span>
+<img src="images/fixg-logo.png" alt="fixG by iCare Mukkam" class="site-logo">
 </a>
 <div class="search-box"><input id="searchInput" type="search" placeholder="Search current tab..."><button onclick="searchCurrentTab()">🔍</button></div>
 <div class="header-actions">
@@ -426,7 +415,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
 <div class="service-card">
-<div class="icon">📱</div><h3>iPhone Service</h3>
+<div class="icon"></div><h3>iPhone Service</h3>
 <p>Display, battery, charging, software, camera and motherboard-related service for iPhone.</p>
 <div class="service-cta"><a class="s-call" href="tel:+919447667744">📞 Call</a><a class="s-wa" href="https://wa.me/919447150744" target="_blank">💬 WhatsApp</a></div>
 </div>
@@ -514,11 +503,11 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 <div class="contact-line">
 <div class="ci">🕒</div>
-<div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: Closed</span></div>
+<div><strong>Opening Hours</strong><span>Mon – Sat: 9:30 AM – 8:00 PM<br>Sunday: 10:00 AM – 5:00 PM</span></div>
 </div>
-<div class="service-cta">
-<a class="s-call" href="tel:+919447667744">📞 Call Now</a>
-<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank">💬 WhatsApp</a>
+<div class="service-cta" style="margin-top:18px">
+<a class="s-call" href="tel:+919447667744" style="padding:12px;font-size:14px">📞 Call Now</a>
+<a class="s-wa" href="https://wa.me/919447150744?text=Hi%20iCare%20Mukkam%2C%20I%20need%20service" target="_blank" style="padding:12px;font-size:14px">💬 WhatsApp</a>
 </div>
 </div>
 <div class="map-box">
@@ -665,16 +654,8 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="form-group"><label>Address</label><textarea id="bookAddress" placeholder="Your complete address"></textarea></div>
 <div class="form-group"><label>Service Type</label>
 <select id="bookService">
-<optgroup label="🏠 Home Service">
-<option value="Home Service - Mobile Repair">🏠 Home Service - Mobile Repair</option>
-<option value="Home Service - Laptop Repair">🏠 Home Service - Laptop Repair</option>
-<option value="Home Service - Display Replacement">🏠 Home Service - Display</option>
-<option value="Home Service - Battery Replacement">🏠 Home Service - Battery</option>
-<option value="Home Service - Other">🏠 Home Service - Other</option>
-</optgroup>
-<optgroup label="🔧 Shop Service">
 <option value="Mobile Service">📱 Mobile Service</option>
-<option value="iPhone Service">📱 iPhone Service</option>
+<option value="iPhone Service"> iPhone Service</option>
 <option value="Samsung Service">📱 Samsung Service</option>
 <option value="Other Brand Mobile Service">📱 Other Brand Mobile Service</option>
 <option value="Laptop Service">💻 Laptop Service</option>
@@ -683,12 +664,11 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <option value="Smart Watch Service">⌚ Smart Watch Service</option>
 <option value="Spare Parts Enquiry">🧩 Spare Parts Enquiry</option>
 <option value="Other">🔧 Other</option>
-</optgroup>
 </select></div>
 <div class="form-group"><label>Device Brand</label><input id="bookBrand" type="text" placeholder="e.g. Apple, Samsung, Xiaomi"></div>
 <div class="form-group"><label>Device Model</label><input id="bookModel" type="text" placeholder="e.g. iPhone 13, Galaxy S21"></div>
 <div class="form-group"><label>Problem / Service Required</label><textarea id="bookDescription" placeholder="Tell us about the issue (display, battery, charging, software, etc.)"></textarea></div>
-<button id="bookSubmitBtn" class="primary-btn" onclick="submitBooking(this)">📅 Book Now</button>
+<button class="primary-btn" onclick="submitBooking()">📅 Book Now</button>
 </div>
 </div>
 
@@ -734,7 +714,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 </div>
 
-<!-- ===== PROFILE MODAL (FIXED) ===== -->
+<!-- ===== PROFILE MODAL ===== -->
 <div id="profileModal" class="modal">
 <div class="modal-box">
 <div class="modal-header"><h2>👤 My Profile</h2><button class="close" onclick="closeProfile()">×</button></div>
@@ -761,7 +741,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "iCare Mukkam / fixG",
-  "image": "https://www.fixg.in/logo.png",
+  "image": "https://www.fixg.in/images/fixg-logo.png",
   "url": "https://www.fixg.in",
   "telephone": "+919447667744",
   "address": {
@@ -783,6 +763,12 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
       "opens": "09:30",
       "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "17:00"
     }
   ],
   "priceRange": "₹₹",
@@ -913,7 +899,7 @@ window.openGallery = function(productId) {
   if (!product) { alert('Product not found'); return; }
   if (product.images && Array.isArray(product.images) && product.images.length > 0) galleryImages = product.images;
   else if (product.image && product.image !== '' && product.image !== 'logo.png') galleryImages = [product.image];
-  else galleryImages = ['logo.png'];
+  else galleryImages = ['images/fixg-logo.png'];
   galleryCurrentIndex = 0;
   document.getElementById('galleryTitle').textContent = product.name || 'Product Gallery';
   document.getElementById('galleryModal').style.display = 'flex';
@@ -955,7 +941,7 @@ window.openProductDetail = function(productId) {
   detailProductId = productId;
   if (product.images && Array.isArray(product.images) && product.images.length > 0) detailImages = product.images;
   else if (product.image && product.image !== '' && product.image !== 'logo.png') detailImages = [product.image];
-  else detailImages = ['logo.png'];
+  else detailImages = ['images/fixg-logo.png'];
   detailCurrentIndex = 0;
   document.getElementById('detailTitle').textContent = product.name || 'Product Details';
   document.getElementById('detailName').textContent = product.name || 'Product';
@@ -1089,7 +1075,7 @@ document.querySelectorAll('.dropdown-content a').forEach(link => {
   link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
 });
 
-/* ===== BOOKING (FIXED - uses 'this' from button) ===== */
+/* ===== BOOKING ===== */
 window.openBooking = function() {
   document.getElementById('bookingModal').style.display = 'flex';
   const user = auth.currentUser;
@@ -1102,7 +1088,7 @@ window.closeBooking = function() {
   document.getElementById('bookingModal').style.display = 'none';
   document.getElementById('bookingMsg').style.display = 'none';
 };
-window.submitBooking = async function(btn) {
+window.submitBooking = async function() {
   const name = document.getElementById('bookName').value.trim();
   const phone = document.getElementById('bookPhone').value.trim();
   const email = document.getElementById('bookEmail').value.trim();
@@ -1116,13 +1102,10 @@ window.submitBooking = async function(btn) {
     msg.textContent = 'Please fill in Name, Phone, and Address.';
     msg.className = 'msg error'; msg.style.display = 'block'; return;
   }
-  const submitBtn = btn || document.getElementById('bookSubmitBtn');
-  const originalText = submitBtn.textContent;
-  submitBtn.disabled = true; submitBtn.textContent = 'Submitting...';
+  const btn = event.target; btn.disabled = true; btn.textContent = 'Submitting...';
   try {
     await addDoc(collection(db, "bookings"), {
       name, phone, email: email || '', address, service,
-      location: 'Shop Visit',
       brand: brand || '', model: model || '',
       description: description || '', userId: auth.currentUser?.uid || '',
       status: 'Pending', createdAt: new Date()
@@ -1146,7 +1129,7 @@ window.submitBooking = async function(btn) {
     console.error('Booking error:', error);
     msg.textContent = '❌ Could not submit booking. Please try again.';
     msg.className = 'msg error'; msg.style.display = 'block';
-  } finally { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+  } finally { btn.disabled = false; btn.textContent = '📅 Book Now'; }
 };
 
 /* ===== AUTH ===== */
@@ -1497,7 +1480,7 @@ function renderProducts(list) {
     let images = [];
     if (p.images && Array.isArray(p.images) && p.images.length > 0) images = p.images;
     else if (p.image && p.image !== '' && p.image !== 'logo.png') images = [p.image];
-    else images = ['logo.png'];
+    else images = ['images/fixg-logo.png'];
     let slidesHtml = '', dotsHtml = '';
     images.forEach((img, idx) => {
       const displayStyle = idx === 0 ? 'flex' : 'none';
@@ -1527,7 +1510,7 @@ function renderParts(list) {
   if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No spare parts found.</div>`; return; }
   let html = '';
   list.forEach(p => {
-    const imgSrc = p.image && p.image !== '' ? p.image : 'logo.png';
+    const imgSrc = p.image && p.image !== '' ? p.image : 'images/fixg-logo.png';
     html += `<div class="product-card">
       <div class="product-image"><div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;"><div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;"><img src="${escapeHtml(imgSrc)}" alt=""></div></div></div>
       <div class="product-info">
@@ -1572,7 +1555,7 @@ function renderTechnicians(list) {
   if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No technicians found.</div>`; return; }
   let html = `<div class="technician-grid">`;
   list.forEach(t => {
-    const imgSrc = t.image && t.image !== '' ? t.image : 'logo.png';
+    const imgSrc = t.image && t.image !== '' ? t.image : 'images/fixg-logo.png';
     html += `<div class="tech-card">
       <img src="${escapeHtml(imgSrc)}" alt="">
       <h3>${escapeHtml(t.name)}</h3>
