@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mobile IC & Display Spare Parts in Mukkam | fixG</title>
+<meta name="description" content="Search 700+ mobile ICs and displays at fixG Mukkam. WTR2965, PM8916, MT6765, Redmi Note 8 Display and more. WhatsApp for price.">
+<meta name="keywords" content="mobile IC Mukkam, display spare parts Mukkam, WTR2965, PM8916, mobile IC Kerala, display combo Mukkam">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.7}
+.topbar{background:#ff5a00;color:white;padding:10px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px}
+.topbar a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+header{background:white;padding:14px 5%;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.logo{font-size:26px;font-weight:900;color:#07182f;text-decoration:none}
+.logo span{color:#ff5a00}
+.logo small{font-size:11px;color:#6b7280;display:block;margin-top:-4px}
+.hero{background:linear-gradient(135deg,#07182f,#ff5a00);color:white;padding:40px 5%;text-align:center}
+.hero h1{font-size:clamp(22px,4vw,32px);margin-bottom:10px}
+.hero p{color:#dbe5f2;font-size:15px}
+.container{max-width:1200px;margin:auto;padding:30px 5%}
+#search{width:100%;padding:18px;font-size:16px;border:2px solid #ff5a00;border-radius:10px;margin-bottom:12px;outline:none}
+.filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.filter-btn{padding:8px 16px;border:2px solid #e5e7eb;background:white;border-radius:20px;cursor:pointer;font-size:13px;font-weight:bold}
+.filter-btn.active{background:#ff5a00;color:white;border-color:#ff5a00}
+.stats{color:#6b7280;font-size:14px;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{background:white;padding:16px;border-radius:10px;border-left:4px solid #ff5a00;display:flex;flex-direction:column;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.card .cat{font-size:11px;color:#ff5a00;text-transform:uppercase;font-weight:bold}
+.card .name{font-weight:bold;font-size:15px;color:#07182f}
+.card .desc{font-size:12px;color:#6b7280;min-height:32px}
+.card a{background:#25d366;color:white;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:bold;text-align:center;margin-top:auto}
+.card a:hover{background:#1eb455}
+.card .view-link{background:#07182f;color:white;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:bold;text-align:center}
+.card .view-link:hover{background:#ff5a00}
+footer{background:#07182f;color:#cbd5e1;text-align:center;padding:30px 5%;margin-top:40px;font-size:14px}
+footer a{color:#ff5a00;text-decoration:none;margin:0 8px}
+.cta{background:#fff7f1;border-left:4px solid #ff5a00;padding:16px;border-radius:10px;margin-bottom:20px;font-size:14px}
+.cta strong{color:#07182f}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div>📍 Mukkam, Kozhikode, Kerala</div>
+  <div><a href="tel:+919447667744">📞 9447667744</a><a href="https://wa.me/919447150744">💬 WhatsApp</a></div>
+</div>
+<header><a href="/" class="logo">fix<span>G</span><small>by iCare Mukkam</small></a></header>
+<section class="hero">
+  <h1>🔧 Mobile IC & Display Spare Parts</h1>
+  <p id="totalCount">Loading...</p>
+</section>
+<div class="container">
+  <div class="cta">
+    <strong>💡 എങ്ങനെ ഉപയോഗിക്കാം:</strong> താഴെയുള്ള സേർച്ച് ബോക്സിൽ IC-യുടെ പേരോ (ഉദാ: WTR2965) മോഡലിന്റെ പേരോ (ഉദാ: Redmi Note 8) ടൈപ്പ് ചെയ്യുക. അപ്പോൾ അതുമായി ബന്ധപ്പെട്ട എല്ലാ ഫലങ്ങളും കാണാം.
+  </div>
+  <input id="search" type="search" placeholder="🔍 WTR2965, PM8916, Redmi Note 8 Display... എന്ന് ടൈപ്പ് ചെയ്യുക" autofocus>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="RF">RF</button>
+    <button class="filter-btn" data-filter="PMIC">PMIC</button>
+    <button class="filter-btn" data-filter="Display">Display</button>
+    <button class="filter-btn" data-filter="Audio">Audio</button>
+    <button class="filter-btn" data-filter="CPU">CPU</button>
+    <button class="filter-btn" data-filter="NFC">NFC</button>
+    <button class="filter-btn" data-filter="Sensor">Sensor</button>
+    <button class="filter-btn" data-filter="Memory">Memory</button>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<footer>
+  © 2026 fixG by iCare Mukkam.<br><br>
+  <a href="/">Home</a> | <a href="/blog.html">Blog</a> | <a href="/#contact">Contact</a>
+</footer>
+<script>
+// ===== IC & Display DATA =====
+// ഈ ഡാറ്റ Python സ്ക്രിപ്റ്റ് ഉപയോഗിച്ച് ഓട്ടോ ജനറേറ്റ് ചെയ്യാം
+// നിലവിൽ ഇതിൽ ഉദാഹരണത്തിന് ചില ഐസികൾ മാത്രം ഉണ്ട്
+// എല്ലാ ഐസികളും ചേർക്കാൻ generate.py വീണ്ടും റൺ ചെയ്യുക
+
+const DATA = [
+  {p:"WTR2965", c:"RF", d:"Qualcomm RF Transceiver IC", s:"wtr2965"},
+  {p:"WTR5975", c:"RF", d:"Qualcomm RF Transceiver IC", s:"wtr5975"},
+  {p:"WTR4905", c:"RF", d:"Qualcomm RF Transceiver IC", s:"wtr4905"},
+  {p:"WTR3925", c:"RF", d:"Qualcomm RF Transceiver IC", s:"wtr3925"},
+  {p:"WTR1625L", c:"RF", d:"Qualcomm RF Transceiver IC", s:"wtr1625l"},
+  {p:"WCN3615", c:"RF", d:"Qualcomm WiFi/BT/GPS IC", s:"wcn3615"},
+  {p:"WCN3990", c:"RF", d:"Qualcomm WiFi/BT IC", s:"wcn3990"},
+  {p:"WCN6755", c:"RF", d:"Qualcomm WiFi/BT Combo", s:"wcn6755"},
+  {p:"QCA6174A", c:"RF", d:"Qualcomm WiFi/BT IC", s:"qca6174a"},
+  {p:"QCA9377", c:"RF", d:"Qualcomm WiFi/BT IC", s:"qca9377"},
+  {p:"QCN5054", c:"RF", d:"Qualcomm 5G Modem", s:"qcn5054"},
+  {p:"QCN6224", c:"RF", d:"Qualcomm 5G Modem", s:"qcn6224"},
+  {p:"SKY77365", c:"RF", d:"Skyworks Power Amplifier", s:"sky77365"},
+  {p:"BCM43570", c:"RF", d:"Broadcom WiFi/BT", s:"bcm43570"},
+  {p:"BCM47752", c:"RF", d:"Broadcom GNSS IC", s:"bcm47752"},
+  {p:"MT6635XP", c:"RF", d:"MediaTek WiFi/BT", s:"mt6635xp"},
+  {p:"MT6190MV", c:"RF", d:"MediaTek RF Transceiver", s:"mt6190mv"},
+  {p:"MT6177HW", c:"RF", d:"MediaTek RF IC", s:"mt6177hw"},
+  {p:"PM8350B", c:"PMIC", d:"Qualcomm PMIC Charging", s:"pm8350b"},
+  {p:"PM8150", c:"PMIC", d:"Qualcomm PMIC", s:"pm8150"},
+  {p:"PM8150L", c:"PMIC", d:"Qualcomm L Core PMIC", s:"pm8150l"},
+  {p:"PM8150B", c:"PMIC", d:"Qualcomm Battery PMIC", s:"pm8150b"},
+  {p:"PM8998", c:"PMIC", d:"Qualcomm PMIC", s:"pm8998"},
+  {p:"PM8996", c:"PMIC", d:"Qualcomm PMIC", s:"pm8996"},
+  {p:"PM8916", c:"PMIC", d:"Qualcomm Power Management IC", s:"pm8916"},
+  {p:"PM8937", c:"PMIC", d:"Qualcomm PMIC", s:"pm8937"},
+  {p:"PM8917", c:"PMIC", d:"Qualcomm PMIC", s:"pm8917"},
+  {p:"PM660", c:"PMIC", d:"Qualcomm PMIC", s:"pm660"},
+  {p:"PM660L", c:"PMIC", d:"Qualcomm PMIC", s:"pm660l"},
+  {p:"PMI632", c:"PMIC", d:"Qualcomm Charging PMIC", s:"pmi632"},
+  {p:"PM439", c:"PMIC", d:"Qualcomm Charging IC", s:"pm439"},
+  {p:"SMB1396", c:"PMIC", d:"Qualcomm Charging IC", s:"smb1396"},
+  {p:"SMB1398", c:"PMIC", d:"Qualcomm Charging IC", s:"smb1398"},
+  {p:"BQ25970", c:"PMIC", d:"TI Fast Charge IC", s:"bq25970"},
+  {p:"SC8551A", c:"PMIC", d:"Southchip Charging IC", s:"sc8551a"},
+  {p:"SC89890", c:"PMIC", d:"Southchip Charging IC", s:"sc89890"},
+  {p:"MAX77705C", c:"PMIC", d:"Maxim PMIC", s:"max77705c"},
+  {p:"MT6365VPW", c:"PMIC", d:"MediaTek PMIC + Audio Codec", s:"mt6365vpw"},
+  {p:"MT6360UP", c:"PMIC", d:"MediaTek PMIC + Charging", s:"mt6360up"},
+  {p:"MT6358VW", c:"PMIC", d:"MediaTek PMIC", s:"mt6358vw"},
+  {p:"MT6315BP", c:"PMIC", d:"MediaTek PMIC", s:"mt6315bp"},
+  {p:"MT6375", c:"PMIC", d:"MediaTek Charging IC", s:"mt6375"},
+  {p:"338S00839-B0", c:"PMIC", d:"Apple Charging IC", s:"338s00839-b0"},
+  {p:"343S00511", c:"PMIC", d:"Apple PMIC", s:"343s00511"},
+  {p:"HX83112-F", c:"Display", d:"Himax TDDI FHD+", s:"hx83112-f"},
+  {p:"HX83108-B", c:"Display", d:"Himax TDDI HD+", s:"hx83108-b"},
+  {p:"HX83206-A", c:"Display", d:"Himax AMOLED Driver", s:"hx83206-a"},
+  {p:"FT8725", c:"Display", d:"FocalTech TDDI", s:"ft8725"},
+  {p:"FT8057M", c:"Display", d:"FocalTech TDDI", s:"ft8057m"},
+  {p:"GT911", c:"Display", d:"Goodix Touch IC", s:"gt911"},
+  {p:"GT9271", c:"Display", d:"Goodix Touch IC", s:"gt9271"},
+  {p:"NT36532", c:"Display", d:"Novatek Touch IC", s:"nt36532"},
+  {p:"ILI9881", c:"Display", d:"Ilitek Display IC", s:"ili9881"},
+  {p:"RM67162", c:"Display", d:"Raydium AMOLED", s:"rm67162"},
+  {p:"WCD9335", c:"Audio", d:"Qualcomm Audio Codec", s:"wcd9335"},
+  {p:"WCD9340", c:"Audio", d:"Qualcomm Audio Codec", s:"wcd9340"},
+  {p:"WCD9378", c:"Audio", d:"Qualcomm Audio Codec", s:"wcd9378"},
+  {p:"CS35L42", c:"Audio", d:"Cirrus Logic Amp", s:"cs35l42"},
+  {p:"CS35L41", c:"Audio", d:"Cirrus Logic Amp", s:"cs35l41"},
+  {p:"TFA9874", c:"Audio", d:"Goodix Audio Amp", s:"tfa9874"},
+  {p:"TFA9865", c:"Audio", d:"Goodix Audio Amp", s:"tfa9865"},
+  {p:"TAS2562", c:"Audio", d:"TI Smart Amp", s:"tas2562"},
+  {p:"SM8450", c:"CPU", d:"Snapdragon 8 Gen 1", s:"sm8450"},
+  {p:"SM8550", c:"CPU", d:"Snapdragon 8 Gen 2", s:"sm8550"},
+  {p:"SM8650", c:"CPU", d:"Snapdragon 8 Gen 3", s:"sm8650"},
+  {p:"SM8250", c:"CPU", d:"Snapdragon 865", s:"sm8250"},
+  {p:"SM8350", c:"CPU", d:"Snapdragon 888", s:"sm8350"},
+  {p:"SM7325", c:"CPU", d:"Snapdragon 778G", s:"sm7325"},
+  {p:"SDM660", c:"CPU", d:"Snapdragon 660", s:"sdm660"},
+  {p:"MSM8998", c:"CPU", d:"Snapdragon 835", s:"msm8998"},
+  {p:"MT6983", c:"CPU", d:"MediaTek Dimensity 9000", s:"mt6983"},
+  {p:"MT6765", c:"CPU", d:"MediaTek Helio P35", s:"mt6765"},
+  {p:"MT6739", c:"CPU", d:"MediaTek Helio P22", s:"mt6739"},
+  {p:"PN80T", c:"NFC", d:"NXP NFC Controller", s:"pn80t"},
+  {p:"SN220U", c:"NFC", d:"NXP NFC Controller", s:"sn220u"},
+  {p:"S3NRN82", c:"NFC", d:"Samsung NFC Controller", s:"s3nrn82"},
+  {p:"ICM-40607", c:"Sensor", d:"InvenSense Gyro/Accel", s:"icm-40607"},
+  {p:"LSM6DSO", c:"Sensor", d:"ST MEMS Accel/Gyro", s:"lsm6dso"},
+  {p:"AK0991X", c:"Sensor", d:"AKM Magnetometer", s:"ak0991x"},
+  {p:"TCS3701", c:"Sensor", d:"AMS Light Sensor", s:"tcs3701"},
+  {p:"H9HQ15AFAMBDAR", c:"Memory", d:"SK Hynix LPDDR4", s:"h9hq15afambdar"},
+  {p:"KLUEG4RHHF", c:"Memory", d:"Samsung UFS 4.0", s:"klueg4rhhf"},
+  {p:"SDIN90W4-16G", c:"Memory", d:"SanDisk eMMC", s:"sdin90w4-16g"},
+  {p:"Redmi Note 8 Pro Display", c:"Display", d:"AMOLED Combo Display", s:"redmi-note-8-pro-display"},
+  {p:"Redmi Note 8 Display", c:"Display", d:"IPS LCD Combo Display", s:"redmi-note-8-display"},
+  {p:"Redmi Note 7 Display", c:"Display", d:"IPS LCD Combo Display", s:"redmi-note-7-display"},
+  {p:"Redmi Note 10 Pro Display", c:"Display", d:"AMOLED Combo Display", s:"redmi-note-10-pro-display"},
+  {p:"Redmi Note 11 Pro Display", c:"Display", d:"AMOLED Combo Display", s:"redmi-note-11-pro-display"},
+  {p:"Redmi 9A Display", c:"Display", d:"IPS LCD Combo Display", s:"redmi-9a-display"},
+  {p:"Redmi 9 Power Display", c:"Display", d:"IPS LCD Combo Display", s:"redmi-9-power-display"},
+  {p:"Redmi K20 Display", c:"Display", d:"AMOLED Combo Display", s:"redmi-k20-display"},
+  {p:"Poco X3 Display", c:"Display", d:"IPS LCD Combo Display", s:"poco-x3-display"},
+  {p:"Poco F1 Display", c:"Display", d:"IPS LCD Combo Display", s:"poco-f1-display"},
+  {p:"Samsung A50 Display", c:"Display", d:"Super AMOLED Combo", s:"samsung-a50-display"},
+  {p:"Samsung A10 Display", c:"Display", d:"IPS LCD Combo Display", s:"samsung-a10-display"},
+  {p:"Samsung A70 Display", c:"Display", d:"Super AMOLED Combo", s:"samsung-a70-display"},
+  {p:"Samsung S8 Display", c:"Display", d:"Super AMOLED Combo", s:"samsung-s8-display"},
+  {p:"Samsung S10 Display", c:"Display", d:"Super AMOLED Combo", s:"samsung-s10-display"},
+  {p:"Samsung S20 Ultra Display", c:"Display", d:"Super AMOLED 120Hz Combo", s:"samsung-s20-ultra-display"},
+  {p:"Samsung Note 20 Ultra Display", c:"Display", d:"Super AMOLED 120Hz Combo", s:"samsung-note-20-ultra-display"},
+  {p:"iPhone 11 Display", c:"Display", d:"IPS LCD Combo Display", s:"iphone-11-display"},
+  {p:"iPhone X Display", c:"Display", d:"Super AMOLED Combo", s:"iphone-x-display"},
+  {p:"iPhone 12 Display", c:"Display", d:"Super Retina XDR OLED Combo", s:"iphone-12-display"},
+  {p:"iPhone 13 Pro Max Display", c:"Display", d:"Super Retina XDR ProMotion", s:"iphone-13-pro-max-display"},
+  {p:"OnePlus 7 Pro Display", c:"Display", d:"AMOLED 90Hz Combo", s:"oneplus-7-pro-display"},
+  {p:"OnePlus 8 Pro Display", c:"Display", d:"AMOLED 120Hz Combo", s:"oneplus-8-pro-display"},
+  {p:"OnePlus 9 Pro Display", c:"Display", d:"AMOLED 120Hz Combo", s:"oneplus-9-pro-display"},
+  {p:"Vivo Y91 Display", c:"Display", d:"IPS LCD Combo Display", s:"vivo-y91-display"},
+  {p:"Vivo Y11 Display", c:"Display", d:"IPS LCD Combo Display", s:"vivo-y11-display"},
+  {p:"Oppo A5s Display", c:"Display", d:"IPS LCD Combo Display", s:"oppo-a5s-display"},
+  {p:"Oppo A15 Display", c:"Display", d:"IPS LCD Combo Display", s:"oppo-a15-display"},
+  {p:"Realme 6 Display", c:"Display", d:"IPS LCD 90Hz Combo", s:"realme-6-display"},
+  {p:"Realme 7 Pro Display", c:"Display", d:"Super AMOLED Combo", s:"realme-7-pro-display"}
+];
+
+const grid = document.getElementById('grid');
+const input = document.getElementById('search');
+const stats = document.getElementById('stats');
+const totalCount = document.getElementById('totalCount');
+let currentFilter = 'all';
+
+totalCount.textContent = `📱 ${DATA.length}+ ICs, Displays & Spare Parts ലഭ്യമാണ്. താഴെ തിരയുക.`;
+
+function render(items){
+  if(!items.length){
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:#6b7280;">😕 ഒന്നും കണ്ടെത്തിയില്ല. വേറെ പദം ഉപയോഗിച്ച് തിരയുക.</div>';
+    stats.textContent = '';
+    return;
+  }
+  stats.textContent = `📊 ${items.length} ഫലങ്ങൾ കാണിച്ചിരിക്കുന്നു`;
+  grid.innerHTML = items.map(i => `
+    <div class="card">
+      <div class="cat">${i.c}</div>
+      <div class="name">${i.p}</div>
+      <div class="desc">${i.d}</div>
+      <a href="${i.s}.html" class="view-link">View Details →</a>
+    </div>`).join('');
+}
+
+function filterData(){
+  const q = input.value.toLowerCase().trim();
+  let items = DATA.filter(i => i.p.toLowerCase().includes(q) || i.c.toLowerCase().includes(q) || i.d.toLowerCase().includes(q));
+  if(currentFilter !== 'all'){
+    items = items.filter(i => i.c === currentFilter);
+  }
+  render(items);
+}
+
+input.addEventListener('input', filterData);
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    filterData();
+  });
+});
+
+// Initial render
+filterData();
+</script>
+</body>
+</html>
