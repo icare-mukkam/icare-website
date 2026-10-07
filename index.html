@@ -19,6 +19,7 @@
 <meta property="og:description" content="Professional mobile, laptop and electronic device service in Mukkam, Kozhikode.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.fixg.in">
+<link rel="sitemap" type="application/xml" href="/sitemap-ic.xml">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -31,7 +32,6 @@ body{font-family:Arial,Helvetica,sans-serif;background:#f6f7f9;color:#111827;pad
 header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .main-header{max-width:1400px;margin:auto;padding:14px 4%;display:flex;align-items:center;gap:25px}
 .logo-wrap{min-width:200px;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start}
-/* പുതിയ ലോഗോയ്ക്കുള്ള CSS */
 .logo-wrap a { display: block; text-decoration: none; }
 .logo-wrap .site-logo { width: 100%; max-width: 220px; height: auto; display: block; }
 .search-box{flex:1;display:flex;max-width:650px}
@@ -175,7 +175,6 @@ header{background:white;position:sticky;top:0;z-index:5000;box-shadow:0 2px 12px
 .service-menu-section-title{font-size:22px;color:#07182f;margin:30px 0 14px;font-weight:800}
 .service-menu-section-title:first-child{margin-top:0}
 .service-menu-note{background:#fff7f1;border-left:4px solid #ff5a00;padding:14px 16px;border-radius:10px;margin-top:24px;color:#5d3a27;font-size:13.5px}
-/* Contact / Location */
 .contact-section{background:white}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:start}
 .contact-info{background:#f8fafc;padding:25px;border-radius:12px;border:1px solid #eee}
@@ -257,10 +256,8 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 .footer-social a:hover{transform:translateY(-3px)}
 .copyright{text-align:center;border-top:1px solid #29405c;margin-top:30px;padding-top:20px;color:#94a3b8;font-size:13px}
 .copyright a{display:inline;color:#ff5a00;margin:0 4px}
-/* Floating buttons */
 .whatsapp,.call{position:fixed;right:20px;width:56px;height:56px;border-radius:50%;color:white;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:25px;z-index:7000;box-shadow:0 5px 20px rgba(0,0,0,.25)}
 .whatsapp{bottom:20px;background:#25d366}.call{bottom:88px;background:#2563eb}
-/* Mobile sticky CTA bar */
 .mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;box-shadow:0 -4px 15px rgba(0,0,0,.08);z-index:8000}
 .mobile-cta-bar a{flex:1;text-align:center;padding:12px 5px;text-decoration:none;font-size:12px;font-weight:bold;color:#111827;display:flex;flex-direction:column;align-items:center;gap:3px}
 .mobile-cta-bar a .mci{font-size:20px}
@@ -305,7 +302,6 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <!-- ===== HEADER ===== -->
 <header>
 <div class="main-header">
-<!-- പുതിയ ലോഗോ ഇവിടെ ചേർത്തിരിക്കുന്നു -->
 <a href="#home" class="logo-wrap">
 <img src="fixg-logo.png" alt="fixG by iCare Mukkam" class="site-logo">
 </a>
@@ -330,6 +326,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <a href="#shop" onclick="switchTab('products'); filterCategory('Earbud')">🎧 Earbuds</a>
 <a href="#shop" onclick="switchTab('products'); filterCategory('Accessory')">🔌 Accessories</a>
 <a href="#shop" onclick="switchTab('parts')">🧩 Spare Parts</a>
+<a href="ic/index.html">🔧 Mobile IC & Display</a>
 <a href="#shop" onclick="switchTab('services')">🔧 Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
 <a href="#shop" onclick="switchTab('technicians')">👨‍🔧 Technicians</a>
@@ -337,6 +334,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 </div>
 <a href="#shop" onclick="switchTab('products')">Products</a>
 <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
+<a href="ic/index.html" style="color:#ff5a00;font-weight:bold;">🔧 Mobile IC & Display</a>
 <a href="#shop" onclick="switchTab('services')">Services</a>
 <a href="#shop" onclick="switchTab('servicemenu')">📋 Service Menu</a>
 <a href="blog.html">📚 Blog</a>
@@ -380,6 +378,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="category" onclick="filterCategory('Earbud')"><div class="category-icon">🎧</div><p>Earbuds</p></div>
 <div class="category" onclick="filterCategory('Accessory')"><div class="category-icon">🔌</div><p>Accessories</p></div>
 <div class="category" onclick="switchTab('parts')"><div class="category-icon">🧩</div><p>Spare Parts</p></div>
+<div class="category" onclick="window.location.href='ic/index.html'"><div class="category-icon">🔧</div><p>IC & Display</p></div>
 <div class="category" onclick="switchTab('services')"><div class="category-icon">🔧</div><p>Services</p></div>
 <div class="category" onclick="switchTab('servicemenu')"><div class="category-icon">📋</div><p>Service Menu</p></div>
 </div></section>
@@ -546,6 +545,7 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <a href="#shop" onclick="switchTab('products')">Tablets</a>
 <a href="#shop" onclick="switchTab('products')">Accessories</a>
 <a href="#shop" onclick="switchTab('parts')">Spare Parts</a>
+<a href="ic/index.html">Mobile IC & Display Parts</a>
 </div>
 <div>
 <h3>Services</h3>
@@ -813,7 +813,6 @@ let pendingCheckout = false;
 const productStatus = document.getElementById('productStatus');
 const productsContainer = document.getElementById('products');
 
-/* ===== SERVICE MENU DATA ===== */
 const MOBILE_SERVICES = [
 ["Mobile Service","Complete mobile phone service for display, battery, charging, camera, speaker, software, network and motherboard-related problems."],
 ["Smartphone Service","Professional smartphone service for display, battery, charging, camera, software, network and hardware-related problems."],
@@ -892,7 +891,6 @@ function renderServiceMenu(filter=""){
   productsContainer.innerHTML = html;
 }
 
-/* ===== GALLERY ===== */
 let galleryImages = [], galleryCurrentIndex = 0;
 window.openGallery = function(productId) {
   const product = allProducts.find(p => p.id === productId);
@@ -933,7 +931,6 @@ window.galleryNext = function() { if (galleryCurrentIndex < galleryImages.length
 window.galleryPrev = function() { if (galleryCurrentIndex > 0) { galleryCurrentIndex--; updateGalleryPosition(); } };
 window.goToGallery = function(index) { if (index >= 0 && index < galleryImages.length) { galleryCurrentIndex = index; updateGalleryPosition(); } };
 
-/* ===== PRODUCT DETAIL ===== */
 let detailProductId = null, detailImages = [], detailCurrentIndex = 0;
 window.openProductDetail = function(productId) {
   const product = allProducts.find(p => p.id === productId);
@@ -995,7 +992,6 @@ window.detailBuyNow = function() {
   window.addToCart(product); window.openCart();
 };
 
-/* ===== PROFILE ===== */
 window.openProfile = function() {
   if (!auth.currentUser) { alert('Please login first.'); return; }
   document.getElementById('profileModal').style.display = 'flex'; loadProfile();
@@ -1064,7 +1060,6 @@ function openCheckoutForUser() {
   document.getElementById('checkoutModal').style.display = "flex"; loadProfileForCheckout();
 }
 
-/* ===== DROPDOWN ===== */
 window.toggleDropdown = function() { document.getElementById('categoryDropdown').classList.toggle('show'); };
 document.addEventListener('click', function(event) {
   const dropdown = document.getElementById('categoryDropdown');
@@ -1075,7 +1070,6 @@ document.querySelectorAll('.dropdown-content a').forEach(link => {
   link.addEventListener('click', function() { document.getElementById('categoryDropdown').classList.remove('show'); });
 });
 
-/* ===== BOOKING ===== */
 window.openBooking = function() {
   document.getElementById('bookingModal').style.display = 'flex';
   const user = auth.currentUser;
@@ -1132,7 +1126,6 @@ window.submitBooking = async function() {
   } finally { btn.disabled = false; btn.textContent = '📅 Book Now'; }
 };
 
-/* ===== AUTH ===== */
 function authErrorMessage(error) {
   const code = error?.code || "";
   const messages = {
@@ -1233,7 +1226,6 @@ window.logoutCustomer = async function() {
   catch (error) { alert(authErrorMessage(error)); }
 };
 
-/* ===== CART ===== */
 function getCart() { return JSON.parse(localStorage.getItem("fixGCart")) || []; }
 function saveCart(cart) { localStorage.setItem("fixGCart", JSON.stringify(cart)); displayCart(); }
 function displayCart() {
@@ -1304,7 +1296,6 @@ window.addToCartFromPart = function(id) {
 };
 window.buyNowFromPart = function(id) { window.addToCartFromPart(id); openCart(); };
 
-/* ===== CHECKOUT & PAYMENT ===== */
 window.checkout = function() {
   const cart = getCart();
   if (!cart.length) { alert("Your cart is empty."); return; }
@@ -1379,7 +1370,6 @@ async function verifyPayment(paymentResponse, customerData) {
   } catch (error) { alert("Payment was completed, but order verification failed.\n\nPlease contact iCare Mukkam / fixG."); }
 }
 
-/* ===== MY ORDERS ===== */
 window.openMyOrders = function() {
   if (!auth.currentUser) { alert("Please login first to view your orders."); openAccount(); return; }
   document.getElementById('ordersModal').style.display = 'flex'; loadCustomerOrders();
@@ -1421,7 +1411,6 @@ async function loadCustomerOrders() {
   }
 }
 
-/* ===== SLIDER (small cards) ===== */
 window.changeProductImage = function(dot) {
   const slider = dot.closest('.image-slider');
   const slides = slider.querySelectorAll('.slide'), dots = slider.querySelectorAll('.dot');
@@ -1448,7 +1437,6 @@ window.prevImage = function(btn) {
   dots.forEach((d, i) => d.classList.toggle('active', i === prevIndex));
 };
 
-/* ===== LOAD DATA ===== */
 async function loadAllData() {
   productStatus.textContent = 'Loading products, spare parts, services and technicians...';
   try {
@@ -1471,7 +1459,6 @@ async function loadAllData() {
   }
 }
 
-/* ===== RENDER ===== */
 function renderProducts(list) {
   productsContainer.className = "products-grid";
   if (!list || list.length === 0) { productsContainer.innerHTML = `<div class="loading">No products found.</div>`; return; }
@@ -1569,7 +1556,6 @@ function renderTechnicians(list) {
   productsContainer.innerHTML = html;
 }
 
-/* ===== TAB SWITCHING ===== */
 window.switchTab = function(tab) {
   currentTab = tab;
   document.querySelectorAll('.shop-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
@@ -1611,7 +1597,6 @@ window.clearFilters = function() {
 };
 window.scrollToSection = function(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); };
 
-/* ===== LEGAL MODAL ===== */
 const fixgLegalTexts = {
 privacy: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Privacy Policy</h2><p>At <strong>iCare Mukkam / fixG</strong> (fixg.in), accessible from https://www.fixg.in, we prioritize the privacy of our customers. We collect basic personal information such as your name, phone number, and address strictly for service bookings, delivery of products, and customer support.</p><p style="margin-top:10px;">We do not sell, trade, or share your personal information with any third parties. All online payments are processed through secure payment gateways (Razorpay), and we do not store any credit/debit card details or banking credentials on our servers.</p>`,
 terms: `<h2 style="color:#07182f;border-bottom:2px solid #ff5a00;padding-bottom:8px;margin-bottom:15px;">Terms & Conditions</h2><p><strong>1. Scope of Service:</strong> iCare Mukkam / fixG provides repair services, mobile accessories, and laptop spare parts in Mukkam, Kozhikode.</p><p><strong>2. Data Backup Responsibility:</strong> Customers are advised to back up all personal data before handing over devices for repair. iCare Mukkam / fixG is not responsible for any accidental data loss during the service process.</p><p><strong>3. Pre-existing Damage:</strong> Devices with severe water damage, physical impacts, or mainboard faults carry inherent risks during repair, which the customer acknowledges upon booking.</p><p><strong>4. Unclaimed Devices:</strong> Devices left unclaimed for more than 60 days following service completion notification may be disposed of to recover service costs.</p>`,
@@ -1627,7 +1612,6 @@ window.addEventListener('click', function(e) {
   if (e.target === modal) modal.style.display = 'none';
 });
 
-/* ===== AUTH STATE ===== */
 onAuthStateChanged(auth, user => {
   const label = document.getElementById('accountLabel');
   const myOrdersBtn = document.getElementById('myOrdersBtn');
@@ -1646,7 +1630,6 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-/* ===== INIT ===== */
 loadAllData();
 displayCart();
 document.getElementById('searchInput').addEventListener('keydown', function(e) {
