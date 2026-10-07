@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Complete Mobile IC List | fixG - iCare Mukkam</title>
+<meta name="description" content="Complete mobile IC list - PMIC, Charging IC, RF IC, WiFi IC, Audio IC. WTR2965, PM660, Tristar and more. fixG Mukkam.">
+<meta name="keywords" content="mobile ic list, wtr2965, pm660, tristar ic, charging ic, power ic, rf ic, mobile ic number">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.6}
+.topbar{background:#ff5a00;color:white;padding:10px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
+.topbar a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+header{background:white;padding:14px 5%;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.logo{font-size:26px;font-weight:900;color:#07182f;text-decoration:none;display:inline-block}
+.logo span{color:#ff5a00}
+.logo small{font-size:11px;color:#6b7280;display:block;margin-top:-4px}
+.hero{background:linear-gradient(135deg,#07182f,#ff5a00);color:white;padding:35px 5%;text-align:center}
+.hero h1{font-size:clamp(22px,4vw,32px);margin-bottom:8px}
+.hero p{font-size:14px;color:#dbe5f2}
+.container{max-width:1200px;margin:auto;padding:25px 4%}
+.search-wrap{position:sticky;top:75px;background:#f6f7f9;padding:15px 0;z-index:50}
+.search-box{width:100%;padding:18px;font-size:17px;border:3px solid #ff5a00;border-radius:12px;outline:none;box-shadow:0 6px 20px rgba(255,90,0,.15);font-weight:bold}
+.search-box::placeholder{color:#9ca3af;font-weight:normal}
+.stats{text-align:center;color:#6b7280;font-size:13px;margin-bottom:15px}
+.stats b{color:#ff5a00}
+.category{background:white;border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.category h2{color:#07182f;font-size:18px;margin-bottom:14px;border-bottom:3px solid #ff5a00;padding-bottom:8px;display:flex;align-items:center;gap:8px}
+.ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.ic-card{background:#f8fafc;padding:12px 14px;border-radius:8px;border-left:4px solid #07182f;display:flex;justify-content:space-between;align-items:center;gap:8px;transition:.2s}
+.ic-card:hover{background:#fff7f1;border-left-color:#ff5a00;transform:translateX(3px)}
+.ic-card .ic-num{font-weight:bold;color:#111827;font-size:14px;font-family:'Courier New',monospace;word-break:break-all}
+.ic-card .ic-name{font-size:11px;color:#6b7280;margin-top:2px}
+.ic-card .enq{background:#25d366;color:white;padding:6px 10px;border-radius:5px;text-decoration:none;font-size:11px;font-weight:bold;white-space:nowrap;flex-shrink:0}
+.no-result{text-align:center;padding:50px 20px;color:#6b7280;display:none}
+.no-result h3{font-size:20px;color:#111827;margin-bottom:10px}
+.cta-box{background:#07182f;color:white;text-align:center;padding:30px 20px;border-radius:14px;margin-top:25px}
+.cta-box h2{color:white;margin-bottom:10px;font-size:20px}
+.cta-box p{margin-bottom:15px;color:#dbe5f2;font-size:14px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;margin:4px}
+.btn-call{background:#ff5a00;color:white}
+.btn-wa{background:#25d366;color:white}
+footer{background:#07182f;color:#cbd5e1;text-align:center;padding:25px 5%;margin-top:40px;font-size:13px}
+footer a{color:#ff5a00;text-decoration:none;margin:0 8px}
+@media(max-width:600px){.ic-grid{grid-template-columns:1fr 1fr}.search-box{font-size:15px;padding:14px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>📍 Mukkam, Kozhikode, Kerala</div>
+  <div>
+    <a href="tel:+919447667744">📞 9447667744</a>
+    <a href="https://wa.me/919447150744">💬 WhatsApp</a>
+  </div>
+</div>
+
+<header>
+  <a href="https://www.fixg.in/" class="logo">fix<span>G</span><small>by iCare Mukkam</small></a>
+</header>
+
+<section class="hero">
+  <h1>🔬 Complete Mobile IC List</h1>
+  <p>എല്ലാ മൊബൈൽ ഐസികളുടെയും നമ്പറുകൾ ഒരിടത്ത്. സെർച്ച് ചെയ്ത് കണ്ടെത്തൂ!</p>
+</section>
+
+<div class="container">
+
+  <div class="search-wrap">
+    <input type="text" id="icSearch" class="search-box" placeholder="🔍 IC Number തിരയുക (ഉദാ: WTR2965, PM660, Tristar)..." onkeyup="filterICs()" autocomplete="off">
+  </div>
+
+  <div class="stats">Total ICs: <b id="totalCount">0</b> | Showing: <b id="showCount">0</b></div>
+
+  <div id="icContainer">
+
+    <!-- ===== PMIC / POWER IC ===== -->
+    <div class="category">
+      <h2>⚡ PMIC / Power IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">PM660</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM660 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM660L</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM660L price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8150</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8150 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8150L</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8150L price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8250</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8250 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8998</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8998 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8996</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8996 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8916</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8916 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8953</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8953 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8937</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8937 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8952</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8952 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8950</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8950 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM7540</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM7540 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PM8058</div><div class="ic-name">Qualcomm PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need PM8058 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6357</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6357 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6358</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6358 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6359</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6359 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6323</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6323 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6328</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6328 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6311</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6311 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6315</div><div class="ic-name">MediaTek PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6315 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">S2MPS11</div><div class="ic-name">Samsung PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need S2MPS11 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">S2MPS13</div><div class="ic-name">Samsung PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need S2MPS13 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">S2MPS15</div><div class="ic-name">Samsung PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need S2MPS15 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">S2MPS16</div><div class="ic-name">Samsung PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need S2MPS16 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">343S00357</div><div class="ic-name">Apple PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 343S00357 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">343S00250</div><div class="ic-name">Apple PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 343S00250 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">338S00411</div><div class="ic-name">Apple PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 338S00411 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">338S00268</div><div class="ic-name">Apple PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 338S00268 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TPS65988</div><div class="ic-name">TI PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need TPS65988 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MAX77812</div><div class="ic-name">Maxim PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MAX77812 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CHARGING IC ===== -->
+    <div class="category">
+      <h2>🔌 Charging IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">Tristar U2</div><div class="ic-name">Apple iPhone 5-6S</div></div><a href="https://wa.me/919447150744?text=Hi, I need Tristar U2 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">Tigris U2</div><div class="ic-name">Apple iPhone 7-8</div></div><a href="https://wa.me/919447150744?text=Hi, I need Tigris U2 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SN2012027</div><div class="ic-name">iPhone 11 Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SN2012027 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">1614A1</div><div class="ic-name">iPhone 12 Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 1614A1 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">1610A1</div><div class="ic-name">Apple Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 1610A1 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">1612A1</div><div class="ic-name">Apple Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 1612A1 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ25890</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ25890 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ25895</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ25895 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ24190</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ24190 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ24296</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ24296 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ24292</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ24292 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BQ25601</div><div class="ic-name">TI Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ25601 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">FSA9288</div><div class="ic-name">Fairchild Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need FSA9288 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">FSA9280</div><div class="ic-name">Fairchild Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need FSA9280 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">NCP3690</div><div class="ic-name">On Semi Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need NCP3690 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SMB1357</div><div class="ic-name">Qualcomm Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SMB1357 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SMB1355</div><div class="ic-name">Qualcomm Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SMB1355 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SMB1360</div><div class="ic-name">Qualcomm Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SMB1360 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MAX77860</div><div class="ic-name">Maxim Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MAX77860 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MAX77813</div><div class="ic-name">Maxim Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MAX77813 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== RF / PA IC ===== -->
+    <div class="category">
+      <h2>📡 RF / PA IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">WTR2965</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR2965 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR3925</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR3925 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR4905</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR4905 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR5975</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR5975 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR3905</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR3905 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR2955</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR2955 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR1605</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR1605 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WTR1625</div><div class="ic-name">Qualcomm RF Transceiver</div></div><a href="https://wa.me/919447150744?text=Hi, I need WTR1625 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6169</div><div class="ic-name">MediaTek RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6169 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6176</div><div class="ic-name">MediaTek RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6176 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6177</div><div class="ic-name">MediaTek RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6177 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6140</div><div class="ic-name">MediaTek RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6140 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6158</div><div class="ic-name">MediaTek RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6158 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SKY77643</div><div class="ic-name">Skyworks PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SKY77643 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SKY77645</div><div class="ic-name">Skyworks PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SKY77645 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SKY77764</div><div class="ic-name">Skyworks PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need SKY77764 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF7389</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF7389 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF7387</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF7387 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF7459</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF7459 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF5218</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF5218 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF5216</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF5216 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF5217</div><div class="ic-name">Qualcomm PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF5217 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RF3608</div><div class="ic-name">Qualcomm RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF3608 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">QFE2101</div><div class="ic-name">Qualcomm ET IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need QFE2101 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">QFE1040</div><div class="ic-name">Qualcomm RF IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need QFE1040 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">QPA5580</div><div class="ic-name">Qorvo PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need QPA5580 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">QPA4340</div><div class="ic-name">Qorvo PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need QPA4340 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TQM7M5050</div><div class="ic-name">TriQuint PA IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need TQM7M5050 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== WiFi / BT IC ===== -->
+    <div class="category">
+      <h2>📶 WiFi / Bluetooth IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">WCN3680</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3680 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3680B</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3680B price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3990</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3990 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3980</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3980 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3610</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3610 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3620</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3620 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCN3660</div><div class="ic-name">Qualcomm WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCN3660 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BCM4335</div><div class="ic-name">Broadcom WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need BCM4335 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BCM4354</div><div class="ic-name">Broadcom WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need BCM4354 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BCM4358</div><div class="ic-name">Broadcom WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need BCM4358 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BCM43455</div><div class="ic-name">Broadcom WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need BCM43455 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6625</div><div class="ic-name">MediaTek WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6625 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6630</div><div class="ic-name">MediaTek WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6630 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6631</div><div class="ic-name">MediaTek WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6631 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT7668</div><div class="ic-name">MediaTek WiFi/BT</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT7668 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT7921</div><div class="ic-name">MediaTek WiFi</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT7921 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== AUDIO IC ===== -->
+    <div class="category">
+      <h2>🔊 Audio IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">WCD9335</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9335 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCD9341</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9341 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCD9385</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9385 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCD9375</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9375 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCD9326</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9326 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">WCD9320</div><div class="ic-name">Qualcomm Audio Codec</div></div><a href="https://wa.me/919447150744?text=Hi, I need WCD9320 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RT5509</div><div class="ic-name">Realtek Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RT5509 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">RT5514</div><div class="ic-name">Realtek Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need RT5514 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TAS2555</div><div class="ic-name">TI Audio Amplifier</div></div><a href="https://wa.me/919447150744?text=Hi, I need TAS2555 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TAS2557</div><div class="ic-name">TI Audio Amplifier</div></div><a href="https://wa.me/919447150744?text=Hi, I need TAS2557 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">CS35L41</div><div class="ic-name">Cirrus Audio Amp</div></div><a href="https://wa.me/919447150744?text=Hi, I need CS35L41 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">CS35L42</div><div class="ic-name">Cirrus Audio Amp</div></div><a href="https://wa.me/919447150744?text=Hi, I need CS35L42 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">U2 Audio IC</div><div class="ic-name">iPhone Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need iPhone U2 Audio price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">338S00267</div><div class="ic-name">Apple Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 338S00267 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">338S00383</div><div class="ic-name">Apple Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need 338S00383 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== DISPLAY / TOUCH IC ===== -->
+    <div class="category">
+      <h2>📱 Display / Touch IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">NT36672</div><div class="ic-name">Novatek Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need NT36672 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">NT36672A</div><div class="ic-name">Novatek Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need NT36672A price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">NT36525</div><div class="ic-name">Novatek Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need NT36525 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">NT36525B</div><div class="ic-name">Novatek Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need NT36525B price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">GT911</div><div class="ic-name">Goodix Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need GT911 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">GT928</div><div class="ic-name">Goodix Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need GT928 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">FT5436</div><div class="ic-name">FocalTech Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need FT5436 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">FT8716</div><div class="ic-name">FocalTech Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need FT8716 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">FT8006</div><div class="ic-name">FocalTech Touch IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need FT8006 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">ILI9881</div><div class="ic-name">Ilitek Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need ILI9881 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">ILI9881C</div><div class="ic-name">Ilitek Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need ILI9881C price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">ILI7807</div><div class="ic-name">Ilitek Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need ILI7807 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">ST7701</div><div class="ic-name">Sitronix Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need ST7701 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">ST7789</div><div class="ic-name">Sitronix Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need ST7789 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LC898212</div><div class="ic-name">Onsemi Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LC898212 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CAMERA IC ===== -->
+    <div class="category">
+      <h2>📷 Camera IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">MAX77826</div><div class="ic-name">Camera Power IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MAX77826 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MAX77818</div><div class="ic-name">Camera Power IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need MAX77818 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LM3560</div><div class="ic-name">Camera Flash IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LM3560 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LM3643</div><div class="ic-name">Camera Flash IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LM3643 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LM3644</div><div class="ic-name">Camera Flash IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LM3644 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LP55231</div><div class="ic-name">Camera LED Driver</div></div><a href="https://wa.me/919447150744?text=Hi, I need LP55231 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BU64295</div><div class="ic-name">Camera Driver IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BU64295 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== SENSOR IC ===== -->
+    <div class="category">
+      <h2>🔧 Sensor IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">BMI160</div><div class="ic-name">Bosch Gyro/Accel</div></div><a href="https://wa.me/919447150744?text=Hi, I need BMI160 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BMI260</div><div class="ic-name">Bosch Gyro/Accel</div></div><a href="https://wa.me/919447150744?text=Hi, I need BMI260 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MPU6500</div><div class="ic-name">InvenSense Gyro</div></div><a href="https://wa.me/919447150744?text=Hi, I need MPU6500 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MPU6050</div><div class="ic-name">InvenSense Gyro</div></div><a href="https://wa.me/919447150744?text=Hi, I need MPU6050 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LIS3DH</div><div class="ic-name">ST Accel</div></div><a href="https://wa.me/919447150744?text=Hi, I need LIS3DH price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">AK09918</div><div class="ic-name">AKM Compass</div></div><a href="https://wa.me/919447150744?text=Hi, I need AK09918 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">BMP280</div><div class="ic-name">Bosch Pressure</div></div><a href="https://wa.me/919447150744?text=Hi, I need BMP280 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CPU / SOC ===== -->
+    <div class="category">
+      <h2>🧠 CPU / SoC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">MSM8998</div><div class="ic-name">Snapdragon 835</div></div><a href="https://wa.me/919447150744?text=Hi, I need MSM8998 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MSM8996</div><div class="ic-name">Snapdragon 820</div></div><a href="https://wa.me/919447150744?text=Hi, I need MSM8996 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MSM8953</div><div class="ic-name">Snapdragon 625</div></div><a href="https://wa.me/919447150744?text=Hi, I need MSM8953 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MSM8917</div><div class="ic-name">Snapdragon 425</div></div><a href="https://wa.me/919447150744?text=Hi, I need MSM8917 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MSM8909</div><div class="ic-name">Snapdragon 210</div></div><a href="https://wa.me/919447150744?text=Hi, I need MSM8909 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SDM660</div><div class="ic-name">Snapdragon 660</div></div><a href="https://wa.me/919447150744?text=Hi, I need SDM660 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SDM665</div><div class="ic-name">Snapdragon 665</div></div><a href="https://wa.me/919447150744?text=Hi, I need SDM665 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SDM845</div><div class="ic-name">Snapdragon 845</div></div><a href="https://wa.me/919447150744?text=Hi, I need SDM845 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SM8150</div><div class="ic-name">Snapdragon 855</div></div><a href="https://wa.me/919447150744?text=Hi, I need SM8150 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">SM8250</div><div class="ic-name">Snapdragon 865</div></div><a href="https://wa.me/919447150744?text=Hi, I need SM8250 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6763</div><div class="ic-name">Helio P23</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6763 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6765</div><div class="ic-name">Helio P35</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6765 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6768</div><div class="ic-name">Helio G70</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6768 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6771</div><div class="ic-name">Helio P60</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6771 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6785</div><div class="ic-name">Helio G95</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6785 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6833</div><div class="ic-name">Dimensity 700</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6833 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">MT6873</div><div class="ic-name">Dimensity 800</div></div><a href="https://wa.me/919447150744?text=Hi, I need MT6873 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">EXYNOS 9611</div><div class="ic-name">Samsung SoC</div></div><a href="https://wa.me/919447150744?text=Hi, I need Exynos 9611 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">EXYNOS 9820</div><div class="ic-name">Samsung SoC</div></div><a href="https://wa.me/919447150744?text=Hi, I need Exynos 9820 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+    <!-- ===== OTHER IC ===== -->
+    <div class="category">
+      <h2>🔩 Other ICs</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div><div class="ic-num">TFA9890</div><div class="ic-name">NXP Audio Amp</div></div><a href="https://wa.me/919447150744?text=Hi, I need TFA9890 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TFA9891</div><div class="ic-name">NXP Audio Amp</div></div><a href="https://wa.me/919447150744?text=Hi, I need TFA9891 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">PCA9555</div><div class="ic-name">NXP I/O Expander</div></div><a href="https://wa.me/919447150744?text=Hi, I need PCA9555 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TPS65132</div><div class="ic-name">TI Display Power</div></div><a href="https://wa.me/919447150744?text=Hi, I need TPS65132 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">TPS65632</div><div class="ic-name">TI Display Power</div></div><a href="https://wa.me/919447150744?text=Hi, I need TPS65632 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LM3697</div><div class="ic-name">TI Backlight IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LM3697 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">LM36923</div><div class="ic-name">TI Backlight IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need LM36923 price" class="enq">Enq</a></div>
+        <div class="ic-card"><div><div class="ic-num">NCP6335</div><div class="ic-name">OnSemi Buck</div></div><a href="https://wa.me/919447150744?text=Hi, I need NCP6335 price" class="enq">Enq</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    <h3>😕 ഈ ഐസി കണ്ടെത്തിയില്ല</h3>
+    <p>ഞങ്ങളെ WhatsApp-ൽ ബന്ധപ്പെടൂ, ഞങ്ങൾ ശ്രമിക്കാം!</p>
+    <br>
+    <a href="https://wa.me/919447150744" class="btn btn-wa">💬 WhatsApp Us</a>
+  </div>
+
+  <div class="cta-box">
+    <h2>ഏതെങ്കിലും ഐസി വേണോ?</h2>
+    <p>ഐസിയുടെ നമ്പർ WhatsApp-ൽ അയച്ചാൽ വില അറിയിച്ചുതരും.</p>
+    <a href="tel:+919447667744" class="btn btn-call">📞 Call 9447667744</a>
+    <a href="https://wa.me/919447150744" class="btn btn-wa">💬 WhatsApp</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 fixG by iCare Mukkam. All Rights Reserved.
+  <br><br>
+  <a href="https://www.fixg.in/">Home</a> |
+  <a href="https://www.fixg.in/blog.html">Blog</a> |
+  <a href="https://www.fixg.in/spare-parts-ic.html">IC Parts</a> |
+  <a href="https://www.fixg.in/#contact">Contact</a>
+</footer>
+
+<script>
+// Count total ICs on load
+let totalICs = document.querySelectorAll('.ic-card').length;
+document.getElementById('totalCount').innerText = totalICs;
+document.getElementById('showCount').innerText = totalICs;
+
+// Search filter
+function filterICs() {
+    let input = document.getElementById('icSearch').value.toLowerCase().trim();
+    let cards = document.querySelectorAll('.ic-card');
+    let categories = document.querySelectorAll('.category');
+    let visibleCount = 0;
+
+    cards.forEach(function(card) {
+        let text = card.innerText.toLowerCase();
+        if (text.includes(input)) {
+            card.style.display = "flex";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    categories.forEach(function(cat) {
+        let hasVisible = false;
+        cat.querySelectorAll('.ic-card').forEach(function(c) {
+            if (c.style.display !== "none") hasVisible = true;
+        });
+        cat.style.display = hasVisible ? "block" : "none";
+    });
+
+    document.getElementById('showCount').innerText = visibleCount;
+    document.getElementById('noResult').style.display = visibleCount === 0 ? "block" : "none";
+}
+</script>
+
+</body>
+</html>
