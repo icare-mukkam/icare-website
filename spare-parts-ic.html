@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IC Spare Parts | fixG - iCare Mukkam</title>
+<meta name="description" content="Buy mobile IC spare parts at fixG Mukkam. Power IC, Charging IC, Display IC, Audio IC, Network IC for iPhone, Samsung, Xiaomi, Oppo, Vivo, Realme. WhatsApp for price.">
+<meta name="keywords" content="mobile IC spare parts, power IC, charging IC, display IC, iPhone IC, Samsung IC, Mukkam, iCare Mukkam">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f6f7f9;color:#111827;line-height:1.7}
+.topbar{background:#ff5a00;color:white;padding:10px 5%;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:8px}
+.topbar a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+header{background:white;padding:14px 5%;box-shadow:0 2px 12px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
+.logo{font-size:26px;font-weight:900;color:#07182f;text-decoration:none;display:inline-block}
+.logo span{color:#ff5a00}
+.logo small{font-size:11px;color:#6b7280;display:block;margin-top:-4px}
+.hero{background:linear-gradient(135deg,#07182f,#ff5a00);color:white;padding:40px 5%;text-align:center}
+.hero h1{font-size:clamp(24px,4vw,34px);margin-bottom:10px}
+.hero p{font-size:15px;color:#dbe5f2;max-width:700px;margin:auto}
+.container{max-width:1200px;margin:auto;padding:30px 5%}
+.search-box{width:100%;padding:16px;font-size:16px;border:2px solid #ff5a00;border-radius:10px;margin-bottom:15px;outline:none;box-shadow:0 4px 12px rgba(255,90,0,.1)}
+.brand-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px;justify-content:center}
+.brand-tab{padding:8px 16px;border:2px solid #e5e7eb;background:white;border-radius:20px;font-weight:bold;cursor:pointer;font-size:13px;transition:.2s}
+.brand-tab.active{background:#ff5a00;color:white;border-color:#ff5a00}
+.brand-tab:hover{border-color:#ff5a00}
+.ic-category{margin-bottom:30px;background:white;border-radius:12px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.ic-category h2{color:#07182f;font-size:20px;border-bottom:2px solid #ff5a00;padding-bottom:10px;margin-bottom:18px}
+.ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.ic-card{background:#f8fafc;padding:14px 16px;border-radius:10px;border-left:4px solid #ff5a00;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:.2s}
+.ic-card:hover{background:#fff7f1;transform:translateX(3px)}
+.ic-card .info{flex:1;min-width:0}
+.ic-card .name{font-weight:bold;color:#111827;font-size:14px;word-wrap:break-word}
+.ic-card .code{font-size:12px;color:#6b7280;margin-top:2px}
+.ic-card .enquire-btn{background:#25d366;color:white;padding:7px 12px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:bold;white-space:nowrap;flex-shrink:0}
+.ic-card .enquire-btn:hover{background:#1da851}
+.no-results{text-align:center;padding:40px;color:#6b7280;display:none;font-size:16px}
+.cta-box{background:#07182f;color:white;text-align:center;padding:35px 20px;border-radius:14px;margin-top:30px}
+.cta-box h2{color:white;margin-bottom:12px;font-size:22px}
+.cta-box p{margin-bottom:18px;color:#dbe5f2}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;margin:4px}
+.btn-call{background:#ff5a00;color:white}
+.btn-wa{background:#25d366;color:white}
+footer{background:#07182f;color:#cbd5e1;text-align:center;padding:30px 5%;margin-top:40px;font-size:14px}
+footer a{color:#ff5a00;text-decoration:none;margin:0 8px}
+@media(max-width:600px){.ic-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>📍 Mukkam, Kozhikode, Kerala</div>
+  <div>
+    <a href="tel:+919447667744">📞 9447667744</a>
+    <a href="https://wa.me/919447150744">💬 WhatsApp</a>
+  </div>
+</div>
+
+<header>
+  <a href="https://www.fixg.in/" class="logo">fix<span>G</span><small>by iCare Mukkam</small></a>
+</header>
+
+<section class="hero">
+  <h1>🔬 IC Spare Parts</h1>
+  <p>എല്ലാ തരത്തിലുള്ള മൊബൈൽ ഐസികളും ലഭ്യമാണ്. വില അറിയാൻ WhatsApp-ൽ ബന്ധപ്പെടുക.</p>
+</section>
+
+<div class="container">
+
+  <!-- Search Box -->
+  <input type="text" id="icSearch" class="search-box" placeholder="🔍 ഐസിയുടെ പേരോ നമ്പറോ തിരയുക (ഉദാ: PM660, Tristar, WiFi)..." onkeyup="filterAll()">
+
+  <!-- Brand Filter Tabs -->
+  <div class="brand-tabs">
+    <button class="brand-tab active" onclick="filterBrand('all', this)">All Brands</button>
+    <button class="brand-tab" onclick="filterBrand('apple', this)">🍎 iPhone</button>
+    <button class="brand-tab" onclick="filterBrand('samsung', this)">📱 Samsung</button>
+    <button class="brand-tab" onclick="filterBrand('xiaomi', this)">📱 Xiaomi</button>
+    <button class="brand-tab" onclick="filterBrand('oppo', this)">📱 Oppo/Vivo</button>
+    <button class="brand-tab" onclick="filterBrand('realme', this)">📱 Realme</button>
+    <button class="brand-tab" onclick="filterBrand('oneplus', this)">📱 OnePlus</button>
+  </div>
+
+  <div id="icContainer">
+
+    <!-- ===== POWER IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>⚡ Power IC (PMIC)</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Power IC - PM660</div><div class="code">Qualcomm PM660</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC PM660 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - PM8150</div><div class="code">Qualcomm PM8150</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC PM8150 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - PM8998</div><div class="code">Qualcomm PM8998</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC PM8998 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - PM8916</div><div class="code">Qualcomm PM8916</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC PM8916 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - PM8953</div><div class="code">Qualcomm PM8953</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC PM8953 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - MT6357</div><div class="code">MediaTek MT6357</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC MT6357 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - MT6358</div><div class="code">MediaTek MT6358</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC MT6358 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - MT6359</div><div class="code">MediaTek MT6359</div></div><a href="https://wa.me/919447150744?text=Hi, I need Power IC MT6359 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - S2MPS</div><div class="code">Samsung S2MPS Series</div></div><a href="https://wa.me/919447150744?text=Hi, I need Samsung S2MPS Power IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Power IC - 343S00357</div><div class="code">Apple iPhone PMIC</div></div><a href="https://wa.me/919447150744?text=Hi, I need iPhone Power IC 343S00357 price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CHARGING IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>🔌 Charging IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Charging IC - Tristar</div><div class="code">Apple iPhone Tristar (U2)</div></div><a href="https://wa.me/919447150744?text=Hi, I need Tristar Charging IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Charging IC - Tigris</div><div class="code">Apple iPhone Tigris (U2)</div></div><a href="https://wa.me/919447150744?text=Hi, I need Tigris Charging IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Charging IC - SN2012027</div><div class="code">Apple iPhone 11 Series</div></div><a href="https://wa.me/919447150744?text=Hi, I need SN2012027 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Charging IC - 1614A1</div><div class="code">Apple iPhone 12 Series</div></div><a href="https://wa.me/919447150744?text=Hi, I need 1614A1 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Charging IC - BQ25890</div><div class="code">Universal Charging IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need BQ25890 price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">USB Charging IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need USB Charging IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Wireless Charging IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Wireless Charging IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Fast Charging IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Fast Charging IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== DISPLAY IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>📱 Display IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Display Driver IC</div><div class="code">Universal Display IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need Display Driver IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Backlight IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Backlight IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Touch IC (Touchscreen Controller)</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Touch IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">LCD IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need LCD IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Display Power IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Display Power IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">OLED Driver IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need OLED Driver IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== AUDIO IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>🔊 Audio IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Audio Codec IC</div><div class="code">Universal Audio IC</div></div><a href="https://wa.me/919447150744?text=Hi, I need Audio Codec IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Audio Amplifier IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Audio Amplifier IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Speaker IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Speaker IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Microphone IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Microphone IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Headphone Jack IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Headphone IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">U2 Audio IC (iPhone)</div><div class="code">Apple iPhone Series</div></div><a href="https://wa.me/919447150744?text=Hi, I need iPhone U2 Audio IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== NETWORK IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>📡 Network IC (RF/PA)</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Power Amplifier (PA) IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need PA IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">RF Transceiver IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need RF Transceiver IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">WiFi IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need WiFi IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Bluetooth IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need Bluetooth IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">GPS IC</div><div class="code">Various Brands</div></div><a href="https://wa.me/919447150744?text=Hi, I need GPS IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Network Signal IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Network Signal IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CPU & STORAGE ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>🧠 CPU & Storage IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">CPU - Snapdragon Series</div><div class="code">Qualcomm (Various Models)</div></div><a href="https://wa.me/919447150744?text=Hi, I need Snapdragon CPU price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">CPU - MediaTek Series</div><div class="code">MediaTek (Helio, Dimensity)</div></div><a href="https://wa.me/919447150744?text=Hi, I need MediaTek CPU price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">CPU - Exynos Series</div><div class="code">Samsung Exynos</div></div><a href="https://wa.me/919447150744?text=Hi, I need Exynos CPU price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">RAM IC</div><div class="code">Various Capacities</div></div><a href="https://wa.me/919447150744?text=Hi, I need RAM IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">ROM / Storage IC (eMMC)</div><div class="code">Various Capacities</div></div><a href="https://wa.me/919447150744?text=Hi, I need eMMC ROM IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">UFS Storage IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need UFS Storage IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">NAND Flash IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need NAND Flash IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== CAMERA IC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>📷 Camera IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Camera Driver IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Camera Driver IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Camera Flash IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Camera Flash IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Front Camera IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Front Camera IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- ===== SENSOR & MISC ===== -->
+    <div class="ic-category" data-brand="all apple samsung xiaomi oppo realme oneplus">
+      <h2>🔧 Sensor & Misc IC</h2>
+      <div class="ic-grid">
+        <div class="ic-card"><div class="info"><div class="name">Face ID IC (iPhone)</div><div class="code">Apple iPhone X and above</div></div><a href="https://wa.me/919447150744?text=Hi, I need Face ID IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Fingerprint Sensor IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Fingerprint IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Proximity Sensor IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Proximity Sensor IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Gyroscope IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Gyroscope IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Vibrator IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Vibrator IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">SIM Card IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need SIM Card IC price" class="enquire-btn">Enquire</a></div>
+        <div class="ic-card"><div class="info"><div class="name">Memory Card IC</div><div class="code">Universal</div></div><a href="https://wa.me/919447150744?text=Hi, I need Memory Card IC price" class="enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">
+    <p>😕 ഈ ഐസി കണ്ടെത്തിയില്ല. ഞങ്ങളെ WhatsApp-ൽ ബന്ധപ്പെടൂ, ഞങ്ങൾ ശ്രമിക്കാം!</p>
+  </div>
+
+  <div class="cta-box">
+    <h2>ഏതെങ്കിലും ഐസി വേണോ?</h2>
+    <p>ഞങ്ങളുടെ WhatsApp-ൽ ഐസിയുടെ പേര് അയച്ചാൽ വില അറിയിച്ചുതരും.</p>
+    <a href="tel:+9194476
