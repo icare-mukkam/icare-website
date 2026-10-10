@@ -640,7 +640,12 @@ footer p{color:#cbd5e1;font-size:14px;line-height:1.6}
 <div class="modal-box"><div class="modal-header"><h2>Customer Details</h2><button class="close" onclick="closeCheckout()">×</button></div>
 <div class="form-group"><label>Name</label><input id="customerName" type="text" placeholder="Your name"></div>
 <div class="form-group"><label>Phone Number</label><input id="customerPhone" type="tel" placeholder="Your phone number"></div>
-<div class="form-group"><label>Delivery Address</label><textarea id="customerAddress" placeholder="Complete delivery address"></textarea></div>
+<div class="form-group"><label>Delivery Address</label><textarea id="customerAddress" placeholder="Complete delivery address" oninput="updateCheckoutShipping()"></textarea></div>
+<div id="checkoutShippingInfo" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; padding:10px; border-radius:7px; margin-bottom:15px; font-size:14px;">
+    <strong>Delivery Charge:</strong> <span id="checkoutShippingAmount">₹0</span>
+    <div style="font-size:12px; color:#15803d; margin-top:4px;">Delivery charge calculated based on address. (അഡ്രസ് അനുസരിച്ച് ഡെലിവറി ചാർജ് കണക്കാക്കും).</div>
+    <div style="font-size:11px; color:#b45309; margin-top:6px; border-top:1px dashed #fcd34d; padding-top:6px;">⚠️ <strong>Note:</strong> Heavy items (Laptops, Batteries, Bulk orders) may have additional delivery charges. Our team will contact you if applicable.</div>
+</div>
 <button class="pay-button" onclick="startRazorpayPayment()">💳 Pay Securely with Razorpay</button>
 </div></div>
 
@@ -1258,7 +1263,15 @@ function displayCart() {
       <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>`;
     container.appendChild(div);
   });
-  totalElement.textContent = "₹" + total.toLocaleString("en-IN"); countElement.textContent = count;
+   // കാർട്ടിൽ ഡെലിവറി ചാർജ് കാണിക്കാൻ
+  let shippingHtml = `<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed #ccc;margin-top:10px;color:#111827;">
+      <span>Delivery Charge</span>
+      <strong style="color:#ff5a00;">Calculated at next step</strong>
+  </div>`;
+  container.insertAdjacentHTML('beforeend', shippingHtml);
+
+  totalElement.textContent = "₹" + total.toLocaleString("en-IN"); 
+  countElement.textContent = count;
 }
 window.changeQuantity = function(index, change) {
   const cart = getCart(); if (!cart[index]) return;
@@ -1316,6 +1329,54 @@ window.checkout = function() {
 };
 window.continueToCheckout = function() { pendingCheckout = false; openCheckoutForUser(); };
 window.closeCheckout = function() { document.getElementById('checkoutModal').style.display = "none"; };
+// ഡെലിവറി ചാർജ് കണക്കാക്കാനുള്ള ഫംഗ്ഷൻ
+function calculateShippingCharge(address) {
+    const addressLower = address.toLowerCase();
+    let charge = 200; // ഡിഫോൾട്ട്: കേരളത്തിന് പുറത്ത് (₹200)
+
+    // 1. മുക്കം, കോഴിക്കോട്, കാലിക്കറ്റ് എന്നിവയ്ക്ക് ₹50
+    if (addressLower.includes("mukkam") || addressLower.includes("kozhikode") || addressLower.includes("calicut")) {
+        return 50;
+    }
+
+    // 2. കേരളത്തിലെ ജില്ലകളുടെ ലിസ്റ്റ്
+    const keralaDistricts = [
+        "thiruvananthapuram", "trivandrum", "kollam", "pathanamthitta", 
+        "alappuzha", "kottayam", "idukki", "ernakulam", "kochi", "cochin", 
+        "thrissur", "palakkad", "malappuram", "wayanad", "kannur", 
+        "kasaragod", "kerala"
+    ];
+
+    // 3. അഡ്രസിൽ കേരളത്തിലെ ജില്ലകളോ "Kerala" എന്ന വാക്കോ ഉണ്ടെങ്കിൽ ₹100
+    if (keralaDistricts.some(district => addressLower.includes(district))) {
+        charge = 100;
+    }
+
+    // 4. പിൻകോഡ് (PIN Code) പരിശോധിക്കുന്നു (കേരളത്തിലെ പിൻകോഡുകൾ 67, 68, 69 എന്നിവയിൽ തുടങ്ങുന്നു)
+    const pincodeMatch = address.match(/\b\d{6}\b/);
+    if (pincodeMatch) {
+        const pincode = pincodeMatch[0];
+        const prefix = pincode.substring(0, 2);
+        if (prefix === "67" || prefix === "68" || prefix === "69") {
+            charge = 100; // കേരളത്തിനുള്ളിൽ
+        }
+    }
+
+    return charge;
+}
+// ചെക്ക്ഔട്ടിൽ അഡ്രസ് ടൈപ്പ് ചെയ്യുമ്പോൾ ചാർജ് അപ്ഡേറ്റ് ചെയ്യാൻ
+window.updateCheckoutShipping = function() {
+    const address = document.getElementById('customerAddress').value.trim();
+    const infoDiv = document.getElementById('checkoutShippingInfo');
+    const amountSpan = document.getElementById('checkoutShippingAmount');
+    if (!address) {
+        infoDiv.style.display = 'none';
+        return;
+    }
+    const charge = calculateShippingCharge(address);
+    amountSpan.textContent = charge === 0 ? 'Free' : '₹' + charge;
+    infoDiv.style.display = 'block';
+};
 window.startRazorpayPayment = async function() {
   const cart = getCart();
   if (!cart.length) { alert("Your cart is empty."); return; }
@@ -1323,9 +1384,19 @@ window.startRazorpayPayment = async function() {
   const name = document.getElementById('customerName').value.trim();
   const phone = document.getElementById('customerPhone').value.trim();
   const address = document.getElementById('customerAddress').value.trim();
-  if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
-  let total = 0;
-  cart.forEach(item => { total += Number(item.price) * Number(item.quantity); });
+   if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
+  let subtotal = 0;
+  cart.forEach(item => { subtotal += Number(item.price) * Number(item.quantity); });
+  
+  // ഡെലിവറി ചാർജ് കണക്കാക്കാൻ
+  let deliveryCharge = calculateShippingCharge(address);
+  
+  // ₹2000-ന് മുകളിൽ വാങ്ങിയാൽ ഡെലിവറി സൗജന്യം (ഓപ്ഷണൽ)
+  if (subtotal > 2000) {
+      deliveryCharge = 0; 
+  }
+  
+  let total = subtotal + deliveryCharge; // ഇതാണ് Razorpay-ലേക്ക് പോകുന്ന ഫൈനൽ തുക
   if (total <= 0) { alert("Invalid order amount."); return; }
   if (typeof window.Razorpay === "undefined") { alert("Razorpay Checkout is not loaded."); return; }
   try {
