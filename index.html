@@ -1384,21 +1384,23 @@ window.startRazorpayPayment = async function() {
   const name = document.getElementById('customerName').value.trim();
   const phone = document.getElementById('customerPhone').value.trim();
   const address = document.getElementById('customerAddress').value.trim();
-   if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
+  if (!name || !phone || !address) { alert("Please fill in all customer details."); return; }
+  
   let subtotal = 0;
   cart.forEach(item => { subtotal += Number(item.price) * Number(item.quantity); });
   
   // ഡെലിവറി ചാർജ് കണക്കാക്കാൻ
   let deliveryCharge = calculateShippingCharge(address);
   
-  // ₹2000-ന് മുകളിൽ വാങ്ങിയാൽ ഡെലിവറി സൗജന്യം (ഓപ്ഷണൽ)
+  // ₹2000-ന് മുകളിൽ വാങ്ങിയാൽ ഡെലിവറി സൗജന്യം
   if (subtotal > 2000) {
       deliveryCharge = 0; 
   }
   
-  let total = subtotal + deliveryCharge; // ഇതാണ് Razorpay-ലേക്ക് പോകുന്ന ഫൈനൽ തുക
+  let total = subtotal + deliveryCharge; 
   if (total <= 0) { alert("Invalid order amount."); return; }
   if (typeof window.Razorpay === "undefined") { alert("Razorpay Checkout is not loaded."); return; }
+  
   try {
     const response = await fetch(CREATE_ORDER_URL, {
       method: "POST", headers: { "Content-Type": "application/json" },
@@ -1409,16 +1411,27 @@ window.startRazorpayPayment = async function() {
     const orderId = data.order?.id || data.order_id || data.razorpay_order_id || data.id || null;
     const orderAmount = data.order?.amount || data.amount || Math.round(total * 100);
     if (!response.ok || !orderId) throw new Error(data.message || data.error || "Razorpay Order ID was not returned.");
+
     const options = {
       key: RAZORPAY_KEY_ID, amount: Number(orderAmount), currency: "INR", name: "fixG by iCare Mukkam",
       description: "fixG Online Order", order_id: orderId,
       prefill: { name, contact: phone, email: auth.currentUser.email || "" },
       notes: { customer_name: name, customer_phone: phone, customer_email: auth.currentUser.email || "", firebase_uid: auth.currentUser.uid },
+      
+      // UPI, കാർഡ്, നെറ്റ് ബാങ്കിംഗ്, വാലറ്റ് ഓപ്ഷനുകൾ
+      method: {
+          upi: true,      
+          card: true,     
+          netbanking: true,
+          wallet: true
+      },
+
       theme: { color: "#ff5a00" },
       handler: async function(paymentResponse) {
-        await verifyPayment(paymentResponse, { name, phone, address, cart, total, email: auth.currentUser.email, uid: auth.currentUser.uid });
+          await verifyPayment(paymentResponse, { name, phone, address, cart, total, email: auth.currentUser.email, uid: auth.currentUser.uid });
       }
     };
+    
     closeCheckout();
     const razorpay = new window.Razorpay(options);
     razorpay.on("payment.failed", function(response) { alert("Payment failed.\n\n" + (response.error?.description || "Please try again.")); });
