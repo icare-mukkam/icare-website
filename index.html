@@ -1639,7 +1639,7 @@ function renderParts(list) {
       <div class="product-image"><div class="image-slider" style="width:100%;height:100%;display:flex;position:relative;"><div class="slide" style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;"><img src="${escapeHtml(imgSrc)}" alt=""></div></div></div>
       <div class="product-info">
         <div class="product-name">${escapeHtml(p.name)}</div>
-        <div class="product-desc">${escapeHtml(p.type || '')}</div>
+        <div class="product-desc">${escapeHtml(p.description || p.type || '')}</div>
         <div class="price">₹${Number(p.price||0).toLocaleString('en-IN')}</div>
         <div class="stock">${p.stock > 0 ? '✓ In Stock: '+p.stock : 'Out of Stock'}</div>
         <div class="product-actions">
