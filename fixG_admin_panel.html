@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>fixG | Admin Panel</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f6f8;color:#111827}
+header{background:#07182f;color:#fff;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:28px;font-weight:900;color:#ff5a00}.wrap{max-width:1400px;margin:auto;padding:25px}
+.card{background:#fff;border-radius:14px;padding:22px;margin-bottom:20px;box-shadow:0 4px 18px #0000000d}
+h1,h2{margin-top:0}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.tab{border:1px solid #ddd;background:#fff;padding:11px 16px;border-radius:8px;font-weight:bold;cursor:pointer}.tab.active{background:#ff5a00;color:#fff;border-color:#ff5a00}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.full{grid-column:1/-1}
+label{font-weight:bold;display:block;margin-bottom:6px}input,select,textarea{width:100%;padding:11px;border:1px solid #d1d5db;border-radius:7px;font-size:14px}textarea{min-height:90px}
+button{cursor:pointer}.primary{background:#ff5a00;color:#fff;border:0;border-radius:8px;padding:12px 18px;font-weight:bold}.danger{background:#dc2626;color:#fff;border:0;border-radius:7px;padding:8px 12px}.secondary{background:#fff;color:#ff5a00;border:1px solid #ff5a00;border-radius:7px;padding:9px 12px;font-weight:bold}
+#app{display:none}.login{max-width:430px;margin:70px auto}.msg{padding:10px;border-radius:7px;margin:10px 0;display:none}.error{background:#fef2f2;color:#b91c1c}.success{background:#f0fdf4;color:#15803d}
+.preview{width:130px;height:130px;border:1px dashed #bbb;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:10px;background:#fafafa}.preview img{width:100%;height:100%;object-fit:contain}
+.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}.thumb{width:55px;height:55px;object-fit:contain;border:1px solid #eee;border-radius:6px}.badge{display:inline-block;padding:4px 8px;border-radius:20px;background:#fff1e8;color:#c2410c;font-size:12px}
+.item-actions{display:flex;gap:6px;flex-wrap:wrap}.hidden{display:none}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.wrap{padding:12px}header{padding:12px}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="logo">fixG <span style="font-size:14px;color:#fff">ADMIN PANEL</span></div><button id="logout" class="secondary" style="display:none">Logout</button></header>
+
+<div id="loginBox" class="login card">
+<h2>Admin Login</h2>
+<p>Use a Firebase Authentication admin account.</p>
+<div id="loginMsg" class="msg error"></div>
+<label>Email</label><input id="email" type="email" placeholder="Admin email">
+<br><br><label>Password</label><input id="password" type="password" placeholder="Password">
+<br><br><button id="loginBtn" class="primary">Login</button>
+<p style="color:#6b7280;font-size:13px;margin-bottom:0">For security, create the admin user in Firebase Authentication and grant it the admin role in Firestore.</p>
+</div>
+
+<div id="app" class="wrap">
+<div class="card">
+<h1>fixG Admin</h1>
+<p style="color:#6b7280">Manage products, mobile spare parts, services and customer orders.</p>
+<div class="tabs">
+<button class="tab active" data-tab="products">Products</button>
+<button class="tab" data-tab="parts">Spare Parts</button>
+<button class="tab" data-tab="services">Services</button>
+<button class="tab" data-tab="orders">Orders</button>
+</div>
+</div>
+
+<section id="products" class="panel">
+<div class="card"><h2>Add Product</h2><div id="productMsg" class="msg"></div>
+<div class="grid">
+<div><label>Product Name</label><input id="pName"></div>
+<div><label>Category</label><select id="pCategory"><option>Mobile</option><option>Laptop</option><option>Tablet</option><option>Watch</option><option>Earbud</option><option>Accessory</option><option>TV</option></select></div>
+<div class="full"><label>Description</label><textarea id="pDesc"></textarea></div>
+<div><label>Price (₹)</label><input id="pPrice" type="number" min="0"></div>
+<div><label>Old Price (₹)</label><input id="pOldPrice" type="number" min="0"></div>
+<div><label>Stock</label><input id="pStock" type="number" min="0"></div>
+<div><label>Product Image</label><input id="pImage" type="file" accept="image/*"><div class="preview"><img id="pPreview" alt=""></div></div>
+<div class="full"><button id="addProduct" class="primary">Upload Image & Add Product</button></div>
+</div></div>
+<div class="card"><h2>Products</h2><div id="productList"></div></div>
+</section>
+
+<section id="parts" class="panel hidden">
+<div class="card"><h2>Add Mobile Spare Part</h2><div id="partMsg" class="msg"></div>
+<div class="grid">
+<div><label>Part Name</label><input id="sName" placeholder="Display / Battery / Charging Port..."></div>
+<div><label>Brand / Model</label><input id="sModel" placeholder="iPhone 13 / Samsung A54..."></div>
+<div><label>Spare Part Type</label><select id="sType"><option>Display</option><option>Battery</option><option>Charging Port</option><option>Camera</option><option>Speaker</option><option>Microphone</option><option>Back Glass</option><option>Housing</option><option>Power Button</option><option>Volume Button</option><option>Motherboard</option><option>Flex Cable</option><option>Other</option></select></div>
+<div><label>Price (₹)</label><input id="sPrice" type="number" min="0"></div>
+<div><label>Stock</label><input id="sStock" type="number" min="0"></div>
+<div><label>Image</label><input id="sImage" type="file" accept="image/*"><div class="preview"><img id="sPreview" alt=""></div></div>
+<div class="full"><label>Description</label><textarea id="sDesc"></textarea></div>
+<div class="full"><button id="addPart" class="primary">Upload Image & Add Spare Part</button></div>
+</div></div>
+<div class="card"><h2>Spare Parts</h2><div id="partList"></div></div>
+</section>
+
+<section id="services" class="panel hidden">
+<div class="card"><h2>Add Service / Repair</h2><div id="serviceMsg" class="msg"></div>
+<div class="grid">
+<div><label>Service Name</label><input id="vName" placeholder="Display Replacement"></div>
+<div><label>Category</label><select id="vCategory"><option>Mobile Repair</option><option>Laptop Repair</option><option>Screen Replacement</option><option>Battery Replacement</option><option>Software Service</option><option>Other</option></select></div>
+<div><label>Price (₹)</label><input id="vPrice" type="number" min="0"></div>
+<div><label>Estimated Time</label><input id="vTime" placeholder="1-2 hours"></div>
+<div class="full"><label>Description</label><textarea id="vDesc"></textarea></div>
+<div class="full"><button id="addService" class="primary">Add Service</button></div>
+</div></div>
+<div class="card"><h2>Services</h2><div id="serviceList"></div></div>
+</section>
+
+<section id="orders" class="panel hidden">
+<div class="card"><h2>Customer Orders</h2><p style="color:#6b7280">Name, phone, email, delivery address, items, amount and payment/order information are shown here when the checkout backend saves them to Firestore.</p><div id="orderList"></div></div>
+</section>
+</div>
+
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+import {getFirestore,collection,addDoc,getDocs,deleteDoc,doc,query,orderBy} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+import {getStorage,ref,uploadBytes,getDownloadURL,deleteObject} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-storage.js";
+
+const firebaseConfig={
+ apiKey:"AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxwQ4wEhGc",
+ authDomain:"icare-mukkam.firebaseapp.com",
+ projectId:"icare-mukkam",
+ storageBucket:"icare-mukkam.firebasestorage.app",
+ messagingSenderId:"121404685611",
+ appId:"1:121404685611:web:177d545ffefc78f563996e"
+};
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),storage=getStorage(app);
+
+const $=id=>document.getElementById(id);
+function msg(id,text,ok=false){const e=$(id);e.textContent=text;e.className="msg "+(ok?"success":"error");e.style.display="block";setTimeout(()=>e.style.display="none",5000)}
+function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+
+async function isAdmin(user){
+  // Admin authorization: Firestore document admins/{uid} must exist with enabled:true.
+  const snap=await getDocs(query(collection(db,"admins")));
+  return snap.docs.some(d=>d.id===user.uid && d.data().enabled===true);
+}
+onAuthStateChanged(auth,async user=>{
+  if(!user){$("loginBox").style.display="block";$("app").style.display="none";$("logout").style.display="none";return}
+  try{
+    if(await isAdmin(user)){$("loginBox").style.display="none";$("app").style.display="block";$("logout").style.display="block";loadAll()}
+    else{await signOut(auth);msg("loginMsg","This account is not authorized as an admin.")}
+  }catch(e){await signOut(auth);msg("loginMsg","Admin authorization failed. Create admins/"+user.uid+" with enabled:true.")}
+});
+$("loginBtn").onclick=async()=>{
+ try{await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value)}
+ catch(e){msg("loginMsg",e.message)}
+};
+$("logout").onclick=()=>signOut(auth);
+
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");
+ document.querySelectorAll(".panel").forEach(x=>x.classList.add("hidden"));$(b.dataset.tab).classList.remove("hidden");
+});
+
+function preview(input,img){input.addEventListener("change",()=>{const f=input.files[0];if(f)img.src=URL.createObjectURL(f)})}
+preview($("pImage"),$("pPreview"));preview($("sImage"),$("sPreview"));
+
+async function uploadImage(file,folder){
+ if(!file)return "";
+ const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+ const r=ref(storage,`${folder}/${Date.now()}_${safe}`);
+ await uploadBytes(r,file,{contentType:file.type});
+ return await getDownloadURL(r);
+}
+$("addProduct").onclick=async()=>{
+ try{
+  const name=$("pName").value.trim();if(!name)return msg("productMsg","Product name is required.");
+  const image=await uploadImage($("pImage").files[0],"products");
+  await addDoc(collection(db,"products"),{name,description:$("pDesc").value.trim(),price:Number($("pPrice").value||0),oldPrice:Number($("pOldPrice").value||0),stock:Number($("pStock").value||0),category:$("pCategory").value,image,createdAt:Date.now()});
+  msg("productMsg","Product added successfully.",true);clearProduct();loadProducts();
+ }catch(e){console.error(e);msg("productMsg","Could not add product: "+e.message)}
+};
+function clearProduct(){["pName","pDesc","pPrice","pOldPrice","pStock"].forEach(id=>$(id).value="");$("pImage").value="";$("pPreview").src=""}
+
+$("addPart").onclick=async()=>{
+ try{
+  const name=$("sName").value.trim();if(!name)return msg("partMsg","Part name is required.");
+  const image=await uploadImage($("sImage").files[0],"spare-parts");
+  await addDoc(collection(db,"spareParts"),{name,model:$("sModel").value.trim(),type:$("sType").value,description:$("sDesc").value.trim(),price:Number($("sPrice").value||0),stock:Number($("sStock").value||0),category:"Spare Parts",image,createdAt:Date.now()});
+  msg("partMsg","Spare part added successfully.",true);loadParts();
+ }catch(e){console.error(e);msg("partMsg","Could not add spare part: "+e.message)}
+};
+
+$("addService").onclick=async()=>{
+ try{
+  const name=$("vName").value.trim();if(!name)return msg("serviceMsg","Service name is required.");
+  await addDoc(collection(db,"services"),{name,category:$("vCategory").value,price:Number($("vPrice").value||0),estimatedTime:$("vTime").value.trim(),description:$("vDesc").value.trim(),createdAt:Date.now()});
+  msg("serviceMsg","Service added successfully.",true);loadServices();
+ }catch(e){msg("serviceMsg","Could not add service: "+e.message)}
+};
+
+async function loadProducts(){
+ const snap=await getDocs(collection(db,"products"));let h='<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th></th></tr>';
+ snap.forEach(d=>{const x=d.data();h+=`<tr><td>${x.image?`<img class="thumb" src="${esc(x.image)}">`:"—"}</td><td>${esc(x.name)}</td><td><span class="badge">${esc(x.category)}</span></td><td>₹${Number(x.price||0).toLocaleString("en-IN")}</td><td>${x.stock||0}</td><td><button class="danger" onclick="removeDoc('products','${d.id}')">Delete</button></td></tr>`});$("productList").innerHTML=h+"</table></div>"}
+async function loadParts(){
+ const snap=await getDocs(collection(db,"spareParts"));let h='<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Part</th><th>Model</th><th>Type</th><th>Price</th><th>Stock</th><th></th></tr>';
+ snap.forEach(d=>{const x=d.data();h+=`<tr><td>${x.image?`<img class="thumb" src="${esc(x.image)}">`:"—"}</td><td>${esc(x.name)}</td><td>${esc(x.model)}</td><td>${esc(x.type)}</td><td>₹${Number(x.price||0).toLocaleString("en-IN")}</td><td>${x.stock||0}</td><td><button class="danger" onclick="removeDoc('spareParts','${d.id}')">Delete</button></td></tr>`});$("partList").innerHTML=h+"</table></div>"}
+async function loadServices(){
+ const snap=await getDocs(collection(db,"services"));let h='<div class="table-wrap"><table class="table"><tr><th>Service</th><th>Category</th><th>Price</th><th>Time</th><th></th></tr>';
+ snap.forEach(d=>{const x=d.data();h+=`<tr><td>${esc(x.name)}<br><small>${esc(x.description)}</small></td><td>${esc(x.category)}</td><td>₹${Number(x.price||0).toLocaleString("en-IN")}</td><td>${esc(x.estimatedTime)}</td><td><button class="danger" onclick="removeDoc('services','${d.id}')">Delete</button></td></tr>`});$("serviceList").innerHTML=h+"</table></div>"}
+async function loadOrders(){
+ const snap=await getDocs(collection(db,"orders"));let h='<div class="table-wrap"><table class="table"><tr><th>Order</th><th>Customer</th><th>Address</th><th>Items</th><th>Total</th><th>Payment</th></tr>';
+ snap.forEach(d=>{const x=d.data();const items=Array.isArray(x.items)?x.items.map(i=>`${esc(i.name)} × ${i.quantity||1}`).join("<br>"):"—";h+=`<tr><td>${esc(d.id)}<br><small>${esc(x.razorpayPaymentId||x.paymentId||"")}</small></td><td><b>${esc(x.customerName||x.name)}</b><br>${esc(x.customerPhone||x.phone)}<br>${esc(x.customerEmail||x.email)}</td><td>${esc(x.deliveryAddress||x.address||"")}</td><td>${items}</td><td>₹${Number(x.total||0).toLocaleString("en-IN")}</td><td>${esc(x.paymentStatus||x.status||"Paid")}</td></tr>`});$("orderList").innerHTML=h+"</table></div>"}
+window.removeDoc=async(c,id)=>{if(confirm("Delete this item?")){await deleteDoc(doc(db,c,id));loadAll()}};
+function loadAll(){loadProducts();loadParts();loadServices();loadOrders()}
+</script>
+</body>
+</html>
