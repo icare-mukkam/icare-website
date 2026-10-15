@@ -440,3 +440,1648 @@ button{cursor:pointer;font-family:inherit}
   <section id="products" class="panel">
     <div class="card">
       <h2 id="productFormTitle">➕ Add Product</h2>
+      <div id="productMsg" class="msg"></div>
+      <input type="hidden" id="pId">
+      <div class="grid">
+        <div><label>Product Name</label><input id="pName" placeholder="e.g. iPhone 15"></div>
+        <div><label>Category</label>
+          <select id="pCategory">
+            <optgroup label="📱 Devices">
+              <option>Mobile</option><option>Laptop</option><option>Tablet</option><option>Smart Watch</option>
+            </optgroup>
+            <optgroup label="🎧 Audio & Sound">
+              <option>Earbuds / TWS</option><option>Neckband</option><option>Bluetooth Speaker</option><option>Headphones</option>
+            </optgroup>
+            <optgroup label="🔌 Power & Charging">
+              <option>Charger / Adapter</option><option>Power Bank</option><option>Wireless Charger</option><option>Car Charger</option>
+            </optgroup>
+            <optgroup label="🔗 Cables & Connectivity">
+              <option>Data Cable</option><option>OTG Cable</option><option>Memory Card</option><option>Pen Drive</option><option>Sim Card</option>
+            </optgroup>
+            <optgroup label="🛡️ Protection & Covers">
+              <option>Back Cover</option><option>Flip Cover</option><option>Tempered Glass</option><option>Camera Lens Protector</option>
+            </optgroup>
+            <optgroup label="💻 Laptop Accessories">
+              <option>Laptop Charger</option><option>Mouse</option><option>Keyboard</option><option>Laptop Bag</option><option>Cooling Pad</option>
+            </optgroup>
+            <optgroup label="🛠️ Other Accessories">
+              <option>Selfie Stick</option><option>Mobile Holder</option><option>Ring Light</option><option>Accessory</option><option>Other</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="full"><label>Description</label><textarea id="pDesc" placeholder="Short product description"></textarea></div>
+        <div><label>Price (₹)</label><input id="pPrice" type="number" min="0" placeholder="0"></div>
+        <div><label>Old Price (₹)</label><input id="pOldPrice" type="number" min="0" placeholder="0 (optional)"></div>
+        <div><label>Stock</label><input id="pStock" type="number" min="0" placeholder="0"></div>
+        <div><label>Product Image</label><input id="pImage" type="file" accept="image/*"><div class="preview"><img id="pPreview" alt="Preview"></div></div>
+        <div class="full">
+            <button id="saveProductBtn" class="primary">⬆ Upload & Add Product</button>
+            <button id="cancelProductEdit" class="secondary hidden" onclick="resetProductForm()">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <h2>📋 All Products</h2>
+        <input type="text" id="searchProducts" class="search-bar" placeholder="Search products by name...">
+        <div id="productList"></div>
+    </div>
+  </section>
+
+  <!-- ===== SPARE PARTS PANEL ===== -->
+  <section id="parts" class="panel hidden">
+    <div class="card">
+      <h2 id="partFormTitle">➕ Add Spare Part</h2>
+      <div id="partMsg" class="msg"></div>
+      <input type="hidden" id="sId">
+      <div class="grid">
+        <div><label>Part Name</label><input id="sName" placeholder="Display / Battery"></div>
+        <div><label>Brand / Model</label><input id="sModel" placeholder="iPhone 13 / Samsung A54"></div>
+        <div><label>Part Type</label>
+          <select id="sType">
+            <optgroup label="Display & Glass">
+              <option>Display (LCD)</option><option>Display (OLED/AMOLED)</option><option>Touch Glass</option><option>Display Frame</option><option>Display Combo</option>
+            </optgroup>
+            <optgroup label="Power & Battery">
+              <option>Battery</option><option>Charging Port Flex</option><option>Charging IC</option><option>Power IC</option><option>DC Jack (Laptop)</option>
+            </optgroup>
+            <optgroup label="Camera & Audio">
+              <option>Front Camera</option><option>Rear Camera</option><option>Camera Lens/Glass</option><option>Loud Speaker</option><option>Ear Speaker</option><option>Ringer/Buzzer</option><option>Microphone</option><option>Audio IC</option>
+            </optgroup>
+            <optgroup label="Body & Mechanical">
+              <option>Back Glass</option><option>Housing/Body</option><option>Power Button</option><option>Volume Button</option><option>Home Button</option><option>Sim Tray</option><option>Sim Reader</option><option>Vibrator/Motor</option><option>Hinges (Laptop)</option><option>Keyboard (Laptop)</option><option>Trackpad (Laptop)</option><option>Cooling Fan (Laptop)</option>
+            </optgroup>
+            <optgroup label="Internal Components (ICs & Boards)">
+              <option>Motherboard / Logic Board</option><option>Touch IC</option><option>Network/Baseband IC</option><option>Wi-Fi IC</option><option>CPU</option><option>RAM</option><option>Storage (NAND/UFS)</option><option>FPC Connector</option><option>Other IC</option>
+            </optgroup>
+            <optgroup label="Flex Cables & Others">
+              <option>LCD Flex</option><option>Signal Flex</option><option>Antenna Cable</option><option>Audio Jack</option><option>Other</option>
+            </optgroup>
+          </select>
+        </div>
+        <div><label>Price (₹)</label><input id="sPrice" type="number" min="0" placeholder="0"></div>
+        <div><label>Stock</label><input id="sStock" type="number" min="0" placeholder="0"></div>
+        <div><label>Image</label><input id="sImage" type="file" accept="image/*"><div class="preview"><img id="sPreview" alt="Preview"></div></div>
+        <div class="full"><label>Description</label><textarea id="sDesc" placeholder="Additional details"></textarea></div>
+        <div class="full">
+            <button id="savePartBtn" class="primary">⬆ Upload & Add Spare Part</button>
+            <button id="cancelPartEdit" class="secondary hidden" onclick="resetPartForm()">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <h2>📋 All Spare Parts</h2>
+        <input type="text" id="searchParts" class="search-bar" placeholder="Search parts by name or model...">
+        <div id="partList"></div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES PANEL ===== -->
+  <section id="services" class="panel hidden">
+    <div class="card">
+      <h2 id="serviceFormTitle">➕ Add Service / Repair</h2>
+      <div id="serviceMsg" class="msg"></div>
+      <input type="hidden" id="vId">
+      <div class="grid">
+        <div><label>Service Name</label><input id="vName" placeholder="e.g. Display Replacement"></div>
+        <div><label>Category</label>
+          <select id="vCategory">
+            <option>Mobile Repair</option><option>Laptop Repair</option><option>Screen Replacement</option>
+            <option>Battery Replacement</option><option>Software Service</option><option>Other</option>
+          </select>
+        </div>
+        <div><label>Price (₹)</label><input id="vPrice" type="number" min="0" placeholder="0"></div>
+        <div><label>Estimated Time</label><input id="vTime" placeholder="e.g. 1-2 hours"></div>
+        <div class="full"><label>Description</label><textarea id="vDesc" placeholder="Service details"></textarea></div>
+        <div class="full"><label>Service Image (optional)</label><input id="vImage" type="file" accept="image/*"><div class="preview"><img id="vPreview" alt="Preview"></div></div>
+        <div class="full">
+            <button id="saveServiceBtn" class="primary">➕ Add Service</button>
+            <button id="cancelServiceEdit" class="secondary hidden" onclick="resetServiceForm()">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <h2>📋 All Services</h2>
+        <input type="text" id="searchServices" class="search-bar" placeholder="Search services...">
+        <div id="serviceList"></div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNICIANS PANEL ===== -->
+  <section id="technicians" class="panel hidden">
+    <div class="card">
+      <h2 id="techFormTitle">➕ Add Technician</h2>
+      <div id="techMsg" class="msg"></div>
+      <input type="hidden" id="tId">
+      <div class="grid">
+        <div><label>Name</label><input id="tName" placeholder="Technician Name"></div>
+        <div><label>Area / Location</label><input id="tArea" placeholder="e.g. Mukkam"></div>
+        <div><label>Experience (Years)</label><input id="tExperience" type="number" min="0" placeholder="0"></div>
+        <div><label>Contact Number</label><input id="tContact" placeholder="Phone number"></div>
+        <div class="full"><label>Description</label><textarea id="tDesc" placeholder="Short bio"></textarea></div>
+        <div class="full"><label>Photo</label><input id="tImage" type="file" accept="image/*"><div class="preview"><img id="tPreview" alt="Preview"></div></div>
+        <div class="full">
+            <button id="saveTechBtn" class="primary">➕ Add Technician</button>
+            <button id="cancelTechEdit" class="secondary hidden" onclick="resetTechForm()">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <h2>📋 All Technicians</h2>
+        <input type="text" id="searchTechs" class="search-bar" placeholder="Search technicians...">
+        <div id="techList"></div>
+    </div>
+  </section>
+
+  <!-- ===== ORDERS PANEL ===== -->
+  <section id="orders" class="panel hidden">
+    <div class="card">
+      <h2>📋 Customer Orders</h2>
+      <p style="color:#6b7280;">Orders placed by customers via the fixG website.</p>
+      <input type="text" id="searchOrders" class="search-bar" placeholder="Search orders by customer name or ID...">
+      <div id="orderList"></div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKINGS PANEL ===== -->
+  <section id="bookings" class="panel hidden">
+    <div class="card">
+      <h2>🛠️ Service Bookings</h2>
+      <p style="color:#6b7280;">Service requests submitted via the "Book Service" form.</p>
+      
+      <div style="display:flex; gap:10px; margin-bottom:15px; flex-wrap:wrap;">
+          <input type="text" id="searchBookings" class="search-bar" style="margin-bottom:0; flex:1; min-width:200px;" placeholder="Search bookings...">
+          <select id="bookingFilter" class="search-bar" style="margin-bottom:0; max-width:200px;" onchange="loadBookings()">
+              <option value="all">All Bookings</option>
+              <option value="Pending">Pending (New)</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+              <option value="Delivered">Delivered</option>
+          </select>
+      </div>
+
+      <div id="bookingList"></div>
+    </div>
+  </section>
+
+  <!-- ===== EXPENSES PANEL ===== -->
+  <section id="expenses" class="panel hidden">
+    <div class="card">
+      <h2 id="expenseFormTitle">➕ Add Shop Expense</h2>
+      <div id="expenseMsg" class="msg"></div>
+      <input type="hidden" id="eId">
+      <div class="grid">
+        <div><label>Expense Name (e.g., Rent, KSEB Bill, Tools)</label><input id="eName" placeholder="Enter expense name"></div>
+        <div><label>Amount (₹)</label><input id="eAmount" type="number" min="0" placeholder="0"></div>
+        <div><label>Date</label><input id="eDate" type="date"></div>
+        <div><label>Payment Method</label>
+            <select id="ePaymentMethod">
+                <option value="Cash">Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="full">
+            <button id="saveExpenseBtn" class="primary">➕ Add Expense</button>
+            <button id="cancelExpenseEdit" class="secondary hidden" onclick="resetExpenseForm()">Cancel Edit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <h2>📋 Expense History</h2>
+        <!-- Added Date Filter Dropdown -->
+        <div style="display:flex; gap:10px; margin-bottom:15px; flex-wrap:wrap;">
+            <input type="text" id="searchExpenses" class="search-bar" style="margin-bottom:0; flex:1; min-width:200px;" placeholder="Search expenses...">
+            <select id="expenseDateFilter" class="search-bar" style="margin-bottom:0; max-width:200px;" onchange="loadExpenses()">
+                <option value="all">All Dates</option>
+                <!-- Options populated dynamically -->
+            </select>
+        </div>
+        <div id="expenseList"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== EDIT BOOKING MODAL ===== -->
+<div id="editBookingModal" class="modal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2 style="margin:0; color:#07182f;">✏️ Edit Booking</h2>
+            <button class="close" onclick="closeEditBooking()" style="font-size:24px; border:none; background:none; cursor:pointer;">×</button>
+        </div>
+        
+        <div class="form-group">
+            <label>Customer Name</label>
+            <input type="text" id="editCustName" disabled style="background:#f3f4f6;">
+        </div>
+
+        <div class="form-group">
+            <label>Assigned Technician</label>
+            <select id="editTechnician">
+                <option value="">-- Select Technician --</option>
+            </select>
+            <div class="modal-flex-row" style="display:flex; gap:10px; margin-top:8px;">
+                <input type="text" id="newTechName" placeholder="New Technician Name" style="flex:1;">
+                <button type="button" onclick="addNewTechFromModal()" class="secondary" style="padding:10px;">+ Add</button>
+            </div>
+        </div>
+
+        <div class="modal-grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">
+            <div class="form-group" style="margin-bottom:0;">
+                <label>Amount Collected (₹)</label>
+                <input type="number" id="editAmount" placeholder="0" oninput="calcModalProfit()">
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+                <label>Expense / Cost (₹)</label>
+                <input type="number" id="editExpense" placeholder="0" oninput="calcModalProfit()">
+            </div>
+        </div>
+
+        <!-- Payment Method for Booking -->
+        <div class="form-group">
+            <label>Payment Method (Collected)</label>
+            <select id="editPaymentMethod">
+                <option value="Cash">Cash</option>
+                <option value="UPI">UPI</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group" style="background:#f8fafc; padding:12px; border-radius:8px; border:1px solid #e2e8f0; margin-bottom:20px;">
+            <label style="margin:0;">Profit (₹)</label>
+            <div id="editProfitDisplay" style="font-weight:bold; font-size:20px; color:#16a34a; margin-top:4px;">₹0</div>
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <select id="editBookingStatus">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+        </div>
+
+        <!-- Lock Message for Technicians -->
+        <div id="editLockMsg" style="display:none; background:#fef2f2; color:#b91c1c; padding:10px; border-radius:8px; margin-bottom:15px; font-size:14px; text-align:center; font-weight:bold;">
+            🔒 This bill is already submitted and locked. Only the Admin can edit it.
+        </div>
+
+        <!-- Edit History Section -->
+        <div id="editHistorySection" style="display:none; margin-top:20px; border-top:1px dashed #cbd5e1; padding-top:15px;">
+            <h4 style="margin-top:0; color:#374151;">📜 Edit History</h4>
+            <div id="editHistoryList" style="max-height:150px; overflow-y:auto; font-size:12px;"></div>
+        </div>
+
+        <div class="modal-actions" style="display:flex; gap:10px; margin-top:20px;">
+            <button onclick="saveBookingEditWithWA()" class="primary" style="flex:1; padding:12px;">💾 Save Changes</button>
+            <button onclick="closeEditBooking()" class="danger" style="flex:1; padding:12px;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BILL / INVOICE MODAL ===== -->
+<div id="billModal" class="modal">
+    <div class="modal-box bill-modal-box">
+        <div class="modal-header">
+            <h2 style="margin:0; color:#07182f;">📄 Service Bill</h2>
+            <button class="close" onclick="closeBillModal()" style="font-size:24px; border:none; background:none; cursor:pointer;">×</button>
+        </div>
+        
+        <div class="bill-wrapper" id="billContent">
+            <div class="bill-header">
+                <img src="fixg-logo.png" alt="fixG Logo" class="bill-logo" onerror="this.style.display='none'">
+                <div class="bill-shop-details">
+                    <h2>fixG <span>by iCare Mukkam</span></h2>
+                    <p>📍 Near Malabar Gold, Calicut Road, Mukkam, Kozhikode, Kerala - 673602</p>
+                    <p>📞 9447150744 | 💬 9447150744</p>
+                    <p>🌐 www.fixg.in | ✉️ icaremukkam@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="bill-title">SERVICE INVOICE</div>
+
+            <div class="bill-info-grid">
+                <div class="bill-info-section">
+                    <h4>CUSTOMER DETAILS</h4>
+                    <p><strong>Name:</strong> <span id="billCustName">—</span></p>
+                    <p><strong>Phone:</strong> <span id="billCustPhone">—</span></p>
+                </div>
+                <div class="bill-info-section">
+                    <h4>BILL DETAILS</h4>
+                    <p><strong>Bill No:</strong> <span id="billId">—</span></p>
+                    <p><strong>Date:</strong> <span id="billDate">—</span></p>
+                </div>
+            </div>
+
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th style="text-align:right;">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Device / Model</strong></td><td style="text-align:right;"><span id="billDevice">—</span></td></tr>
+                    <tr><td><strong>Service Type</strong></td><td style="text-align:right;"><span id="billService">—</span></td></tr>
+                    <tr><td><strong>Issue / Problem</strong></td><td style="text-align:right;"><span id="billIssue">—</span></td></tr>
+                    <tr><td><strong>Technician</strong></td><td style="text-align:right;"><span id="billTech">—</span></td></tr>
+                    <tr><td><strong>Status</strong></td><td style="text-align:right;"><span id="billStatus">—</span></td></tr>
+                </tbody>
+            </table>
+
+            <div class="bill-total-section">
+                <div class="bill-total-row">
+                    <span>Service Charge:</span>
+                    <span id="billAmount">₹0</span>
+                </div>
+                <div class="bill-total-row grand-total">
+                    <span>TOTAL AMOUNT:</span>
+                    <span id="billTotal">₹0</span>
+                </div>
+            </div>
+
+            <div class="bill-footer">
+                <p><strong>Thank you for choosing fixG by iCare Mukkam!</strong></p>
+                <p>📍 Mukkam, Kozhikode, Kerala | 📞 9447150744</p>
+                <p style="margin-top:10px; font-style:italic;">⚠️ Note: Devices must be collected within 30 days. Warranty does not cover physical or liquid damage.</p>
+            </div>
+        </div>
+
+        <div class="bill-actions">
+            <a id="billWhatsAppBtn" href="#" target="_blank" class="btn-wa">💬 Send via WhatsApp</a>
+            <button onclick="printBill()" class="btn-print">🖨️ Print / Save PDF</button>
+            <button onclick="closeBillModal()" class="btn-close-bill">Close</button>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+// ----- IMPORTS -----
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+import {
+  getFirestore, collection, addDoc, getDocs, getDoc, deleteDoc, doc, updateDoc
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+import {
+  getStorage, ref, uploadBytes, getDownloadURL
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-storage.js";
+
+// ----- CONFIG -----
+const firebaseConfig = {
+  apiKey: "AIzaSyAuV6-pSmuSPiNcrVcokaW5YMxwQ4wEhGc",
+  authDomain: "icare-mukkam.firebaseapp.com",
+  projectId: "icare-mukkam",
+  storageBucket: "icare-mukkam.firebasestorage.app",
+  messagingSenderId: "121404685611",
+  appId: "1:121404685611:web:177d545ffefc78f563996e"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// ----- GLOBAL VARIABLES -----
+const MAIN_ADMIN_UID = "qmIHjVzTy9X6utWoI3bqXKqvu6p1"; 
+let currentUserRole = 'admin'; 
+let allProducts = [], allParts = [], allServices = [], allTechs = [], allOrders = [], allBookings = [], allExpenses = [];
+
+// ----- DOM HELPERS -----
+const $ = id => document.getElementById(id);
+
+function msg(id, text, ok = false) {
+  const el = $(id);
+  if (!el) return;
+  el.textContent = text;
+  el.className = "msg " + (ok ? "success" : "error");
+  el.style.display = "block";
+  if(ok) setTimeout(() => { el.style.display = "none"; }, 3000);
+}
+
+function esc(v) {
+  return String(v ?? "").replace(/[&<>"']/g, m => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+  }[m]));
+}
+
+// ----- ROLE VALIDATION & UI CONTROL -----
+async function checkUserRole(user) {
+  const userRef = doc(db, "admins", user.uid);
+  const userSnap = await getDoc(userRef);
+  
+  if (!userSnap.exists()) throw new Error("Account not registered in system.");
+  if (userSnap.data().enabled !== true) throw new Error("Account is disabled.");
+  
+  if (user.uid === MAIN_ADMIN_UID) {
+      currentUserRole = 'admin';
+  } else {
+      currentUserRole = userSnap.data().role || 'technician'; 
+  }
+  return true;
+}
+
+function applyRolePermissions() {
+    const tabs = ['products', 'parts', 'services', 'technicians', 'orders', 'bookings', 'expenses'];
+    
+    if (currentUserRole === 'technician') {
+        document.getElementById('tabProducts').style.display = 'none';
+        document.getElementById('tabParts').style.display = 'none';
+        document.getElementById('tabServices').style.display = 'none';
+        document.getElementById('tabTechnicians').style.display = 'none';
+        document.getElementById('tabOrders').style.display = 'none';
+        document.getElementById('tabExpenses').style.display = 'none'; 
+        document.getElementById('tabBookings').style.display = 'inline-block';
+        
+        document.getElementById('dashboardTitle').innerHTML = "🛠️ Technician Dashboard";
+        document.getElementById('dashboardSubtitle').innerText = "Manage your service bookings and generate bills.";
+        document.getElementById('statsGrid').style.display = 'none'; 
+        document.getElementById('todayProfitCard').style.display = 'none';
+        
+        document.querySelector('[data-tab="bookings"]').click();
+        
+    } else {
+        tabs.forEach(t => {
+            const el = document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1));
+            if(el) el.style.display = 'inline-block';
+        });
+        document.getElementById('statsGrid').style.display = 'grid';
+        document.getElementById('todayProfitCard').style.display = 'block';
+        document.getElementById('dashboardTitle').innerHTML = "📊 fixG Dashboard";
+        document.getElementById('dashboardSubtitle').innerText = "Overview of your store's performance.";
+        
+        document.querySelector('[data-tab="products"]').click();
+    }
+}
+
+// ----- AUTH STATE -----
+onAuthStateChanged(auth, async user => {
+  if (!user) {
+    $("loginBox").style.display = "block";
+    $("app").style.display = "none";
+    $("logout").style.display = "none";
+    $("adminHeaderInfo").textContent = "";
+    return;
+  }
+  try {
+    await checkUserRole(user);
+
+    $("loginBox").style.display = "none";
+    $("app").style.display = "block";
+    $("logout").style.display = "block";
+    $("adminHeaderInfo").textContent = "Logged in: " + user.email + " (" + currentUserRole.toUpperCase() + ")";
+    
+    applyRolePermissions();
+    
+    if (currentUserRole === 'admin') {
+        loadDashboardStats();
+        loadAll(); 
+        window.loadProfitData('all'); 
+    } else {
+        loadBookings(); 
+    }
+  } catch (e) {
+    await signOut(auth);
+    msg("loginMsg", "Access Denied: " + e.message);
+  }
+});
+
+// ----- LOGIN / LOGOUT -----
+$("loginBtn").onclick = async () => {
+  const email = $("email").value.trim();
+  const password = $("password").value;
+  if (!email || !password) return msg("loginMsg", "Enter email and password.");
+  $("loginBtn").disabled = true; $("loginBtn").textContent = "Signing in...";
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (e) {
+    msg("loginMsg", "Login Error: " + e.message);
+  } finally {
+    $("loginBtn").disabled = false; $("loginBtn").textContent = "Login";
+  }
+};
+$("logout").onclick = () => signOut(auth);
+
+// ----- TABS -----
+document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  document.querySelectorAll(".panel").forEach(x => x.classList.add("hidden"));
+  $(b.dataset.tab).classList.remove("hidden");
+});
+
+// ----- IMAGE PREVIEW & UPLOAD -----
+function preview(input, img) {
+  input.addEventListener("change", () => {
+    const f = input.files[0];
+    if (f) img.src = URL.createObjectURL(f);
+  });
+}
+preview($("pImage"), $("pPreview")); preview($("sImage"), $("sPreview"));
+preview($("vImage"), $("vPreview")); preview($("tImage"), $("tPreview"));
+
+async function uploadImage(file, folder) {
+  if (!file) return "";
+  const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  const refPath = ref(storage, `${folder}/${Date.now()}_${safe}`);
+  await uploadBytes(refPath, file, { contentType: file.type });
+  return await getDownloadURL(refPath);
+}
+
+// ================= DASHBOARD STATS =================
+async function loadDashboardStats() {
+    try {
+        const pSnap = await getDocs(collection(db, "products"));
+        const ptSnap = await getDocs(collection(db, "spareParts"));
+        const oSnap = await getDocs(collection(db, "orders"));
+        const bSnap = await getDocs(collection(db, "bookings"));
+        
+        $("statProducts").textContent = pSnap.size;
+        $("statParts").textContent = ptSnap.size;
+        $("statOrders").textContent = oSnap.size;
+        $("statBookings").textContent = bSnap.size;
+    } catch(e) { console.error("Stats error:", e); }
+}
+
+// ================= PROFIT & PAYMENT CALCULATION =================
+window.loadProfitData = async function(type = 'day') {
+    if (currentUserRole !== 'admin') return;
+
+    const selectedDate = document.getElementById('profitDatePicker').value;
+    const selectedMonth = document.getElementById('profitMonthPicker').value;
+    
+    let filterType = type;
+    let filterValue = '';
+
+    // Handle 'all' time or empty date scenario
+    if (type === 'all' || (!selectedDate && !selectedMonth)) {
+        filterType = 'all';
+        filterValue = '';
+        document.getElementById('profitLabel').innerText = "Net Profit (All Time)";
+    } else if (type === 'month' && selectedMonth) {
+        filterType = 'month';
+        filterValue = selectedMonth;
+        document.getElementById('profitDatePicker').value = ''; 
+        document.getElementById('profitLabel').innerText = "Net Profit (Month)";
+    } else if (type === 'day' && selectedDate) {
+        filterType = 'day';
+        filterValue = selectedDate;
+        document.getElementById('profitMonthPicker').value = ''; 
+        document.getElementById('profitLabel').innerText = "Net Profit (Day)";
+    }
+
+    try {
+        const bSnap = await getDocs(collection(db, "bookings"));
+        let bookings = bSnap.docs.map(d => d.data());
+        
+        const eSnap = await getDocs(collection(db, "shopExpenses"));
+        let expenses = eSnap.docs.map(d => d.data());
+
+        calculateDashboardProfits(bookings, expenses, filterType, filterValue);
+        loadBookings(filterType, filterValue); 
+
+    } catch(e) { console.error("Dashboard calc error:", e); }
+}
+
+function calculateDashboardProfits(bookingsList, expensesList, filterType, filterValue) {
+    let serviceProfit = 0;
+    let shopExpense = 0;
+    let techProfits = {};
+    let totalBookingsCount = 0;
+    let totalAmountCollected = 0;
+    let totalServiceExpense = 0;
+
+    let cashCollected = 0;
+    let upiCollected = 0;
+    let cashExpensePaid = 0;
+    let upiExpensePaid = 0;
+
+    let startDate, endDate;
+    
+    if (filterType === 'day') {
+        startDate = new Date(filterValue);
+        startDate.setHours(0, 0, 0, 0);
+        endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + 1);
+    } else if (filterType === 'month') {
+        startDate = new Date(filterValue + "-01");
+        startDate.setHours(0, 0, 0, 0);
+        endDate = new Date(startDate);
+        endDate.setMonth(endDate.getMonth() + 1);
+    } else if (filterType === 'all') {
+        startDate = new Date(0); 
+        endDate = new Date(8640000000000000); 
+    }
+
+    // Process Bookings
+    bookingsList.forEach(b => {
+        let timestamp = b.updatedAt || b.createdAt;
+        if (!timestamp) return;
+        let dateObj = timestamp.seconds ? new Date(timestamp.seconds * 1000) : new Date(timestamp);
+
+        if (dateObj >= startDate && dateObj < endDate) {
+            let profit = Number(b.profit || 0);
+            serviceProfit += profit;
+            totalBookingsCount++;
+            
+            let collectedAmount = Number(b.amount || 0);
+            totalAmountCollected += collectedAmount;
+            
+            let serviceExp = Number(b.expense || 0);
+            totalServiceExpense += serviceExp;
+
+            let tech = b.technician || "Unassigned";
+            if (!techProfits[tech]) techProfits[tech] = 0;
+            techProfits[tech] += profit;
+
+            let method = b.paymentMethod || "Cash";
+            if (method === 'Cash') cashCollected += collectedAmount;
+            else if (method === 'UPI') upiCollected += collectedAmount;
+        }
+    });
+
+    // Process Expenses
+    expensesList.forEach(e => {
+        let timestamp = e.date || e.createdAt; 
+        if (!timestamp) return;
+        
+        let dateObj;
+        if (typeof timestamp === 'string') {
+            dateObj = new Date(timestamp + 'T00:00:00'); 
+        } else if (timestamp.seconds) {
+            dateObj = new Date(timestamp.seconds * 1000);
+        } else {
+            dateObj = new Date(timestamp);
+        }
+
+        if (dateObj >= startDate && dateObj < endDate) {
+            let amount = Number(e.amount || 0);
+            shopExpense += amount;
+
+            let method = e.paymentMethod || "Cash";
+            if (method === 'Cash') cashExpensePaid += amount;
+            else if (method === 'UPI') upiExpensePaid += amount;
+        }
+    });
+
+    // Update UI
+    document.getElementById('statServiceProfit').textContent = '₹' + serviceProfit.toLocaleString('en-IN');
+    document.getElementById('statShopExpense').textContent = '₹' + shopExpense.toLocaleString('en-IN');
+    document.getElementById('statTotalBookings').textContent = totalBookingsCount;
+    document.getElementById('statTotalCollected').textContent = '₹' + totalAmountCollected.toLocaleString('en-IN');
+    document.getElementById('statTotalServiceExpense').textContent = '₹' + totalServiceExpense.toLocaleString('en-IN');
+    
+    let netProfit = serviceProfit - shopExpense;
+    let netProfitEl = document.getElementById('statTodayNetProfit');
+    netProfitEl.textContent = '₹' + netProfit.toLocaleString('en-IN');
+    netProfitEl.style.color = netProfit >= 0 ? "#16a34a" : "#dc2626";
+
+    let cashInHand = cashCollected - cashExpensePaid;
+    let upiBalance = upiCollected - upiExpensePaid;
+
+    document.getElementById('statCashInHand').textContent = '₹' + cashInHand.toLocaleString('en-IN');
+    document.getElementById('cashDetails').innerHTML = `Collected: ₹${cashCollected.toLocaleString('en-IN')} | Paid: ₹${cashExpensePaid.toLocaleString('en-IN')}`;
+
+    document.getElementById('statUpiBalance').textContent = '₹' + upiBalance.toLocaleString('en-IN');
+    document.getElementById('upiDetails').innerHTML = `Collected: ₹${upiCollected.toLocaleString('en-IN')} | Paid: ₹${upiExpensePaid.toLocaleString('en-IN')}`;
+
+    // Technician Breakdown
+    let h = '<table class="table" style="font-size:13px; margin:0;"><tr><th>Technician</th><th style="text-align:right;">Profit</th></tr>';
+    if (Object.keys(techProfits).length === 0) {
+        h += '<tr><td colspan="2" style="text-align:center; color:#6b7280;">No profit recorded for this period.</td></tr>';
+    } else {
+        for (let tech in techProfits) {
+            h += `<tr><td>${esc(tech)}</td><td style="text-align:right; font-weight:bold; color:#16a34a;">₹${techProfits[tech].toLocaleString('en-IN')}</td></tr>`;
+        }
+    }
+    h += '</table>';
+    document.getElementById('techProfitList').innerHTML = h;
+}
+
+// ================= PRODUCTS CRUD =================
+$("saveProductBtn").onclick = async () => {
+  try {
+    const id = $("pId").value;
+    const name = $("pName").value.trim();
+    if (!name) return msg("productMsg", "Product name is required.");
+    
+    let imageUrl = $("pPreview").src;
+    if ($("pImage").files[0]) imageUrl = await uploadImage($("pImage").files[0], "products");
+
+    const data = {
+      name, description: $("pDesc").value.trim(),
+      price: Number($("pPrice").value || 0), oldPrice: Number($("pOldPrice").value || 0),
+      stock: Number($("pStock").value || 0), category: $("pCategory").value,
+      image: imageUrl, updatedAt: Date.now()
+    };
+
+    if (id) {
+      await updateDoc(doc(db, "products", id), data);
+      msg("productMsg", "✅ Product updated successfully.", true);
+    } else {
+      data.createdAt = Date.now();
+      await addDoc(collection(db, "products"), data);
+      msg("productMsg", "✅ Product added.", true);
+    }
+    resetProductForm(); loadDashboardStats(); loadProducts();
+  } catch (e) { msg("productMsg", "Error: " + e.message); }
+};
+
+window.resetProductForm = function() {
+    $("pId").value = ""; $("pName").value = ""; $("pDesc").value = "";
+    $("pPrice").value = ""; $("pOldPrice").value = ""; $("pStock").value = "";
+    $("pImage").value = ""; $("pPreview").src = "";
+    $("productFormTitle").textContent = "➕ Add Product";
+    $("saveProductBtn").textContent = "⬆ Upload & Add Product";
+    $("cancelProductEdit").classList.add("hidden");
+}
+
+window.editProduct = (id) => {
+    const x = allProducts.find(p => p.id === id);
+    if(!x) return;
+    $("pId").value = x.id; $("pName").value = x.name; $("pDesc").value = x.description || "";
+    $("pPrice").value = x.price; $("pOldPrice").value = x.oldPrice || ""; $("pStock").value = x.stock;
+    $("pCategory").value = x.category || "Mobile"; $("pPreview").src = x.image || "";
+    $("productFormTitle").textContent = "✏️ Edit Product";
+    $("saveProductBtn").textContent = "💾 Update Product";
+    $("cancelProductEdit").classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+async function loadProducts() {
+  const snap = await getDocs(collection(db, "products"));
+  allProducts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderProducts(allProducts);
+}
+
+function renderProducts(data) {
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr>';
+  data.forEach(x => {
+    h += `<tr><td>${x.image ? `<img class="thumb" src="${esc(x.image)}">` : "—"}</td>
+      <td>${esc(x.name)}</td><td><span class="badge">${esc(x.category)}</span></td>
+      <td>₹${Number(x.price||0).toLocaleString("en-IN")}</td><td>${x.stock||0}</td>
+      <td class="action-buttons">
+        <button class="secondary btn-sm" onclick="editProduct('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('products','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("productList").innerHTML = h + "</table></div>";
+}
+
+// ================= SPARE PARTS CRUD =================
+$("savePartBtn").onclick = async () => {
+  try {
+    const id = $("sId").value;
+    const name = $("sName").value.trim();
+    if (!name) return msg("partMsg", "Part name is required.");
+    
+    let imageUrl = $("sPreview").src;
+    if ($("sImage").files[0]) imageUrl = await uploadImage($("sImage").files[0], "spare-parts");
+
+    const data = {
+      name, model: $("sModel").value.trim(), type: $("sType").value,
+      description: $("sDesc").value.trim(), price: Number($("sPrice").value || 0),
+      stock: Number($("sStock").value || 0), category: "Spare Parts",
+      image: imageUrl, updatedAt: Date.now()
+    };
+
+    if (id) {
+      await updateDoc(doc(db, "spareParts", id), data);
+      msg("partMsg", "✅ Spare part updated.", true);
+    } else {
+      data.createdAt = Date.now();
+      await addDoc(collection(db, "spareParts"), data);
+      msg("partMsg", "✅ Spare part added.", true);
+    }
+    resetPartForm(); loadDashboardStats(); loadParts();
+  } catch (e) { msg("partMsg", "Error: " + e.message); }
+};
+
+window.resetPartForm = function() {
+    $("sId").value = ""; $("sName").value = ""; $("sModel").value = "";
+    $("sDesc").value = ""; $("sPrice").value = ""; $("sStock").value = "";
+    $("sImage").value = ""; $("sPreview").src = "";
+    $("partFormTitle").textContent = "➕ Add Spare Part";
+    $("savePartBtn").textContent = "⬆ Upload & Add Spare Part";
+    $("cancelPartEdit").classList.add("hidden");
+}
+
+window.editPart = (id) => {
+    const x = allParts.find(p => p.id === id);
+    if(!x) return;
+    $("sId").value = x.id; $("sName").value = x.name; $("sModel").value = x.model || "";
+    $("sType").value = x.type || "Display"; $("sDesc").value = x.description || "";
+    $("sPrice").value = x.price; $("sStock").value = x.stock; $("sPreview").src = x.image || "";
+    $("partFormTitle").textContent = "✏️ Edit Spare Part";
+    $("savePartBtn").textContent = "💾 Update Spare Part";
+    $("cancelPartEdit").classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+async function loadParts() {
+  const snap = await getDocs(collection(db, "spareParts"));
+  allParts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderParts(allParts);
+}
+
+function renderParts(data) {
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Part</th><th>Model</th><th>Type</th><th>Price</th><th>Stock</th><th>Actions</th></tr>';
+  data.forEach(x => {
+    h += `<tr><td>${x.image ? `<img class="thumb" src="${esc(x.image)}">` : "—"}</td>
+      <td>${esc(x.name)}</td><td>${esc(x.model)}</td><td>${esc(x.type)}</td>
+      <td>₹${Number(x.price||0).toLocaleString("en-IN")}</td><td>${x.stock||0}</td>
+      <td class="action-buttons">
+        <button class="secondary btn-sm" onclick="editPart('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('spareParts','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("partList").innerHTML = h + "</table></div>";
+}
+
+// ================= SERVICES CRUD =================
+$("saveServiceBtn").onclick = async () => {
+  try {
+    const id = $("vId").value;
+    const name = $("vName").value.trim();
+    if (!name) return msg("serviceMsg", "Service name is required.");
+    
+    let imageUrl = $("vPreview").src;
+    if ($("vImage").files[0]) imageUrl = await uploadImage($("vImage").files[0], "services");
+
+    const data = {
+      name, category: $("vCategory").value, price: Number($("vPrice").value || 0),
+      estimatedTime: $("vTime").value.trim(), description: $("vDesc").value.trim(),
+      image: imageUrl, updatedAt: Date.now()
+    };
+
+    if (id) {
+      await updateDoc(doc(db, "services", id), data);
+      msg("serviceMsg", "✅ Service updated.", true);
+    } else {
+      data.createdAt = Date.now();
+      await addDoc(collection(db, "services"), data);
+      msg("serviceMsg", "✅ Service added.", true);
+    }
+    resetServiceForm(); loadDashboardStats(); loadServices();
+  } catch (e) { msg("serviceMsg", "Error: " + e.message); }
+};
+
+window.resetServiceForm = function() {
+    $("vId").value = ""; $("vName").value = ""; $("vTime").value = ""; $("vDesc").value = "";
+    $("vPrice").value = ""; $("vImage").value = ""; $("vPreview").src = "";
+    $("serviceFormTitle").textContent = "➕ Add Service / Repair";
+    $("saveServiceBtn").textContent = "➕ Add Service";
+    $("cancelServiceEdit").classList.add("hidden");
+}
+
+window.editService = (id) => {
+    const x = allServices.find(p => p.id === id);
+    if(!x) return;
+    $("vId").value = x.id; $("vName").value = x.name; $("vCategory").value = x.category || "Mobile Repair";
+    $("vPrice").value = x.price; $("vTime").value = x.estimatedTime || ""; $("vDesc").value = x.description || "";
+    $("vPreview").src = x.image || "";
+    $("serviceFormTitle").textContent = "✏️ Edit Service";
+    $("saveServiceBtn").textContent = "💾 Update Service";
+    $("cancelServiceEdit").classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+async function loadServices() {
+  const snap = await getDocs(collection(db, "services"));
+  allServices = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderServices(allServices);
+}
+
+function renderServices(data) {
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Service</th><th>Category</th><th>Price</th><th>Time</th><th>Actions</th></tr>';
+  data.forEach(x => {
+    h += `<tr><td>${x.image ? `<img class="thumb" src="${esc(x.image)}">` : "—"}</td>
+      <td>${esc(x.name)}<br><small>${esc(x.description)}</small></td>
+      <td>${esc(x.category)}</td>
+      <td>₹${Number(x.price||0).toLocaleString("en-IN")}</td>
+      <td>${esc(x.estimatedTime)}</td>
+      <td class="action-buttons">
+        <button class="secondary btn-sm" onclick="editService('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('services','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("serviceList").innerHTML = h + "</table></div>";
+}
+
+// ================= TECHNICIANS CRUD =================
+$("saveTechBtn").onclick = async () => {
+  try {
+    const id = $("tId").value;
+    const name = $("tName").value.trim();
+    if (!name) return msg("techMsg", "Name is required.");
+    
+    let imageUrl = $("tPreview").src;
+    if ($("tImage").files[0]) imageUrl = await uploadImage($("tImage").files[0], "technicians");
+
+    const data = {
+      name, area: $("tArea").value.trim(), experience: Number($("tExperience").value || 0),
+      contact: $("tContact").value.trim(), description: $("tDesc").value.trim(),
+      image: imageUrl, updatedAt: Date.now()
+    };
+
+    if (id) {
+      await updateDoc(doc(db, "technicians", id), data);
+      msg("techMsg", "✅ Technician updated.", true);
+    } else {
+      data.createdAt = Date.now();
+      await addDoc(collection(db, "technicians"), data);
+      msg("techMsg", "✅ Technician added.", true);
+    }
+    resetTechForm(); loadTechnicians();
+  } catch (e) { msg("techMsg", "Error: " + e.message); }
+};
+
+window.resetTechForm = function() {
+    $("tId").value = ""; $("tName").value = ""; $("tArea").value = ""; $("tExperience").value = "";
+    $("tContact").value = ""; $("tDesc").value = ""; $("tImage").value = ""; $("tPreview").src = "";
+    $("techFormTitle").textContent = "➕ Add Technician";
+    $("saveTechBtn").textContent = "➕ Add Technician";
+    $("cancelTechEdit").classList.add("hidden");
+}
+
+window.editTech = (id) => {
+    const x = allTechs.find(p => p.id === id);
+    if(!x) return;
+    $("tId").value = x.id; $("tName").value = x.name; $("tArea").value = x.area || "";
+    $("tExperience").value = x.experience || ""; $("tContact").value = x.contact || "";
+    $("tDesc").value = x.description || ""; $("tPreview").src = x.image || "";
+    $("techFormTitle").textContent = "✏️ Edit Technician";
+    $("saveTechBtn").textContent = "💾 Update Technician";
+    $("cancelTechEdit").classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+async function loadTechnicians() {
+  const snap = await getDocs(collection(db, "technicians"));
+  allTechs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderTechs(allTechs);
+}
+
+function renderTechs(data) {
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Image</th><th>Name</th><th>Area</th><th>Experience</th><th>Contact</th><th>Actions</th></tr>';
+  data.forEach(x => {
+    h += `<tr><td>${x.image ? `<img class="thumb" src="${esc(x.image)}" style="border-radius:50%">` : "—"}</td>
+      <td>${esc(x.name)}</td><td>${esc(x.area)}</td><td>${x.experience} years</td><td>${esc(x.contact)}</td>
+      <td class="action-buttons">
+        <button class="secondary btn-sm" onclick="editTech('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('technicians','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("techList").innerHTML = h + "</table></div>";
+}
+
+// ================= ORDERS =================
+async function loadOrders() {
+  const snap = await getDocs(collection(db, "orders"));
+  allOrders = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderOrders(allOrders);
+}
+
+function renderOrders(data) {
+  const statuses = ["Pending", "Shipped", "Delivered", "Cancelled", "Paid"];
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Order ID</th><th>Customer</th><th>Address</th><th>Items</th><th>Total</th><th>Status</th></tr>';
+  data.forEach(x => {
+    const items = Array.isArray(x.items) ? x.items.map(i => `${esc(i.name)} × ${i.quantity||1}`).join("<br>") : "—";
+    const currentStatus = x.paymentStatus || x.status || "Paid";
+    
+    let statusHtml = `<select class="status-select" onchange="updateOrderStatus('${x.id}', this.value)">`;
+    statuses.forEach(s => {
+        statusHtml += `<option value="${s}" ${s === currentStatus ? 'selected' : ''}>${s}</option>`;
+    });
+    statusHtml += `</select>`;
+
+    h += `<tr><td><code>${esc(x.id.slice(0,12))}</code></td>
+      <td><b>${esc(x.customerName||x.name)}</b><br>${esc(x.customerPhone||x.phone)}<br>${esc(x.customerEmail||x.email)}</td>
+      <td>${esc(x.deliveryAddress||x.address||"")}</td>
+      <td>${items}</td>
+      <td>₹${Number(x.total||0).toLocaleString("en-IN")}</td>
+      <td>${statusHtml}</td>
+    </tr>`;
+  });
+  $("orderList").innerHTML = h + "</table></div>";
+}
+
+window.updateOrderStatus = async (id, newStatus) => {
+    try {
+        await updateDoc(doc(db, "orders", id), { status: newStatus, paymentStatus: newStatus });
+        alert("✅ Order status updated to: " + newStatus);
+    } catch (e) {
+        alert("Error updating status: " + e.message);
+    }
+};
+
+// ================= EXPENSES CRUD =================
+$("saveExpenseBtn").onclick = async () => {
+  try {
+    const id = $("eId").value;
+    const name = $("eName").value.trim();
+    const amount = Number($("eAmount").value || 0);
+    const paymentMethod = $("ePaymentMethod").value;
+    let dateVal = $("eDate").value;
+
+    if (!name) return msg("expenseMsg", "Expense name is required.");
+    if (amount <= 0) return msg("expenseMsg", "Please enter a valid amount.");
+    
+    if (!dateVal) {
+        const today = new Date();
+        dateVal = today.toISOString().split('T')[0]; 
+    }
+
+    const data = {
+      name: name,
+      amount: amount,
+      paymentMethod: paymentMethod,
+      date: dateVal, 
+      createdAt: Date.now(),
+      updatedAt: Date.now()
+    };
+
+    if (id) {
+      await updateDoc(doc(db, "shopExpenses", id), data);
+      msg("expenseMsg", "✅ Expense updated successfully.", true);
+    } else {
+      await addDoc(collection(db, "shopExpenses"), data);
+      msg("expenseMsg", "✅ Expense added.", true);
+    }
+    resetExpenseForm(); 
+    loadExpenses();
+    window.loadProfitData('all'); 
+  } catch (e) { msg("expenseMsg", "Error: " + e.message); }
+};
+
+window.resetExpenseForm = function() {
+    $("eId").value = ""; $("eName").value = ""; $("eAmount").value = ""; 
+    $("ePaymentMethod").value = "Cash";
+    const today = new Date();
+    $("eDate").value = today.toISOString().split('T')[0];
+    
+    $("expenseFormTitle").textContent = "➕ Add Shop Expense";
+    $("saveExpenseBtn").textContent = "➕ Add Expense";
+    $("cancelExpenseEdit").classList.add("hidden");
+}
+
+window.editExpense = (id) => {
+    const x = allExpenses.find(p => p.id === id);
+    if(!x) return;
+    $("eId").value = x.id; 
+    $("eName").value = x.name; 
+    $("eAmount").value = x.amount; 
+    $("ePaymentMethod").value = x.paymentMethod || "Cash";
+    $("eDate").value = x.date || "";
+    
+    $("expenseFormTitle").textContent = "✏️ Edit Expense";
+    $("saveExpenseBtn").textContent = "💾 Update Expense";
+    $("cancelExpenseEdit").classList.remove("hidden");
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+// UPDATED: Load Expenses with Date Filter
+window.loadExpenses = async function() {
+  const snap = await getDocs(collection(db, "shopExpenses"));
+  allExpenses = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  
+  // Sort all expenses by date (newest first)
+  allExpenses.sort((a, b) => {
+      let dateA = a.date ? new Date(a.date).getTime() : 0;
+      let dateB = b.date ? new Date(b.date).getTime() : 0;
+      return dateB - dateA;
+  });
+
+  // Populate Date Filter Dropdown
+  const dateFilter = document.getElementById('expenseDateFilter');
+  if (dateFilter) {
+      let dates = new Set();
+      allExpenses.forEach(e => {
+          if (e.date) dates.add(e.date);
+      });
+      let sortedDates = Array.from(dates).sort().reverse();
+      let currentVal = dateFilter.value || 'all';
+      dateFilter.innerHTML = '<option value="all">All Dates</option>';
+      sortedDates.forEach(d => {
+          let parts = d.split('-');
+          let displayDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+          dateFilter.innerHTML += `<option value="${d}">${displayDate}</option>`;
+      });
+      dateFilter.value = currentVal;
+  }
+
+  // Filter expenses based on dropdown
+  let filteredExpenses = allExpenses;
+  if (dateFilter && dateFilter.value !== 'all') {
+      filteredExpenses = allExpenses.filter(x => x.date === dateFilter.value);
+  }
+  
+  renderExpenses(filteredExpenses);
+}
+
+function renderExpenses(data) {
+  let h = '<div class="table-wrap"><table class="table"><tr><th>Date</th><th>Expense Name</th><th>Method</th><th>Amount</th><th>Actions</th></tr>';
+  data.forEach(x => {
+    let dateStr = x.date || "—";
+    let method = x.paymentMethod || "Cash";
+    let methodColor = method === 'Cash' ? '#f59e0b' : (method === 'UPI' ? '#3b82f6' : '#6b7280');
+    
+    h += `<tr>
+      <td>${esc(dateStr)}</td>
+      <td>${esc(x.name)}</td>
+      <td><span class="badge" style="background:${methodColor}20; color:${methodColor}; border:1px solid ${methodColor}40;">${esc(method)}</span></td>
+      <td style="color:#dc2626; font-weight:bold;">₹${Number(x.amount||0).toLocaleString("en-IN")}</td>
+      <td class="action-buttons">
+        <button class="secondary btn-sm" onclick="editExpense('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('shopExpenses','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("expenseList").innerHTML = h + "</table></div>";
+}
+
+// ================= BOOKINGS =================
+window.loadBookings = async function(filterType = 'all', filterValue = '') {
+  const snap = await getDocs(collection(db, "bookings"));
+  let rawBookings = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  
+  rawBookings.sort((a, b) => {
+      let dateA = a.createdAt?.seconds ? a.createdAt.seconds * 1000 : (a.createdAt ? new Date(a.createdAt).getTime() : 0);
+      let dateB = b.createdAt?.seconds ? b.createdAt.seconds * 1000 : (b.createdAt ? new Date(b.createdAt).getTime() : 0);
+      return dateB - dateA;
+  });
+
+  let filteredBookings = rawBookings;
+
+  // Apply Date Filter if provided
+  if (filterValue) {
+      function getLocalDateString(ts) {
+          if (!ts) return "";
+          let d;
+          if (ts.seconds) d = new Date(ts.seconds * 1000);
+          else d = new Date(ts);
+          if (isNaN(d.getTime())) return "";
+          return d.toLocaleDateString('en-CA'); // Returns YYYY-MM-DD format
+      }
+      filteredBookings = filteredBookings.filter(b => {
+          let dateString = getLocalDateString(b.updatedAt || b.createdAt);
+          if (filterType === 'day') return dateString === filterValue;
+          if (filterType === 'month') return dateString.startsWith(filterValue);
+          return true;
+      });
+  }
+
+  // Apply Status Filter
+  const statusFilter = document.getElementById('bookingFilter')?.value || 'all';
+  if (statusFilter !== 'all') {
+      filteredBookings = filteredBookings.filter(b => (b.status || 'Pending') === statusFilter);
+  }
+
+  allBookings = filteredBookings;
+  renderBookings(allBookings);
+} 
+
+function renderBookings(data) {
+  let h = '<div class="table-wrap booking-table-wrap"><table class="table booking-table"><thead><tr><th>Date</th><th>Customer</th><th>Device / Service</th><th>Technician</th><th>Amount</th><th>Method</th><th>Profit</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+  
+  data.forEach(x => {
+    let dateStr = "N/A";
+    if (x.createdAt) {
+        if (x.createdAt.seconds) {
+            dateStr = new Date(x.createdAt.seconds * 1000).toLocaleDateString("en-IN");
+        } else {
+            dateStr = new Date(x.createdAt).toLocaleDateString("en-IN");
+        }
+    }
+    
+    const technician = x.technician || "—";
+    const amount = x.amount ? Number(x.amount) : 0;
+    const expense = x.expense ? Number(x.expense) : 0;
+    const profit = amount - expense;
+    const method = x.paymentMethod || "Cash";
+    const methodColor = method === 'Cash' ? '#f59e0b' : (method === 'UPI' ? '#3b82f6' : '#6b7280');
+
+    const amountStr = amount ? `₹${amount.toLocaleString("en-IN")}` : "—";
+    
+    let profitStr = "—";
+    if (amount > 0 || expense > 0) {
+        profitStr = `₹${profit.toLocaleString("en-IN")}`;
+    }
+    const profitColor = profit > 0 ? "#16a34a" : (profit < 0 ? "#dc2626" : "#6b7280");
+    
+    let statusText = x.status || "Pending";
+    let statusColor = "#dcfce7"; 
+    let statusTextColor = "#166534";
+    if (statusText === "Pending") {
+        statusColor = "#fef3c7"; 
+        statusTextColor = "#92400e";
+    } else if (statusText === "In Progress") {
+        statusColor = "#dbeafe"; 
+        statusTextColor = "#1e40af";
+    }
+
+    // Edited Badge Logic
+    let editedBadge = '';
+    if (x.editCount && x.editCount > 0) {
+        editedBadge = `<span class="badge" style="background:#fee2e2; color:#991b1b; border:1px solid #fecaca; margin-left:5px; font-size:10px;">✏️ Edited ${x.editCount}x</span>`;
+    }
+
+    h += `<tr>
+      <td data-label="Date">${dateStr}</td>
+      <td data-label="Customer"><b>${esc(x.name)}</b>${editedBadge}<br>${esc(x.phone)}</td>
+      <td data-label="Service"><span class="badge">${esc(x.service)}</span><br><small>${esc(x.brand)} ${esc(x.model)}</small></td>
+      <td data-label="Technician">${esc(technician)}</td>
+      <td data-label="Amount"><b>${amountStr}</b></td>
+      <td data-label="Method"><span class="badge" style="background:${methodColor}20; color:${methodColor}; border:1px solid ${methodColor}40;">${esc(method)}</span></td>
+      <td data-label="Profit"><b style="color:${profitColor};">${profitStr}</b></td>
+      <td data-label="Status"><span class="badge" style="background:${statusColor};color:${statusTextColor};">${esc(statusText)}</span></td>
+      <td class="action-buttons" data-label="Actions">
+        <button class="primary btn-sm" onclick="openBillModal('${x.id}')">📄 Bill</button>
+        <button class="secondary btn-sm" onclick="openEditBooking('${x.id}')">Edit</button>
+        <button class="danger btn-sm" onclick="removeDoc('bookings','${x.id}')">Delete</button>
+      </td></tr>`;
+  });
+  $("bookingList").innerHTML = h + "</tbody></table></div>";
+}
+
+// ================= EDIT BOOKING FUNCTIONS =================
+window.calcModalProfit = function() {
+    const amount = Number(document.getElementById('editAmount').value || 0);
+    const expense = Number(document.getElementById('editExpense').value || 0);
+    const profit = amount - expense;
+    const display = document.getElementById('editProfitDisplay');
+    display.textContent = `₹${profit.toLocaleString("en-IN")}`;
+    display.style.color = profit > 0 ? "#16a34a" : (profit < 0 ? "#dc2626" : "#6b7280");
+};
+
+window.openEditBooking = async function(id) {
+    try {
+        const techSnap = await getDocs(collection(db, "technicians"));
+        const techSelect = document.getElementById('editTechnician');
+        techSelect.innerHTML = '<option value="">-- Select Technician --</option>';
+        techSnap.forEach(doc => {
+            const tech = doc.data();
+            const opt = document.createElement('option');
+            opt.value = tech.name;
+            opt.textContent = tech.name;
+            techSelect.appendChild(opt);
+        });
+
+        const docRef = doc(db, "bookings", id);
+        const docSnap = await getDoc(docRef);
+        
+        if (docSnap.exists()) {
+            const data = docSnap.data();
+            document.getElementById('editCustName').value = data.name || 'Unknown';
+            document.getElementById('editTechnician').value = data.technician || '';
+            document.getElementById('editAmount').value = data.amount || ''; 
+            document.getElementById('editExpense').value = data.expense || '';
+            document.getElementById('editPaymentMethod').value = data.paymentMethod || 'Cash';
+            document.getElementById('editBookingStatus').value = data.status || 'Pending';
+            document.getElementById('newTechName').value = '';
+            
+            calcModalProfit();
+            
+            // --- Show Edit History ---
+            const histSection = document.getElementById('editHistorySection');
+            const histList = document.getElementById('editHistoryList');
+            if (data.editHistory && data.editHistory.length > 0) {
+                let hHtml = '';
+                data.editHistory.forEach(entry => {
+                    let dateStr = new Date(entry.editedAt).toLocaleString('en-IN');
+                    let changes = [];
+                    if (entry.oldAmount !== entry.newAmount) changes.push(`Amount: ₹${entry.oldAmount} → ₹${entry.newAmount}`);
+                    if (entry.oldExpense !== entry.newExpense) changes.push(`Expense: ₹${entry.oldExpense} → ₹${entry.newExpense}`);
+                    if (entry.oldStatus !== entry.newStatus) changes.push(`Status: ${entry.oldStatus} → ${entry.newStatus}`);
+                    if (entry.oldTechnician !== entry.newTechnician) changes.push(`Tech: ${entry.oldTechnician} → ${entry.newTechnician}`);
+                    
+                    hHtml += `<div style="padding:6px 10px; background:#f8fafc; border-radius:6px; margin-bottom:5px; border-left:3px solid #ff5a00;">
+                        <b>${entry.editedBy}</b> edited on <b>${dateStr}</b><br>
+                        <span style="color:#4b5563;">${changes.join(' | ')}</span>
+                    </div>`;
+                });
+                histList.innerHTML = hHtml;
+                histSection.style.display = 'block';
+            } else {
+                histSection.style.display = 'none';
+            }
+            
+            // --- Lock Logic for Technicians ---
+            let isLocked = false;
+            if (currentUserRole === 'technician' && Number(data.amount || 0) > 0) {
+                isLocked = true;
+            }
+
+            const editFields = ['editTechnician', 'editAmount', 'editExpense', 'editPaymentMethod', 'editBookingStatus', 'newTechName'];
+            editFields.forEach(fieldId => {
+                const el = document.getElementById(fieldId);
+                if (el) el.disabled = isLocked;
+            });
+
+            const addTechBtn = document.querySelector('#editBookingModal .modal-flex-row button');
+            if (addTechBtn) addTechBtn.disabled = isLocked;
+
+            const saveBtn = document.querySelector('#editBookingModal .modal-actions .primary');
+            const lockMsg = document.getElementById('editLockMsg');
+            
+            if (isLocked) {
+                saveBtn.style.display = 'none';
+                if (lockMsg) lockMsg.style.display = 'block';
+            } else {
+                saveBtn.style.display = 'block';
+                if (lockMsg) lockMsg.style.display = 'none';
+            }
+
+            window.currentEditBookingId = id;
+            document.getElementById('editBookingModal').style.display = 'flex';
+        } else {
+            alert("Booking not found!");
+        }
+    } catch (e) {
+        console.error(e);
+        alert("Error loading booking: " + e.message);
+    }
+};
+
+window.closeEditBooking = function() {
+    document.getElementById('editBookingModal').style.display = 'none';
+};
+
+window.addNewTechFromModal = async function() {
+    const name = document.getElementById('newTechName').value.trim();
+    if (!name) { alert("Please enter technician name"); return; }
+    
+    try {
+        await addDoc(collection(db, "technicians"), {
+            name: name,
+            area: "Mukkam",
+            experience: 0,
+            contact: "",
+            createdAt: Date.now()
+        });
+        
+        const techSnap = await getDocs(collection(db, "technicians"));
+        const techSelect = document.getElementById('editTechnician');
+        techSelect.innerHTML = '<option value="">-- Select Technician --</option>';
+        techSnap.forEach(doc => {
+            const tech = doc.data();
+            const opt = document.createElement('option');
+            opt.value = tech.name;
+            opt.textContent = tech.name;
+            if (tech.name === name) opt.selected = true;
+            techSelect.appendChild(opt);
+        });
+        
+        document.getElementById('newTechName').value = '';
+        alert("✅ Technician added successfully!");
+    } catch(e) {
+        alert("Error adding technician: " + e.message);
+    }
+};
+
+// ================= SAVE BOOKING WITH AUTO WHATSAPP =================
+window.saveBookingEditWithWA = async function() {
+    const id = window.currentEditBookingId;
+    const tech = document.getElementById('editTechnician').value;
+    const amount = Number(document.getElementById('editAmount').value || 0);
+    const expense = Number(document.getElementById('editExpense').value || 0);
+    const paymentMethod = document.getElementById('editPaymentMethod').value;
+    const status = document.getElementById('editBookingStatus').value;
+    const profit = amount - expense;
+
+    if (!tech || !status) {
+        alert("Please select both Technician and Status.");
+        return;
+    }
+
+    try {
+        const bookingRef = doc(db, "bookings", id);
+        const oldSnap = await getDoc(bookingRef);
+        const oldData = oldSnap.data();
+
+        // Check if anything actually changed
+        let hasChanges = false;
+        if (Number(oldData.amount || 0) !== amount) hasChanges = true;
+        if (Number(oldData.expense || 0) !== expense) hasChanges = true;
+        if ((oldData.technician || '') !== tech) hasChanges = true;
+        if ((oldData.paymentMethod || 'Cash') !== paymentMethod) hasChanges = true;
+        if ((oldData.status || 'Pending') !== status) hasChanges = true;
+
+        if (!hasChanges) {
+            alert("ℹ️ No changes were made.");
+            closeEditBooking();
+            return;
+        }
+
+        // Build edit history entry
+        let history = oldData.editHistory || [];
+        history.push({
+            editedAt: Date.now(),
+            editedBy: currentUserRole === 'admin' ? 'Admin' : 'Technician',
+            oldAmount: Number(oldData.amount || 0),
+            newAmount: amount,
+            oldExpense: Number(oldData.expense || 0),
+            newExpense: expense,
+            oldStatus: oldData.status || 'Pending',
+            newStatus: status,
+            oldTechnician: oldData.technician || 'None',
+            newTechnician: tech
+        });
+
+        await updateDoc(bookingRef, {
+            technician: tech,
+            amount: amount,
+            expense: expense,
+            paymentMethod: paymentMethod,
+            profit: profit,
+            status: status,
+            editHistory: history,
+            editCount: (oldData.editCount || 0) + 1,
+            lastEditedAt: Date.now(),
+            lastEditedBy: currentUserRole === 'admin' ? 'Admin' : 'Technician',
+            updatedAt: Date.now()
+        });
+        
+        const sendWA = confirm("✅ Booking updated!\n\nDo you want to send the bill to the customer via WhatsApp?");
+        
+        closeEditBooking();
+        loadBookings(); 
+        window.loadProfitData('all'); 
+        
+        if (sendWA) {
+            setTimeout(() => {
+                openBillModal(id);
+                setTimeout(() => {
+                    const waBtn = document.getElementById('billWhatsAppBtn');
+                    if (waBtn && waBtn.href && !waBtn.href.endsWith('#')) {
+                        window.open(waBtn.href, '_blank');
+                    }
+                }, 800);
+            }, 500);
+        }
+    } catch (e) {
+        console.error(e);
+        alert("Error updating booking: " + e.message);
+    }
+};
+
+// ================= BILL / INVOICE FUNCTIONS =================
+window.openBillModal = async function(id) {
+    try {
+        const docRef = doc(db, "bookings", id);
+        const docSnap = await getDoc(docRef);
+        
+        if (!docSnap.exists()) { alert("Booking not found!"); return; }
+        
+        const data = docSnap.data();
+        
+        document.getElementById('billCustName').textContent = data.name || 'N/A';
+        document.getElementById('billCustPhone').textContent = data.phone || 'N/A';
+        document.getElementById('billId').textContent = '#' + id.slice(0, 8).toUpperCase();
+        
+        let dateStr = "N/A";
+        if (data.createdAt) {
+            const d = data.createdAt.seconds ? new Date(data.createdAt.seconds * 1000) : new Date(data.createdAt);
+            dateStr = d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+        document.getElementById('billDate').textContent = dateStr;
+        
+        const brand = data.brand || '';
+        const model = data.model || '';
+        document.getElementById('billDevice').textContent = (brand + ' ' + model).trim() || 'N/A';
+        document.getElementById('billService').textContent = data.service || 'N/A';
+        document.getElementById('billIssue').textContent = data.description || 'N/A';
+        document.getElementById('billTech').textContent = data.technician || 'Not Assigned';
+        document.getElementById('billStatus').textContent = data.status || 'Pending';
+        
+        const amount = Number(data.amount || 0);
+        document.getElementById('billAmount').textContent = '₹' + amount.toLocaleString('en-IN');
+        document.getElementById('billTotal').textContent = '₹' + amount.toLocaleString('en-IN');
+        
+        const waMessage = buildWhatsAppBill(data, id, dateStr, amount);
+        const cleanPhone = (data.phone || '').replace(/\D/g, '');
+        let waPhone = cleanPhone;
+        if (waPhone.length === 10) waPhone = '91' + waPhone;
+        
+        const waLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMessage)}`;
+        document.getElementById('billWhatsAppBtn').href = waLink;
+        
+        document.getElementById('billModal').style.display = 'flex';
+    } catch (e) {
+        console.error(e);
+        alert("Error loading bill: " + e.message);
+    }
+};
+
+function buildWhatsAppBill(data, id, dateStr, amount) {
+    const brand = data.brand || '';
+    const model = data.model || '';
+    const device = (brand + ' ' + model).trim() || 'N/A';
+    
+    let msg = `*fixG by iCare Mukkam*\n`;
+    msg += `Near Malabar Gold, Calicut Road, Mukkam, Kozhikode, Kerala - 673602\n`;
+    msg += `Phone: 9447150744 | Web: www.fixg.in\n`;
+    msg += `----------------------------------------\n`;
+    msg += `*SERVICE INVOICE*\n`;
+    msg += `----------------------------------------\n\n`;
+    msg += `*Bill No:* #${id.slice(0, 8).toUpperCase()}\n`;
+    msg += `*Date:* ${dateStr}\n\n`;
+    msg += `*Customer:* ${data.name || 'N/A'}\n`;
+    msg += `*Phone:* ${data.phone || 'N/A'}\n\n`;
+    msg += `*Device:* ${device}\n`;
+    msg += `*Service:* ${data.service || 'N/A'}\n`;
+    msg += `*Issue:* ${data.description || 'N/A'}\n`;
+    msg += `*Technician:* ${data.technician || 'Not Assigned'}\n`;
+    msg += `*Status:* ${data.status || 'Pending'}\n\n`;
+    msg += `----------------------------------------\n`;
+    msg += `*TOTAL AMOUNT: Rs. ${amount.toLocaleString('en-IN')}*\n`;
+    msg += `----------------------------------------\n\n`;
+    msg += `Thank you for choosing us!\n`;
+    msg += `For any queries, contact 9447150744`;
+    
+    return msg;
+}
+
+window.closeBillModal = function() {
+    document.getElementById('billModal').style.display = 'none';
+};
+
+window.printBill = function() {
+    window.print();
+};
+
+// ================= DELETE & UTILITIES =================
+window.removeDoc = async (c, id) => {
+  if (confirm("Are you sure you want to delete this item permanently?")) {
+    try {
+        await deleteDoc(doc(db, c, id));
+        alert("Deleted successfully.");
+        if(c === 'products') loadProducts();
+        if(c === 'spareParts') loadParts();
+        if(c === 'services') loadServices();
+        if(c === 'technicians') loadTechnicians();
+        if(c === 'bookings') {
+            loadBookings();
+            window.loadProfitData('all'); 
+        }
+        if(c === 'shopExpenses') {
+            loadExpenses();
+            window.loadProfitData('all'); 
+        }
+        if(currentUserRole === 'admin') loadDashboardStats();
+    } catch(e) { alert("Error deleting: " + e.message); }
+  }
+};
+
+// ================= SEARCH / FILTER LOGIC =================
+$("searchProducts").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderProducts(allProducts.filter(x => x.name.toLowerCase().includes(term) || (x.category||'').toLowerCase().includes(term)));
+});
+$("searchParts").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderParts(allParts.filter(x => x.name.toLowerCase().includes(term) || (x.model||'').toLowerCase().includes(term)));
+});
+$("searchServices").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderServices(allServices.filter(x => x.name.toLowerCase().includes(term)));
+});
+$("searchTechs").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderTechs(allTechs.filter(x => x.name.toLowerCase().includes(term) || (x.area||'').toLowerCase().includes(term)));
+});
+$("searchOrders").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderOrders(allOrders.filter(x => (x.customerName||x.name||'').toLowerCase().includes(term) || x.id.toLowerCase().includes(term)));
+});
+$("searchBookings").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    const filterVal = document.getElementById('bookingFilter')?.value || 'all';
+    let list = allBookings;
+    if (filterVal !== 'all') {
+        list = list.filter(b => (b.status || 'Pending') === filterVal);
+    }
+    renderBookings(list.filter(x => (x.name||'').toLowerCase().includes(term) || (x.phone||'').includes(term)));
+});
+$("searchExpenses").addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase();
+    renderExpenses(allExpenses.filter(x => (x.name||'').toLowerCase().includes(term)));
+});
+
+// ================= INITIAL LOAD =================
+function loadAll() {
+  if (currentUserRole === 'admin') {
+      loadProducts().catch(e => console.error("Products:", e));
+      loadParts().catch(e => console.error("Parts:", e));
+      loadServices().catch(e => console.error("Services:", e));
+      loadTechnicians().catch(e => console.error("Technicians:", e));
+      loadOrders().catch(e => console.error("Orders:", e));
+      loadExpenses().catch(e => console.error("Expenses:", e));
+  }
+  // Bookings are loaded for both Admin and Technician
+  loadBookings().catch(e => console.error("Bookings:", e));
+}
+</script>
+</body>
+</html>
